@@ -1,4 +1,6 @@
-package blaplafla.todolist.Modals;
+package blaplafla.todolist.models.task;
+
+import blaplafla.todolist.controllers.DictionaryController;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -56,7 +58,7 @@ public class Task implements Serializable, Comparable<Task> {
     @Override
     public int compareTo(Task task) {
         int temp = Long.compare(this.leftTime() / priority, task.leftTime() / priority);
-        return temp == 0 ? Long.compare(this.leftTime(), task.leftTime()):temp;
+        return temp == 0 ? Long.compare(this.leftTime(), task.leftTime()) : temp;
     }
 
     public String prettyTimer() {
@@ -68,7 +70,7 @@ public class Task implements Serializable, Comparable<Task> {
         leftTime = leftTime - hour * 60 * 60;
         long minute = leftTime / 60;
         long second = leftTime - minute * 60;
-        return String.format("còn lại %d ngày %d giờ %d phút %d giây", day, hour, minute, second);
+        return DictionaryController.getInstance().prettyTime(day, hour, minute, second);
     }
 
 }

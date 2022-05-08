@@ -1,4 +1,6 @@
-package blaplafla.todolist.Modals;
+package blaplafla.todolist.models.task;
+
+import blaplafla.todolist.models.arraylist.SimpleArrayList;
 
 import java.io.Serializable;
 import java.util.Date;

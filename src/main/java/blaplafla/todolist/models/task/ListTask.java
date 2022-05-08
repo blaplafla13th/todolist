@@ -1,4 +1,8 @@
-package blaplafla.todolist.Modals;
+package blaplafla.todolist.models.task;
+
+import blaplafla.todolist.controllers.DictionaryController;
+import blaplafla.todolist.models.arraylist.SimpleArrayList;
+import blaplafla.todolist.models.dictionary.Dictionary;
 
 import java.io.Serializable;
 
@@ -39,8 +43,12 @@ public class ListTask implements Serializable {
         done.removeIndex(id);
     }
 
+    public void addTask(MotherTask newTask) {
+        undone.add(newTask);
+    }
+
     @Override
     public String toString() {
-        return String.format("Danh sách việc cần làm của %s",username);
+        return DictionaryController.getInstance().label("todolist-name")+username;
     }
 }

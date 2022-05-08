@@ -1,4 +1,4 @@
-package blaplafla.todolist.Modals;
+package blaplafla.todolist.models.arraylist;
 
 // Java program for implementation of Heap Sort
 public class MergeSortTest {

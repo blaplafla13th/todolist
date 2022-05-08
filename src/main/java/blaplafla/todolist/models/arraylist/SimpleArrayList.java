@@ -1,4 +1,4 @@
-package blaplafla.todolist.Modals;
+package blaplafla.todolist.models.arraylist;
 
 import java.io.Serializable;
 import java.util.Arrays;

@@ -1,6 +1,6 @@
-package blaplafla.todolist.Controller;
+package blaplafla.todolist.controllers;
 
-import blaplafla.todolist.Modals.ListTask;
+import blaplafla.todolist.models.task.ListTask;
 
 import java.io.*;
 
