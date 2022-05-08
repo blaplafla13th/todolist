@@ -4,10 +4,14 @@ public class Vietnamese extends Dictionary {
     @Override
     public String errorExplain(int errorCode) {
         return switch (errorCode) {
-            case 1 -> "Thành công";
-            case 2 -> "Không tìm thấy file";
-            case 3 -> "Không thể đọc ghi file";
-            case 4 -> "Dữ liệu không hợp lệ";
+            case 100 -> "Thành công";
+            case 200 -> "Không tìm thấy file dữ liệu";
+            case 201 -> "Không tìm thấy file ngôn ngữ";
+            case 300 -> "Không thể đọc ghi file dữ liệu";
+            case 301 -> "Không thể đọc ghi file ngôn ngữ";
+            case 400 -> "Dữ liệu không hợp lệ";
+            case 401 -> "Dữ liệu ngôn ngữ không hợp lệ";
+            case 500 -> "Lỗi nhập liệu người dùng";
             default -> "Không xác định";
         };
     }
@@ -19,9 +23,17 @@ public class Vietnamese extends Dictionary {
 
     @Override
     public String label(String label) {
-        return switch (label){
+        return switch (label) {
             case "todolist-name" -> "Danh sách việc cần làm của ";
+            case "current-lang" -> "Ngôn ngữ hiện tại: ";
+            case "set-lang" -> "Đổi ngôn ngữ sang: ";
+            case "set-lang-term" -> "Nhập số của lựa chọn: ";
             default -> "Không xác định";
         };
+    }
+
+    @Override
+    public String getInfo() {
+        return "Tiếng Việt";
     }
 }
