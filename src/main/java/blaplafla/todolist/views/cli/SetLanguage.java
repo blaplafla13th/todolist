@@ -21,7 +21,9 @@ public class SetLanguage {
         } catch (NumberFormatException e){
             System.out.println(d.errorExplain(500));
         }
-        d.setDictionary(i);
+        code = d.setDictionary(i);
+        if (code != 100)
+            System.out.println(d.errorExplain(code));
         System.out.println(d.label("current-lang")+d.getDictionary());
 
     }
