@@ -15,8 +15,10 @@ public class DictionaryController {
 
     private DictionaryController() {
         int code = setDictionaryDefault();
-        if (code != 100)
-            System.out.println(code);
+        if (code != 100) {
+            System.out.println("Language file not found. Stop program, exit code: " + code);
+            System.exit(code);
+        }
     }
 
     public int setDictionaryDefault() {
@@ -32,6 +34,7 @@ public class DictionaryController {
                 Object obj = first.getDeclaredConstructor().newInstance();
                 if (obj instanceof Dictionary) {
                     dictionary = (Dictionary) obj;
+                    return 100;
                 } else return 401;
             } else return 401;
         } catch (ClassNotFoundException e) {
@@ -42,7 +45,7 @@ public class DictionaryController {
                  IllegalAccessException e) {
             return 401;
         }
-        return 100;
+
     }
 
     public String getDictionary() {
@@ -102,6 +105,5 @@ public class DictionaryController {
     public String label(String label) {
         return dictionary.label(label);
     }
-
 
 }
