@@ -1,4 +1,4 @@
-module blaplafla.todolist.demo {
+module blaplafla.todolist {
     requires javafx.controls;
     requires javafx.fxml;
 
