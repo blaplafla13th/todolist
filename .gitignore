@@ -5,6 +5,7 @@ target/
 
 ### IntelliJ IDEA ###
 *.iws
+.idea/workspace.xml
 *.ipr
 
 ### Eclipse ###
