@@ -29,11 +29,11 @@ public class FileController {
             fileOutputStream = new FileOutputStream(userfile);
             objectOutputStream = new ObjectOutputStream(fileOutputStream);
             hasFile = true;
-            return 1;
+            return 100;
         } catch (FileNotFoundException e) {
-            return 2;
+            return 200;
         } catch (IOException e) {
-            return 3;
+            return 300;
         }
     }
 
@@ -45,25 +45,25 @@ public class FileController {
         if (hasFile) {
             try {
                 listTask = (ListTask) objectInputStream.readObject();
-                return 1;
+                return 100;
             } catch (IOException e) {
-                return 3;
+                return 300;
             } catch (ClassNotFoundException e) {
-                return 4;
+                return 400;
             }
         }
-        return 2;
+        return 200;
     }
     public int exportListTask() {
         if (hasFile) {
             try {
                 objectOutputStream.writeObject(listTask);
-                return 1;
+                return 100;
             } catch (IOException e) {
-                return 3;
+                return 300;
             }
         }
-        return 2;
+        return 200;
     }
 
     public static FileController getInstance() {
