@@ -1,31 +1,98 @@
 package blaplafla.todolist.models.task;
 
-import blaplafla.todolist.models.arraylist.SimpleArrayList;
+import blaplafla.todolist.models.datastructure.SimpleArrayList;
+import blaplafla.todolist.models.datastructure.SimpleVector;
 
 import java.io.Serializable;
 import java.util.Date;
 
 public class MotherTask extends Task implements Serializable, Comparable<Task> {
     private SimpleArrayList<Task> undoneSubTask;
-    private SimpleArrayList<Task> doneSubTask;
+    private SimpleVector<Task> doneSubTask;
 
     public MotherTask(String title, String description, Date deadline, int priority) {
         super(title, description, deadline, priority);
         undoneSubTask = new SimpleArrayList<>();
-        doneSubTask = new SimpleArrayList<>();
+        doneSubTask = new SimpleVector<>();
     }
 
     public SimpleArrayList<Task> getSubTask() {
         return undoneSubTask;
     }
 
-    public void doneSubtask(int id) {
-        doneSubTask.add(undoneSubTask.get(id));
-        undoneSubTask.removeIndex(id);
+    public int doneSubtask(Task task) {
+        if (undoneSubTask.isContain(task)) {
+            doneSubTask.add(task);
+            undoneSubTask.remove(task);
+            return 100;
+        } else return 501;
     }
 
-    public void undoneSubtask(int id) {
-        undoneSubTask.add(doneSubTask.get(id));
-        doneSubTask.removeIndex(id);
+    public int undoneSubtask(Task task) {
+        if (doneSubTask.isContain(task)) {
+            undoneSubTask.add(task);
+            doneSubTask.remove(task);
+            return 100;
+        }else return 501;
+    }
+
+    public Task getSubTaskById(int from, int id) {
+        Task task;
+        if (from == 1) {
+            return undoneSubTask.get(id);
+        } else if (from == 2) {
+            return doneSubTask.get(id);
+        } else return null;
+    }
+
+    public int toggleTask(Task task) {
+        if (undoneSubTask.isContain(task)){
+            return doneSubtask(task);
+        }else if (doneSubTask.isContain(task)){
+            return undoneSubtask(task);
+        }
+        else return 501;
+    }
+
+    public Task getTaskById(int from, int id) {
+        Task task;
+        if (from == 1) {
+            return undoneSubTask.get(id);
+        } else if (from == 2) {
+            return doneSubTask.get(id);
+        } else return null;
+    }
+
+    public int deleteTaskById(int from, int id) {
+        if (from == 1) {
+            undoneSubTask.removeIndex(id);
+            return 100;
+        } else if (from == 2) {
+            doneSubTask.removeIndex(id);
+            return 100;
+        } else return 501;
+    }
+
+    public Task getLastDoneTask() {
+        return doneSubTask.peek();
+    }
+
+    public void addTask(String title, String description, Date deadline, int priority) {
+        MotherTask newTask = new MotherTask(title, description, deadline, priority);
+        undoneSubTask.add(newTask);
+    }
+
+    public int editTask(int from, int id, String title, String description, Date deadline, int priority) {
+        Task task;
+        if (from == 1) {
+            task = undoneSubTask.get(id);
+        } else if (from == 2) {
+            task = doneSubTask.get(id);
+        } else return 501;
+        task.setDeadline(deadline);
+        task.setDescription(description);
+        task.setTitle(title);
+        task.setPriority(priority);
+        return 100;
     }
 }

@@ -1,4 +1,4 @@
-package blaplafla.todolist.models.arraylist;
+package blaplafla.todolist.models.datastructure;
 
 @SuppressWarnings("unchecked")
 

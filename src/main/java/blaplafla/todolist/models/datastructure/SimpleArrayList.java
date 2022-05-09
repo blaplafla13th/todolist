@@ -1,4 +1,4 @@
-package blaplafla.todolist.models.arraylist;
+package blaplafla.todolist.models.datastructure;
 
 import java.io.Serializable;
 import java.util.Arrays;
@@ -52,17 +52,7 @@ public class SimpleArrayList<T extends Comparable<? super T>> implements Seriali
         if (array == null) {
             throw new NullPointerException();
         } else if (data == null) {
-            for (int i = 0; i < n; i++) {
-                if (array[i] == null) {
-                    n--;
-                    for (int j = 0; j < n + 1; j++) {
-                        if (i != j) {
-                            newArray[j] = array[i];
-                        }
-                    }
-                    break;
-                }
-            }
+            return;
         }
         for (int i = 0; i < n; i++) {
             if (array[i] != null && array[i].equals(data)) {
@@ -83,11 +73,7 @@ public class SimpleArrayList<T extends Comparable<? super T>> implements Seriali
         if (array == null) {
             throw new NullPointerException();
         } else if (data == null) {
-            for (int i = 0; i < n; i++) {
-                if (array[i] == null) {
-                    return true;
-                }
-            }
+            return false;
         } else {
             for (int i = 0; i < n; i++) {
                 if (array[i] != null && array[i].equals(data)) {
@@ -129,10 +115,6 @@ public class SimpleArrayList<T extends Comparable<? super T>> implements Seriali
         return new Itr();
     }
 
-    public Iterator<T> invertIterator() {
-        return new InvItr();
-    }
-
     public void removeIndex(int i) {
         if (array == null) {
             throw new NullPointerException();
@@ -161,18 +143,5 @@ public class SimpleArrayList<T extends Comparable<? super T>> implements Seriali
         }
     }
 
-    private class InvItr implements Iterator<T> {
-        private int currentIndex = n - 1;
-
-
-        public boolean hasNext() {
-            return currentIndex > 0;
-        }
-
-
-        public T next() {
-            return array[currentIndex--];
-        }
-    }
 
 }
