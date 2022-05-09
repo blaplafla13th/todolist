@@ -100,8 +100,4 @@ public class ListTask implements Serializable {
         else return 501;
     }
 
-    @Override
-    public String toString() {
-        return DictionaryController.getInstance().label("todolist-name") + username;
-    }
 }

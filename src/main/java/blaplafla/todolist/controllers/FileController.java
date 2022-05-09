@@ -4,7 +4,7 @@ import blaplafla.todolist.models.task.ListTask;
 
 import java.io.*;
 
-public class FileController {
+public class FileController{
     private File userfile;
     private boolean hasFile = false;
     private ListTask listTask;
@@ -12,9 +12,8 @@ public class FileController {
     private ObjectInputStream objectInputStream;
     private FileOutputStream fileOutputStream;
     private ObjectOutputStream objectOutputStream;
-    private static FileController controller;
 
-    private FileController() {
+    public FileController() {
     }
 
     public boolean hasFile() {
@@ -66,10 +65,4 @@ public class FileController {
         return 200;
     }
 
-    public static FileController getInstance() {
-        if (controller == null) {
-            controller = new FileController();
-        }
-        return controller;
-    }
 }

@@ -61,7 +61,7 @@ public class Task implements Serializable, Comparable<Task> {
         return temp == 0 ? Long.compare(this.leftTime(), task.leftTime()) : temp;
     }
 
-    public String prettyTimer() {
+    public long[] prettyTimer() {
         long leftTime = leftTime();
         leftTime = leftTime / 1000; //convert to second
         long day = leftTime / 24 / 60 / 60;
@@ -70,7 +70,7 @@ public class Task implements Serializable, Comparable<Task> {
         leftTime = leftTime - hour * 60 * 60;
         long minute = leftTime / 60;
         long second = leftTime - minute * 60;
-        return DictionaryController.getInstance().prettyTime(day, hour, minute, second);
+        return new long[]{day, hour, minute, second};
     }
 
 }

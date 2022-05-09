@@ -9,9 +9,12 @@ public class Vietnamese extends Dictionary {
             case 201 -> "Không tìm thấy file ngôn ngữ";
             case 300 -> "Không thể đọc ghi file dữ liệu";
             case 301 -> "Không thể đọc ghi file ngôn ngữ";
-            case 400 -> "Dữ liệu không hợp lệ";
-            case 401 -> "Dữ liệu ngôn ngữ không hợp lệ";
+            case 400 -> "Dữ liệu của tệp không hợp lệ";
+            case 401 -> "Dữ liệu của tệp ngôn ngữ không hợp lệ";
             case 500 -> "Lỗi nhập liệu người dùng";
+            case 501 -> "Không tìm thấy id được cung cấp";
+            case 502 -> "Ngày không hợp lệ";
+            case 503 -> "Thời gian không hợp lệ";
             default -> "Không xác định";
         };
     }
@@ -28,6 +31,9 @@ public class Vietnamese extends Dictionary {
             case "current-lang" -> "Ngôn ngữ hiện tại: ";
             case "set-lang" -> "Đổi ngôn ngữ sang: ";
             case "set-lang-term" -> "Nhập số của lựa chọn: ";
+            case "def" -> "Trả về giá trị mặc định: ";
+            case "input-date" -> "Nhập giá trị ngày (định dạng năm-tháng-ngày:) ";
+            case "input-time" -> "Nhập giá trị thời gian (định dạng giờ:phút:giây (24h):) ";
             default -> "Không xác định";
         };
     }

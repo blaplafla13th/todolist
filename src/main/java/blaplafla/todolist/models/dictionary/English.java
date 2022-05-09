@@ -12,6 +12,9 @@ public class English extends Dictionary {
             case 400 -> "Data file is invalid";
             case 401 -> "Language file is invalid";
             case 500 -> "User input wrong data type";
+            case 501 -> "Input id not found";
+            case 502 -> "Invalid day";
+            case 503 -> "Invalid time";
             default -> "Unknown";
         };
     }
@@ -28,6 +31,9 @@ public class English extends Dictionary {
             case "current-lang" -> "Current language: ";
             case "set-lang" -> "Set language to: ";
             case "sel-lang-term" -> "Input number of option: ";
+            case "def" -> "Return default value: ";
+            case "input-date" -> "Input date (form y-m-d:) ";
+            case "input-time" -> "Input time (form h:m:s (24h):) ";
             default -> "Unknown";
         };
     }

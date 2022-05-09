@@ -1,36 +1,27 @@
-package blaplafla.todolist.controllers;
+package blaplafla.todolist.Request;
+
+import blaplafla.todolist.controllers.DictionaryController;
+import blaplafla.todolist.controllers.MainController;
 
 import java.util.Date;
-import java.util.Scanner;
 
 @SuppressWarnings("deprecation")
-public class TerminalInputValidationController {
-    private static TerminalInputValidationController instance;
-    private Scanner input;
+public abstract class RequestValidation {
 
-    private TerminalInputValidationController() {
-        input = new Scanner(System.in);
-    }
-
-    public static TerminalInputValidationController getInstance() {
-        if (instance == null) {
-            instance = new TerminalInputValidationController();
-        }
-        return instance;
-    }
-
-    public String input(){
-        return input.nextLine().trim().replaceAll("\\s+", " ");
-    }
-
+    protected DictionaryController dictionaryController = MainController.getInstance().getDictionaryController();
+    public abstract String input();
     public Integer inputInteger(String in) {
         try {
             return Integer.parseInt(in);
         } catch (NumberFormatException e) {
-            System.out.println(DictionaryController.getInstance().errorExplain(500));
-            System.out.println(DictionaryController.getInstance().label("def") + 0);
+            System.out.println(dictionaryController.errorExplain(500));
+            System.out.println(dictionaryController.label("def") + 0);
             return 0;
         }
+    }
+
+    public void reset() {
+        this.dictionaryController = MainController.getInstance().getDictionaryController();
     }
 
     public Integer inputPositiveInteger(String in) {
@@ -39,15 +30,15 @@ public class TerminalInputValidationController {
                 return Integer.parseInt(in);
             throw new NumberFormatException();
         } catch (NumberFormatException e) {
-            System.out.println(DictionaryController.getInstance().errorExplain(500));
-            System.out.println(DictionaryController.getInstance().label("def") + 1);
+            System.out.println(dictionaryController.errorExplain(500));
+            System.out.println(dictionaryController.label("def") + 1);
             return 1;
         }
     }
 
     public String inputString(String temp) {
         if (temp.equals("") || temp.equals(" ")) {
-            System.out.println(DictionaryController.getInstance().errorExplain(500));
+            System.out.println(dictionaryController.errorExplain(500));
             return "Lorem Ipsum";
         } else return temp;
     }
@@ -65,8 +56,8 @@ public class TerminalInputValidationController {
             else
                 throw new NumberFormatException();
         } catch (NumberFormatException e) {
-            System.out.println(DictionaryController.getInstance().errorExplain(502));
-            System.out.println(DictionaryController.getInstance().label("def") + "2022-01-01");
+            System.out.println(dictionaryController.errorExplain(502));
+            System.out.println(dictionaryController.label("def") + "2022-01-01");
             return new Date(122, 1, 1);
         }
     }
@@ -90,8 +81,8 @@ public class TerminalInputValidationController {
             } else
                 throw new NumberFormatException();
         } catch (NumberFormatException e) {
-            System.out.println(DictionaryController.getInstance().errorExplain(503));
-            System.out.println(DictionaryController.getInstance().label("def") + "0:0:0");
+            System.out.println(dictionaryController.errorExplain(503));
+            System.out.println(dictionaryController.label("def") + "0:0:0");
             date.setHours(0);
             date.setMinutes(0);
             date.setSeconds(0);
