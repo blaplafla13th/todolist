@@ -1,9 +1,9 @@
 package blaplafla.todolist.controllers;
 
-import blaplafla.todolist.Request.RequestValidation;
+import blaplafla.todolist.request.RequestValidation;
 import blaplafla.todolist.views.View;
 import blaplafla.todolist.views.cli.SetLanguage;
-import blaplafla.todolist.Request.TerminalInputValidation;
+import blaplafla.todolist.request.TerminalInputValidation;
 
 public class MainController {
     private static MainController instance;
