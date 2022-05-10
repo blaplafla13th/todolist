@@ -1,6 +1,6 @@
 package blaplafla.todolist.views.cli;
 
-import blaplafla.todolist.Request.RequestValidation;
+import blaplafla.todolist.request.RequestValidation;
 import blaplafla.todolist.controllers.DictionaryController;
 import blaplafla.todolist.controllers.MainController;
 import blaplafla.todolist.views.View;
