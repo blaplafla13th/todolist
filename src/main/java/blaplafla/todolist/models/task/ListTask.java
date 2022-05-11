@@ -11,8 +11,8 @@ public class ListTask implements Serializable {
     private SimpleVector<MotherTask> done;
     private String username;
 
-    public ListTask(String username) {
-        this.username = username;
+    public ListTask() {
+        username = "user";
         undone = new SimpleArrayList<>();
         done = new SimpleVector<>();
     }
