@@ -9,6 +9,14 @@ import blaplafla.todolist.request.TerminalInputValidation;
 public class MainController {
     private static MainController instance;
     protected View setLanguage;
+    protected View saveFile;
+    protected View openFile;
+    protected View index;
+    protected View done;
+    protected View create;
+    protected View edit;
+    protected View makeSubTask;
+    protected View detail;
     protected RequestValidation input;
     protected final DictionaryController dictionaryController;
     protected final FileController fileController;
@@ -28,14 +36,20 @@ public class MainController {
 
     }
 
-    public DictionaryController getDictionaryController() {
+    public DictionaryController dictionaryController() {
         return dictionaryController;
     }
 
-    public FileController getFileController() {
+    public FileController fileController() {
         return fileController;
     }
+    public TaskController taskController() {
+        return taskController;
+    }
 
+    public ListTask listTask() {
+        return listTask;
+    }
     public RequestValidation getInput() {
         return input;
     }
@@ -47,7 +61,41 @@ public class MainController {
         return instance;
     }
 
-    public View getSetLanguageView() {
+    public View setLanguageView() {
         return setLanguage;
     }
+
+    public View saveFileView() {
+        return saveFile;
+    }
+
+    public View openFileView() {
+        return openFile;
+    }
+
+    public View indexView() {
+        return index;
+    }
+
+    public View doneView() {
+        return done;
+    }
+
+    public View createView() {
+        return create;
+    }
+
+    public View editView() {
+        return edit;
+    }
+
+    public View makeSubTaskView() {
+        return makeSubTask;
+    }
+
+    public View detailView() {
+        return detail;
+    }
+
+
 }

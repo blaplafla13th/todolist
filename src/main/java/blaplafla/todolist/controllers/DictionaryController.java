@@ -103,7 +103,7 @@ public class DictionaryController{
     }
 
     public void changeLanguage(){
-        MainController.getInstance().getSetLanguageView().run();
+        MainController.getInstance().setLanguageView().run();
     }
 
     public Class[] getClassList(String packageName) throws ClassNotFoundException, IOException {

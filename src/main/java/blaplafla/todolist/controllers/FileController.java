@@ -7,7 +7,6 @@ import java.io.*;
 public class FileController{
     private File userfile;
     private boolean hasFile = false;
-    private ListTask listTask;
     private FileInputStream fileInputStream;
     private ObjectInputStream objectInputStream;
     private FileOutputStream fileOutputStream;
@@ -36,14 +35,10 @@ public class FileController{
         }
     }
 
-    public ListTask getListTask() {
-        return listTask;
-    }
-
     public int importListTask() {
         if (hasFile) {
             try {
-                listTask = (ListTask) objectInputStream.readObject();
+                MainController.getInstance().listTask= (ListTask) objectInputStream.readObject();
                 return 100;
             } catch (IOException e) {
                 return 300;
@@ -56,7 +51,7 @@ public class FileController{
     public int exportListTask() {
         if (hasFile) {
             try {
-                objectOutputStream.writeObject(listTask);
+                objectOutputStream.writeObject(MainController.getInstance().listTask);
                 return 100;
             } catch (IOException e) {
                 return 300;

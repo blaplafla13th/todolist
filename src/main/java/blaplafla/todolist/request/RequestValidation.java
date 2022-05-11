@@ -8,7 +8,7 @@ import java.util.Date;
 @SuppressWarnings("deprecation")
 public abstract class RequestValidation {
 
-    protected DictionaryController dictionaryController = MainController.getInstance().getDictionaryController();
+    protected DictionaryController dictionaryController = MainController.getInstance().dictionaryController();
     public abstract String input();
     public Integer inputInteger(String in) {
         try {
@@ -21,12 +21,12 @@ public abstract class RequestValidation {
     }
 
     public void reset() {
-        this.dictionaryController = MainController.getInstance().getDictionaryController();
+        this.dictionaryController = MainController.getInstance().dictionaryController();
     }
 
     public Integer inputPositiveInteger(String in) {
         try {
-            if (Integer.parseInt(in) >= 0)
+            if (Integer.parseInt(in) > 0)
                 return Integer.parseInt(in);
             throw new NumberFormatException();
         } catch (NumberFormatException e) {
