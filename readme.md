@@ -1,18 +1,24 @@
-tính năng: 
+Tính năng:
 
-xem thêm sửa xóa task
+- xem thêm sửa xóa task
 
-sắp xếp cv theo thứ tự ưu tiên và thời gian
+- sắp xếp cv theo thứ tự ưu tiên và thời gian
 
-đổi ngôn ngữ
-Các trang
-Trang đổi ngôn ngữ
-Nhập xuất file
-Danh sách các việc cần làm + việc cuối cùng đã hoàn thành
-Danh sách các việc đã làm 
-Tạo việc mới
-Sửa việc đã tạo
-Tạo công việc con
-Xem chi tiết việc (Sửa Xóa Tích hoàn thành)
+- đổi ngôn ngữ
 
-#Ứng dụng To D
+Giao diện
+
+| Tên  | CLI | Web | GUI |
+|:----|-----|-----|-----|
+|Trang đổi ngôn ngữ|&#9745;|&#9744;|&#9744;|
+|Nhập xuất file|&#9744;|&#9744;|&#9744;|
+|Danh sách các việc cần làm + việc cuối cùng đã hoàn thành|&#9744;|&#9744;|&#9744;|
+|Danh sách các việc đã làm |&#9744;|&#9744;|&#9744;|
+|Tạo việc mới|&#9744;|&#9744;|&#9744;|
+|Sửa việc đã tạo|&#9744;|&#9744;|&#9744;|
+|Tạo công việc con|&#9744;|&#9744;|&#9744;|
+|Xem chi tiết việc (Sửa Xóa Tích hoàn thành)|&#9744;|&#9744;|&#9744;|
+
+&#9745; hoàn tất  
+&#9744; đang làm  
+# Ứng dụng To D
