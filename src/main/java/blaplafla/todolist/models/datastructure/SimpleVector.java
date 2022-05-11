@@ -29,15 +29,15 @@ public class SimpleVector<T extends Comparable<? super T>> implements Serializab
         if (array == null) {
             throw new NullPointerException();
         } else if (n <= 0) return null;
-        return array[n];
+        return array[n-1];
     }
 
     public T pop() {
         if (array == null) {
             throw new NullPointerException();
         } else if (n <= 0) return null;
-        T temp = array[n];
-        array[n] = null;
+        T temp = array[n-1];
+        array[n-1] = null;
         n--;
         return temp;
     }
@@ -46,7 +46,7 @@ public class SimpleVector<T extends Comparable<? super T>> implements Serializab
         if (array == null) {
             throw new NullPointerException();
         } else if (i < 0 || i > n) throw new IndexOutOfBoundsException();
-        return array[i];
+        return array[n-1-i];
     }
 
     public boolean isContain(T data) {
@@ -89,6 +89,7 @@ public class SimpleVector<T extends Comparable<? super T>> implements Serializab
     }
 
     public void removeIndex(int i) {
+        i=n-1-i;
         if (array == null) {
             throw new NullPointerException();
         } else if (i < 0 || i > n) throw new IndexOutOfBoundsException();
