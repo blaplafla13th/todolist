@@ -1,5 +1,11 @@
 package blaplafla.todolist.views;
 
 public interface View {
-    void run();
+    default void run(){
+
+    }
+
+    default void run(String... params){
+        run();
+    }
 }
