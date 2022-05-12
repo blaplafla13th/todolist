@@ -6,10 +6,15 @@ import java.util.Iterator;
 
 @SuppressWarnings("unchecked")
 
-public class SimpleArrayList<T extends Comparable<? super T>> implements Serializable, Iterable<T> {
+public class SimpleArrayList<T extends Comparable<? super T>> implements Serializable, Iterable<T>,SimpleStructure<T> {
     private transient T[] array;
     private MergeSort<T> sort;
     private int n = 0;
+
+    @Override
+    public T[] getArray() {
+        return array;
+    }
 
     public SimpleArrayList() {
         int DEFAULT_SIZE = 100;

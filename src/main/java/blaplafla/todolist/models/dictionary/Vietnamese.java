@@ -11,6 +11,7 @@ public class Vietnamese extends Dictionary {
             case 301 -> "Không thể đọc ghi file ngôn ngữ";
             case 400 -> "Dữ liệu của tệp không hợp lệ";
             case 401 -> "Dữ liệu của tệp ngôn ngữ không hợp lệ";
+            case 402 -> "Đầu vào không hợp lệ";
             case 500 -> "Lỗi nhập liệu người dùng";
             case 501 -> "Không tìm thấy id được cung cấp";
             case 502 -> "Ngày không hợp lệ";
@@ -32,6 +33,8 @@ public class Vietnamese extends Dictionary {
             case "set-lang" -> "Đổi ngôn ngữ sang: ";
             case "set-lang-term" -> "Nhập số của lựa chọn: ";
             case "def" -> "Trả về giá trị mặc định: ";
+            case "list-undone" -> "Danh sách công việc chưa hoàn thành:";
+            case "list-done" -> "Danh sách công việc chưa hoàn thành:";
             case "input-date" -> "Nhập giá trị ngày (định dạng năm-tháng-ngày:) ";
             case "input-time" -> "Nhập giá trị thời gian (định dạng giờ:phút:giây (24h):) ";
             default -> "Không xác định";

@@ -1,29 +1,35 @@
 package blaplafla.todolist.controllers;
 
 import blaplafla.todolist.models.task.ListTask;
-import blaplafla.todolist.request.RequestValidation;
+import blaplafla.todolist.request.*;
 import blaplafla.todolist.views.View;
-import blaplafla.todolist.views.cli.SetLanguage;
-import blaplafla.todolist.request.TerminalInputValidation;
+import blaplafla.todolist.views.cli.*;
 
 public class MainController {
     private static MainController instance;
     protected View setLanguage;
+
     protected View saveFile;
     protected View openFile;
+
     protected View index;
     protected View done;
+    protected View undone;
+
     protected View create;
     protected View edit;
-    protected View makeSubTask;
     protected View detail;
+    protected View doneSubTask;
+    protected View undoneSubTask;
+    protected View createSubTask;
+    protected View detailSubTask;
     protected RequestValidation input;
     protected final DictionaryController dictionaryController;
     protected final FileController fileController;
     protected final TaskController taskController;
     protected ListTask listTask;
 
-    public MainController() {
+    private MainController() {
         dictionaryController = new DictionaryController();
         fileController = new FileController();
         taskController = new TaskController();
@@ -31,8 +37,10 @@ public class MainController {
     }
 
     public void setModeCli() {
-        setLanguage = new SetLanguage();
         input = new TerminalInputValidation();
+        index = new IndexCli();
+        setLanguage = new SetLanguageCli();
+
 
     }
 
@@ -43,6 +51,7 @@ public class MainController {
     public FileController fileController() {
         return fileController;
     }
+
     public TaskController taskController() {
         return taskController;
     }
@@ -50,7 +59,8 @@ public class MainController {
     public ListTask listTask() {
         return listTask;
     }
-    public RequestValidation getInput() {
+
+    public RequestValidation input() {
         return input;
     }
 
@@ -81,6 +91,10 @@ public class MainController {
         return done;
     }
 
+    public View undoneView() {
+        return undone;
+    }
+
     public View createView() {
         return create;
     }
@@ -89,13 +103,23 @@ public class MainController {
         return edit;
     }
 
-    public View makeSubTaskView() {
-        return makeSubTask;
-    }
-
     public View detailView() {
         return detail;
     }
 
+    public View doneSubTaskView() {
+        return doneSubTask;
+    }
 
+    public View undoneSubTaskView() {
+        return undoneSubTask;
+    }
+
+    public View createSubTaskView() {
+        return createSubTask;
+    }
+
+    public View detailSubTaskView() {
+        return detailSubTask;
+    }
 }

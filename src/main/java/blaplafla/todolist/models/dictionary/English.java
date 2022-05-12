@@ -11,6 +11,7 @@ public class English extends Dictionary {
             case 301 -> "Language file can't be read or written";
             case 400 -> "Data file is invalid";
             case 401 -> "Language file is invalid";
+            case 402 -> "Params is invalid";
             case 500 -> "User input wrong data type";
             case 501 -> "Input id not found";
             case 502 -> "Invalid day";

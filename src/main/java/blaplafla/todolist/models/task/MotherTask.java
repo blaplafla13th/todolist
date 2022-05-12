@@ -54,16 +54,7 @@ public class MotherTask extends Task implements Serializable, Comparable<Task> {
         else return 501;
     }
 
-    public Task getTaskById(int from, int id) {
-        Task task;
-        if (from == 1) {
-            return undoneSubTask.get(id);
-        } else if (from == 2) {
-            return doneSubTask.get(id);
-        } else return null;
-    }
-
-    public int deleteTaskById(int from, int id) {
+    public int deleteSubTaskById(int from, int id) {
         if (from == 1) {
             undoneSubTask.removeIndex(id);
             return 100;
@@ -77,22 +68,16 @@ public class MotherTask extends Task implements Serializable, Comparable<Task> {
         return doneSubTask.peek();
     }
 
-    public void addTask(String title, String description, Date deadline, int priority) {
+    public void addSubTask(String title, String description, Date deadline, int priority) {
         MotherTask newTask = new MotherTask(title, description, deadline, priority);
         undoneSubTask.add(newTask);
     }
 
-    public int editTask(int from, int id, String title, String description, Date deadline, int priority) {
-        Task task;
-        if (from == 1) {
-            task = undoneSubTask.get(id);
-        } else if (from == 2) {
-            task = doneSubTask.get(id);
-        } else return 501;
-        task.setDeadline(deadline);
-        task.setDescription(description);
-        task.setTitle(title);
-        task.setPriority(priority);
-        return 100;
+    public SimpleArrayList<Task> getUndoneSubTask() {
+        return undoneSubTask;
+    }
+
+    public SimpleVector<Task> getDoneSubTask() {
+        return doneSubTask;
     }
 }

@@ -77,13 +77,9 @@ public class ListTask implements Serializable {
         undone.add(newTask);
     }
 
-    public int editTask(int from, int id, String title, String description, Date deadline, int priority) {
-        Task task;
-        if (from == 1) {
-            task = undone.get(id);
-        } else if (from == 2) {
-            task = done.get(id);
-        } else return 501;
+    public int editTask(Task task, String title, String description, Date deadline, int priority) {
+        if (task == null)
+            return 501;
         task.setDeadline(deadline);
         task.setDescription(description);
         task.setTitle(title);

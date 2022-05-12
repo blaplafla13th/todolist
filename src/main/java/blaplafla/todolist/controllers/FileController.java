@@ -19,12 +19,14 @@ public class FileController{
         return userfile != null;
     }
 
-    public int setFile(File userfile) {
-        this.userfile = userfile;
+    public int setFile(String userfile) {
+        this.userfile = new File(userfile);
         try {
-            fileInputStream = new FileInputStream(userfile);
+            if (!this.userfile.isFile())
+                this.userfile.createNewFile();
+            fileInputStream = new FileInputStream(this.userfile);
             objectInputStream = new ObjectInputStream(fileInputStream);
-            fileOutputStream = new FileOutputStream(userfile);
+            fileOutputStream = new FileOutputStream(this.userfile);
             objectOutputStream = new ObjectOutputStream(fileOutputStream);
             hasFile = true;
             return 100;
@@ -60,4 +62,15 @@ public class FileController{
         return 200;
     }
 
+    public void openFile(){
+        MainController.getInstance().openFileView().run();
+    }
+
+    public void saveFile(){
+        MainController.getInstance().saveFileView().run();
+    }
+
+    public boolean isFile(String file) {
+        return (new File(file)).isFile();
+    }
 }
