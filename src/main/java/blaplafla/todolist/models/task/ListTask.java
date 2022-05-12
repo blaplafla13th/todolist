@@ -18,6 +18,7 @@ public class ListTask implements Serializable {
     }
 
     public SimpleArrayList<MotherTask> getUndone() {
+        undone.sort();
         return undone;
     }
 
