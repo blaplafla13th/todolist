@@ -5,7 +5,7 @@ public interface View {
 
     }
 
-    default void run(String... params){
+    default void run(Object... params){
         run();
     }
 }
