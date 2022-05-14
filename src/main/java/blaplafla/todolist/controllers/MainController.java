@@ -5,6 +5,8 @@ import blaplafla.todolist.request.*;
 import blaplafla.todolist.views.View;
 import blaplafla.todolist.views.cli.*;
 
+import java.io.IOException;
+
 public class MainController {
     private static MainController instance;
     protected View setLanguage;
@@ -40,7 +42,8 @@ public class MainController {
         input = new TerminalInputValidation();
         index = new IndexCli();
         setLanguage = new SetLanguageCli();
-
+        openFile = new OpenFileCLI();
+        saveFile = new SaveFileCLI();
 
     }
 
@@ -121,5 +124,19 @@ public class MainController {
 
     public View detailSubTaskView() {
         return detailSubTask;
+    }
+
+    public void pause(){
+        System.out.println(dictionaryController.label("pause"));
+        try {
+            System.in.read();
+        } catch (IOException e) {
+        }
+    }
+    public void returnCode(int error){
+        if (error != 100) {
+            dictionaryController.errorExplain(error);
+            MainController.getInstance().pause();
+        }
     }
 }
