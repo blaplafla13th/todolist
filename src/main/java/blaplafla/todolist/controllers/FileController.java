@@ -4,7 +4,7 @@ import blaplafla.todolist.models.task.ListTask;
 
 import java.io.*;
 
-public class FileController{
+public class FileController {
     private File userfile;
     private boolean hasFile = false;
     private FileInputStream fileInputStream;
@@ -22,7 +22,7 @@ public class FileController{
     public int setFile(String userfile) {
         this.userfile = new File(userfile);
         try {
-            if (!this.userfile.isFile())
+            if (!this.userfile.exists())
                 this.userfile.createNewFile();
             fileInputStream = new FileInputStream(this.userfile);
             objectInputStream = new ObjectInputStream(fileInputStream);
@@ -37,10 +37,19 @@ public class FileController{
         }
     }
 
+    public int unsetFile() {
+        this.userfile = null;
+        fileInputStream = null;
+        objectInputStream = null;
+        fileOutputStream = null;
+        objectOutputStream = null;
+        return 100;
+    }
+
     public int importListTask() {
         if (hasFile) {
             try {
-                MainController.getInstance().listTask= (ListTask) objectInputStream.readObject();
+                MainController.getInstance().listTask = (ListTask) objectInputStream.readObject();
                 return 100;
             } catch (IOException e) {
                 return 300;
@@ -50,6 +59,7 @@ public class FileController{
         }
         return 200;
     }
+
     public int exportListTask() {
         if (hasFile) {
             try {
@@ -62,15 +72,21 @@ public class FileController{
         return 200;
     }
 
-    public void openFile(){
+    public void openFile() {
         MainController.getInstance().openFileView().run();
     }
 
-    public void saveFile(){
+    public void saveFile() {
+        if (!hasFile())
+            openFile();
         MainController.getInstance().saveFileView().run();
     }
 
-    public boolean isFile(String file) {
-        return (new File(file)).isFile();
+    public boolean isFolder(String file) {
+        return (new File(file)).isDirectory();
+    }
+
+    public boolean isNullFile() {
+        return userfile.isFile() && userfile.length() == 0;
     }
 }
