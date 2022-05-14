@@ -4,10 +4,9 @@ import blaplafla.todolist.models.datastructure.SimpleArrayList;
 import blaplafla.todolist.models.datastructure.SimpleStructure;
 import blaplafla.todolist.models.task.*;
 
-
-import java.util.ArrayList;
 import java.util.Date;
 
+@SuppressWarnings("rawtypes")
 public class TaskController {
 
     public TaskController() {
@@ -105,7 +104,7 @@ public class TaskController {
 
     public SimpleArrayList<Task> paginate(SimpleStructure tasks, int numPerPage, int page) {
         if (tasks == null || numPerPage * (page-1) >= tasks.size()) {
-            return null;
+            return new SimpleArrayList<>();
         }
         int start = numPerPage * (page - 1);
         int end = start + numPerPage;
