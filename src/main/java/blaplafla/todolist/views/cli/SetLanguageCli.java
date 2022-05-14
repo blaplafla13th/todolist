@@ -6,13 +6,13 @@ import blaplafla.todolist.controllers.MainController;
 import blaplafla.todolist.views.View;
 
 
-public class SetLanguage implements View {
-    public SetLanguage() {
+public class SetLanguageCli implements View {
+    public SetLanguageCli() {
     }
 
     public void run() {
-        DictionaryController d = MainController.getInstance().getDictionaryController();
-        RequestValidation i = MainController.getInstance().getInput();
+        DictionaryController d = MainController.getInstance().dictionaryController();
+        RequestValidation i = MainController.getInstance().input();
 
         System.out.println(d.label("current-lang")+d.getDictionary());
         System.out.println(d.label("set-lang"));
