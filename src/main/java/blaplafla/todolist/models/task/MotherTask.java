@@ -1,19 +1,19 @@
 package blaplafla.todolist.models.task;
 
 import blaplafla.todolist.models.datastructure.SimpleArrayList;
-import blaplafla.todolist.models.datastructure.SimpleVector;
+import blaplafla.todolist.models.datastructure.SimpleStack;
 
 import java.io.Serializable;
 import java.util.Date;
 
 public class MotherTask extends Task implements Serializable, Comparable<Task> {
     private SimpleArrayList<Task> undoneSubTask;
-    private SimpleVector<Task> doneSubTask;
+    private SimpleStack<Task> doneSubTask;
 
     public MotherTask(String title, String description, Date deadline, int priority) {
         super(title, description, deadline, priority);
         undoneSubTask = new SimpleArrayList<>();
-        doneSubTask = new SimpleVector<>();
+        doneSubTask = new SimpleStack<>();
     }
 
     public SimpleArrayList<Task> getSubTask() {
@@ -77,7 +77,7 @@ public class MotherTask extends Task implements Serializable, Comparable<Task> {
         return undoneSubTask;
     }
 
-    public SimpleVector<Task> getDoneSubTask() {
+    public SimpleStack<Task> getDoneSubTask() {
         return doneSubTask;
     }
 }

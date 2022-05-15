@@ -1,6 +1,5 @@
 package blaplafla.todolist.models.task;
 
-import blaplafla.todolist.controllers.DictionaryController;
 import blaplafla.todolist.models.datastructure.*;
 
 import java.io.Serializable;
@@ -8,13 +7,13 @@ import java.util.Date;
 
 public class ListTask implements Serializable {
     private SimpleArrayList<MotherTask> undone;
-    private SimpleVector<MotherTask> done;
+    private SimpleStack<MotherTask> done;
     private String username;
 
     public ListTask() {
         username = "user";
         undone = new SimpleArrayList<>();
-        done = new SimpleVector<>();
+        done = new SimpleStack<>();
     }
 
     public SimpleArrayList<MotherTask> getUndone() {
@@ -22,7 +21,7 @@ public class ListTask implements Serializable {
         return undone;
     }
 
-    public SimpleVector<MotherTask> getDone() {
+    public SimpleStack<MotherTask> getDone() {
         return done;
     }
 
