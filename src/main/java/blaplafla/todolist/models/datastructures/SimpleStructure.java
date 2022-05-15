@@ -1,4 +1,4 @@
-package blaplafla.todolist.models.datastructure;
+package blaplafla.todolist.models.datastructures;
 
 public interface SimpleStructure<T> {
     T[] getArray();
