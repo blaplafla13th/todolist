@@ -1,6 +1,6 @@
 package blaplafla.todolist.models.task;
 
-import blaplafla.todolist.models.datastructure.*;
+import blaplafla.todolist.models.datastructures.*;
 
 import java.io.Serializable;
 import java.util.Date;
