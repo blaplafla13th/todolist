@@ -1,7 +1,6 @@
 package blaplafla.todolist.controllers;
 
-import blaplafla.todolist.models.datastructure.SimpleArrayList;
-import blaplafla.todolist.models.datastructure.SimpleStructure;
+import blaplafla.todolist.models.datastructures.*;
 import blaplafla.todolist.models.task.*;
 
 import java.util.Date;
