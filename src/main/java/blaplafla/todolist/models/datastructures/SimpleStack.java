@@ -100,7 +100,7 @@ public class SimpleStack<T extends Comparable<? super T>> implements Serializabl
         } else if (i < 0 || i > n) throw new IndexOutOfBoundsException();
         else {
             n--;
-            if (n - i >= 0) System.arraycopy(array, i + 1, array, i, n - 1 - i);
+            if (n - i >= 0) System.arraycopy(array, i + 1, array, i, n - i);
         }
     }
 
