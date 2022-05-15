@@ -50,6 +50,7 @@ Trong khuôn khổ đề tài, chúng ta sẽ nói về ArrayList, Vector và St
     - Cũng như ArrayList, Vector cũng implement từ interface List, các hàm của Vector cũng không khác ArrayList
     - Các hàm của Vector đều yêu cầu synchronized (đồng bộ) tức chỉ có 1 thread được hoạt động trên 1 Vector
     - Vector có 1 class con là Stack hoạt đông theo cơ chế FIFO(first in - first out). Nhờ cơ chế synchronized khi nhiều Thread cùng truy cập vào Stack sẽ không bị lấy nhầm cùng 1 cái
+    - Test: [SyncTest](src/main/java/blaplafla/todolist/models/test/SyncTest.java)
    
 
 
