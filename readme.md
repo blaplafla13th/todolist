@@ -42,6 +42,9 @@ Trong khuôn khổ đề tài, chúng ta sẽ nói về ArrayList, Vector và St
     - Vector có 1 class con là Stack hoạt đông theo cơ chế FIFO(first in - first out). Nhờ cơ chế synchronized khi nhiều
       Thread cùng truy cập vào Stack sẽ không bị lấy nhầm cùng 1 cái
     - Test: [SyncTest](src/main/java/blaplafla/todolist/models/test/SyncTest.java)
+      - Tạo 2 đối tượng ArrayList và Stack ứng với mỗi đối tượng tạo 2 luồng add 5000 phần tử
+      - Start 4 luồng trên và join lại
+      - ArrayList sẽ không luôn cho ra kết quả là 10000 như Stack thậm chí còn phát sinh lỗi ArrayIndexOutOfBoundsException
 
 ### II. MergeSort
 
@@ -105,6 +108,10 @@ Trong khuôn khổ đề tài, chúng ta sẽ nói về ArrayList, Vector và St
 - Do yêu cầu bài toán, để chính xác thuật toán được chọn phải xử lý nhanh với tốc độ thời gian thực (dưới 1s)
 
 ### II. Áp dụng cấu trúc dữ liệu và giải thuật vào bài toán
+
+1. Cấu trúc dữ liệu
+2. Thuật toán sắp xếp
+3. Mô hình
 
 ## C. Mô tả chương trình ứng dụng
 
