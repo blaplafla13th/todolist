@@ -51,11 +51,28 @@ Trong khuôn khổ đề tài, chúng ta sẽ nói về ArrayList, Vector và St
     - Các hàm của Vector đều yêu cầu synchronized (đồng bộ) tức chỉ có 1 thread được hoạt động trên 1 Vector
     - Vector có 1 class con là Stack hoạt đông theo cơ chế FIFO(first in - first out). Nhờ cơ chế synchronized khi nhiều Thread cùng truy cập vào Stack sẽ không bị lấy nhầm cùng 1 cái
     - Test: [SyncTest](src/main/java/blaplafla/todolist/models/test/SyncTest.java)
-   
-
+### II. MergeSort
+- Giải thuật sắp xếp trộn (Merge Sort) là thuật toán sắp xếp hiệu quả sử dụng thuật toán Divide and Conquer (chia để trị)
+- Thuật toán hoạt động khá đơn giản:
+  - Ở bước chia, chia đôi nhiều lần mảng ban đầu thành các mảnh con cho đến khi mỗi mảnh có kích thước là 1 hoặc 2. Khi đó sắp xếp mảng trong mảng con đơn giản chỉ là so sánh hai phần tử.
+  - Ở bước trị, các mảng sẽ gộp lại với nhau, do các mảng đã sắp xếp ở trên nên chỉ cần so sánh giá trị đầu tiên của và thêm vào mảng kết quả
+- Thuật toán được sử dụng nhiều do:
+  - Thuật toán đơn giản, ổn định
+  - Độ phức tạp thời gian thấp O(nlogn) trong mọi trường hợp
+  - Độ phức tạp không gian là O(n)
+  - Nhờ việc chia nhỏ các mảng để xử lý độc lập, thuật toán dễ dàng hoạt động trên đa luồng để xử lý nhanh hơn, hiệu quả hơn, xử dụng tối đa tài nguyên phần cứng. Thay vì chia đôi có thể chia thành nhiều mảnh hơn cho nhiều luồng xử lý một lúc nên đặc biệt thích hợp cho dữ liệu lớn.
+- Trong khoa học máy tính, một thuật toán sắp xếp ổn định bảo toàn thứ tự các bản ghi với các khóa bằng nhau.
+- Nhược điểm:
+  - So sánh chậm hơn với các thuật toán khác cho các khối lượng nhỏ
+  - Đòi hỏi một bộ nhớ tạm O(n) để chia nhỏ và xử lý khi làm việc với mảng vậy nên thuật toán chủ yếu sử dụng với LinkedList
+  - Thuật toán mỗi lần sắp xếp sẽ chạy trên toàn bộ mảng nên bất kể mảng đã được sắp xếp hay chưa vẫn tốn một lượng thời gian
+### III. Mô hình MVC
 
 ## B. Giới thiệu bài toán
-## C. Mô tả các cấu trúc dữ liệu và thuật toán sử dụng
-## D. Mô tả chương trình ứng dụng
+### I. To-do List và Task  
+1. Lý do, tính cấp thiết
+2. Ứng dụng  
+### II. Áp dụng cấu trúc dữ liệu và giải thuật vào bài toán 
+## C. Mô tả chương trình ứng dụng
 ## Tài liệu tham khảo
 
