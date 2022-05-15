@@ -1,4 +1,6 @@
-package blaplafla.todolist.models.datastructure;
+package blaplafla.todolist.models.test;
+
+import blaplafla.todolist.models.datastructures.SimpleArrayList;
 
 // Java program for implementation of Heap Sort
 public class MergeSortTest {
