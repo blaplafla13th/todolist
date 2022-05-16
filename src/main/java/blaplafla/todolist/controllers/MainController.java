@@ -36,6 +36,7 @@ public class MainController {
         fileController = new FileController();
         taskController = new TaskController();
         listTask = new ListTask();
+        setModeCli();
     }
 
     public void setModeCli() {
