@@ -1,7 +1,7 @@
 package blaplafla.todolist.views.cli;
 
 import blaplafla.todolist.controllers.*;
-import blaplafla.todolist.models.datastructure.SimpleArrayList;
+import blaplafla.todolist.models.datastructures.SimpleArrayList;
 import blaplafla.todolist.models.task.*;
 import blaplafla.todolist.request.RequestValidation;
 import blaplafla.todolist.views.View;
@@ -32,6 +32,7 @@ public class IndexCli implements View {
                         System.out.println((3 * (page - 1) + i) + ". " + d.label("title") + task.getTitle());
                         System.out.println(d.prettyTime(task.prettyTimer()));
                         System.out.println(d.label("desc") + task.getDescription());
+                        System.out.println(d.label("subtask-incomplete") + ((MotherTask) task).undoneSubTaskSize());
                         System.out.println(d.label("-"));
                     }
                 else
@@ -39,7 +40,7 @@ public class IndexCli implements View {
 
                 if (!listTask.getDone().isEmpty()) {
                     System.out.println(d.label("last-done"));
-                    System.out.println(listTask.getDone());
+                    System.out.println(listTask.getDone().peek().getTitle());
                 }
 
                 System.out.println(d.label("input-command"));
@@ -57,9 +58,6 @@ public class IndexCli implements View {
         System.out.println("save file :" + d.label("save-button"));//
         System.out.println("prev :" + d.label("prev-button"));//
         System.out.println("add :" + d.label("add-button"));
-        System.out.println("delete :" + d.label("delete-button"));
-        System.out.println("detail :" + d.label("detail-button"));
-        System.out.println("toggle :" + d.label("toggle-button"));
         System.out.println("done list :" + d.label("done list-button"));
         System.out.println("undone list :" + d.label("undone list-button"));
         System.out.println("exit :" + d.label("exit-button"));
@@ -85,6 +83,10 @@ public class IndexCli implements View {
             case "set lang" -> d.changeLanguage();
             case "open file" -> f.openFile();
             case "save file" -> f.saveFile();
+            case "exit" -> System.exit(1);
+            case "done list" -> t.listDone();
+            case "undone list" -> t.listUndone();
+            case "add" -> t.create();
             default -> {
                 System.out.println(d.label("unknown-command"));
                 MainController.getInstance().pause();
