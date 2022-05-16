@@ -79,4 +79,12 @@ public class MotherTask extends Task implements Serializable, Comparable<Task> {
     public SimpleStack<Task> getDoneSubTask() {
         return doneSubTask;
     }
+
+    public int subTaskSize(){
+        return doneSubTask.size()+undoneSubTask.size();
+    }
+
+    public int undoneSubTaskSize(){
+        return undoneSubTask.size();
+    }
 }
