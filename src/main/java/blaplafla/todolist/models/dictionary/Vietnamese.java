@@ -33,10 +33,10 @@ public class Vietnamese extends Dictionary {
             case "set-lang" -> "Đổi ngôn ngữ sang: ";
             case "set-lang-term" -> "Nhập số của lựa chọn: ";
             case "def" -> "Trả về giá trị mặc định: ";
-            case "list-undone" -> "Danh sách công việc chưa hoàn thành:";
-            case "list-done" -> "Danh sách công việc đã hoàn thành:";
             case "input-date" -> "Nhập giá trị ngày (định dạng năm-tháng-ngày:) ";
             case "input-time" -> "Nhập giá trị thời gian (định dạng giờ:phút:giây (24h):) ";
+            case "list-undone" -> "Danh sách công việc chưa hoàn thành:";
+            case "list-done" -> "Danh sách công việc đã hoàn thành:";
             case "title" -> "Công việc: ";
             case "desc" -> "Mô tả: ";
             case "input-command" -> "Nhập lệnh";
@@ -46,6 +46,7 @@ public class Vietnamese extends Dictionary {
             case "set-username-button" -> "đổi tên";
             case "add-button" -> "thêm";
             case "delete-button" -> "xóa";
+            case "detail-button" -> "chi tiết";
             case "set-name" ->"Tên mới";
             case "unknown-command" ->"Không rõ lệnh gõ 'help' để xem danh lệnh";
             case "pause" -> "Nhấn Enter để tiếp tục";
@@ -57,6 +58,9 @@ public class Vietnamese extends Dictionary {
             case "warning-load-data" -> "Bạn có muốn ghi đè dữ liệu phiên hiện tại từ file?";
             case "type-yes-to-continue" -> "Gõ 'yes' để tiếp tục";
             case "process-done" -> "Hoàn tất";
+            case "subtask-incomplete" -> "Số subtask chưa xong: ";
+            case "toggle-button" -> "đổi trạng thái ";
+            case "subtask-total"-> "Nhiệm vụ con: ";
             case "-" ->"--------------------------------";
             default -> "Không xác định";
         };
