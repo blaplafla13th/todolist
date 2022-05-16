@@ -65,7 +65,7 @@ Trong khuôn khổ đề tài, chúng ta sẽ nói về ArrayList, Vector và St
 - Trong khoa học máy tính, một thuật toán sắp xếp ổn định bảo toàn thứ tự các bản ghi với các khóa bằng nhau.
 - Nhược điểm:
     - So sánh chậm hơn với các thuật toán khác cho các khối lượng nhỏ
-    - Đòi hỏi một bộ nhớ tạm O(n) để chia nhỏ và xử lý khi làm việc với mảng vậy nên thuật toán chủ yếu sử dụng với
+    - Đòi hỏi một bộ nhớ tạm O(n) để chia nhỏ và xử lý khi làm việc với mảng (sắp xếp ngoài mảng ban đầu) vậy nên thuật toán chủ yếu sử dụng với
       LinkedList
     - Thuật toán mỗi lần sắp xếp sẽ chạy trên toàn bộ mảng nên bất kể mảng đã được sắp xếp hay chưa vẫn tốn một lượng
       thời gian
@@ -109,9 +109,37 @@ Trong khuôn khổ đề tài, chúng ta sẽ nói về ArrayList, Vector và St
 
 ### II. Áp dụng cấu trúc dữ liệu và giải thuật vào bài toán
 
-1. Cấu trúc dữ liệu
+1. Cấu trúc dữ liệu (datastructures)
+- Sử dụng List để lưu dữ liệu
+- Trong bài xây dựng lại 2 class ArrayList thành SimpleArrayList và Stack thành SimpleStack
+  - SimpleArrayList implement từ SimpleDataStructure với kiểu Generic các phần tử có class cha là Comparable tiện cho việc sắp xếp mảng, sử dụng để lưu trữ công việc chưa hoàn thành
+  - SimpleStack implement từ SimpleDataStructure với kiểu Generic với index và Iterator có thứ tự ngược lại thứ tự nhập vào dùng để lưu công việc đã hoàn thành
 2. Thuật toán sắp xếp
+- Sử dụng thuật toán Merge Sort
+- Thuật toán Merge Sort được cài đặt dưới dạng một object và được lưu làm biến thành viên của SimpleArrayList để thuận tiện cho việc sắp xếp
+- Class MergeSort được thiết kế chạy đa luồng trên hai mảng dữ liệu riêng biệt tách ra từ mảng đầu vào để tận dụng phần cứng tăng tốc xử lý 
 3. Mô hình
+- Chương trình sử dụng mô hình MVC mở rộng
+  - Controller:
+    - Bao gồm MainController cùng các các Controller phụ
+    - MainController là 1 singleton bao gồm các Controller phụ và các View nhằm quản lý nhất quán
+    - Controller phụ sẽ là hằng sau khi khai báo để đảm bảo không bị lỗi liên quan đến các biến thành viên trong Controller phụ bị thay đổi khi thay Controller phụ
+    - Các View của chương trình cũng sẽ lưu tại đây để thuận tiện cho việc gọi các View
+  - Model:
+    - Lưu các dữ liệu của chương trình
+      - Thuật toán sắp xếp (aglorithms)
+      - Cấu trúc dữ liệu (datastructures)
+      - Từ điển cho việc sử dụng nhiều ngôn ngữ (dictionary)
+      - Đối tượng Task (task)
+    - Request:
+      - Xử lý đầu vào người dùng nhập của chương trình
+      - RequestValidation là class cha có extend là 
+        - TerminalInputValidation dùng để nhập liệu từ Terminal
+    - View:
+      - Hiển thị thông tin cho người sử dụng
+      - Interface View với 2 method run() không đối và run() có đối để chạy với 2 điều kiện: có đối truyền vào và không có đối truyền vào
+      - Các package theo từng gói giao diện của View
+- Sơ đồ quan hệ:
 
 ## C. Mô tả chương trình ứng dụng
 
@@ -126,17 +154,19 @@ Trong khuôn khổ đề tài, chúng ta sẽ nói về ArrayList, Vector và St
 
 ### II. Giao diện
 
-| Tên                                                       | CLI     | Web | GUI |
-|:----------------------------------------------------------|---------|-----|-----|
-| Trang đổi ngôn ngữ                                        | &#9745; |&#9744;|&#9744;|
-| Nhập file                                                 | &#9745; |&#9744;|&#9744;|
-| Lưu file                                                  | &#9745; |&#9744;|&#9744;|
-| Danh sách các việc cần làm + việc cuối cùng đã hoàn thành | &#9744; |&#9744;|&#9744;|
-| Danh sách các việc đã làm                                 | &#9744; |&#9744;|&#9744;|
-| Tạo việc mới                                              | &#9744; |&#9744;|&#9744;|
-| Sửa việc đã tạo                                           | &#9744; |&#9744;|&#9744;|
-| Tạo công việc con                                         | &#9744; |&#9744;|&#9744;|
-| Xem chi tiết việc (Sửa Xóa Tích hoàn thành)               | &#9744; |&#9744;|&#9744;|
+| Tên                                                                |    CLI    |   GUI    |
+|:-------------------------------------------------------------------|:---------:|:--------:|
+| Trang đổi ngôn ngữ<br>SetLanguage                                  |  &#9745;  | &#9744;  |
+| Nhập file<br>OpenFile                                              |  &#9745;  | &#9744;  |
+| Lưu file<br>SaveFile                                               |  &#9745;  | &#9744;  |
+| Danh sách các việc cần làm + việc cuối cùng đã hoàn thành<br>Index |  &#9744;  | &#9744;  |
+| Danh sách các việc chưa hoàn thành<br>Undone                       |  &#9744;  | &#9744;  |
+| Danh sách các việc đã làm<br>Done                                  |  &#9744;  | &#9744;  |
+| Tạo việc mới<br>Create                                             |  &#9744;  | &#9744;  |
+| Sửa việc đã tạo<br>Edit                                            |  &#9744;  | &#9744;  |
+| Tạo công việc con<br>CreateSubTask                                 |  &#9744;  | &#9744;  |
+| Xem chi tiết việc (Sửa Xóa Tích hoàn thành)<br>Detail              |  &#9744;  | &#9744;  |
+| Xem chi tiết việc con (Sửa Xóa Tích hoàn thành)<br>DetailSubTask   |  &#9744;  | &#9744;  |
 
 &#9745; hoàn tất  
 &#9744; đang làm
