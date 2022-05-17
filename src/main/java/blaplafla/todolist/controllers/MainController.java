@@ -36,7 +36,6 @@ public class MainController {
         fileController = new FileController();
         taskController = new TaskController();
         listTask = new ListTask();
-        setModeCli();
     }
 
     public void setModeCli() {
@@ -45,6 +44,7 @@ public class MainController {
         setLanguage = new SetLanguageCli();
         openFile = new OpenFileCLI();
         saveFile = new SaveFileCLI();
+        done = new DoneCli();
 
     }
 
