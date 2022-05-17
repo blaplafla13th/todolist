@@ -83,10 +83,10 @@ public class MergeSort<T extends Comparable<? super T>> implements Serializable 
         public void mergeSort(T[] array) {
             if (array.length > 1) {
                 T[] left = (T[]) new Comparable[array.length / 2];
-                T[] right = (T[]) new Comparable[array.length - array.length / 2];
                 System.arraycopy(array, 0, left, 0, array.length / 2);
-                System.arraycopy(array, array.length / 2, right, 0, array.length - array.length / 2);
                 mergeSort(left);
+                T[] right = (T[]) new Comparable[array.length - array.length / 2];
+                System.arraycopy(array, array.length / 2, right, 0, array.length - array.length / 2);
                 mergeSort(right);
                 merge(array, left, right);
             }
