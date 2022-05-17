@@ -11,12 +11,15 @@ public class Task implements Serializable, Comparable<Task> {
     private Date deadline;
     private int priority;
 
+    private final String  created_at;
+
 
     public Task(String title, String description, Date deadline, int priority) {
         this.title = title;
         this.deadline = deadline;
         this.description = description;
         this.priority = priority;
+        created_at=System.currentTimeMillis()+"/"+System.nanoTime();
     }
 
     public String getTitle() {
@@ -73,4 +76,7 @@ public class Task implements Serializable, Comparable<Task> {
         return new long[]{day, hour, minute, second};
     }
 
+    public boolean equals(Task task) {
+        return created_at.equals(task.created_at);
+    }
 }
