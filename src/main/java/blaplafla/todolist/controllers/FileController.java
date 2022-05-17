@@ -9,8 +9,7 @@ public class FileController {
     private boolean hasFile = false;
     private FileInputStream fileInputStream;
     private ObjectInputStream objectInputStream;
-    private FileOutputStream fileOutputStream;
-    private ObjectOutputStream objectOutputStream;
+
 
     public FileController() {
     }
@@ -22,12 +21,8 @@ public class FileController {
     public int setFile(String userfile) {
         this.userfile = new File(userfile);
         try {
-            if (!this.userfile.exists())
-                this.userfile.createNewFile();
             fileInputStream = new FileInputStream(this.userfile);
             objectInputStream = new ObjectInputStream(fileInputStream);
-            fileOutputStream = new FileOutputStream(this.userfile);
-            objectOutputStream = new ObjectOutputStream(fileOutputStream);
             hasFile = true;
             return 100;
         } catch (FileNotFoundException e) {
@@ -39,17 +34,16 @@ public class FileController {
 
     public int unsetFile() {
         this.userfile = null;
-        fileInputStream = null;
-        objectInputStream = null;
-        fileOutputStream = null;
-        objectOutputStream = null;
         return 100;
     }
 
     public int importListTask() {
         if (hasFile) {
             try {
-                MainController.getInstance().listTask = (ListTask) objectInputStream.readObject();
+                Object object =  objectInputStream.readObject();
+                if (object != null) {
+                    MainController.getInstance().listTask = (ListTask) object;
+                }
                 return 100;
             } catch (IOException e) {
                 return 300;
@@ -63,7 +57,10 @@ public class FileController {
     public int exportListTask() {
         if (hasFile) {
             try {
-                objectOutputStream.writeObject(MainController.getInstance().listTask);
+                FileOutputStream fileOutputStream = new FileOutputStream(this.userfile);
+                ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+                objectOutputStream.writeObject(MainController.getInstance().listTask());
+                objectOutputStream.flush();
                 return 100;
             } catch (IOException e) {
                 return 300;
@@ -87,6 +84,11 @@ public class FileController {
     }
 
     public boolean isNullFile() {
-        return userfile.isFile() && userfile.length() == 0;
+        try {
+            return userfile.isFile() && userfile.length() == 0
+                && objectInputStream.readObject() == null;
+        } catch (IOException | ClassNotFoundException e) {
+            return true;
+        }
     }
 }
