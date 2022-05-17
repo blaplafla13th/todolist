@@ -10,7 +10,7 @@ public class TerminalInputValidation extends RequestValidation {
     }
 
     public String input(){
-        return input.nextLine().trim().replaceAll("\\s+", " ");
+        return input.nextLine().replaceAll("\\s+", " ").trim();
     }
 
 }
