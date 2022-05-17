@@ -1,7 +1,9 @@
 package blaplafla.todolist.controllers;
 
-import blaplafla.todolist.models.datastructures.*;
-import blaplafla.todolist.models.task.*;
+import blaplafla.todolist.models.datastructures.SimpleArrayList;
+import blaplafla.todolist.models.datastructures.SimpleStructure;
+import blaplafla.todolist.models.task.MotherTask;
+import blaplafla.todolist.models.task.Task;
 
 import java.util.Date;
 
@@ -102,7 +104,7 @@ public class TaskController {
     }
 
     public SimpleArrayList<Task> paginate(SimpleStructure tasks, int numPerPage, int page) {
-        if (tasks == null || numPerPage * (page-1) >= tasks.size()) {
+        if (tasks == null || numPerPage * (page - 1) >= tasks.size()) {
             return new SimpleArrayList<>();
         }
         int start = numPerPage * (page - 1);
@@ -113,7 +115,6 @@ public class TaskController {
         }
         return tasksArrayList;
     }
-
 
 
 }

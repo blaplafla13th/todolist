@@ -6,17 +6,17 @@ import java.util.Iterator;
 
 
 @SuppressWarnings("unchecked")
-public class SimpleStack<T extends Comparable<? super T>> implements Serializable, Iterable<T>,SimpleStructure<T> {
+public class SimpleStack<T extends Comparable<? super T>> implements Serializable, Iterable<T>, SimpleStructure<T> {
     private T[] array;
     private int n = 0;
+
+    public SimpleStack() {
+        array = (T[]) new Comparable[50];
+    }
 
     @Override
     public T[] getArray() {
         return array;
-    }
-
-    public SimpleStack() {
-        array = (T[]) new Comparable[50];
     }
 
     public synchronized void add(T data) {
@@ -34,15 +34,15 @@ public class SimpleStack<T extends Comparable<? super T>> implements Serializabl
         if (array == null) {
             throw new NullPointerException();
         } else if (n <= 0) return null;
-        return array[n-1];
+        return array[n - 1];
     }
 
     public synchronized T pop() {
         if (array == null) {
             throw new NullPointerException();
         } else if (n <= 0) return null;
-        T temp = array[n-1];
-        array[n-1] = null;
+        T temp = array[n - 1];
+        array[n - 1] = null;
         n--;
         return temp;
     }
@@ -51,7 +51,7 @@ public class SimpleStack<T extends Comparable<? super T>> implements Serializabl
         if (array == null) {
             throw new NullPointerException();
         } else if (i < 0 || i > n) throw new IndexOutOfBoundsException();
-        return array[n-1-i];
+        return array[n - 1 - i];
     }
 
     public synchronized boolean isContain(T data) {
@@ -94,7 +94,7 @@ public class SimpleStack<T extends Comparable<? super T>> implements Serializabl
     }
 
     public synchronized void removeIndex(int i) {
-        i=n-1-i;
+        i = n - 1 - i;
         if (array == null) {
             throw new NullPointerException();
         } else if (i < 0 || i > n) throw new IndexOutOfBoundsException();

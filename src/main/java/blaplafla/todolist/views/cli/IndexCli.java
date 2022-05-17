@@ -1,8 +1,13 @@
 package blaplafla.todolist.views.cli;
 
-import blaplafla.todolist.controllers.*;
+import blaplafla.todolist.controllers.DictionaryController;
+import blaplafla.todolist.controllers.FileController;
+import blaplafla.todolist.controllers.MainController;
+import blaplafla.todolist.controllers.TaskController;
 import blaplafla.todolist.models.datastructures.SimpleArrayList;
-import blaplafla.todolist.models.task.*;
+import blaplafla.todolist.models.task.ListTask;
+import blaplafla.todolist.models.task.MotherTask;
+import blaplafla.todolist.models.task.Task;
 import blaplafla.todolist.request.RequestValidation;
 import blaplafla.todolist.views.View;
 
@@ -19,6 +24,9 @@ public class IndexCli implements View {
     @Override
     public void run() {
         while (true) {
+            if (page > max_page) {
+                page = 1;
+            }
             System.out.print("\033[H\033[2J");
             System.out.flush();
             System.out.println(d.label("todolist-name") + listTask.getUsername());

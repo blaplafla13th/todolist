@@ -47,8 +47,8 @@ public class English extends Dictionary {
             case "add-button" -> "add";
             case "delete-button" -> "delete";
             case "detail-button" -> "detail";
-            case "set-name" ->"New name";
-            case "unknown-command" ->"Unknown command, type 'help' for list command";
+            case "set-name" -> "New name";
+            case "unknown-command" -> "Unknown command, type 'help' for list command";
             case "pause" -> "Press Enter to continue...";
             case "open-button" -> "Open file";
             case "save-button" -> "Save file";
@@ -60,8 +60,15 @@ public class English extends Dictionary {
             case "process-done" -> "Done";
             case "subtask-incomplete" -> "Remaining subtask: ";
             case "toggle-button" -> "change status ";
-            case "subtask-total"-> "SubTask: ";
-            case "-" ->"--------------------------------";
+            case "subtask-total" -> "SubTask: ";
+            case "set-lang-button" -> "Change language ";
+            case "done list-button" -> "done List ";
+            case "undone list-button" -> "undone list ";
+            case "exit-button" -> "exit ";
+            case "done-list-name" -> "Done list of ";
+            case "back-button" -> "back";
+            case "index" -> "Input index";
+            case "-" -> "--------------------------------";
             default -> "Unknown";
         };
     }

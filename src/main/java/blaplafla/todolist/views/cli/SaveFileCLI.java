@@ -18,8 +18,7 @@ public class SaveFileCLI implements View {
             System.out.println(d.label("type-yes-to-continue"));
             if (i.input().equals("yes"))
                 MainController.getInstance().returnCode(f.exportListTask());
-        }
-        else MainController.getInstance().returnCode(f.exportListTask());
+        } else MainController.getInstance().returnCode(f.exportListTask());
         System.out.println(d.label("process-done"));
     }
 }

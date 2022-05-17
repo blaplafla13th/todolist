@@ -11,7 +11,7 @@ import java.util.Enumeration;
 import java.util.List;
 
 @SuppressWarnings("rawtypes")
-public class DictionaryController{
+public class DictionaryController {
     private Dictionary dictionary;
 
     DictionaryController() {
@@ -20,6 +20,23 @@ public class DictionaryController{
             System.out.println("Language file not found. Stop program, exit code: " + code);
             System.exit(code);
         }
+    }
+
+    private static List<Class> findClasses(File directory, String packageName) throws ClassNotFoundException {
+        List<Class> classes = new ArrayList<>();
+        if (!directory.exists()) {
+            return classes;
+        }
+        File[] files = directory.listFiles();
+        for (File file : files) {
+            if (file.isDirectory()) {
+                assert !file.getName().contains(".");
+                classes.addAll(findClasses(file, packageName + "." + file.getName()));
+            } else if (file.getName().endsWith(".class")) {
+                classes.add(Class.forName(packageName + '.' + file.getName().substring(0, file.getName().length() - 6)));
+            }
+        }
+        return classes;
     }
 
     public int setDictionaryDefault() {
@@ -93,7 +110,7 @@ public class DictionaryController{
     }
 
     public String prettyTime(long[] time) {
-        if (time !=null && time.length==4)
+        if (time != null && time.length == 4)
             return dictionary.prettyTime(time[0], time[1], time[2], time[3]);
         return null;
     }
@@ -102,14 +119,14 @@ public class DictionaryController{
         return dictionary.label(label);
     }
 
-    public void changeLanguage(){
+    public void changeLanguage() {
         MainController.getInstance().setLanguageView().run();
     }
 
     public Class[] getClassList(String packageName) throws ClassNotFoundException, IOException {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         assert classLoader != null;
-        String path =packageName.replace('.', '/');
+        String path = packageName.replace('.', '/');
         Enumeration<URL> resources = classLoader.getResources(path);
         List<File> dirs = new ArrayList<>();
         while (resources.hasMoreElements()) {
@@ -121,21 +138,5 @@ public class DictionaryController{
             classes.addAll(findClasses(directory, packageName));
         }
         return classes.toArray(new Class[classes.size()]);
-    }
-    private static List<Class> findClasses(File directory, String packageName) throws ClassNotFoundException {
-        List<Class> classes = new ArrayList<>();
-        if (!directory.exists()) {
-            return classes;
-        }
-        File[] files = directory.listFiles();
-        for (File file : files) {
-            if (file.isDirectory()) {
-                assert !file.getName().contains(".");
-                classes.addAll(findClasses(file, packageName + "." + file.getName()));
-            } else if (file.getName().endsWith(".class")) {
-                classes.add(Class.forName(packageName + '.' + file.getName().substring(0, file.getName().length() - 6)));
-            }
-        }
-        return classes;
     }
 }

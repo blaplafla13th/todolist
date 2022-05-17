@@ -9,7 +9,9 @@ import java.util.Date;
 public abstract class RequestValidation {
 
     protected DictionaryController dictionaryController = MainController.getInstance().dictionaryController();
+
     public abstract String input();
+
     public Integer inputInteger(String in) {
         try {
             return Integer.parseInt(in);

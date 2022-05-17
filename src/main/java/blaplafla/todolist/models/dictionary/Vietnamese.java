@@ -47,8 +47,8 @@ public class Vietnamese extends Dictionary {
             case "add-button" -> "thêm";
             case "delete-button" -> "xóa";
             case "detail-button" -> "chi tiết";
-            case "set-name" ->"Tên mới";
-            case "unknown-command" ->"Không rõ lệnh gõ 'help' để xem danh lệnh";
+            case "set-name" -> "Tên mới";
+            case "unknown-command" -> "Không rõ lệnh gõ 'help' để xem danh lệnh";
             case "pause" -> "Nhấn Enter để tiếp tục";
             case "open-button" -> "Mở file";
             case "save-button" -> "Lưu file";
@@ -60,8 +60,15 @@ public class Vietnamese extends Dictionary {
             case "process-done" -> "Hoàn tất";
             case "subtask-incomplete" -> "Số subtask chưa xong: ";
             case "toggle-button" -> "đổi trạng thái ";
-            case "subtask-total"-> "Nhiệm vụ con: ";
-            case "-" ->"--------------------------------";
+            case "subtask-total" -> "Nhiệm vụ con: ";
+            case "set-lang-button" -> "đổi ngôn ngữ ";
+            case "done list-button" -> "danh sách đã hoàn tất ";
+            case "undone list-button" -> "danh sách đang chờ ";
+            case "exit-button" -> "thoát ";
+            case "done-list-name" -> "Danh sách việc đã hoàn thành của ";
+            case "back-button" -> "quay lại";
+            case "index" -> "Nhập số thứ tự";
+            case "-" -> "--------------------------------";
             default -> "Không xác định";
         };
     }

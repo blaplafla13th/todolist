@@ -1,13 +1,14 @@
 package blaplafla.todolist.models.task;
 
-import blaplafla.todolist.models.datastructures.*;
+import blaplafla.todolist.models.datastructures.SimpleArrayList;
+import blaplafla.todolist.models.datastructures.SimpleStack;
 
 import java.io.Serializable;
 import java.util.Date;
 
 public class ListTask implements Serializable {
-    private SimpleArrayList<MotherTask> undone;
-    private SimpleStack<MotherTask> done;
+    private final SimpleArrayList<MotherTask> undone;
+    private final SimpleStack<MotherTask> done;
     private String username;
 
     public ListTask() {
@@ -97,6 +98,6 @@ public class ListTask implements Serializable {
 
     public boolean isEmpty() {
         return done != null && done.isEmpty() &&
-           undone != null && undone.isEmpty();
+            undone != null && undone.isEmpty();
     }
 }

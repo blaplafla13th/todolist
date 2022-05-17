@@ -21,7 +21,7 @@ public class FileController {
     public int setFile(String userfile) {
         this.userfile = new File(userfile);
         try {
-            if (!this.userfile.exists() || this.userfile.length()==0){
+            if (!this.userfile.exists() || this.userfile.length() == 0) {
                 this.userfile.createNewFile();
                 FileOutputStream fileOutputStream = new FileOutputStream(this.userfile);
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
@@ -46,7 +46,7 @@ public class FileController {
     public int importListTask() {
         if (hasFile) {
             try {
-                Object object =  objectInputStream.readObject();
+                Object object = objectInputStream.readObject();
                 if (object != null) {
                     MainController.getInstance().listTask = (ListTask) object;
                 }

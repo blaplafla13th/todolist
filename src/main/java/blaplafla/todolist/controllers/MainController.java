@@ -1,7 +1,8 @@
 package blaplafla.todolist.controllers;
 
 import blaplafla.todolist.models.task.ListTask;
-import blaplafla.todolist.request.*;
+import blaplafla.todolist.request.RequestValidation;
+import blaplafla.todolist.request.TerminalInputValidation;
 import blaplafla.todolist.views.View;
 import blaplafla.todolist.views.cli.*;
 
@@ -9,15 +10,15 @@ import java.io.IOException;
 
 public class MainController {
     private static MainController instance;
+    protected final DictionaryController dictionaryController;
+    protected final FileController fileController;
+    protected final TaskController taskController;
     protected View setLanguage;
-
     protected View saveFile;
     protected View openFile;
-
     protected View index;
     protected View done;
     protected View undone;
-
     protected View create;
     protected View edit;
     protected View detail;
@@ -26,9 +27,6 @@ public class MainController {
     protected View createSubTask;
     protected View detailSubTask;
     protected RequestValidation input;
-    protected final DictionaryController dictionaryController;
-    protected final FileController fileController;
-    protected final TaskController taskController;
     protected ListTask listTask;
 
     private MainController() {
@@ -36,6 +34,13 @@ public class MainController {
         fileController = new FileController();
         taskController = new TaskController();
         listTask = new ListTask();
+    }
+
+    public static MainController getInstance() {
+        if (instance == null) {
+            instance = new MainController();
+        }
+        return instance;
     }
 
     public void setModeCli() {
@@ -66,13 +71,6 @@ public class MainController {
 
     public RequestValidation input() {
         return input;
-    }
-
-    public static MainController getInstance() {
-        if (instance == null) {
-            instance = new MainController();
-        }
-        return instance;
     }
 
     public View setLanguageView() {
@@ -127,14 +125,15 @@ public class MainController {
         return detailSubTask;
     }
 
-    public void pause(){
+    public void pause() {
         System.out.println(dictionaryController.label("pause"));
         try {
             System.in.read();
         } catch (IOException e) {
         }
     }
-    public void returnCode(int error){
+
+    public void returnCode(int error) {
         if (error != 100) {
             dictionaryController.errorExplain(error);
             MainController.getInstance().pause();

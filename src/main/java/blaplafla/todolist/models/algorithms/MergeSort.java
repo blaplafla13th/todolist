@@ -65,7 +65,7 @@ public class MergeSort<T extends Comparable<? super T>> implements Serializable 
     }
 
     class Worker extends Thread {
-        private T[] array;
+        private final T[] array;
 
         public Worker(T[] array) {
             this.array = array;

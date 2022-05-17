@@ -1,17 +1,14 @@
 package blaplafla.todolist.models.task;
 
-import blaplafla.todolist.controllers.DictionaryController;
-
 import java.io.Serializable;
 import java.util.Date;
 
 public class Task implements Serializable, Comparable<Task> {
+    private final String created_at;
     private String title;
     private String description;
     private Date deadline;
     private int priority;
-
-    private final String  created_at;
 
 
     public Task(String title, String description, Date deadline, int priority) {
@@ -19,7 +16,7 @@ public class Task implements Serializable, Comparable<Task> {
         this.deadline = deadline;
         this.description = description;
         this.priority = priority;
-        created_at=System.currentTimeMillis()+"/"+System.nanoTime();
+        created_at = System.currentTimeMillis() + "/" + System.nanoTime();
     }
 
     public String getTitle() {
@@ -55,7 +52,7 @@ public class Task implements Serializable, Comparable<Task> {
     }
 
     public long leftTime() {
-        return deadline.getTime() - System.currentTimeMillis(); //millisecond
+        return (deadline.getTime() - System.currentTimeMillis()) / 1000; //second
     }
 
     @Override
@@ -66,7 +63,6 @@ public class Task implements Serializable, Comparable<Task> {
 
     public long[] prettyTimer() {
         long leftTime = leftTime();
-        leftTime = leftTime / 1000; //convert to second
         long day = leftTime / 24 / 60 / 60;
         leftTime = leftTime - day * 24 * 60 * 60;
         long hour = leftTime / 60 / 60;

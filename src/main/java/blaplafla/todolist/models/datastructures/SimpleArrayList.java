@@ -8,20 +8,20 @@ import java.util.Iterator;
 
 @SuppressWarnings("unchecked")
 
-public class SimpleArrayList<T extends Comparable<? super T>> implements Serializable, Iterable<T>,SimpleStructure<T> {
+public class SimpleArrayList<T extends Comparable<? super T>> implements Serializable, Iterable<T>, SimpleStructure<T> {
     private T[] array;
-    private MergeSort<T> sort;
+    private final MergeSort<T> sort;
     private int n = 0;
-
-    @Override
-    public T[] getArray() {
-        return array;
-    }
 
     public SimpleArrayList() {
         int DEFAULT_SIZE = 100;
         array = (T[]) new Comparable[DEFAULT_SIZE];
         sort = new MergeSort<>(array);
+    }
+
+    @Override
+    public T[] getArray() {
+        return array;
     }
 
     public void add(T data) {

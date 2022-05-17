@@ -3,8 +3,6 @@ package blaplafla.todolist.models.test;
 import blaplafla.todolist.models.datastructures.SimpleArrayList;
 import blaplafla.todolist.models.datastructures.SimpleStack;
 
-import java.util.concurrent.CountDownLatch;
-
 public class SyncTest {
     public static void main(String[] args) {
         test();

@@ -1,13 +1,14 @@
 package blaplafla.todolist.models.task;
 
-import blaplafla.todolist.models.datastructures.*;
+import blaplafla.todolist.models.datastructures.SimpleArrayList;
+import blaplafla.todolist.models.datastructures.SimpleStack;
 
 import java.io.Serializable;
 import java.util.Date;
 
 public class MotherTask extends Task implements Serializable, Comparable<Task> {
-    private SimpleArrayList<Task> undoneSubTask;
-    private SimpleStack<Task> doneSubTask;
+    private final SimpleArrayList<Task> undoneSubTask;
+    private final SimpleStack<Task> doneSubTask;
 
     public MotherTask(String title, String description, Date deadline, int priority) {
         super(title, description, deadline, priority);
@@ -32,7 +33,7 @@ public class MotherTask extends Task implements Serializable, Comparable<Task> {
             undoneSubTask.add(task);
             doneSubTask.remove(task);
             return 100;
-        }else return 501;
+        } else return 501;
     }
 
     public Task getSubTaskById(int from, int id) {
@@ -45,12 +46,11 @@ public class MotherTask extends Task implements Serializable, Comparable<Task> {
     }
 
     public int toggleTask(Task task) {
-        if (undoneSubTask.isContain(task)){
+        if (undoneSubTask.isContain(task)) {
             return doneSubtask(task);
-        }else if (doneSubTask.isContain(task)){
+        } else if (doneSubTask.isContain(task)) {
             return undoneSubtask(task);
-        }
-        else return 501;
+        } else return 501;
     }
 
     public int deleteSubTaskById(int from, int id) {
@@ -80,11 +80,11 @@ public class MotherTask extends Task implements Serializable, Comparable<Task> {
         return doneSubTask;
     }
 
-    public int subTaskSize(){
-        return doneSubTask.size()+undoneSubTask.size();
+    public int subTaskSize() {
+        return doneSubTask.size() + undoneSubTask.size();
     }
 
-    public int undoneSubTaskSize(){
+    public int undoneSubTaskSize() {
         return undoneSubTask.size();
     }
 }

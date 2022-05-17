@@ -1,10 +1,10 @@
 package blaplafla.todolist.views.cli;
 
-import blaplafla.todolist.controllers.*;
+import blaplafla.todolist.controllers.DictionaryController;
+import blaplafla.todolist.controllers.FileController;
+import blaplafla.todolist.controllers.MainController;
 import blaplafla.todolist.request.RequestValidation;
 import blaplafla.todolist.views.View;
-
-import java.io.IOException;
 
 public class OpenFileCLI implements View {
     DictionaryController d = MainController.getInstance().dictionaryController();
@@ -29,11 +29,10 @@ public class OpenFileCLI implements View {
         }
         if (!f.isNullFile() && MainController.getInstance().listTask().isEmpty()) {
             MainController.getInstance().returnCode(f.importListTask());
-        }
-        else if (!f.isNullFile() && !MainController.getInstance().listTask().isEmpty()) {
+        } else if (!f.isNullFile() && !MainController.getInstance().listTask().isEmpty()) {
             System.out.println(d.label("warning-load-data"));
             System.out.println(d.label("type-yes-to-continue"));
-            if (MainController.getInstance().input().input().equals("yes")){
+            if (MainController.getInstance().input().input().equals("yes")) {
                 MainController.getInstance().returnCode(f.importListTask());
             }
         }
