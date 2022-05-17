@@ -21,10 +21,11 @@ public class SetLanguageCli implements View {
             System.out.println(d.errorExplain(code));
         }
         System.out.println(d.label("set-lang-term"));
-        code = d.setDictionary(i.inputPositiveInteger(i.input()));
+        code = d.setDictionary(i.inputInteger(i.input()));
         if (code != 100)
             System.out.println(d.errorExplain(code));
         System.out.println(d.label("current-lang")+d.getDictionary());
         i.reset();
+        MainController.getInstance().pause();
     }
 }
