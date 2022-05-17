@@ -160,17 +160,26 @@ Trong khuôn khổ đề tài, chúng ta sẽ nói về ArrayList, Vector và St
           Controller phụ bị thay đổi khi thay Controller phụ
         - Các View của chương trình cũng sẽ lưu tại đây để thuận tiện cho việc gọi các View
     - Model:
-        - Lưu các dữ liệu của chương trình
+        - Lưu các dữ liệu của chương trình, ngoại trừ từ điển tất cả đều implement class Serialize để có thể ghi ra file
             - Thuật toán sắp xếp (aglorithms)
+                - Sử dụng thuật toán MergeSort trong class MergeSort
+                - Thuật toán sử dụng 2 luồng để mỗi luồng xử lý 1 nửa mảng nhằm sử dụng tối đa hiệu suất tài nguyên phần
+                  cứng
             - Cấu trúc dữ liệu (datastructures)
-            - Từ điển cho việc sử dụng nhiều ngôn ngữ (dictionary)
+                - Gồm Interface SimpleStructure cùng 2 class SimpleStack mô phỏng lại Stack và SimpleArrayList mô phỏng
+                  lại ArrayList
+            - Từ điển (dictionary)
+                - cho việc sử dụng nhiều ngôn ngữ
+                - Gồm Interface Dictionary và 2 file ngôn ngữ Vietnamese và English
+                - Sử dụng làm biến thành viên cho DictionaryController
+                - Sử dụng Design Pattern Stragety để có thể thay đổi ngôn ngữ linh hoạt
             - Đối tượng Task và ListTask(task)
                 - Class ListTask để quản lý tổng các task, gồm các hàm để quản lý cùng với 2 list:
                     - SimpleArrayList undone để lưu các việc chưa hoàn thành
                     - SimpleStack done để lưu các việc đã hoàn thành
                     - ListTask đóng vai trò như 1 cơ sở dữ liệu quản lý tất cả các Task cùng với các hàm để xử lý các
-                      vấn đề người dùng yêu cầu. ListTask được quản lý bởi MainController và được các Controller con gọi
-                      đến
+                      vấn đề người dùng yêu cầu.
+                    - ListTask được quản lý bởi MainController và được các Controller con gọi đến
                 - Class Task là object thể hiện cho từng công việc
                     - gồm các hàm setter và getter cho 4 thuộc tính
                         - Tiêu đề
@@ -192,7 +201,7 @@ Trong khuôn khổ đề tài, chúng ta sẽ nói về ArrayList, Vector và St
             - Hiển thị thông tin cho người sử dụng
             - Interface View với 2 method run() không đối và run() có đối để chạy với 2 điều kiện: có đối truyền vào và
               không có đối truyền vào
-            - Các package theo từng gói giao diện của View
+            - Các package theo từng gói giao diện của View, các giao diện được mô tả ở C.II
 - Sơ đồ quan hệ:
 
 ## C. Mô tả chương trình ứng dụng
