@@ -55,9 +55,13 @@ public class Task implements Serializable, Comparable<Task> {
         return (deadline.getTime() - System.currentTimeMillis()) / 1000; //second
     }
 
+    public long priorityPoint() {
+        return leftTime() > 0 ? leftTime() / priority : leftTime() * priority;
+    }
+
     @Override
     public int compareTo(Task task) {
-        int temp = Long.compare(this.leftTime() / priority, task.leftTime() / priority);
+        int temp = Long.compare(priorityPoint(), task.priorityPoint());
         return temp == 0 ? Long.compare(this.leftTime(), task.leftTime()) : temp;
     }
 
