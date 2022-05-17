@@ -12,7 +12,7 @@ public class TaskController {
     }
 
     public void index() {
-        MainController.getInstance().indexView().run(MainController.getInstance().listTask);
+        MainController.getInstance().indexView().run();
     }
 
     public void create() {

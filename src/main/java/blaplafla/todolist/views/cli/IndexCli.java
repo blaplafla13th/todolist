@@ -8,45 +8,43 @@ import blaplafla.todolist.views.View;
 
 
 public class IndexCli implements View {
-    int page = 1;
-    int max_page = 0;
     DictionaryController d = MainController.getInstance().dictionaryController();
     TaskController t = MainController.getInstance().taskController();
     FileController f = MainController.getInstance().fileController();
     RequestValidation r = MainController.getInstance().input();
+    ListTask listTask = MainController.getInstance().listTask();
+    int page = 1;
+    int max_page = t.paginateSize(listTask.getUndone(), 3);
 
     @Override
-    public void run(Object... params) {
-        if (params[0] instanceof ListTask listTask) {
-            max_page = t.paginateSize(listTask.getUndone(), 3);
-            while (true) {
-                System.out.print("\033[H\033[2J");
-                System.out.flush();
-                System.out.println(d.label("todolist-name") + listTask.getUsername());
-                SimpleArrayList<Task> tasks = t.paginate(listTask.getUndone(), 3, page);
-                int i = 0;
-                if (!tasks.isEmpty())
-                    for (Task task : tasks) {
-                        i++;
-                        System.out.println(d.label("-"));
-                        System.out.println((3 * (page - 1) + i) + ". " + d.label("title") + task.getTitle());
-                        System.out.println(d.prettyTime(task.prettyTimer()));
-                        System.out.println(d.label("desc") + task.getDescription());
-                        System.out.println(d.label("subtask-incomplete") + ((MotherTask) task).undoneSubTaskSize());
-                        System.out.println(d.label("-"));
-                    }
-                else
+    public void run() {
+        while (true) {
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+            System.out.println(d.label("todolist-name") + listTask.getUsername());
+            SimpleArrayList<Task> tasks = t.paginate(listTask.getUndone(), 3, page);
+            int i = 0;
+            if (!tasks.isEmpty())
+                for (Task task : tasks) {
+                    i++;
                     System.out.println(d.label("-"));
-
-                if (!listTask.getDone().isEmpty()) {
-                    System.out.println(d.label("last-done"));
-                    System.out.println(listTask.getDone().peek().getTitle());
+                    System.out.println((3 * (page - 1) + i) + ". " + d.label("title") + task.getTitle());
+                    System.out.println(d.prettyTime(task.prettyTimer()));
+                    System.out.println(d.label("desc") + task.getDescription());
+                    System.out.println(d.label("subtask-incomplete") + ((MotherTask) task).undoneSubTaskSize());
+                    System.out.println(d.label("-"));
                 }
+            else
+                System.out.println(d.label("-"));
 
-                System.out.println(d.label("input-command"));
-                execute(r.input());
+            if (!listTask.getDone().isEmpty()) {
+                System.out.println(d.label("last-done"));
+                System.out.println(listTask.getDone().peek().getTitle());
             }
-        } else d.errorExplain(402);
+
+            System.out.println(d.label("input-command"));
+            execute(r.input());
+        }
     }
 
     private void commandlist() {
@@ -65,8 +63,10 @@ public class IndexCli implements View {
 
     private void execute(String command) {
         switch (command) {
-            case "help" -> {commandlist();
-            MainController.getInstance().pause();}
+            case "help" -> {
+                commandlist();
+                MainController.getInstance().pause();
+            }
             case "next" -> {
                 if (page < max_page)
                     page++;
@@ -81,17 +81,23 @@ public class IndexCli implements View {
                 MainController.getInstance().listTask().setUsername(r.input());
             }
             case "set lang" -> d.changeLanguage();
-            case "open file" -> f.openFile();
+            case "open file" -> {
+                f.openFile();
+                listTask = MainController.getInstance().listTask();
+                max_page = t.paginateSize(listTask.getUndone(), 3);
+            }
             case "save file" -> f.saveFile();
             case "exit" -> System.exit(1);
             case "done list" -> t.listDone();
             case "undone list" -> t.listUndone();
-            case "add" -> t.create();
+            case "add" -> {
+                t.create();
+                max_page = t.paginateSize(listTask.getUndone(), 3);
+            }
             default -> {
                 System.out.println(d.label("unknown-command"));
                 MainController.getInstance().pause();
             }
         }
-
     }
 }
