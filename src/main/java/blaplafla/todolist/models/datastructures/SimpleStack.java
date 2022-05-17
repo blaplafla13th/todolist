@@ -7,7 +7,7 @@ import java.util.Iterator;
 
 @SuppressWarnings("unchecked")
 public class SimpleStack<T extends Comparable<? super T>> implements Serializable, Iterable<T>,SimpleStructure<T> {
-    private transient T[] array;
+    private T[] array;
     private int n = 0;
 
     @Override

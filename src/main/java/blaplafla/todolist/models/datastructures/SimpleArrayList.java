@@ -9,7 +9,7 @@ import java.util.Iterator;
 @SuppressWarnings("unchecked")
 
 public class SimpleArrayList<T extends Comparable<? super T>> implements Serializable, Iterable<T>,SimpleStructure<T> {
-    private transient T[] array;
+    private T[] array;
     private MergeSort<T> sort;
     private int n = 0;
 
