@@ -1,8 +1,10 @@
 package blaplafla.todolist.models.algorithms;
 
+import java.io.Serializable;
+
 @SuppressWarnings("unchecked")
 
-public class MergeSort<T extends Comparable<? super T>> {
+public class MergeSort<T extends Comparable<? super T>> implements Serializable {
     private T[] array;
 
     public MergeSort(T[] array) {
