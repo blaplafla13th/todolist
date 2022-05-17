@@ -32,11 +32,11 @@ public class TaskController {
     }
 
     public void listDone() {
-        MainController.getInstance().doneView().run(MainController.getInstance().listTask.getDone());
+        MainController.getInstance().doneView().run(MainController.getInstance().listTask);
     }
 
     public void listUndone() {
-        MainController.getInstance().undoneView().run(MainController.getInstance().listTask.getDone());
+        MainController.getInstance().undoneView().run(MainController.getInstance().listTask);
     }
 
     public void toggleMotherTask(MotherTask task) {
@@ -51,11 +51,11 @@ public class TaskController {
         int from = 0;
         int id = 0;
         if (MainController.getInstance().listTask.getUndone().indexOf(task) != -1) {
-            id = 1;
-            from = MainController.getInstance().listTask.getUndone().indexOf(task);
+            from = 1;
+            id = MainController.getInstance().listTask.getUndone().indexOf(task);
         } else if (MainController.getInstance().listTask.getDone().indexOf(task) != -1) {
-            id = 2;
-            from = MainController.getInstance().listTask.getDone().indexOf(task);
+            from = 2;
+            id = MainController.getInstance().listTask.getDone().indexOf(task);
         }
         MainController.getInstance().listTask.deleteTaskById(from, id);
     }
