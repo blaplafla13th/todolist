@@ -48,8 +48,8 @@ public class MainController {
         setLanguage = new SetLanguageCli();
         openFile = new OpenFileCLI();
         saveFile = new SaveFileCLI();
-        done = new UndoneCli();
-        undone = new DoneCli();
+        done = new DoneCli();
+        undone = new UndoneCli();
         create = new CreateCli();
         edit = new EditCli();
     }
