@@ -105,8 +105,6 @@ public class SimpleStack<T extends Comparable<? super T>> implements Serializabl
     }
 
     public synchronized void remove(T data) {
-        int index = 0;
-        T[] newArray = (T[]) new Comparable[n];
         if (array == null) {
             throw new NullPointerException();
         } else if (data == null) {
@@ -114,16 +112,9 @@ public class SimpleStack<T extends Comparable<? super T>> implements Serializabl
         }
         for (int i = n - 1; i >= 0; i--) {
             if (array[i] != null && array[i].equals(data)) {
-                n--;
-                for (int j = 0; j < n + 1; j++) {
-                    if (i != j) {
-                        newArray[j] = array[i];
-                    }
-                }
-                break;
+                removeIndex(n - 1 - i);
             }
         }
-        array = newArray;
     }
 
     public synchronized Iterator<T> iterator() {
