@@ -48,9 +48,10 @@ public class MainController {
         setLanguage = new SetLanguageCli();
         openFile = new OpenFileCLI();
         saveFile = new SaveFileCLI();
-        done = new DoneCli();
+        done = new UndoneCli();
+        undone = new DoneCli();
         create = new CreateCli();
-
+        edit = new EditCli();
     }
 
     public DictionaryController dictionaryController() {
