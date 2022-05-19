@@ -105,7 +105,7 @@ public abstract class RequestValidation {
     }
 
     private boolean isValidTime(int hour, int minute, int second) {
-        return hour < 0 || hour > 23 || minute < 0 || minute > 59 || second < 0 || second > 59;
+        return !(hour < 0 || hour > 23 || minute < 0 || minute > 59 || second < 0 || second > 59);
     }
 
     private boolean isLeap(int year) {
