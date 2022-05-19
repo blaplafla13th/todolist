@@ -25,6 +25,14 @@ public class TaskController {
         MainController.getInstance().listTask.addTask(title, description, deadline, priority);
     }
 
+    public void create(MotherTask task) {
+        MainController.getInstance().createView().run(task);
+    }
+
+    public void create(MotherTask task, String title, String description, Date deadline, int priority) {
+        task.addSubTask(title, description, deadline, priority);
+    }
+
     public void edit(Task task) {
         MainController.getInstance().editView().run(task);
     }
@@ -89,14 +97,6 @@ public class TaskController {
 
     public void listUndoneSub(MotherTask task) {
         MainController.getInstance().undoneSubTaskView().run(task);
-    }
-
-    public void createSub(MotherTask task) {
-        MainController.getInstance().createSubTaskView().run(task);
-    }
-
-    public void createSub(MotherTask task, String title, String description, Date deadline, int priority) {
-        task.addSubTask(title, description, deadline, priority);
     }
 
     public int paginateSize(SimpleStructure tasks, int numPerPage) {

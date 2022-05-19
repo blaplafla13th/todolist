@@ -24,7 +24,6 @@ public class MainController {
     protected View detail;
     protected View doneSubTask;
     protected View undoneSubTask;
-    protected View createSubTask;
     protected View detailSubTask;
     protected RequestValidation input;
     protected ListTask listTask;
@@ -50,6 +49,7 @@ public class MainController {
         openFile = new OpenFileCLI();
         saveFile = new SaveFileCLI();
         done = new DoneCli();
+        create = new CreateCli();
 
     }
 
@@ -117,10 +117,6 @@ public class MainController {
         return undoneSubTask;
     }
 
-    public View createSubTaskView() {
-        return createSubTask;
-    }
-
     public View detailSubTaskView() {
         return detailSubTask;
     }
@@ -129,7 +125,7 @@ public class MainController {
         System.out.println(dictionaryController.label("pause"));
         try {
             System.in.read();
-        } catch (IOException e) {
+        } catch (IOException ignored) {
         }
     }
 
