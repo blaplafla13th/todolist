@@ -30,7 +30,10 @@ public class CreateCli implements View {
         System.out.println(d.label("placeholder-desc"));
         String desc = r.input();
         System.out.println(d.label("placeholder-deadline"));
-        Date deadline = r.inputTime(null, r.input());
+        System.out.println(d.label("input-date"));
+        Date deadline = r.inputDate(r.input());
+        System.out.println(d.label("input-time"));
+        deadline = r.inputTime(deadline, r.input());
         System.out.println(d.label("placeholder-priority"));
         int priority = r.inputPositiveInteger(r.input());
         if (params[0] instanceof ListTask)
