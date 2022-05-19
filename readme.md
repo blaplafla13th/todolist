@@ -228,11 +228,10 @@ Trong khuôn khổ đề tài, chúng ta sẽ nói về ArrayList, Vector và St
 | Nhập file<br>OpenFile                                              | &#9745; | &#9744;  |
 | Lưu file<br>SaveFile                                               | &#9745; | &#9744;  |
 | Danh sách các việc cần làm + việc cuối cùng đã hoàn thành<br>Index | &#9745; | &#9744;  |
-| Danh sách các việc chưa hoàn thành<br>Undone                       | &#9744; | &#9744;  |
+| Danh sách các việc chưa hoàn thành<br>Undone                       | &#9745; | &#9744;  |
 | Danh sách các việc đã làm<br>Done                                  | &#9745; | &#9744;  |
-| Tạo việc mới<br>Create                                             | &#9744; | &#9744;  |
-| Sửa việc đã tạo (MotherTask&Task) <br>Edit                         | &#9744; | &#9744;  |
-| Tạo công việc con<br>CreateSubTask                                 | &#9744; | &#9744;  |
+| Tạo việc mới (MotherTask&Task)<br>Create                           | &#9745; | &#9744;  |
+| Sửa việc đã tạo (MotherTask&Task) <br>Edit                         | &#9745; | &#9744;  |
 | Xem chi tiết việc (Sửa Xóa Tích hoàn thành)<br>Detail              | &#9744; | &#9744;  |
 | Xem chi tiết việc con (Sửa Xóa Tích hoàn thành)<br>DetailSubTask   | &#9744; | &#9744;  |
 | Danh sách các việc con chưa hoàn thành<br>Undone                   | &#9744; | &#9744;  |
