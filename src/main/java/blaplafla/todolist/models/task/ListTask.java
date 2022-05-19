@@ -38,6 +38,7 @@ public class ListTask implements Serializable {
         if (undone.isContain(task)) {
             done.add(task);
             undone.remove(task);
+            task.toggle();
             return 100;
         } else return 501;
     }
@@ -46,6 +47,7 @@ public class ListTask implements Serializable {
         if (done.isContain(task)) {
             undone.add(task);
             done.remove(task);
+            task.toggle();
             return 100;
         } else return 501;
     }
@@ -89,15 +91,16 @@ public class ListTask implements Serializable {
     }
 
     public int toggleTask(MotherTask task) {
-        if (undone.isContain(task)) {
-            return doneTask(task);
-        } else if (done.isContain(task)) {
+        if (!undone.isContain(task) && !done.isContain(task))
+            return 501;
+        if (task.isStatus()) {
             return undoneTask(task);
-        } else return 501;
+        } else
+            return doneTask(task);
     }
 
     public boolean isEmpty() {
-        return done != null && done.isEmpty() &&
-            undone != null && undone.isEmpty();
+        return done.isEmpty() &&
+            undone.isEmpty();
     }
 }

@@ -2,6 +2,7 @@ package blaplafla.todolist.models.task;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 
 public class Task implements Serializable, Comparable<Task> {
     private final String created_at;
@@ -9,14 +10,14 @@ public class Task implements Serializable, Comparable<Task> {
     private String description;
     private Date deadline;
     private int priority;
-
+    private boolean status = false;
 
     public Task(String title, String description, Date deadline, int priority) {
         this.title = title;
         this.deadline = deadline;
         this.description = description;
         this.priority = priority;
-        created_at = System.currentTimeMillis() + "/" + System.nanoTime();
+        created_at = 100 * Math.random() + "/" + System.nanoTime();
     }
 
     public String getTitle() {
@@ -76,7 +77,24 @@ public class Task implements Serializable, Comparable<Task> {
         return new long[]{day, hour, minute, second};
     }
 
-    public boolean equals(Task task) {
-        return created_at.equals(task.created_at);
+    public boolean isStatus() {
+        return status;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Task task = (Task) o;
+        return priority == task.priority && status == task.status && Objects.equals(created_at, task.created_at) && Objects.equals(title, task.title) && Objects.equals(description, task.description) && Objects.equals(deadline, task.deadline);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(created_at, title, description, deadline, priority, status);
+    }
+
+    public void toggle() {
+        this.status = !status;
     }
 }
