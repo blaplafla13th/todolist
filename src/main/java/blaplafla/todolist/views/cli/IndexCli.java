@@ -96,8 +96,14 @@ public class IndexCli implements View {
             }
             case "save file" -> f.saveFile();
             case "exit" -> System.exit(1);
-            case "done list" -> t.listDone();
-            case "undone list" -> t.listUndone();
+            case "done list" -> {
+                t.listDone();
+                max_page = t.paginateSize(listTask.getUndone(), 3);
+            }
+            case "undone list" -> {
+                t.listUndone();
+                max_page = t.paginateSize(listTask.getUndone(), 3);
+            }
             case "add" -> {
                 t.create();
                 max_page = t.paginateSize(listTask.getUndone(), 3);
