@@ -38,6 +38,18 @@ public abstract class RequestValidation {
         }
     }
 
+    public Integer inputPositiveInteger(String in, int max) {
+        try {
+            if (Integer.parseInt(in) > 0 && Integer.parseInt(in) <= max)
+                return Integer.parseInt(in);
+            throw new NumberFormatException();
+        } catch (NumberFormatException e) {
+            System.out.println(dictionaryController.errorExplain(500));
+            System.out.println(dictionaryController.label("def") + 1);
+            return 1;
+        }
+    }
+
     public String inputString(String temp) {
         if (temp.equals("") || temp.equals(" ")) {
             System.out.println(dictionaryController.errorExplain(500));
