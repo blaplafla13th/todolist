@@ -126,7 +126,7 @@ public class SimpleStack<T extends Comparable<? super T>> implements Serializabl
 
 
         public boolean hasNext() {
-            return currentIndex > 0;
+            return currentIndex >= 0;
         }
 
 
