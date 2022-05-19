@@ -1,7 +1,6 @@
 package blaplafla.todolist.views.cli;
 
 import blaplafla.todolist.controllers.DictionaryController;
-import blaplafla.todolist.controllers.FileController;
 import blaplafla.todolist.controllers.MainController;
 import blaplafla.todolist.controllers.TaskController;
 import blaplafla.todolist.models.datastructures.SimpleArrayList;
@@ -12,18 +11,22 @@ import blaplafla.todolist.request.RequestValidation;
 import blaplafla.todolist.views.View;
 
 public class DoneCli implements View {
-    int page = 1;
+
 
     DictionaryController d = MainController.getInstance().dictionaryController();
     TaskController t = MainController.getInstance().taskController();
-    FileController f = MainController.getInstance().fileController();
     RequestValidation r = MainController.getInstance().input();
     SimpleArrayList<Task> tasks;
     boolean using = true;
-    ListTask listTask = MainController.getInstance().listTask();
+    ListTask listTask;
+    int page = 1;
+    int max_page;
 
     @Override
     public void run() {
+        listTask = MainController.getInstance().listTask();
+        page = 1;
+        max_page = t.paginateSize(listTask.getDone(), 3);
         while (using) {
             if (page > max_page) {
                 page = 1;
@@ -49,7 +52,7 @@ public class DoneCli implements View {
             execute(r.input());
         }
         using = true;
-    }    int max_page = max_page = t.paginateSize(listTask.getUndone(), 3);
+    }
 
     private void commandlist() {
         System.out.println(d.label("list command"));
@@ -77,16 +80,16 @@ public class DoneCli implements View {
             }
             case "detail" -> {
                 System.out.print(d.label("index") + ":");
-                t.detailMotherTask((MotherTask) tasks.get(r.inputPositiveInteger(r.input()) - 1));
+                t.detailMotherTask((MotherTask) tasks.get(r.inputPositiveInteger(r.input(), 3) - 1));
             }
             case "delete" -> {
                 System.out.print(d.label("index") + ":");
-                t.deleteMotherTask((MotherTask) tasks.get(r.inputPositiveInteger(r.input()) - 1));
+                t.deleteMotherTask((MotherTask) tasks.get(r.inputPositiveInteger(r.input(), 3) - 1));
                 max_page = t.paginateSize(listTask.getUndone(), 3);
             }
             case "toggle" -> {
                 System.out.print(d.label("index") + ":");
-                t.toggleMotherTask((MotherTask) tasks.get(r.inputPositiveInteger(r.input()) - 1));
+                t.toggleMotherTask((MotherTask) tasks.get(r.inputPositiveInteger(r.input(), 3) - 1));
                 max_page = t.paginateSize(listTask.getUndone(), 3);
             }
 
