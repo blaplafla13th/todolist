@@ -21,6 +21,10 @@ public class CreateCli implements View {
             System.out.println(d.label("create-sub"));
         else if (params[0] instanceof ListTask)
             System.out.println(d.label("create-task"));
+        else {
+            MainController.getInstance().returnCode(402);
+            return;
+        }
         System.out.println(d.label("placeholder-title"));
         String title = r.input();
         System.out.println(d.label("placeholder-desc"));
