@@ -33,7 +33,7 @@ public class UndoneCli implements View {
             }
             System.out.print("\033[H\033[2J");
             System.out.flush();
-            System.out.println(d.label("undone-list-name") + listTask.getUsername());
+            System.out.println(d.label("todolist-name") + listTask.getUsername());
             tasks = t.paginate(listTask.getUndone(), 3, page);
             int i = 0;
             if (!tasks.isEmpty())
@@ -86,16 +86,16 @@ public class UndoneCli implements View {
             }
             case "detail" -> {
                 System.out.print(d.label("index") + ":");
-                t.detailMotherTask((MotherTask) tasks.get(r.inputPositiveInteger(r.input(), 3) - 1));
+                t.detailMotherTask((MotherTask) tasks.get(r.inputPositiveInteger(r.input(), tasks.size()) - 1));
             }
             case "delete" -> {
                 System.out.print(d.label("index") + ":");
-                t.deleteMotherTask((MotherTask) tasks.get(r.inputPositiveInteger(r.input(), 3) - 1));
+                t.deleteMotherTask((MotherTask) tasks.get(r.inputPositiveInteger(r.input(), tasks.size()) - 1));
                 max_page = t.paginateSize(listTask.getUndone(), 3);
             }
             case "toggle" -> {
                 System.out.print(d.label("index") + ":");
-                t.toggleMotherTask((MotherTask) tasks.get(r.inputPositiveInteger(r.input(), 3) - 1));
+                t.toggleMotherTask((MotherTask) tasks.get(r.inputPositiveInteger(r.input(), tasks.size()) - 1));
                 max_page = t.paginateSize(listTask.getUndone(), 3);
             }
 
