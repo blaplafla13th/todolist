@@ -47,7 +47,7 @@ public class IndexCli implements View {
 
             if (!listTask.getDone().isEmpty()) {
                 System.out.println(d.label("last-done"));
-                System.out.println(listTask.getDone().peek().getTitle());
+                System.out.println(listTask.getLastDoneTask().getTitle());
             }
 
             System.out.println(d.label("input-command"));
