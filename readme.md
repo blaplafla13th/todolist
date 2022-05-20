@@ -232,7 +232,7 @@ Trong khuôn khổ đề tài, chúng ta sẽ nói về ArrayList, Vector và St
 | Danh sách các việc đã làm<br>Done                                  | &#9745; | &#9744;  |
 | Tạo việc mới (MotherTask&Task)<br>Create                           | &#9745; | &#9744;  |
 | Sửa việc đã tạo (MotherTask&Task) <br>Edit                         | &#9745; | &#9744;  |
-| Xem chi tiết việc (Sửa Xóa Tích hoàn thành)<br>Detail              | &#9744; | &#9744;  |
+| Xem chi tiết việc (Sửa Xóa Tích hoàn thành)<br>Detail              | &#9745; | &#9744;  |
 | Xem chi tiết việc con (Sửa Xóa Tích hoàn thành)<br>DetailSubTask   | &#9744; | &#9744;  |
 | Danh sách các việc con chưa hoàn thành<br>Undone                   | &#9744; | &#9744;  |
 | Danh sách các việc con đã làm<br>Done                              | &#9744; | &#9744;  |

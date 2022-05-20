@@ -52,6 +52,7 @@ public class MainController {
         undone = new UndoneCli();
         create = new CreateCli();
         edit = new EditCli();
+        detail = new DetailCli();
     }
 
     public DictionaryController dictionaryController() {
