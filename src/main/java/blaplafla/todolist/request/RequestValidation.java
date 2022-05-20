@@ -66,7 +66,7 @@ public abstract class RequestValidation {
             int month = Integer.parseInt(splitted[1]);
             int day = Integer.parseInt(splitted[2]);
             if (isValidDate(day, month, year))
-                return new Date(year - 1900, month, day);
+                return new Date(year - 1900, month - 1, day);
             else
                 throw new NumberFormatException();
         } catch (NumberFormatException e) {
