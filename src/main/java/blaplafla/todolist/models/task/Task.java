@@ -97,4 +97,9 @@ public class Task implements Serializable, Comparable<Task> {
     public void toggle() {
         this.status = !status;
     }
+
+    public String getDeadlineTime() {
+        return String.format("%d/%d/%d %d:%d:%d", deadline.getDate(), deadline.getMonth(), deadline.getYear()
+            , deadline.getHours(), deadline.getMinutes(), deadline.getMinutes());
+    }
 }

@@ -5,12 +5,10 @@ import blaplafla.todolist.models.datastructures.SimpleStructure;
 import blaplafla.todolist.models.task.MotherTask;
 import blaplafla.todolist.models.task.Task;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @SuppressWarnings("rawtypes")
 public class TaskController {
-    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("d-M-yyyy HH:mm:ss");
 
     public TaskController() {
     }
@@ -116,10 +114,6 @@ public class TaskController {
             tasksArrayList.add((Task) tasks.get(i));
         }
         return tasksArrayList;
-    }
-
-    public String date(Date date) {
-        return simpleDateFormat.format(date);
     }
 
 }
