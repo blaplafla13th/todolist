@@ -16,10 +16,6 @@ public class MotherTask extends Task implements Serializable, Comparable<Task> {
         doneSubTask = new SimpleStack<>();
     }
 
-    public SimpleArrayList<Task> getSubTask() {
-        return undoneSubTask;
-    }
-
     public int doneSubtask(Task task) {
         if (undoneSubTask.isContain(task)) {
             doneSubTask.add(task);
