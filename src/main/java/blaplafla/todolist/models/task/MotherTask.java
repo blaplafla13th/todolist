@@ -69,6 +69,7 @@ public class MotherTask extends Task implements Serializable, Comparable<Task> {
     }
 
     public SimpleArrayList<Task> getUndoneSubTask() {
+        undoneSubTask.sort();
         return undoneSubTask;
     }
 
