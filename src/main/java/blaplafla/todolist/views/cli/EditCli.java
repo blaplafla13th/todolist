@@ -26,8 +26,11 @@ public class EditCli implements View {
             String desc = r.input();
             System.out.println(d.label("placeholder-deadline"));
             System.out.println(d.label("old-value") + ":" + task.getDeadlineTime());
-            System.out.println(d.label(d.prettyTime(task.prettyTimer())));
-            Date deadline = r.inputTime(null, r.input());
+            System.out.println(d.prettyTime(task.prettyTimer()));
+            System.out.println(d.label("input-date"));
+            Date deadline = r.inputDate(r.input());
+            System.out.println(d.label("input-time"));
+            deadline = r.inputTime(deadline, r.input());
             System.out.println(d.label("placeholder-priority"));
             System.out.println(d.label("old-value") + ":" + task.getPriority());
             int priority = r.inputPositiveInteger(r.input());
