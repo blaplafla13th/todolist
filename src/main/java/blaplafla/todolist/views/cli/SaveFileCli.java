@@ -6,7 +6,7 @@ import blaplafla.todolist.controllers.MainController;
 import blaplafla.todolist.request.RequestValidation;
 import blaplafla.todolist.views.View;
 
-public class SaveFileCLI implements View {
+public class SaveFileCli implements View {
     DictionaryController d = MainController.getInstance().dictionaryController();
     RequestValidation i = MainController.getInstance().input();
     FileController f = MainController.getInstance().fileController();

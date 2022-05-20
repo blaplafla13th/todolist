@@ -46,8 +46,8 @@ public class MainController {
         input = new TerminalInputValidation();
         index = new IndexCli();
         setLanguage = new SetLanguageCli();
-        openFile = new OpenFileCLI();
-        saveFile = new SaveFileCLI();
+        openFile = new OpenFileCli();
+        saveFile = new SaveFileCli();
         done = new DoneCli();
         undone = new UndoneCli();
         create = new CreateCli();
