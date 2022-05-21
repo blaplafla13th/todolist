@@ -73,14 +73,14 @@ public class TaskController {
     public void deleteSubTask(MotherTask task, Task subTask) {
         int from = 0;
         int id = 0;
-        if (task.getUndoneSubTask().indexOf(task) != -1) {
-            id = 1;
-            from = MainController.getInstance().listTask.getUndone().indexOf(task);
-        } else if (task.getDoneSubTask().indexOf(task) != -1) {
-            id = 2;
-            from = MainController.getInstance().listTask.getDone().indexOf(task);
+        if (task.getUndoneSubTask().indexOf(subTask) != -1) {
+            from = 1;
+            id = task.getUndoneSubTask().indexOf(subTask);
+        } else if (task.getDoneSubTask().indexOf(subTask) != -1) {
+            from = 2;
+            id = task.getDoneSubTask().indexOf(subTask);
         }
-        MainController.getInstance().listTask.deleteTaskById(from, id);
+        task.deleteSubTaskById(from, id);
     }
 
     public void detailMotherTask(MotherTask task) {

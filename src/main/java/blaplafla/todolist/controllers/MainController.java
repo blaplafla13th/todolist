@@ -53,6 +53,8 @@ public class MainController {
         create = new CreateCli();
         edit = new EditCli();
         detail = new DetailCli();
+        undoneSubTask = new UndoneSubCli();
+        doneSubTask = new DoneSubCli();
     }
 
     public DictionaryController dictionaryController() {
