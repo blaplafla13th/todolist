@@ -69,6 +69,26 @@ public class Vietnamese extends Dictionary {
             case "back-button" -> "quay lại";
             case "index" -> "Nhập số thứ tự";
             case "-" -> "--------------------------------";
+            case "create-sub" -> "";
+            case "create-task" -> "";
+            case "placeholder-title" -> "";
+            case "placeholder-desc" -> "";
+            case "placeholder-deadline" -> "";
+            case "placeholder-priority" -> "";
+            case "priority" -> "";
+            case "last-done" -> "";
+            case "add-subtask-button" -> "";
+            case "toggle-this-button" -> "";
+            case "delete-this-button" -> "";
+            case "edit-this-button" -> "";
+            case "mother-task-name" -> "";
+            case "task-name" -> "";
+            case "deadline-time" -> "";
+            case "done-sub-list" -> "";
+            case "edit-task" -> "";
+            case "yes" -> "";
+            case "subtask-remaining" -> "";
+            case "undone-sub-list" -> "";
             default -> "Không xác định";
         };
     }
