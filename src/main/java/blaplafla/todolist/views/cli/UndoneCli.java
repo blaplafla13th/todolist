@@ -1,12 +1,8 @@
 package blaplafla.todolist.views.cli;
 
-import blaplafla.todolist.controllers.DictionaryController;
-import blaplafla.todolist.controllers.MainController;
-import blaplafla.todolist.controllers.TaskController;
+import blaplafla.todolist.controllers.*;
 import blaplafla.todolist.models.datastructures.SimpleArrayList;
-import blaplafla.todolist.models.task.ListTask;
-import blaplafla.todolist.models.task.MotherTask;
-import blaplafla.todolist.models.task.Task;
+import blaplafla.todolist.models.task.*;
 import blaplafla.todolist.request.RequestValidation;
 import blaplafla.todolist.views.View;
 
