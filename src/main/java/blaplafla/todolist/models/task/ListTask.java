@@ -53,7 +53,6 @@ public class ListTask implements Serializable {
     }
 
     public Task getTaskById(int from, int id) {
-        Task task;
         if (from == 1) {
             return undone.get(id);
         } else if (from == 2) {
