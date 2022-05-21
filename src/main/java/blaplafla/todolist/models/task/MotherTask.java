@@ -18,6 +18,7 @@ public class MotherTask extends Task implements Serializable, Comparable<Task> {
 
     public int doneSubtask(Task task) {
         if (undoneSubTask.isContain(task)) {
+            task.toggle();
             doneSubTask.add(task);
             undoneSubTask.remove(task);
             return 100;
@@ -26,6 +27,7 @@ public class MotherTask extends Task implements Serializable, Comparable<Task> {
 
     public int undoneSubtask(Task task) {
         if (doneSubTask.isContain(task)) {
+            task.toggle();
             undoneSubTask.add(task);
             doneSubTask.remove(task);
             return 100;
@@ -33,7 +35,6 @@ public class MotherTask extends Task implements Serializable, Comparable<Task> {
     }
 
     public Task getSubTaskById(int from, int id) {
-        Task task;
         if (from == 1) {
             return undoneSubTask.get(id);
         } else if (from == 2) {
@@ -42,11 +43,12 @@ public class MotherTask extends Task implements Serializable, Comparable<Task> {
     }
 
     public int toggleTask(Task task) {
-        if (undoneSubTask.isContain(task)) {
-            return doneSubtask(task);
-        } else if (doneSubTask.isContain(task)) {
+        if (!undoneSubTask.isContain(task) && !doneSubTask.isContain(task))
+            return 501;
+        if (task.isStatus()) {
             return undoneSubtask(task);
-        } else return 501;
+        } else
+            return doneSubtask(task);
     }
 
     public int deleteSubTaskById(int from, int id) {
