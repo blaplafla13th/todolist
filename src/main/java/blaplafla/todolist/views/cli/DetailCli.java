@@ -31,7 +31,8 @@ public class DetailCli implements View {
                 System.out.println(d.label("-"));
                 System.out.println(d.label("desc") + task.getDescription());
                 System.out.println(d.label("deadline-time") + ":" + task.getDeadlineTime());
-                System.out.println(d.prettyTime(task.prettyTimer()));
+                if (!task.isStatus())
+                    System.out.println(d.prettyTime(task.prettyTimer()));
                 System.out.println(d.label("priority") + task.getPriority());
                 System.out.println(d.label("subtask-incomplete") + task.undoneSubTaskSize());
                 System.out.println(d.label("-"));
