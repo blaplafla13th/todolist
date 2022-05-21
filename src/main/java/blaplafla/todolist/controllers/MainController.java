@@ -55,6 +55,7 @@ public class MainController {
         detail = new DetailCli();
         undoneSubTask = new UndoneSubCli();
         doneSubTask = new DoneSubCli();
+        detailSubTask = new DetailSubCli();
     }
 
     public DictionaryController dictionaryController() {
