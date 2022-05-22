@@ -2,7 +2,7 @@ package blaplafla.todolist.views.cli;
 
 import blaplafla.todolist.controllers.*;
 import blaplafla.todolist.models.task.Task;
-import blaplafla.todolist.request.RequestValidation;
+import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.views.View;
 
 import java.util.Date;

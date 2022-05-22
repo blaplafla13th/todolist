@@ -3,7 +3,7 @@ package blaplafla.todolist.views.cli;
 import blaplafla.todolist.controllers.*;
 import blaplafla.todolist.models.datastructures.SimpleArrayList;
 import blaplafla.todolist.models.task.*;
-import blaplafla.todolist.request.RequestValidation;
+import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.views.View;
 
 public class DoneCli implements View {

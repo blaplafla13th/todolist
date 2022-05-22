@@ -5,7 +5,7 @@ import blaplafla.todolist.controllers.MainController;
 import blaplafla.todolist.controllers.TaskController;
 import blaplafla.todolist.models.task.MotherTask;
 import blaplafla.todolist.models.task.Task;
-import blaplafla.todolist.request.RequestValidation;
+import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.views.View;
 
 public class DetailSubCli implements View {

@@ -1,7 +1,7 @@
 package blaplafla.todolist.views.cli;
 
 import blaplafla.todolist.controllers.*;
-import blaplafla.todolist.request.RequestValidation;
+import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.views.View;
 
 public class SaveFileCli implements View {

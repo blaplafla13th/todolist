@@ -1,4 +1,4 @@
-package blaplafla.todolist.request;
+package blaplafla.todolist.requests;
 
 import java.util.Scanner;
 

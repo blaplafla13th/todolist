@@ -1,4 +1,4 @@
-package blaplafla.todolist.request;
+package blaplafla.todolist.requests;
 
 import blaplafla.todolist.controllers.DictionaryController;
 import blaplafla.todolist.controllers.MainController;

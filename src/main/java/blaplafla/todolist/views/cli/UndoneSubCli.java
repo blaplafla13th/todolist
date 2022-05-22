@@ -6,7 +6,7 @@ import blaplafla.todolist.controllers.TaskController;
 import blaplafla.todolist.models.datastructures.SimpleArrayList;
 import blaplafla.todolist.models.task.MotherTask;
 import blaplafla.todolist.models.task.Task;
-import blaplafla.todolist.request.RequestValidation;
+import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.views.View;
 
 public class UndoneSubCli implements View {
