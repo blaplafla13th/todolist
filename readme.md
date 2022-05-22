@@ -155,10 +155,17 @@ Trong khuôn khổ đề tài, chúng ta sẽ nói về ArrayList, Vector và St
             - TaskController: quản lý đối tượng Task
             - FileController: quản lý nhập xuất dữ liệu file
             - DictionaryController: quản lý ngôn ngữ và nhập liệu
-        - MainController là 1 singleton bao gồm các Controller phụ và các View nhằm quản lý nhất quán
+        - MainController là 1 singleton bao gồm các Controller phụ và Router nhằm quản lý nhất quán
         - Controller phụ sẽ là hằng sau khi khai báo để đảm bảo không bị lỗi liên quan đến các biến thành viên trong
           Controller phụ bị thay đổi khi thay Controller phụ
-        - Các View của chương trình cũng sẽ lưu tại đây để thuận tiện cho việc gọi các View
+        - Router của chương trình cũng sẽ lưu tại đây để thuận tiện cho việc gọi các View
+    - Router:
+        - Router là class mang nhiệm vụ điều hướng đến các views tương ứng cũng như nhận các request người dùng nhập
+          vào.
+        - MainController sử dụng Strategy Pattern để thay đổi Router linh hoạt, đồng thời có các hàm để gọi các view và
+          request từ Router để các controller cũng như view có thể gọi thông qua MainController mà không cần phải xác
+          định xem view mình cần gọi đến có đúng không, đảm bảo tính nhất quán cũng như tách biệt các thành phần của
+          chương trình
     - Model:
         - Lưu các dữ liệu của chương trình, ngoại trừ từ điển tất cả đều implement class Serialize để có thể ghi ra file
             - Thuật toán sắp xếp (aglorithms)
@@ -172,7 +179,7 @@ Trong khuôn khổ đề tài, chúng ta sẽ nói về ArrayList, Vector và St
                 - cho việc sử dụng nhiều ngôn ngữ
                 - Gồm Interface Dictionary và 2 file ngôn ngữ Vietnamese và English
                 - Sử dụng làm biến thành viên cho DictionaryController
-                - Sử dụng Design Pattern Stragety để có thể thay đổi ngôn ngữ linh hoạt
+                - Sử dụng Design Pattern Strategy để có thể thay đổi ngôn ngữ linh hoạt
             - Đối tượng Task và ListTask(task)
                 - Class ListTask để quản lý tổng các task, gồm các hàm để quản lý cùng với 2 list:
                     - SimpleArrayList undone để lưu các việc chưa hoàn thành

@@ -1,33 +1,18 @@
 package blaplafla.todolist.controllers;
 
 import blaplafla.todolist.models.task.ListTask;
-import blaplafla.todolist.request.RequestValidation;
-import blaplafla.todolist.request.TerminalInputValidation;
+import blaplafla.todolist.requests.RequestValidation;
+import blaplafla.todolist.routers.CliRouter;
+import blaplafla.todolist.routers.Router;
 import blaplafla.todolist.views.View;
-import blaplafla.todolist.views.cli.*;
-
-import java.io.IOException;
 
 public class MainController {
     private static MainController instance;
     protected final DictionaryController dictionaryController;
     protected final FileController fileController;
     protected final TaskController taskController;
-    protected View setLanguage;
-    protected View saveFile;
-    protected View openFile;
-    protected View index;
-    protected View done;
-    protected View undone;
-    protected View create;
-    protected View edit;
-    protected View detail;
-    protected View doneSubTask;
-    protected View undoneSubTask;
-    protected View detailSubTask;
-    protected RequestValidation input;
     protected ListTask listTask;
-
+    protected Router route;
     private MainController() {
         dictionaryController = new DictionaryController();
         fileController = new FileController();
@@ -43,19 +28,7 @@ public class MainController {
     }
 
     public void setModeCli() {
-        input = new TerminalInputValidation();
-        index = new IndexCli();
-        setLanguage = new SetLanguageCli();
-        openFile = new OpenFileCli();
-        saveFile = new SaveFileCli();
-        done = new DoneCli();
-        undone = new UndoneCli();
-        create = new CreateCli();
-        edit = new EditCli();
-        detail = new DetailCli();
-        undoneSubTask = new UndoneSubCli();
-        doneSubTask = new DoneSubCli();
-        detailSubTask = new DetailSubCli();
+        route = new CliRouter();
     }
 
     public DictionaryController dictionaryController() {
@@ -75,69 +48,62 @@ public class MainController {
     }
 
     public RequestValidation input() {
-        return input;
+        return route.getInput();
     }
 
     public View setLanguageView() {
-        return setLanguage;
+        return route.getSetLanguage();
     }
 
     public View saveFileView() {
-        return saveFile;
+        return route.getSaveFile();
     }
 
     public View openFileView() {
-        return openFile;
+        return route.getOpenFile();
     }
 
     public View indexView() {
-        return index;
+        return route.getIndex();
     }
 
     public View doneView() {
-        return done;
+        return route.getDone();
     }
 
     public View undoneView() {
-        return undone;
+        return route.getUndone();
     }
 
     public View createView() {
-        return create;
+        return route.getCreate();
     }
 
     public View editView() {
-        return edit;
+        return route.getEdit();
     }
 
     public View detailView() {
-        return detail;
+        return route.getDetail();
     }
 
     public View doneSubTaskView() {
-        return doneSubTask;
+        return route.getDoneSubTask();
     }
 
     public View undoneSubTaskView() {
-        return undoneSubTask;
+        return route.getUndoneSubTask();
     }
 
     public View detailSubTaskView() {
-        return detailSubTask;
+        return route.getDetailSubTask();
     }
 
     public void pause() {
-        System.out.println(dictionaryController.label("pause"));
-        try {
-            System.in.read();
-        } catch (IOException ignored) {
-        }
+        route.pause();
     }
 
     public void returnCode(int error) {
-        if (error != 100) {
-            dictionaryController.errorExplain(error);
-            MainController.getInstance().pause();
-        }
+        route.returnCode(error);
     }
 }
