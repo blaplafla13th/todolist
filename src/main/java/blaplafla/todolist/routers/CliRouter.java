@@ -1,9 +1,7 @@
 package blaplafla.todolist.routers;
 
 import blaplafla.todolist.controllers.MainController;
-import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.requests.TerminalInputValidation;
-import blaplafla.todolist.views.View;
 import blaplafla.todolist.views.cli.*;
 
 import java.io.IOException;
@@ -11,6 +9,11 @@ import java.io.IOException;
 public class CliRouter extends Router {
 
     public CliRouter() {
+        input = new TerminalInputValidation();
+    }
+
+    @Override
+    public void setupView() {
         index = new IndexCli();
         setLanguage = new SetLanguageCli();
         openFile = new OpenFileCli();
@@ -23,7 +26,6 @@ public class CliRouter extends Router {
         undoneSubTask = new UndoneSubCli();
         doneSubTask = new DoneSubCli();
         detailSubTask = new DetailSubCli();
-        input = new TerminalInputValidation();
     }
 
     @Override
