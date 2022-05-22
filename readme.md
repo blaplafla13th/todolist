@@ -1,3 +1,5 @@
+word https://1drv.ms/w/s!AlK0dj0v2W4fgR8APehPBd3V5G4b
+
 # Ứng dụng To Do List
 
 ## A. Các định nghĩa khái niệm liên quan
@@ -249,6 +251,68 @@ Trong khuôn khổ đề tài, chúng ta sẽ nói về ArrayList, Vector và St
 &#9744; đang làm
 
 ### III. Mô tả từng giao diện
+1. Creat (Tạo việc mới)
+
+| Luồng |                                     Đối tượng                                     |
+|:------|:---------------------------------------------------------------------------------:|
+| Vào   |                             ListTask hoặc MotherTask                              |
+| Ra    | Task mới với các thông tin về tên, mô tả, deadline, độ ưu tiên do người dùng nhập |
+
+2. Detail (Xem chi tiết)
+
+| Luồng |                                                                                                                                                                                                                           Đối tượng                                                                                                                                                                                                                           |
+|:------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Vào   |                                                                                                                                                                                                                          MotherTask                                                                                                                                                                                                                           |
+| Ra    | -Các thông tin về công việc: tên, mô tả, thời gian hết hạn, độ ưu tiên, thông tin của công việc con (số lượng, tên, mô tả, tiến độ...) (nếu có) <br/>-Nhận lệnh từ người dùng nhập vào: <br/>+Sửa (Edit), <br/>+Thêm (Add),<br/>+Xóa (Delete),<br/>+Chuyển đổi trạng thái hoàn thành (Toggle),<br/>+Quay lại (Back),<br/>+ Trang kế (Next), <br/>+Trang trước (Prev), <br/>+Danh sách đã hoàn thành (Done list),<br/>+Danh sách chưa hoàn thành (Undone list) |
+
+3. Done (Danh sách đã làm)
+
+| Luồng |                                                                                                                                                                                          Đối tượng                                                                                                                                                                                          |
+|:------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Vào   |                                                                                                                                                                                          ListTask                                                                                                                                                                                           |
+| Ra    |                                                    - Danh sách các việc đã hoàn thành theo trang bao gồm tên, mô tả và số lượng các công việc con <br/> - Nhận lệnh từ người dùng nhập vào: <br/>+Sửa (Edit),<br/>+Xóa (Delete),<br/>+Chuyển đổi trạng thái hoàn thành (Toggle),<br/>+Quay lại (Back),<br/>+ Trang kế (Next), <br/>+Trang trước (Prev)                                                     |
+
+4. Edit (Sửa việc đã tạo)
+
+| Luồng |                                     Đối tượng                                      |
+|:------|:----------------------------------------------------------------------------------:|
+| Vào   |                            Task (MotherTask, ListTask)                             |
+| Ra    | task cũ với các thông số (tên, mô tả, deadline, độ ưu tiên) mới do người dùng nhập |
+
+5. Index (Danh sách các việc cần làm + việc cuối cùng đã hoàn thành)
+
+| Luồng |                                                                                                                                                                                                            Đối tượng                                                                                                                                                                                                             |
+|:------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Vào   |                                                                                                                                                                                                             ListTask                                                                                                                                                                                                             |
+| Ra    | - Tên công việc, mô tả, pretty-time, task con chưa hoàn thành, danh sách công việc hoàn thành cuối cùng<br/>-Nhận lệnh từ người dùng nhập vào:  <br/>+Thêm (Add), <br/>+ Trang kế (Next), <br/>+Trang trước (Prev),<br/>+Mở (OpenFile), <br/>+Lưu (SaveFile)<br/>+Cài đặt username (Set username);<br/>+Cài đặt ngôn ngữ (Set Lang) <br/>+Danh sách đã hoàn thành (Done list),<br/>+Danh sách chưa hoàn thành (Undone list), <br/>+Thoát (Exit) |
+
+6. OpenFile (Nhập file)
+
+| Luồng |         Đối tượng         |
+|:------|:-------------------------:|
+| Vào   | Đường dẫn tới file (path) |
+| Ra    |                           |
+
+7. SaveFile (Lưu file)
+
+| Luồng | Đối tượng |
+|:------|:---------:|
+| Vào   |           |
+| ra    |           |
+
+8. Set Language (Đổi ngôn ngữ)
+
+| Luồng | Đối tượng |
+|:------|:---------:|
+| Vào   |           |
+| ra    |           |
+
+9. Undone (Danh sách chưa hoàn thành)
+
+| Luồng |                                                                                                                                      Đối tượng                                                                                                                                       |
+|:------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Vào   |                                                                                                                                       ListTask                                                                                                                                       |
+| Ra    | - Danh sách các việc chưa hoàn thành theo trang bao gồm tên, mô tả và task con <br/> - Nhận lệnh từ người dùng nhập vào:<br/>+Thêm (Add) <br/>+Sửa (Edit),<br/>+Xóa (Delete),<br/>+Chuyển đổi trạng thái hoàn thành (Toggle),<br/>+Quay lại (Back),<br/>+ Trang kế (Next), <br/>+Trang trước (Prev) |
 
 ## Tài liệu tham khảo
 
