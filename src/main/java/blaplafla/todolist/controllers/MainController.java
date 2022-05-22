@@ -29,6 +29,7 @@ public class MainController {
 
     public void setModeCli() {
         route = new CliRouter();
+        route.setupView();
     }
 
     public DictionaryController dictionaryController() {

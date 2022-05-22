@@ -73,6 +73,8 @@ public abstract class Router {
         return detailSubTask;
     }
 
+    public abstract void setupView();
+
     public abstract void pause();
 
     public abstract void returnCode(int error);
