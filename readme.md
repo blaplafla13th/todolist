@@ -34,7 +34,7 @@ Trong khuôn khổ đề tài, chúng ta sẽ nói về ArrayList, Vector và St
     - ArrayList có chứa một biến thành viên là một mảng Object đồng thời ArrayList được thiết kế để tự mở rộng mảng khi
       mảng đó đầy nên kích thước của ArrayList không cố định
     - ArrayList duy trì thứ tự được thêm vào
-    - Truy cập theo index nên có thể truy cập ngẫu nhiên nhưng bù lại, khi chèn, xóa sẽ dịch mangr hoặc đánh lại index
+    - Truy cập theo index nên có thể truy cập ngẫu nhiên nhưng bù lại, khi chèn, xóa sẽ dịch mảng hay đánh lại index
       nên thao tác chậm
 2. Vector và Stack
     - Cũng như ArrayList, Vector cũng implement từ interface List, các hàm của Vector cũng không khác ArrayList
@@ -67,7 +67,7 @@ Trong khuôn khổ đề tài, chúng ta sẽ nói về ArrayList, Vector và St
       lý một lúc nên đặc biệt thích hợp cho dữ liệu lớn.
 - Trong khoa học máy tính, một thuật toán sắp xếp ổn định bảo toàn thứ tự tương đối các bản ghi với nhau theo một khóa.
 - Nhược điểm:
-    - So sánh chậm hơn với các thuật toán khác cho các khối lượng nhỏ
+    - So sánh chậm hơn với các thuật toán khác với bộ dữ liệu nhỏ
     - Đòi hỏi một bộ nhớ tạm O(n) để chia nhỏ và xử lý khi làm việc với mảng (sắp xếp ngoài mảng ban đầu) vậy nên thuật
       toán chủ yếu sử dụng với LinkedList và chia nhiều như vậy rồi gọi đệ quy cũng dễ gây lỗi StackOverFlow
     - Thuật toán mỗi lần sắp xếp sẽ chạy trên toàn bộ mảng nên bất kể mảng đã được sắp xếp hay chưa vẫn tốn một lượng
@@ -93,7 +93,7 @@ Trong khuôn khổ đề tài, chúng ta sẽ nói về ArrayList, Vector và St
   ![](img/mvc.png)
 - Ưu điểm của mô hình:
     - Các thành phần tách biệt hoàn toàn với nhau chỉ gọi qua nhau thông qua các yêu cầu nên dễ dàng quản lý, nâng cấp,
-      sửa chữa. Một phần bị hỏng thì chỉ có thể hỏng trong phạm vi Controller đó quản lý, sửa một phần thì tất cả vẫn có
+      sửa chữa. Một phần bị hỏng thì chỉ có thể hỏng trong phạm vi Controller đó quản lý, sửa, nâng cấp một phần thì tất cả vẫn có
       thể hoạt động bình thường theo thay đổi mới
     - Nhiều View: Do các thành phần tách biệt nên phát triển các View khác nhau hoàn toàn dễ dàng, một chương trình có
       thể chạy trên nhiều giao diện khác nhau như thông qua giao diện dòng lệnh hay giao diện đồ họa.
