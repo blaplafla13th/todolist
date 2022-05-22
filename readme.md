@@ -210,7 +210,8 @@ Trong khuôn khổ đề tài, chúng ta sẽ nói về ArrayList, Vector và St
               không có đối truyền vào
             - Các package theo từng gói giao diện của View, các giao diện được mô tả ở C.II
 - Sơ đồ quan hệ:
-
+  ![](img/nolink.png)
+  ![](img/linked.png)
 ## C. Mô tả chương trình ứng dụng
 
 ### I. Tính năng:

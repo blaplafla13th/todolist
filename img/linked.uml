@@ -1,0 +1,937 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/home/phambathang/Desktop/todolist/src/main/java/blaplafla/todolist</OriginalElement>
+  <nodes>
+    <node x="-794.1236916453627" y="912.2033428381174">blaplafla.todolist.views.View</node>
+    <node x="-157.384987002868" y="990.0000000000001">blaplafla.todolist.views.cli.SaveFileCli</node>
+    <node x="-464.36239401750043" y="664.101047683412">blaplafla.todolist.models.dictionary.English</node>
+    <node x="-157.384987002868" y="785.9999999999999">blaplafla.todolist.views.cli.DetailCli</node>
+    <node x="-157.384987002868" y="735.0000000000001">blaplafla.todolist.views.cli.IndexCli</node>
+    <node x="-331.93960320000645" y="429.0">blaplafla.todolist.models.task.Task</node>
+    <node x="-464.36239401750043" y="793.5621364773039">blaplafla.todolist.requests.TerminalInputValidation</node>
+    <node x="-157.384987002868" y="480.0">blaplafla.todolist.views.cli.UndoneCli</node>
+    <node x="-1181.9194279914248" y="501.4775992317286">blaplafla.todolist.CliStarter</node>
+    <node x="-157.384987002868" y="683.9999999999999">blaplafla.todolist.views.cli.DoneCli</node>
+    <node x="-464.36239401750043" y="728.831592080358">blaplafla.todolist.models.dictionary.Vietnamese</node>
+    <node x="-157.384987002868" y="836.9999999999997">blaplafla.todolist.views.cli.CreateCli</node>
+    <node x="-157.384987002868" y="632.9999999999999">blaplafla.todolist.views.cli.EditCli</node>
+    <node x="-675.8294729338728" y="611.2810682386519">blaplafla.todolist.models.algorithms.MergeSort</node>
+    <node x="-535.6954879189005" y="429.0">blaplafla.todolist.models.task.MotherTask</node>
+    <node x="-675.8294729338728" y="546.9387542835257">blaplafla.todolist.models.datastructures.SimpleStructure</node>
+    <node x="-896.1236916453627" y="697.831592080358">blaplafla.todolist.controllers.DictionaryController</node>
+    <node x="-675.8294729338728" y="429.0">blaplafla.todolist.models.task.ListTask</node>
+    <node x="-157.384987002868" y="939.0000000000001">blaplafla.todolist.views.cli.OpenFileCli</node>
+    <node x="-398.6072299683704" y="546.9387542835257">blaplafla.todolist.models.datastructures.SimpleStack</node>
+    <node x="-1174.81729100772" y="768.8007413482572">blaplafla.todolist.controllers.MainController</node>
+    <node x="-398.6072299683704" y="611.2810682386519">blaplafla.todolist.models.datastructures.SimpleArrayList</node>
+    <node x="-794.1236916453627" y="793.5621364773039">blaplafla.todolist.requests.RequestValidation</node>
+    <node x="-896.1236916453627" y="556.5078164743384">blaplafla.todolist.controllers.TaskController</node>
+    <node x="-157.384987002868" y="531.0">blaplafla.todolist.views.cli.DoneSubCli</node>
+    <node x="-644.8294729338729" y="848.7244298771902">blaplafla.todolist.routers.CliRouter</node>
+    <node x="-896.1236916453627" y="848.7244298771902">blaplafla.todolist.routers.Router</node>
+    <node x="-157.384987002868" y="888.0000000000001">blaplafla.todolist.views.cli.SetLanguageCli</node>
+    <node x="-644.8294729338729" y="697.831592080358">blaplafla.todolist.models.dictionary.Dictionary</node>
+    <node x="-157.384987002868" y="429.0">blaplafla.todolist.views.cli.DetailSubCli</node>
+    <node x="-157.384987002868" y="582.0">blaplafla.todolist.views.cli.UndoneSubCli</node>
+    <node x="-896.1236916453627" y="961.439458588105">blaplafla.todolist.controllers.FileController</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="blaplafla.todolist.views.cli.DoneSubCli" target="blaplafla.todolist.models.datastructures.SimpleArrayList" relationship="TO_ONE">
+      <point x="68.999987002868" y="-10.5" />
+      <point x="99.5" y="536.0" />
+      <point x="99.5" y="377.0" />
+      <point x="-194.0" y="377.0" />
+      <point x="-194.0" y="505.0" />
+      <point x="-441.862" y="505.0" />
+      <point x="-441.862" y="633.781" />
+      <point x="-97.99977003162962" y="6.99993176134808" />
+    </edge>
+    <edge source="blaplafla.todolist.models.datastructures.SimpleArrayList" target="blaplafla.todolist.models.algorithms.MergeSort" relationship="TO_ONE">
+      <point x="-10.499770031629623" y="15.5" />
+      <point x="-311.107" y="762.831592080358" />
+      <point x="-216.36239401750043" y="762.831592080358" />
+      <point x="-216.36239401750043" y="841.7244298771902" />
+      <point x="-521.8294729338729" y="841.7244298771902" />
+      <point x="-521.8294729338729" y="752.332" />
+      <point x="-657.8294729338729" y="752.332" />
+      <point x="-61.500000000000114" y="15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.SaveFileCli" target="blaplafla.todolist.controllers.FileController" relationship="TO_ONE">
+      <point x="14.999987002867996" y="15.499999999999886" />
+      <point x="-78.385" y="1049.0" />
+      <point x="-220.0" y="1049.0" />
+      <point x="-220.0" y="1022.0" />
+      <point x="-820.124" y="1022.0" />
+      <point x="-3.083546373545687E-4" y="15.499541411894938" />
+    </edge>
+    <edge source="blaplafla.todolist.models.task.ListTask" target="blaplafla.todolist.models.task.MotherTask" relationship="CREATE">
+      <point x="56.0" y="0.0" />
+      <point x="-71.0" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DoneSubCli" target="blaplafla.todolist.requests.RequestValidation" relationship="TO_ONE">
+      <point x="68.999987002868" y="0.0" />
+      <point x="29.0" y="546.5" />
+      <point x="29.0" y="1038.5" />
+      <point x="-550.0" y="1038.5" />
+      <point x="-550.0" y="896.0" />
+      <point x="-700.124" y="896.0" />
+      <point x="-3.083546373545687E-4" y="15.49986352269616" />
+    </edge>
+    <edge source="blaplafla.todolist.controllers.MainController" target="blaplafla.todolist.controllers.DictionaryController" relationship="TO_ONE">
+      <point x="2.910077200795058E-4" y="-15.499741348257203" />
+      <point x="-1092.317" y="721.332" />
+      <point x="-928.624" y="721.332" />
+      <point x="-928.624" y="777.0" />
+      <point x="-793.624" y="777.0" />
+      <point x="-3.083546373545687E-4" y="15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DetailSubCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="-1.2997132003533807E-5" y="-15.5" />
+      <point x="-86.885" y="411.5" />
+      <point x="59.0" y="411.5" />
+      <point x="59.0" y="765.5" />
+      <point x="-21.0" y="765.5" />
+      <point x="-21.0" y="816.5" />
+      <point x="74.0" y="816.5" />
+      <point x="74.0" y="1084.5" />
+      <point x="-236.862" y="1084.5" />
+      <point x="-236.862" y="980.0" />
+      <point x="-204.0" y="980.0" />
+      <point x="-204.0" y="927.703" />
+      <point x="42.999691645362645" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.routers.CliRouter" target="blaplafla.todolist.views.cli.DoneCli" relationship="CREATE">
+      <point x="60.0" y="-0.6244298771904369" />
+      <point x="-161.3849922017208" y="863.5999999999998" />
+      <point x="-161.3849922017208" y="699.4999999999999" />
+      <point x="-54.5" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.models.task.MotherTask" target="blaplafla.todolist.models.datastructures.SimpleArrayList" relationship="TO_ONE">
+      <point x="4.879189005464468E-4" y="15.5" />
+      <point x="-464.695" y="505.0" />
+      <point x="-441.862" y="505.0" />
+      <point x="-441.862" y="633.781" />
+      <point x="-97.99977003162962" y="6.99993176134808" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.IndexCli" target="blaplafla.todolist.requests.RequestValidation" relationship="TO_ONE">
+      <point x="55.999987002868004" y="-1.1368683772161603E-13" />
+      <point x="-4.0" y="750.5" />
+      <point x="-4.0" y="725.0" />
+      <point x="29.0" y="725.0" />
+      <point x="29.0" y="1038.5" />
+      <point x="-550.0" y="1038.5" />
+      <point x="-550.0" y="896.0" />
+      <point x="-700.124" y="896.0" />
+      <point x="-3.083546373545687E-4" y="15.49986352269616" />
+    </edge>
+    <edge source="blaplafla.todolist.models.task.MotherTask" target="blaplafla.todolist.models.datastructures.SimpleStack" relationship="TO_ONE">
+      <point x="4.879189005464468E-4" y="-15.5" />
+      <point x="-464.695" y="372.5" />
+      <point x="-377.0" y="372.5" />
+      <point x="-62.892770031629595" y="-15.499754283525704" />
+    </edge>
+    <edge source="blaplafla.todolist.routers.Router" target="blaplafla.todolist.requests.RequestValidation" relationship="TO_ONE">
+      <point x="-3.083546373545687E-4" y="15.499570122809814" />
+      <point x="-845.124" y="896.0" />
+      <point x="-700.124" y="896.0" />
+      <point x="-3.083546373545687E-4" y="15.49986352269616" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DoneCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="54.499987002868004" y="-10.499999999999886" />
+      <point x="-21.0" y="689.0" />
+      <point x="-21.0" y="816.5" />
+      <point x="74.0" y="816.5" />
+      <point x="74.0" y="1084.5" />
+      <point x="-236.862" y="1084.5" />
+      <point x="-236.862" y="980.0" />
+      <point x="-204.0" y="980.0" />
+      <point x="-204.0" y="927.703" />
+      <point x="42.999691645362645" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.models.task.ListTask" target="blaplafla.todolist.models.datastructures.SimpleStack" relationship="CREATE">
+      <point x="-55.99952706612714" y="-10.5" />
+      <point x="-709.124" y="434.0" />
+      <point x="-709.124" y="645.281" />
+      <point x="-420.0" y="645.281" />
+      <point x="-420.0" y="562.439" />
+      <point x="-84.49977003162962" y="2.457164742963869E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.UndoneCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="64.499987002868" y="-10.5" />
+      <point x="54.5" y="485.0" />
+      <point x="54.5" y="513.5" />
+      <point x="59.0" y="513.5" />
+      <point x="59.0" y="765.5" />
+      <point x="-21.0" y="765.5" />
+      <point x="-21.0" y="816.5" />
+      <point x="74.0" y="816.5" />
+      <point x="74.0" y="1084.5" />
+      <point x="-236.862" y="1084.5" />
+      <point x="-236.862" y="980.0" />
+      <point x="-204.0" y="980.0" />
+      <point x="-204.0" y="927.703" />
+      <point x="42.999691645362645" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.routers.CliRouter" target="blaplafla.todolist.views.cli.DetailCli" relationship="CREATE">
+      <point x="60.0" y="1.575570122809495" />
+      <point x="-159.38498960229438" y="865.7999999999997" />
+      <point x="-159.38498960229438" y="801.4999999999999" />
+      <point x="-56.0" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.SaveFileCli" target="blaplafla.todolist.controllers.DictionaryController" relationship="TO_ONE">
+      <point x="-64.0" y="-1.1368683772161603E-13" />
+      <point x="-179.0" y="1005.5" />
+      <point x="-179.0" y="777.0" />
+      <point x="-793.624" y="777.0" />
+      <point x="-3.083546373545687E-4" y="15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.routers.CliRouter" target="blaplafla.todolist.views.cli.OpenFileCli" relationship="CREATE">
+      <point x="16.5" y="15.5" />
+      <point x="-568.3294729338729" y="1116.0" />
+      <point x="60.5" y="1116.0" />
+      <point x="60.5" y="965.0" />
+      <point x="67.5" y="10.499999999999886" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.UndoneCli" target="blaplafla.todolist.models.datastructures.SimpleArrayList" relationship="TO_ONE">
+      <point x="-64.5" y="9.5" />
+      <point x="-441.862" y="505.0" />
+      <point x="-441.862" y="633.781" />
+      <point x="-97.99977003162962" y="6.99993176134808" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DoneCli" target="blaplafla.todolist.models.datastructures.SimpleArrayList" relationship="TO_ONE">
+      <point x="-54.5" y="10.500000000000114" />
+      <point x="-270.362" y="710.0" />
+      <point x="-270.362" y="656.5" />
+      <point x="-446.362" y="656.5" />
+      <point x="-446.362" y="505.0" />
+      <point x="-441.862" y="505.0" />
+      <point x="-441.862" y="633.781" />
+      <point x="-97.99977003162962" y="6.99993176134808" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DoneCli" target="blaplafla.todolist.requests.RequestValidation" relationship="TO_ONE">
+      <point x="54.499987002868004" y="1.1368683772161603E-13" />
+      <point x="-4.0" y="699.5" />
+      <point x="-4.0" y="725.0" />
+      <point x="29.0" y="725.0" />
+      <point x="29.0" y="1038.5" />
+      <point x="-550.0" y="1038.5" />
+      <point x="-550.0" y="896.0" />
+      <point x="-700.124" y="896.0" />
+      <point x="-3.083546373545687E-4" y="15.49986352269616" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.CreateCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="58.999987002868004" y="-10.499999999999659" />
+      <point x="-21.0" y="842.0" />
+      <point x="-21.0" y="816.5" />
+      <point x="74.0" y="816.5" />
+      <point x="74.0" y="1084.5" />
+      <point x="-236.862" y="1084.5" />
+      <point x="-236.862" y="980.0" />
+      <point x="-204.0" y="980.0" />
+      <point x="-204.0" y="927.703" />
+      <point x="42.999691645362645" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.UndoneCli" target="blaplafla.todolist.requests.RequestValidation" relationship="TO_ONE">
+      <point x="64.499987002868" y="0.0" />
+      <point x="29.0" y="495.5" />
+      <point x="29.0" y="1038.5" />
+      <point x="-550.0" y="1038.5" />
+      <point x="-550.0" y="896.0" />
+      <point x="-700.124" y="896.0" />
+      <point x="-3.083546373545687E-4" y="15.49986352269616" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DoneSubCli" target="blaplafla.todolist.controllers.DictionaryController" relationship="TO_ONE">
+      <point x="-69.0" y="0.0" />
+      <point x="-179.0" y="546.5" />
+      <point x="-179.0" y="777.0" />
+      <point x="-793.624" y="777.0" />
+      <point x="-3.083546373545687E-4" y="15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.IndexCli" target="blaplafla.todolist.controllers.DictionaryController" relationship="TO_ONE">
+      <point x="-56.0" y="-1.1368683772161603E-13" />
+      <point x="-179.0" y="750.5" />
+      <point x="-179.0" y="777.0" />
+      <point x="-793.624" y="777.0" />
+      <point x="-3.083546373545687E-4" y="15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DetailCli" target="blaplafla.todolist.controllers.TaskController" relationship="TO_ONE">
+      <point x="-56.0" y="-10.499999999999886" />
+      <point x="-204.0" y="791.0" />
+      <point x="-204.0" y="857.0" />
+      <point x="-483.329" y="857.0" />
+      <point x="-483.329" y="633.781" />
+      <point x="-456.862" y="633.781" />
+      <point x="-456.862" y="524.0" />
+      <point x="-815.124" y="524.0" />
+      <point x="-3.083546373545687E-4" y="-15.499816474338331" />
+    </edge>
+    <edge source="blaplafla.todolist.routers.CliRouter" target="blaplafla.todolist.views.cli.IndexCli" relationship="CREATE">
+      <point x="-15.5" y="15.5" />
+      <point x="-600.3294729338729" y="1185.0" />
+      <point x="175.5" y="1185.0" />
+      <point x="175.5" y="628.5" />
+      <point x="-46.384987002868" y="628.5" />
+      <point x="55.0" y="-15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.routers.CliRouter" target="blaplafla.todolist.views.cli.SetLanguageCli" relationship="CREATE">
+      <point x="-25.0" y="15.5" />
+      <point x="-609.8294729338729" y="1194.5" />
+      <point x="185.0" y="1194.5" />
+      <point x="185.0" y="903.5000000000001" />
+      <point x="84.0" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.models.task.ListTask" target="blaplafla.todolist.models.datastructures.SimpleArrayList" relationship="TO_ONE">
+      <point x="4.72933872856629E-4" y="15.5" />
+      <point x="-619.829" y="505.0" />
+      <point x="-441.862" y="505.0" />
+      <point x="-441.862" y="633.781" />
+      <point x="-97.99977003162962" y="6.99993176134808" />
+    </edge>
+    <edge source="blaplafla.todolist.models.task.ListTask" target="blaplafla.todolist.models.datastructures.SimpleStack" relationship="TO_ONE">
+      <point x="15.000472933872857" y="-15.5" />
+      <point x="-604.829" y="372.5" />
+      <point x="-377.0" y="372.5" />
+      <point x="-62.892770031629595" y="-15.499754283525704" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.CreateCli" target="blaplafla.todolist.controllers.DictionaryController" relationship="TO_ONE">
+      <point x="-59.0" y="3.410605131648481E-13" />
+      <point x="-179.0" y="852.5" />
+      <point x="-179.0" y="777.0" />
+      <point x="-793.624" y="777.0" />
+      <point x="-3.083546373545687E-4" y="15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.UndoneSubCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="57.384987002868" y="15.5" />
+      <point x="-21.0" y="816.5" />
+      <point x="74.0" y="816.5" />
+      <point x="74.0" y="1084.5" />
+      <point x="-236.862" y="1084.5" />
+      <point x="-236.862" y="980.0" />
+      <point x="-204.0" y="980.0" />
+      <point x="-204.0" y="927.703" />
+      <point x="42.999691645362645" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DoneCli" target="blaplafla.todolist.controllers.DictionaryController" relationship="TO_ONE">
+      <point x="-54.5" y="1.1368683772161603E-13" />
+      <point x="-179.0" y="699.5" />
+      <point x="-179.0" y="777.0" />
+      <point x="-793.624" y="777.0" />
+      <point x="-3.083546373545687E-4" y="15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.routers.CliRouter" target="blaplafla.todolist.views.cli.UndoneSubCli" relationship="CREATE">
+      <point x="45.32947293387292" y="15.5" />
+      <point x="-539.5" y="891.5" />
+      <point x="-189.107" y="891.5" />
+      <point x="-189.107" y="608.0" />
+      <point x="-79.0" y="10.5" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DoneSubCli" target="blaplafla.todolist.models.task.Task" relationship="TO_MANY">
+      <point x="68.999987002868" y="10.5" />
+      <point x="7.0" y="557.0" />
+      <point x="7.0" y="429.5" />
+      <point x="125.0" y="429.5" />
+      <point x="125.0" y="351.5" />
+      <point x="-231.0" y="351.5" />
+      <point x="-231.0" y="444.5" />
+      <point x="42.49960320000645" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.models.task.ListTask" target="blaplafla.todolist.models.datastructures.SimpleArrayList" relationship="CREATE">
+      <point x="-14.999527066127143" y="15.5" />
+      <point x="-634.829" y="483.0" />
+      <point x="-899.124" y="483.0" />
+      <point x="-899.124" y="741.832" />
+      <point x="-497.829" y="741.832" />
+      <point x="-497.829" y="623.281" />
+      <point x="-97.99977003162962" y="-3.50006823865192" />
+    </edge>
+    <edge source="blaplafla.todolist.routers.CliRouter" target="blaplafla.todolist.views.cli.DoneSubCli" relationship="CREATE">
+      <point x="60.0" y="-5.0244298771903" />
+      <point x="-165.3849974005736" y="859.1999999999999" />
+      <point x="-165.3849974005736" y="546.5" />
+      <point x="-69.0" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.IndexCli" target="blaplafla.todolist.controllers.TaskController" relationship="TO_ONE">
+      <point x="-56.0" y="12.499999999999886" />
+      <point x="-204.0" y="763.0" />
+      <point x="-204.0" y="857.0" />
+      <point x="-483.329" y="857.0" />
+      <point x="-483.329" y="633.781" />
+      <point x="-456.862" y="633.781" />
+      <point x="-456.862" y="524.0" />
+      <point x="-815.124" y="524.0" />
+      <point x="-3.083546373545687E-4" y="-15.499816474338331" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DoneSubCli" target="blaplafla.todolist.controllers.TaskController" relationship="TO_ONE">
+      <point x="-69.0" y="10.5" />
+      <point x="-199.607" y="557.0" />
+      <point x="-199.607" y="524.0" />
+      <point x="-815.124" y="524.0" />
+      <point x="-3.083546373545687E-4" y="-15.499816474338331" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.UndoneSubCli" target="blaplafla.todolist.controllers.TaskController" relationship="TO_ONE">
+      <point x="74.384987002868" y="15.5" />
+      <point x="-4.0" y="638.0" />
+      <point x="89.0" y="638.0" />
+      <point x="89.0" y="387.5" />
+      <point x="-653.5" y="387.5" />
+      <point x="-653.5" y="407.0" />
+      <point x="-830.124" y="407.0" />
+      <point x="-830.124" y="524.0" />
+      <point x="-815.124" y="524.0" />
+      <point x="-3.083546373545687E-4" y="-15.499816474338331" />
+    </edge>
+    <edge source="blaplafla.todolist.models.task.MotherTask" target="blaplafla.todolist.models.datastructures.SimpleStack" relationship="CREATE">
+      <point x="44.69548791890054" y="15.5" />
+      <point x="-420.0" y="562.439" />
+      <point x="-84.49977003162962" y="2.457164742963869E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.routers.CliRouter" target="blaplafla.todolist.requests.TerminalInputValidation" relationship="CREATE">
+      <point x="60.0" y="6.775570122809427" />
+      <point x="-346.86239401750043" y="870.9999999999997" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DetailSubCli" target="blaplafla.todolist.models.task.Task" relationship="TO_ONE">
+      <point x="-70.5" y="-9.5" />
+      <point x="-231.0" y="435.0" />
+      <point x="-231.0" y="444.5" />
+      <point x="42.49960320000645" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.UndoneCli" target="blaplafla.todolist.models.task.Task" relationship="TO_MANY">
+      <point x="64.499987002868" y="0.0" />
+      <point x="7.0" y="495.5" />
+      <point x="7.0" y="429.5" />
+      <point x="125.0" y="429.5" />
+      <point x="125.0" y="351.5" />
+      <point x="-231.0" y="351.5" />
+      <point x="-231.0" y="444.5" />
+      <point x="42.49960320000645" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.CreateCli" target="blaplafla.todolist.controllers.TaskController" relationship="TO_ONE">
+      <point x="-59.0" y="-10.499999999999659" />
+      <point x="-204.0" y="842.0" />
+      <point x="-204.0" y="857.0" />
+      <point x="-483.329" y="857.0" />
+      <point x="-483.329" y="633.781" />
+      <point x="-456.862" y="633.781" />
+      <point x="-456.862" y="524.0" />
+      <point x="-815.124" y="524.0" />
+      <point x="-3.083546373545687E-4" y="-15.499816474338331" />
+    </edge>
+    <edge source="blaplafla.todolist.models.task.ListTask" target="blaplafla.todolist.models.task.MotherTask" relationship="TO_MANY">
+      <point x="4.72933872856629E-4" y="-15.5" />
+      <point x="-619.829" y="336.5" />
+      <point x="-362.0" y="336.5" />
+      <point x="-362.0" y="444.5" />
+      <point x="71.0" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.models.task.MotherTask" target="blaplafla.todolist.models.task.Task" relationship="GENERALIZATION">
+      <point x="-14.999512081099454" y="-15.5" />
+      <point x="-479.695" y="351.5" />
+      <point x="-289.43960320000645" y="351.5" />
+      <point x="0.0" y="-15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.controllers.MainController" target="blaplafla.todolist.controllers.TaskController" relationship="TO_ONE">
+      <point x="54.81729100772009" y="-15.499741348257203" />
+      <point x="-1037.5" y="524.0" />
+      <point x="-815.124" y="524.0" />
+      <point x="-3.083546373545687E-4" y="-15.499816474338331" />
+    </edge>
+    <edge source="blaplafla.todolist.routers.CliRouter" target="blaplafla.todolist.views.cli.UndoneCli" relationship="CREATE">
+      <point x="-10.5" y="15.5" />
+      <point x="-595.3294729338729" y="1180.0" />
+      <point x="170.5" y="1180.0" />
+      <point x="170.5" y="474.5" />
+      <point x="-82.385" y="474.5" />
+      <point x="10.499987002867996" y="-15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DoneCli" target="blaplafla.todolist.controllers.TaskController" relationship="TO_ONE">
+      <point x="-54.5" y="-10.499999999999886" />
+      <point x="-204.0" y="689.0" />
+      <point x="-204.0" y="857.0" />
+      <point x="-483.329" y="857.0" />
+      <point x="-483.329" y="633.781" />
+      <point x="-456.862" y="633.781" />
+      <point x="-456.862" y="524.0" />
+      <point x="-815.124" y="524.0" />
+      <point x="-3.083546373545687E-4" y="-15.499816474338331" />
+    </edge>
+    <edge source="blaplafla.todolist.models.task.MotherTask" target="blaplafla.todolist.models.datastructures.SimpleArrayList" relationship="CREATE">
+      <point x="-14.999512081099454" y="15.5" />
+      <point x="-479.695" y="483.0" />
+      <point x="-899.124" y="483.0" />
+      <point x="-899.124" y="741.832" />
+      <point x="-497.829" y="741.832" />
+      <point x="-497.829" y="623.281" />
+      <point x="-97.99977003162962" y="-3.50006823865192" />
+    </edge>
+    <edge source="blaplafla.todolist.controllers.MainController" target="blaplafla.todolist.routers.CliRouter" relationship="CREATE">
+      <point x="-29.99970899227992" y="15.5" />
+      <point x="-1122.317" y="1169.5" />
+      <point x="-639.8294729338729" y="1169.5" />
+      <point x="-55.0" y="15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.UndoneCli" target="blaplafla.todolist.controllers.TaskController" relationship="TO_ONE">
+      <point x="-64.5" y="-10.5" />
+      <point x="-189.607" y="485.0" />
+      <point x="-189.607" y="407.0" />
+      <point x="-830.124" y="407.0" />
+      <point x="-830.124" y="524.0" />
+      <point x="-815.124" y="524.0" />
+      <point x="-3.083546373545687E-4" y="-15.499816474338331" />
+    </edge>
+    <edge source="blaplafla.todolist.routers.Router" target="blaplafla.todolist.views.View" relationship="TO_ONE">
+      <point x="51.0" y="0.0" />
+      <point x="-751.1236916453627" y="864.2244298771902" />
+      <point x="0.0" y="-15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.UndoneCli" target="blaplafla.todolist.controllers.DictionaryController" relationship="TO_ONE">
+      <point x="-64.5" y="0.0" />
+      <point x="-179.0" y="495.5" />
+      <point x="-179.0" y="777.0" />
+      <point x="-793.624" y="777.0" />
+      <point x="-3.083546373545687E-4" y="15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.IndexCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="55.999987002868004" y="-10.500000000000114" />
+      <point x="-21.0" y="740.0" />
+      <point x="-21.0" y="816.5" />
+      <point x="74.0" y="816.5" />
+      <point x="74.0" y="1084.5" />
+      <point x="-236.862" y="1084.5" />
+      <point x="-236.862" y="980.0" />
+      <point x="-204.0" y="980.0" />
+      <point x="-204.0" y="927.703" />
+      <point x="42.999691645362645" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.routers.CliRouter" target="blaplafla.todolist.views.cli.DetailSubCli" relationship="CREATE">
+      <point x="0.0" y="15.5" />
+      <point x="-584.8294729338729" y="1099.5" />
+      <point x="160.0" y="1099.5" />
+      <point x="160.0" y="312.0" />
+      <point x="-71.885" y="312.0" />
+      <point x="14.999987002867996" y="-15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DetailSubCli" target="blaplafla.todolist.controllers.TaskController" relationship="TO_ONE">
+      <point x="-22.615012997132" y="-15.5" />
+      <point x="-109.5" y="407.0" />
+      <point x="-830.124" y="407.0" />
+      <point x="-830.124" y="524.0" />
+      <point x="-815.124" y="524.0" />
+      <point x="-3.083546373545687E-4" y="-15.499816474338331" />
+    </edge>
+    <edge source="blaplafla.todolist.controllers.MainController" target="blaplafla.todolist.models.task.ListTask" relationship="CREATE">
+      <point x="-82.5" y="0.0" />
+      <point x="-1199.4194279914248" y="784.3007413482572" />
+      <point x="-1199.4194279914248" y="372.5" />
+      <point x="-634.829" y="372.5" />
+      <point x="-14.999527066127143" y="-15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.SaveFileCli" target="blaplafla.todolist.requests.RequestValidation" relationship="TO_ONE">
+      <point x="63.999987002868" y="-1.1368683772161603E-13" />
+      <point x="29.0" y="1005.5" />
+      <point x="29.0" y="1038.5" />
+      <point x="-550.0" y="1038.5" />
+      <point x="-550.0" y="896.0" />
+      <point x="-700.124" y="896.0" />
+      <point x="-3.083546373545687E-4" y="15.49986352269616" />
+    </edge>
+    <edge source="blaplafla.todolist.routers.CliRouter" target="blaplafla.todolist.views.cli.CreateCli" relationship="CREATE">
+      <point x="10.5" y="15.5" />
+      <point x="-574.3294729338729" y="1110.0" />
+      <point x="39.5" y="1110.0" />
+      <point x="39.5" y="863.0" />
+      <point x="59.0" y="10.500000000000341" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DetailSubCli" target="blaplafla.todolist.controllers.DictionaryController" relationship="TO_ONE">
+      <point x="-70.5" y="0.0" />
+      <point x="-179.0" y="444.5" />
+      <point x="-179.0" y="777.0" />
+      <point x="-793.624" y="777.0" />
+      <point x="-3.083546373545687E-4" y="15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.controllers.MainController" target="blaplafla.todolist.controllers.FileController" relationship="TO_ONE">
+      <point x="2.910077200795058E-4" y="15.5" />
+      <point x="-1092.317" y="1022.0" />
+      <point x="-820.124" y="1022.0" />
+      <point x="-3.083546373545687E-4" y="15.499541411894938" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.UndoneSubCli" target="blaplafla.todolist.requests.RequestValidation" relationship="TO_ONE">
+      <point x="78.999987002868" y="0.0" />
+      <point x="29.0" y="597.5" />
+      <point x="29.0" y="1038.5" />
+      <point x="-550.0" y="1038.5" />
+      <point x="-550.0" y="896.0" />
+      <point x="-700.124" y="896.0" />
+      <point x="-3.083546373545687E-4" y="15.49986352269616" />
+    </edge>
+    <edge source="blaplafla.todolist.models.datastructures.SimpleStack" target="blaplafla.todolist.models.datastructures.SimpleStructure" relationship="REALIZATION">
+      <point x="2.2996837037680962E-4" y="15.5" />
+      <point x="-314.107" y="605.5" />
+      <point x="-502.329" y="605.5" />
+      <point x="73.5004729338728" y="15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.SaveFileCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="-1.2997132003533807E-5" y="15.499999999999886" />
+      <point x="-93.385" y="1069.5" />
+      <point x="-204.0" y="1069.5" />
+      <point x="-204.0" y="927.703" />
+      <point x="42.999691645362645" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.IndexCli" target="blaplafla.todolist.models.task.ListTask" relationship="TO_ONE">
+      <point x="-56.0" y="-10.500000000000114" />
+      <point x="-294.362" y="740.0" />
+      <point x="-294.362" y="714.101" />
+      <point x="-232.0" y="714.101" />
+      <point x="-232.0" y="595.0" />
+      <point x="-687.829" y="595.0" />
+      <point x="-687.829" y="444.5" />
+      <point x="-55.99952706612714" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.routers.CliRouter" target="blaplafla.todolist.views.cli.SaveFileCli" relationship="CREATE">
+      <point x="-40.0" y="15.5" />
+      <point x="-624.8294729338729" y="1154.5" />
+      <point x="-108.385" y="1154.5" />
+      <point x="-15.000012997132004" y="15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.UndoneCli" target="blaplafla.todolist.models.task.ListTask" relationship="TO_ONE">
+      <point x="-1.2997132003533807E-5" y="-15.5" />
+      <point x="-92.885" y="470.0" />
+      <point x="-222.0" y="470.0" />
+      <point x="-222.0" y="595.0" />
+      <point x="-687.829" y="595.0" />
+      <point x="-687.829" y="444.5" />
+      <point x="-55.99952706612714" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.EditCli" target="blaplafla.todolist.requests.RequestValidation" relationship="TO_ONE">
+      <point x="48.49998700286801" y="1.1368683772161603E-13" />
+      <point x="-4.0" y="648.5" />
+      <point x="-4.0" y="725.0" />
+      <point x="29.0" y="725.0" />
+      <point x="29.0" y="1038.5" />
+      <point x="-550.0" y="1038.5" />
+      <point x="-550.0" y="896.0" />
+      <point x="-700.124" y="896.0" />
+      <point x="-3.083546373545687E-4" y="15.49986352269616" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.UndoneSubCli" target="blaplafla.todolist.models.datastructures.SimpleArrayList" relationship="TO_ONE">
+      <point x="-79.0" y="-12.991999999999962" />
+      <point x="-216.607" y="584.508" />
+      <point x="-216.607" y="505.0" />
+      <point x="-441.862" y="505.0" />
+      <point x="-441.862" y="633.781" />
+      <point x="-97.99977003162962" y="6.99993176134808" />
+    </edge>
+    <edge source="blaplafla.todolist.routers.CliRouter" target="blaplafla.todolist.routers.Router" relationship="GENERALIZATION">
+      <point x="-60.0" y="-9.5" />
+      <point x="51.0" y="-9.5" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.UndoneSubCli" target="blaplafla.todolist.controllers.DictionaryController" relationship="TO_ONE">
+      <point x="-79.0" y="0.0" />
+      <point x="-179.0" y="597.5" />
+      <point x="-179.0" y="777.0" />
+      <point x="-793.624" y="777.0" />
+      <point x="-3.083546373545687E-4" y="15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.controllers.MainController" target="blaplafla.todolist.controllers.DictionaryController" relationship="CREATE">
+      <point x="69.81729100772009" y="-15.5" />
+      <point x="-1022.5" y="706.332" />
+      <point x="-102.5" y="-6.9995920803579565" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DoneCli" target="blaplafla.todolist.models.task.Task" relationship="TO_MANY">
+      <point x="54.499987002868004" y="10.500000000000114" />
+      <point x="110.0" y="710.0" />
+      <point x="110.0" y="429.5" />
+      <point x="125.0" y="429.5" />
+      <point x="125.0" y="351.5" />
+      <point x="-231.0" y="351.5" />
+      <point x="-231.0" y="444.5" />
+      <point x="42.49960320000645" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.requests.TerminalInputValidation" target="blaplafla.todolist.requests.RequestValidation" relationship="GENERALIZATION">
+      <point x="-117.5" y="0.0" />
+      <point x="94.0" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DetailCli" target="blaplafla.todolist.requests.RequestValidation" relationship="TO_ONE">
+      <point x="55.999987002868004" y="1.1368683772161603E-13" />
+      <point x="-4.0" y="801.5" />
+      <point x="-4.0" y="725.0" />
+      <point x="29.0" y="725.0" />
+      <point x="29.0" y="1038.5" />
+      <point x="-550.0" y="1038.5" />
+      <point x="-550.0" y="896.0" />
+      <point x="-700.124" y="896.0" />
+      <point x="-3.083546373545687E-4" y="15.49986352269616" />
+    </edge>
+    <edge source="blaplafla.todolist.models.datastructures.SimpleArrayList" target="blaplafla.todolist.models.datastructures.SimpleStructure" relationship="REALIZATION">
+      <point x="2.2996837037680962E-4" y="15.49993176134808" />
+      <point x="-300.607" y="652.281" />
+      <point x="-477.0" y="652.281" />
+      <point x="-477.0" y="605.5" />
+      <point x="-502.329" y="605.5" />
+      <point x="73.5004729338728" y="15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.routers.CliRouter" target="blaplafla.todolist.views.cli.EditCli" relationship="CREATE">
+      <point x="60.0" y="-2.8244298771903686" />
+      <point x="-163.3849948011472" y="861.3999999999999" />
+      <point x="-163.3849948011472" y="648.4999999999999" />
+      <point x="-48.5" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DoneCli" target="blaplafla.todolist.models.task.ListTask" relationship="TO_ONE">
+      <point x="44.499987002868004" y="-15.499999999999886" />
+      <point x="-58.385" y="670.5" />
+      <point x="145.0" y="670.5" />
+      <point x="145.0" y="327.0" />
+      <point x="-687.829" y="327.0" />
+      <point x="-687.829" y="444.5" />
+      <point x="-55.99952706612714" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.EditCli" target="blaplafla.todolist.controllers.DictionaryController" relationship="TO_ONE">
+      <point x="-48.5" y="1.1368683772161603E-13" />
+      <point x="-179.0" y="648.5" />
+      <point x="-179.0" y="777.0" />
+      <point x="-793.624" y="777.0" />
+      <point x="-3.083546373545687E-4" y="15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.OpenFileCli" target="blaplafla.todolist.controllers.DictionaryController" relationship="TO_ONE">
+      <point x="-67.5" y="-1.1368683772161603E-13" />
+      <point x="-179.0" y="954.5" />
+      <point x="-179.0" y="777.0" />
+      <point x="-793.624" y="777.0" />
+      <point x="-3.083546373545687E-4" y="15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DetailCli" target="blaplafla.todolist.controllers.DictionaryController" relationship="TO_ONE">
+      <point x="-56.0" y="1.1368683772161603E-13" />
+      <point x="-179.0" y="801.5" />
+      <point x="-179.0" y="777.0" />
+      <point x="-793.624" y="777.0" />
+      <point x="-3.083546373545687E-4" y="15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.OpenFileCli" target="blaplafla.todolist.controllers.FileController" relationship="TO_ONE">
+      <point x="-67.5" y="-10.500000000000114" />
+      <point x="-220.0" y="944.0" />
+      <point x="-220.0" y="1022.0" />
+      <point x="-820.124" y="1022.0" />
+      <point x="-3.083546373545687E-4" y="15.499541411894938" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.UndoneSubCli" target="blaplafla.todolist.models.task.Task" relationship="TO_MANY">
+      <point x="78.999987002868" y="-10.5" />
+      <point x="13.615" y="587.0" />
+      <point x="13.615" y="580.008" />
+      <point x="7.0" y="580.008" />
+      <point x="7.0" y="429.5" />
+      <point x="125.0" y="429.5" />
+      <point x="125.0" y="351.5" />
+      <point x="-231.0" y="351.5" />
+      <point x="-231.0" y="444.5" />
+      <point x="42.49960320000645" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DetailCli" target="blaplafla.todolist.models.task.MotherTask" relationship="TO_ONE">
+      <point x="55.999987002868004" y="10.500000000000114" />
+      <point x="-32.385" y="812.0" />
+      <point x="-32.385" y="779.0" />
+      <point x="135.5" y="779.0" />
+      <point x="135.5" y="341.0" />
+      <point x="-362.0" y="341.0" />
+      <point x="-362.0" y="444.5" />
+      <point x="71.0" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.IndexCli" target="blaplafla.todolist.controllers.FileController" relationship="TO_ONE">
+      <point x="55.999987002868004" y="10.499999999999886" />
+      <point x="-32.385" y="761.0" />
+      <point x="-32.385" y="660.0" />
+      <point x="50.0" y="660.0" />
+      <point x="50.0" y="1049.0" />
+      <point x="-220.0" y="1049.0" />
+      <point x="-220.0" y="1022.0" />
+      <point x="-820.124" y="1022.0" />
+      <point x="-3.083546373545687E-4" y="15.499541411894938" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DoneSubCli" target="blaplafla.todolist.models.task.MotherTask" relationship="TO_ONE">
+      <point x="-69.0" y="-15.5" />
+      <point x="-362.0" y="531.0" />
+      <point x="-362.0" y="444.5" />
+      <point x="71.0" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DoneSubCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="67.499987002868" y="-15.5" />
+      <point x="-20.885" y="513.5" />
+      <point x="59.0" y="513.5" />
+      <point x="59.0" y="765.5" />
+      <point x="-21.0" y="765.5" />
+      <point x="-21.0" y="816.5" />
+      <point x="74.0" y="816.5" />
+      <point x="74.0" y="1084.5" />
+      <point x="-236.862" y="1084.5" />
+      <point x="-236.862" y="980.0" />
+      <point x="-204.0" y="980.0" />
+      <point x="-204.0" y="927.703" />
+      <point x="42.999691645362645" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.SetLanguageCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="-84.0" y="-1.1368683772161603E-13" />
+      <point x="-204.0" y="903.5" />
+      <point x="-204.0" y="927.703" />
+      <point x="42.999691645362645" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.controllers.MainController" target="blaplafla.todolist.controllers.FileController" relationship="CREATE">
+      <point x="-14.99970899227992" y="15.5" />
+      <point x="-1107.317" y="976.939458588105" />
+      <point x="-76.0" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.models.dictionary.English" target="blaplafla.todolist.models.dictionary.Dictionary" relationship="GENERALIZATION">
+      <point x="3.9401750041179184E-4" y="15.499952316587951" />
+      <point x="-411.862" y="712.0" />
+      <point x="64.0" y="-1.3315920803579502" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.EditCli" target="blaplafla.todolist.controllers.TaskController" relationship="TO_ONE">
+      <point x="-48.5" y="12.500000000000114" />
+      <point x="-204.0" y="661.0" />
+      <point x="-204.0" y="857.0" />
+      <point x="-483.329" y="857.0" />
+      <point x="-483.329" y="633.781" />
+      <point x="-456.862" y="633.781" />
+      <point x="-456.862" y="524.0" />
+      <point x="-815.124" y="524.0" />
+      <point x="-3.083546373545687E-4" y="-15.499816474338331" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.UndoneSubCli" target="blaplafla.todolist.models.task.MotherTask" relationship="TO_ONE">
+      <point x="-79.0" y="0.0" />
+      <point x="-167.385" y="597.5" />
+      <point x="-167.385" y="531.0" />
+      <point x="-362.0" y="531.0" />
+      <point x="-362.0" y="444.5" />
+      <point x="71.0" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.CreateCli" target="blaplafla.todolist.requests.RequestValidation" relationship="TO_ONE">
+      <point x="58.999987002868004" y="3.410605131648481E-13" />
+      <point x="-4.0" y="852.5" />
+      <point x="-4.0" y="725.0" />
+      <point x="29.0" y="725.0" />
+      <point x="29.0" y="1038.5" />
+      <point x="-550.0" y="1038.5" />
+      <point x="-550.0" y="896.0" />
+      <point x="-700.124" y="896.0" />
+      <point x="-3.083546373545687E-4" y="15.49986352269616" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.OpenFileCli" target="blaplafla.todolist.requests.RequestValidation" relationship="TO_ONE">
+      <point x="67.499987002868" y="-1.1368683772161603E-13" />
+      <point x="29.0" y="954.5" />
+      <point x="29.0" y="1038.5" />
+      <point x="-550.0" y="1038.5" />
+      <point x="-550.0" y="896.0" />
+      <point x="-700.124" y="896.0" />
+      <point x="-3.083546373545687E-4" y="15.49986352269616" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DetailSubCli" target="blaplafla.todolist.requests.RequestValidation" relationship="TO_ONE">
+      <point x="70.499987002868" y="0.0" />
+      <point x="29.0" y="444.5" />
+      <point x="29.0" y="1038.5" />
+      <point x="-550.0" y="1038.5" />
+      <point x="-550.0" y="896.0" />
+      <point x="-700.124" y="896.0" />
+      <point x="-3.083546373545687E-4" y="15.49986352269616" />
+    </edge>
+    <edge source="blaplafla.todolist.models.dictionary.Vietnamese" target="blaplafla.todolist.models.dictionary.Dictionary" relationship="GENERALIZATION">
+      <point x="3.9401750041179184E-4" y="-15.499592080357957" />
+      <point x="-394.862" y="712.0" />
+      <point x="64.0" y="-1.3315920803579502" />
+    </edge>
+    <edge source="blaplafla.todolist.controllers.MainController" target="blaplafla.todolist.models.task.ListTask" relationship="TO_ONE">
+      <point x="-14.99970899227992" y="-15.499741348257203" />
+      <point x="-1107.317" y="633.781" />
+      <point x="-698.624" y="633.781" />
+      <point x="-698.624" y="595.0" />
+      <point x="-687.829" y="595.0" />
+      <point x="-687.829" y="444.5" />
+      <point x="-55.99952706612714" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.models.datastructures.SimpleArrayList" target="blaplafla.todolist.models.algorithms.MergeSort" relationship="CREATE">
+      <point x="0.0" y="15.5" />
+      <point x="-300.6072299683704" y="652.2810682386519" />
+      <point x="-596.3294729338728" y="652.2810682386519" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.controllers.MainController" target="blaplafla.todolist.controllers.TaskController" relationship="CREATE">
+      <point x="-29.99970899227992" y="-15.5" />
+      <point x="-1122.317" y="572.0078164743384" />
+      <point x="-81.0" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.controllers.DictionaryController" target="blaplafla.todolist.models.dictionary.Dictionary" relationship="TO_ONE">
+      <point x="102.5" y="0.0" />
+      <point x="-64.0" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DetailCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="55.999987002868004" y="-10.499999999999886" />
+      <point x="-21.0" y="791.0" />
+      <point x="-21.0" y="816.5" />
+      <point x="74.0" y="816.5" />
+      <point x="74.0" y="1084.5" />
+      <point x="-236.862" y="1084.5" />
+      <point x="-236.862" y="980.0" />
+      <point x="-204.0" y="980.0" />
+      <point x="-204.0" y="927.703" />
+      <point x="42.999691645362645" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.controllers.MainController" target="blaplafla.todolist.routers.Router" relationship="TO_ONE">
+      <point x="15.00029100772008" y="15.5" />
+      <point x="-1077.317" y="864.2244298771902" />
+      <point x="-51.0" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DetailSubCli" target="blaplafla.todolist.models.task.MotherTask" relationship="TO_ONE">
+      <point x="-70.5" y="9.5" />
+      <point x="-217.5" y="454.0" />
+      <point x="-217.5" y="464.5" />
+      <point x="-362.0" y="464.5" />
+      <point x="-362.0" y="444.5" />
+      <point x="71.0" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.OpenFileCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="-67.5" y="10.499999999999886" />
+      <point x="-204.0" y="965.0" />
+      <point x="-204.0" y="927.703" />
+      <point x="42.999691645362645" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.requests.RequestValidation" target="blaplafla.todolist.controllers.DictionaryController" relationship="TO_ONE">
+      <point x="-3.083546373545687E-4" y="-15.5" />
+      <point x="-700.124" y="777.0" />
+      <point x="-793.624" y="777.0" />
+      <point x="-3.083546373545687E-4" y="15.5" />
+    </edge>
+    <edge source="blaplafla.todolist.models.task.MotherTask" target="blaplafla.todolist.models.task.Task" relationship="TO_MANY">
+      <point x="22.833487918900516" y="15.5" />
+      <point x="-441.862" y="477.5" />
+      <point x="-231.0" y="477.5" />
+      <point x="-231.0" y="444.5" />
+      <point x="42.49960320000645" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.EditCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="48.49998700286801" y="-10.499999999999886" />
+      <point x="-21.0" y="638.0" />
+      <point x="-21.0" y="816.5" />
+      <point x="74.0" y="816.5" />
+      <point x="74.0" y="1084.5" />
+      <point x="-236.862" y="1084.5" />
+      <point x="-236.862" y="980.0" />
+      <point x="-204.0" y="980.0" />
+      <point x="-204.0" y="927.703" />
+      <point x="42.999691645362645" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.controllers.TaskController" target="blaplafla.todolist.models.datastructures.SimpleArrayList" relationship="CREATE">
+      <point x="14.999691645362645" y="-15.499816474338331" />
+      <point x="-800.124" y="483.0" />
+      <point x="-899.124" y="483.0" />
+      <point x="-899.124" y="741.832" />
+      <point x="-497.829" y="741.832" />
+      <point x="-497.829" y="623.281" />
+      <point x="-97.99977003162962" y="-3.50006823865192" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.929125138427464" showDependencies="true" x="-497.4999999999998" y="763.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

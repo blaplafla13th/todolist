@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/home/phambathang/Desktop/todolist/src/main/java/blaplafla/todolist</OriginalElement>
+  <nodes>
+    <node x="-794.1236916453627" y="912.2033428381174">blaplafla.todolist.views.View</node>
+    <node x="-157.384987002868" y="990.0000000000001">blaplafla.todolist.views.cli.SaveFileCli</node>
+    <node x="-464.36239401750043" y="664.101047683412">blaplafla.todolist.models.dictionary.English</node>
+    <node x="-157.384987002868" y="785.9999999999999">blaplafla.todolist.views.cli.DetailCli</node>
+    <node x="-157.384987002868" y="735.0000000000001">blaplafla.todolist.views.cli.IndexCli</node>
+    <node x="-331.93960320000645" y="429.0">blaplafla.todolist.models.task.Task</node>
+    <node x="-464.36239401750043" y="793.5621364773039">blaplafla.todolist.requests.TerminalInputValidation</node>
+    <node x="-157.384987002868" y="480.0">blaplafla.todolist.views.cli.UndoneCli</node>
+    <node x="-1181.9194279914248" y="501.4775992317286">blaplafla.todolist.CliStarter</node>
+    <node x="-157.384987002868" y="683.9999999999999">blaplafla.todolist.views.cli.DoneCli</node>
+    <node x="-464.36239401750043" y="728.831592080358">blaplafla.todolist.models.dictionary.Vietnamese</node>
+    <node x="-157.384987002868" y="836.9999999999997">blaplafla.todolist.views.cli.CreateCli</node>
+    <node x="-157.384987002868" y="632.9999999999999">blaplafla.todolist.views.cli.EditCli</node>
+    <node x="-675.8294729338728" y="611.2810682386519">blaplafla.todolist.models.algorithms.MergeSort</node>
+    <node x="-535.6954879189005" y="429.0">blaplafla.todolist.models.task.MotherTask</node>
+    <node x="-675.8294729338728" y="546.9387542835257">blaplafla.todolist.models.datastructures.SimpleStructure</node>
+    <node x="-896.1236916453627" y="697.831592080358">blaplafla.todolist.controllers.DictionaryController</node>
+    <node x="-675.8294729338728" y="429.0">blaplafla.todolist.models.task.ListTask</node>
+    <node x="-157.384987002868" y="939.0000000000001">blaplafla.todolist.views.cli.OpenFileCli</node>
+    <node x="-398.6072299683704" y="546.9387542835257">blaplafla.todolist.models.datastructures.SimpleStack</node>
+    <node x="-1174.81729100772" y="768.8007413482572">blaplafla.todolist.controllers.MainController</node>
+    <node x="-398.6072299683704" y="611.2810682386519">blaplafla.todolist.models.datastructures.SimpleArrayList</node>
+    <node x="-794.1236916453627" y="793.5621364773039">blaplafla.todolist.requests.RequestValidation</node>
+    <node x="-896.1236916453627" y="556.5078164743384">blaplafla.todolist.controllers.TaskController</node>
+    <node x="-157.384987002868" y="531.0">blaplafla.todolist.views.cli.DoneSubCli</node>
+    <node x="-644.8294729338729" y="848.7244298771902">blaplafla.todolist.routers.CliRouter</node>
+    <node x="-896.1236916453627" y="848.7244298771902">blaplafla.todolist.routers.Router</node>
+    <node x="-157.384987002868" y="888.0000000000001">blaplafla.todolist.views.cli.SetLanguageCli</node>
+    <node x="-644.8294729338729" y="697.831592080358">blaplafla.todolist.models.dictionary.Dictionary</node>
+    <node x="-157.384987002868" y="429.0">blaplafla.todolist.views.cli.DetailSubCli</node>
+    <node x="-157.384987002868" y="582.0">blaplafla.todolist.views.cli.UndoneSubCli</node>
+    <node x="-896.1236916453627" y="961.439458588105">blaplafla.todolist.controllers.FileController</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="blaplafla.todolist.requests.TerminalInputValidation" target="blaplafla.todolist.requests.RequestValidation" relationship="GENERALIZATION">
+      <point x="-117.5" y="0.0" />
+      <point x="94.0" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.models.datastructures.SimpleArrayList" target="blaplafla.todolist.models.datastructures.SimpleStructure" relationship="REALIZATION">
+      <point x="2.2996837037680962E-4" y="-15.50006823865192" />
+      <point x="-300.607" y="595.0" />
+      <point x="-575.829" y="595.0" />
+      <point x="4.72933872856629E-4" y="15.500245716474296" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.UndoneSubCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="-79.00001299713199" y="0.0" />
+      <point x="-176.0" y="597.5" />
+      <point x="-176.0" y="927.703" />
+      <point x="43.00023524219034" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.UndoneCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="-64.50001299713199" y="0.0" />
+      <point x="-176.0" y="495.5" />
+      <point x="-176.0" y="927.703" />
+      <point x="43.00023524219034" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DoneSubCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="-69.00001299713199" y="0.0" />
+      <point x="-176.0" y="546.5" />
+      <point x="-176.0" y="927.703" />
+      <point x="43.00023524219034" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.SetLanguageCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="-84.00001299713199" y="-1.1368683772161603E-13" />
+      <point x="-176.0" y="903.5" />
+      <point x="-176.0" y="927.703" />
+      <point x="43.00023524219034" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.models.dictionary.English" target="blaplafla.todolist.models.dictionary.Dictionary" relationship="GENERALIZATION">
+      <point x="3.9401750041179184E-4" y="15.499952316587951" />
+      <point x="-411.862" y="712.0" />
+      <point x="-481.862" y="712.0" />
+      <point x="-481.862" y="746.332" />
+      <point x="-580.829" y="746.332" />
+      <point x="4.7293387297031586E-4" y="15.500407919642043" />
+    </edge>
+    <edge source="blaplafla.todolist.models.datastructures.SimpleStack" target="blaplafla.todolist.models.datastructures.SimpleStructure" relationship="REALIZATION">
+      <point x="2.2996837037680962E-4" y="15.500245716474296" />
+      <point x="-314.107" y="595.0" />
+      <point x="-575.829" y="595.0" />
+      <point x="4.72933872856629E-4" y="15.500245716474296" />
+    </edge>
+    <edge source="blaplafla.todolist.models.task.MotherTask" target="blaplafla.todolist.models.task.Task" relationship="GENERALIZATION">
+      <point x="71.0" y="0.0" />
+      <point x="-42.5" y="0.0" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.SaveFileCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="-64.00001299713199" y="-1.1368683772161603E-13" />
+      <point x="-176.0" y="1005.5" />
+      <point x="-176.0" y="927.703" />
+      <point x="43.00023524219034" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DetailCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="-56.00001299713199" y="1.1368683772161603E-13" />
+      <point x="-176.0" y="801.5" />
+      <point x="-176.0" y="927.703" />
+      <point x="43.00023524219034" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.CreateCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="-59.00001299713199" y="3.410605131648481E-13" />
+      <point x="-176.0" y="852.5" />
+      <point x="-176.0" y="927.703" />
+      <point x="43.00023524219034" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DetailSubCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="-70.50001299713199" y="0.0" />
+      <point x="-176.0" y="444.5" />
+      <point x="-176.0" y="927.703" />
+      <point x="43.00023524219034" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.OpenFileCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="-67.50001299713199" y="-1.1368683772161603E-13" />
+      <point x="-176.0" y="954.5" />
+      <point x="-176.0" y="927.703" />
+      <point x="43.00023524219034" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.models.dictionary.Vietnamese" target="blaplafla.todolist.models.dictionary.Dictionary" relationship="GENERALIZATION">
+      <point x="3.9401750041179184E-4" y="-15.499592080357957" />
+      <point x="-394.862" y="712.0" />
+      <point x="-481.862" y="712.0" />
+      <point x="-481.862" y="746.332" />
+      <point x="-580.829" y="746.332" />
+      <point x="4.7293387297031586E-4" y="15.500407919642043" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.EditCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="-48.50001299713199" y="1.1368683772161603E-13" />
+      <point x="-176.0" y="648.5" />
+      <point x="-176.0" y="927.703" />
+      <point x="43.00023524219034" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.IndexCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="-56.00001299713199" y="-1.1368683772161603E-13" />
+      <point x="-176.0" y="750.5" />
+      <point x="-176.0" y="927.703" />
+      <point x="43.00023524219034" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.views.cli.DoneCli" target="blaplafla.todolist.views.View" relationship="REALIZATION">
+      <point x="-54.50001299713199" y="1.1368683772161603E-13" />
+      <point x="-176.0" y="699.5" />
+      <point x="-176.0" y="927.703" />
+      <point x="43.00023524219034" y="-3.428381173762318E-4" />
+    </edge>
+    <edge source="blaplafla.todolist.routers.CliRouter" target="blaplafla.todolist.routers.Router" relationship="GENERALIZATION">
+      <point x="-60.0" y="0.0" />
+      <point x="51.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.9767171129220024" showDependencies="false" x="-526.5000000000001" y="733.6191895113229" />
+  <SelectedNodes>
+    <node>blaplafla.todolist.models.datastructures.SimpleStructure</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
