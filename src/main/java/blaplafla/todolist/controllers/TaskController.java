@@ -100,7 +100,7 @@ public class TaskController {
     }
 
     public int paginateSize(SimpleStructure tasks, int numPerPage) {
-        return tasks.size() / numPerPage + 1;
+        return tasks.size() % numPerPage != 0 ? tasks.size()/numPerPage+1 : tasks.size()/numPerPage;
     }
 
     public SimpleArrayList<Task> paginate(SimpleStructure tasks, int numPerPage, int page) {

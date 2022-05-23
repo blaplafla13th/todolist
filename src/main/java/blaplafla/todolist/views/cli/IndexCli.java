@@ -18,6 +18,9 @@ public class IndexCli implements View {
 
     @Override
     public void run() {
+        listTask = MainController.getInstance().listTask();
+        page = 1;
+        max_page = t.paginateSize(listTask.getUndone(), 3);
         while (true) {
             if (page > max_page) {
                 page = 1;
