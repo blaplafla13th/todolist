@@ -88,6 +88,10 @@ public class English extends Dictionary {
             case "edit-task" -> "Edit task";
             case "subtask-remaining" -> "Subtasks Remaining";
             case "undone-sub-list" -> "List undone subtasks";
+            case "tasks" ->"Tasks";
+            case "subtasks" ->"SubTasks";
+            case "refresh" -> "Refresh";
+            case "old-value" -> "Old Value: ";
             default -> "Unknown";
         };
     }
