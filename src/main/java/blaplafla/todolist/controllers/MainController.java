@@ -3,6 +3,7 @@ package blaplafla.todolist.controllers;
 import blaplafla.todolist.models.task.ListTask;
 import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.routers.CliRouter;
+import blaplafla.todolist.routers.GuiRouter;
 import blaplafla.todolist.routers.Router;
 import blaplafla.todolist.views.View;
 
@@ -29,6 +30,9 @@ public class MainController {
 
     public void setModeCli() {
         route = new CliRouter();
+        route.setupView();
+    }public void setModeGui() {
+        route = new GuiRouter();
         route.setupView();
     }
 
