@@ -7,6 +7,6 @@ public abstract class Dictionary {
 
     abstract public String label(String label);
 
-    abstract public String getInfo();
+    abstract public String toString();
 
 }

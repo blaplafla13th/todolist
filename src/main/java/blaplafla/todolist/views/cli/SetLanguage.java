@@ -20,7 +20,7 @@ public class SetLanguage implements View {
         }
         int i=1;
         for (Dictionary dic: d.getLanglist()             ) {
-            System.out.println(i++ + ". " + dic.getInfo());
+            System.out.println(i++ + ". " + dic);
         }
         System.out.println(d.label("input-num-option"));
         code = d.setDictionary(r.inputInteger(r.input())-1);

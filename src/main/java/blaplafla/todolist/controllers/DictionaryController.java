@@ -39,7 +39,7 @@ public class DictionaryController {
                 if (obj instanceof Dictionary dictionary) {
                     boolean inserted = false;
                     for (Dictionary dict : this.langlist) {
-                        if (dict.getInfo().equals(dictionary.getInfo()))
+                        if (dict.toString().equals(dictionary.toString()))
                             inserted = true;
                     }
                     if (!inserted)
@@ -59,7 +59,7 @@ public class DictionaryController {
     }
 
     public String getDictionary() {
-        return dictionary.getInfo();
+        return dictionary.toString();
     }
 
     public int setDictionary(int i) {
