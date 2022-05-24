@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane fx:id="ap" prefHeight="700.0" prefWidth="600.0" style="-fx-background-color: white;"
+            xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="blaplafla.todolist.views.gui.IndexGui">
+    <children>
+        <MenuBar layoutX="14.0" layoutY="14.0">
+            <menus>
+                <Menu fx:id="file" mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="openfile" mnemonicParsing="false" onAction="#openFile" text="Open file"/>
+                        <MenuItem fx:id="savefile" mnemonicParsing="false" onAction="#saveFile" text="Save file"/>
+                        <MenuItem fx:id="username" mnemonicParsing="false" onAction="#setUsername" text="Username"/>
+                        <MenuItem fx:id="language" mnemonicParsing="false" onAction="#setLanguage" text="Language"/>
+                    </items>
+                </Menu>
+                <Menu fx:id="task" mnemonicParsing="false" text="ListTask">
+                    <items>
+                        <MenuItem fx:id="undonelist" mnemonicParsing="false" onAction="#undoneList" text="Undone List"/>
+                        <MenuItem fx:id="donelist" mnemonicParsing="false" onAction="#doneList" text="Done List"/>
+                        <MenuItem fx:id="addtask" mnemonicParsing="false" onAction="#add" text="Add task"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <VBox layoutX="18.0" layoutY="89.0" prefHeight="54.0" prefWidth="565.0"/>
+        <Label fx:id="undone" layoutX="18.0" layoutY="47.0" text="Undone list" AnchorPane.topAnchor="60.0">
+            <font>
+                <Font name="System Bold" size="20.0"/>
+            </font>
+        </Label>
+        <ListView fx:id="listViewTask" layoutX="14.0" layoutY="96.0" prefHeight="500.0" prefWidth="565.0"/>
+        <Label fx:id="lastDone" layoutX="14.0" layoutY="615.0" text="Last Done Task: aaa " AnchorPane.topAnchor="640.0">
+            <font>
+                <Font name="System Bold" size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="prev" layoutX="14.0" layoutY="611.0" onMouseClicked="#prev" text="Prev">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <Label fx:id="next" layoutX="527.0" layoutY="611.0" onMouseClicked="#next" text="Next" textAlignment="RIGHT"
+               AnchorPane.rightAnchor="33.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <Button fx:id="refresh" layoutX="514.0" layoutY="15.0" mnemonicParsing="false" onAction="#addData"
+                text="Refresh"/>
+        <TextField fx:id="usernameField" layoutX="216.0" layoutY="15.0" onAction="#doneSetUsername"
+                   onInputMethodTextChanged="#doneSetUsername"/>
+    </children>
+</AnchorPane>

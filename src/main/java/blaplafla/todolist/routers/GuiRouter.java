@@ -8,13 +8,14 @@ import java.io.IOException;
 
 public class GuiRouter extends Router {
 
+
     public GuiRouter() {
         input = new TerminalInputValidation();
     }
 
     @Override
     public void setupView() {
-        index = new IndexGui();
+        this.index = new Index();
     }
 
     @Override

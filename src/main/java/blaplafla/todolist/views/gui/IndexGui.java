@@ -8,22 +8,17 @@ import blaplafla.todolist.models.datastructures.SimpleArrayList;
 import blaplafla.todolist.models.task.ListTask;
 import blaplafla.todolist.models.task.Task;
 import blaplafla.todolist.requests.RequestValidation;
-import blaplafla.todolist.views.View;
-import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class IndexGui extends Application implements View, Initializable {
+public class IndexGui implements Initializable {
     DictionaryController d = MainController.getInstance().dictionaryController();
     TaskController t = MainController.getInstance().taskController();
     FileController f = MainController.getInstance().fileController();
@@ -35,6 +30,8 @@ public class IndexGui extends Application implements View, Initializable {
 
     @FXML
     private Label undone;
+    @FXML
+    private Menu file;
     @FXML
     private MenuItem openfile;
     @FXML
@@ -63,30 +60,13 @@ public class IndexGui extends Application implements View, Initializable {
     private Label prev;
     @FXML
     private TextField usernameField;
+    @FXML
+    private AnchorPane ap;
 
     ObservableList<Task> listtask = FXCollections.observableArrayList();
 
-
     @Override
-    public void run() {
-        r = MainController.getInstance().input();
-        launch();
-
-    }
-
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        URL fxm = getClass().getResource("IndexGui.fxml");
-        FXMLLoader loader = new FXMLLoader(fxm);
-        AnchorPane page = loader.load();
-        Scene scene = new Scene(page);
-        primaryStage.setTitle(d.label("todolist-name") + listTask.getUsername());
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL url, ResourceBundle resourceBundle) {
         task.setText(d.label("tasks"));
         undone.setText(d.label("undone list-button"));
         openfile.setText(d.label("open-button"));
@@ -103,7 +83,6 @@ public class IndexGui extends Application implements View, Initializable {
         prev.setText(d.label("prev-button"));
         usernameField.setVisible(false);
         addData();
-
     }
 
     public void addData() {
@@ -170,7 +149,7 @@ public class IndexGui extends Application implements View, Initializable {
     public void doneSetUsername() {
         usernameField.setVisible(false);
         MainController.getInstance().listTask().setUsername(usernameField.getText());
-        Stage primStage = (Stage) usernameField.getScene().getWindow();
-        primStage.setTitle(d.label("todolist-name") + listTask.getUsername());
+        MainController.getInstance().indexView().refresh();
     }
+
 }
