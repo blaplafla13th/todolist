@@ -10,7 +10,6 @@ import javafx.embed.swing.JFXPanel;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 
 import javax.swing.*;
 import java.awt.*;
@@ -26,17 +25,15 @@ public class Index implements View {
     int page = 1;
     int max_page = t.paginateSize(listTask.getUndone(), 3);
     private JFrame jframe = new JFrame();
-
-    boolean show = false;
+    private boolean show = false;
+    private JFXPanel jfxPanel = new JFXPanel();
 
     @Override
-
     public void run() {
-        show=true;
+        show = true;
         jframe.setTitle(d.label("todolist-name") + listTask.getUsername());
-        jframe.setSize(600,700);
+        jframe.setSize(600, 700);
         jframe.setLayout(new BorderLayout());
-        JFXPanel jfxPanel = new JFXPanel();
         jframe.add(jfxPanel);
         jframe.addWindowListener(new WindowAdapter() {
                                      @Override
@@ -46,10 +43,11 @@ public class Index implements View {
                                      }
                                  }
         );
-        Platform.runLater(() -> initFX(jfxPanel));
+        Platform.runLater(() -> initFX());
         jframe.setVisible(true);
     }
-    private void initFX(JFXPanel jfxPanel) {
+
+    private void initFX() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("Index.fxml"));
             Scene scene = new Scene(root);
@@ -59,10 +57,17 @@ public class Index implements View {
         }
     }
 
-    @Override
-    public void refresh() {
-        jframe.dispose();
-        run();
+    public JFrame getJframe() {
+        return jframe;
+    }
+
+    public boolean isShow() {
+        return show;
+    }
+    public void close() {
+        jframe.remove(jfxPanel);
+        jframe.setVisible(false);
+        show = false;
     }
 
 }
