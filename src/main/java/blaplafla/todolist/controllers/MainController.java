@@ -55,6 +55,9 @@ public class MainController {
     public RequestValidation input() {
         return route.getInput();
     }
+    public Router router() {
+        return route;
+    }
 
     public View setLanguageView() {
         return route.getSetLanguage();
