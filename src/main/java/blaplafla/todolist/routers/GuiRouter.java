@@ -34,4 +34,12 @@ public class GuiRouter extends Router {
             pause();
         }
     }
+
+    @Override
+    public void refresh() {
+        if (index instanceof Index index && index.isShow()){
+            index.close();
+            index.run();
+        }
+    }
 }

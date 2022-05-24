@@ -78,4 +78,8 @@ public abstract class Router {
     public abstract void pause();
 
     public abstract void returnCode(int error);
+
+    public void refresh(){
+
+    }
 }
