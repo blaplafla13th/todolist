@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="259.0" prefWidth="446.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blaplafla.todolist.views.gui.SetLanguageGui">
+   <children>
+      <Label fx:id="curlang" layoutX="14.0" layoutY="14.0" text="Current language: Lorem Ipsum">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ListView fx:id="langlist" layoutX="14.0" layoutY="68.0" prefHeight="171.0" prefWidth="262.0" />
+      <Label fx:id="changelang" layoutX="14.0" layoutY="39.0" text="Set language to:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="cancel" layoutX="290.0" layoutY="213.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+      <Button fx:id="ok" layoutX="370.0" layoutY="213.0" mnemonicParsing="false" onAction="#accept" text="Accept" />
+   </children>
+</AnchorPane>

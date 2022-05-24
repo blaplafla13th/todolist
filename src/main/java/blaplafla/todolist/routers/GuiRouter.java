@@ -16,6 +16,7 @@ public class GuiRouter extends Router {
     @Override
     public void setupView() {
         this.index = new Index();
+        this.setLanguage = new SetLanguage();
     }
 
     @Override
@@ -40,6 +41,10 @@ public class GuiRouter extends Router {
         if (index instanceof Index index && index.isShow()){
             index.close();
             index.run();
+        }
+        if (setLanguage instanceof SetLanguage setLanguage && setLanguage.isShow()){
+            setLanguage.close();
+            setLanguage.run();
         }
     }
 }
