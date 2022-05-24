@@ -8,7 +8,7 @@ import blaplafla.todolist.models.task.Task;
 import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.views.View;
 
-public class DetailSubCli implements View {
+public class DetailSub implements View {
     DictionaryController d = MainController.getInstance().dictionaryController();
     RequestValidation r = MainController.getInstance().input();
     TaskController t = MainController.getInstance().taskController();

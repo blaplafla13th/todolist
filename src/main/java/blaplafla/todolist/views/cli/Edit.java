@@ -7,7 +7,7 @@ import blaplafla.todolist.views.View;
 
 import java.util.Date;
 
-public class EditCli implements View {
+public class Edit implements View {
     DictionaryController d = MainController.getInstance().dictionaryController();
     TaskController t = MainController.getInstance().taskController();
     RequestValidation r = MainController.getInstance().input();

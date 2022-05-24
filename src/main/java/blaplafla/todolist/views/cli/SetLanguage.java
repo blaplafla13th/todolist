@@ -6,9 +6,7 @@ import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.views.View;
 
 
-public class SetLanguageCli implements View {
-    public SetLanguageCli() {
-    }
+public class SetLanguage implements View {
 
     public void run() {
         DictionaryController d = MainController.getInstance().dictionaryController();

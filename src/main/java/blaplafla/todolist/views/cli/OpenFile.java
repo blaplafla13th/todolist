@@ -4,7 +4,7 @@ import blaplafla.todolist.controllers.*;
 import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.views.View;
 
-public class OpenFileCli implements View {
+public class OpenFile implements View {
     DictionaryController d = MainController.getInstance().dictionaryController();
     RequestValidation i = MainController.getInstance().input();
     FileController f = MainController.getInstance().fileController();

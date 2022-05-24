@@ -9,7 +9,7 @@ import blaplafla.todolist.models.task.Task;
 import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.views.View;
 
-public class UndoneSubCli implements View {
+public class DoneSub implements View {
 
 
     DictionaryController d = MainController.getInstance().dictionaryController();
@@ -26,7 +26,7 @@ public class UndoneSubCli implements View {
         if (params[0] instanceof MotherTask motherTask) {
             this.motherTask = motherTask;
             page = 1;
-            max_page = t.paginateSize(motherTask.getUndoneSubTask(), 3);
+            max_page = t.paginateSize(motherTask.getDoneSubTask(), 3);
             while (using) {
                 if (page > max_page) {
                     page = 1;
@@ -34,8 +34,8 @@ public class UndoneSubCli implements View {
                 System.out.print("\033[H\033[2J");
                 System.out.flush();
                 System.out.println(d.label("task-name") + motherTask.getTitle());
-                System.out.println(d.label("undone-sub-list"));
-                tasks = t.paginate(motherTask.getUndoneSubTask(), 3, page);
+                System.out.println(d.label("done-sub-list"));
+                tasks = t.paginate(motherTask.getDoneSubTask(), 3, page);
                 int i = 0;
                 if (!tasks.isEmpty())
                     for (Task task : tasks) {
@@ -43,7 +43,6 @@ public class UndoneSubCli implements View {
                         System.out.println(d.label("-"));
                         System.out.println(i + ". " + d.label("title") + task.getTitle());
                         System.out.println(d.label("desc") + task.getDescription());
-                        System.out.println(d.prettyTime(task.prettyTimer()));
                         System.out.println(d.label("-"));
                     }
                 else
@@ -61,7 +60,6 @@ public class UndoneSubCli implements View {
         System.out.println(d.label("list command"));
         System.out.println("next :" + d.label("next-button"));//
         System.out.println("prev :" + d.label("prev-button"));//
-        System.out.println("add :" + d.label("add-button"));
         System.out.println("toggle :" + d.label("toggle-button"));//
         System.out.println("delete :" + d.label("delete-button"));//
         System.out.println("detail :" + d.label("detail-button"));//
@@ -89,19 +87,15 @@ public class UndoneSubCli implements View {
             case "delete" -> {
                 System.out.print(d.label("index") + ":");
                 t.deleteSubTask(motherTask, tasks.get(r.inputPositiveInteger(r.input(), tasks.size()) - 1));
-                max_page = t.paginateSize(motherTask.getUndoneSubTask(), 3);
+                max_page = t.paginateSize(motherTask.getDoneSubTask(), 3);
             }
             case "toggle" -> {
                 System.out.print(d.label("index") + ":");
                 t.toggleSubTask(motherTask, tasks.get(r.inputPositiveInteger(r.input(), tasks.size()) - 1));
-                max_page = t.paginateSize(motherTask.getUndoneSubTask(), 3);
+                max_page = t.paginateSize(motherTask.getDoneSubTask(), 3);
             }
 
             case "back" -> using = false;
-            case "add" -> {
-                t.create(motherTask);
-                max_page = t.paginateSize(motherTask.getUndoneSubTask(), 3);
-            }
             default -> {
                 System.out.println(d.label("unknown-command"));
                 MainController.getInstance().pause();

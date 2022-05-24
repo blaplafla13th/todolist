@@ -14,18 +14,18 @@ public class CliRouter extends Router {
 
     @Override
     public void setupView() {
-        index = new IndexCli();
-        setLanguage = new SetLanguageCli();
-        openFile = new OpenFileCli();
-        saveFile = new SaveFileCli();
-        done = new DoneCli();
-        undone = new UndoneCli();
-        create = new CreateCli();
-        edit = new EditCli();
-        detail = new DetailCli();
-        undoneSubTask = new UndoneSubCli();
-        doneSubTask = new DoneSubCli();
-        detailSubTask = new DetailSubCli();
+        index = new Index();
+        setLanguage = new SetLanguage();
+        openFile = new OpenFile();
+        saveFile = new SaveFile();
+        done = new Done();
+        undone = new Undone();
+        create = new Create();
+        edit = new Edit();
+        detail = new Detail();
+        undoneSubTask = new UndoneSub();
+        doneSubTask = new DoneSub();
+        detailSubTask = new DetailSub();
     }
 
     @Override

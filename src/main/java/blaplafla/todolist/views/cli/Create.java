@@ -7,7 +7,7 @@ import blaplafla.todolist.views.View;
 
 import java.util.Date;
 
-public class CreateCli implements View {
+public class Create implements View {
     DictionaryController d = MainController.getInstance().dictionaryController();
     TaskController t = MainController.getInstance().taskController();
     RequestValidation r = MainController.getInstance().input();
