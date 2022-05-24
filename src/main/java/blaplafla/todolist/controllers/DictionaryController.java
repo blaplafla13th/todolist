@@ -2,15 +2,18 @@ package blaplafla.todolist.controllers;
 
 import blaplafla.todolist.models.dictionary.Dictionary;
 
-import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.net.URL;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.nio.file.*;
 import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.List;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.Objects;
+import java.util.stream.Stream;
 
-@SuppressWarnings("rawtypes")
+@SuppressWarnings({"rawtypes", "resource"})
 public class DictionaryController {
     private Dictionary dictionary;
 
@@ -50,9 +53,10 @@ public class DictionaryController {
         } catch (ClassNotFoundException e) {
             return 201;
         } catch (IOException e) {
+            e.printStackTrace();
             return 301;
         } catch (NoSuchMethodException | InvocationTargetException | InstantiationException |
-                 IllegalAccessException e) {
+                 IllegalAccessException | URISyntaxException e) {
             return 401;
         }
 
@@ -89,38 +93,26 @@ public class DictionaryController {
         MainController.getInstance().setLanguageView().run();
     }
 
-    public ArrayList<Class> getClassList(String packageName) throws ClassNotFoundException, IOException {
+    public ArrayList<Class> getClassList(String packageName) throws ClassNotFoundException, IOException, URISyntaxException {
+        ArrayList<Class> classes = new ArrayList<>();
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         assert classLoader != null;
         String path = packageName.replace('.', '/');
-        Enumeration<URL> resources = classLoader.getResources(path);
-        List<File> dirs = new ArrayList<>();
-        while (resources.hasMoreElements()) {
-            URL resource = resources.nextElement();
-            dirs.add(new File(resource.getFile()));
+        URI uri = Objects.requireNonNull(getClass().getResource("/" + path)).toURI();
+        Path myPath;
+        if (uri.getScheme().equals("jar")) {
+            FileSystem fileSystem = FileSystems.newFileSystem(uri, Collections.emptyMap());
+            myPath = fileSystem.getPath("/" + path);
+        } else {
+            myPath = Paths.get(uri);
         }
-        ArrayList<Class> classes = new ArrayList<>();
-        for (File directory : dirs) {
-            classes.addAll(findClasses(directory, packageName));
-        }
-        return classes;
-    }
-
-    private static List<Class> findClasses(File directory, String packageName) throws ClassNotFoundException {
-        List<Class> classes = new ArrayList<>();
-        if (!directory.exists()) {
-            return classes;
-        }
-        File[] files = directory.listFiles(file -> !file.getName().equals("Dictionary.class"));
-        if (files != null) {
-            for (File file : files) {
-                if (file.isDirectory()) {
-                    assert !file.getName().contains(".");
-                    classes.addAll(findClasses(file, packageName + "." + file.getName()));
-                } else if (file.getName().endsWith(".class")) {
-                    classes.add(Class.forName(packageName + '.' + file.getName().substring(0, file.getName().length() - 6)));
-                }
-            }
+        Stream<Path> walk = Files.walk(myPath, 1);
+        for (Iterator<Path> iter = walk.iterator(); iter.hasNext(); ) {
+            Path temp = iter.next();
+            String className = temp.toAbsolutePath().toString().replace("/", ".");
+            className = className.substring(className.indexOf("blaplafla"));
+            if (className.contains(".class") && !className.contains("Dictionary.class"))
+                classes.add(Class.forName(className.replace(".class", "")));
         }
         return classes;
     }
