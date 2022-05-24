@@ -14,47 +14,39 @@ import java.util.List;
 public class DictionaryController {
     private Dictionary dictionary;
 
+    private ArrayList<Dictionary> langlist = new ArrayList<>();
+
+    public ArrayList<Dictionary> getLanglist() {
+        return langlist;
+    }
+
     DictionaryController() {
-        int code = setDictionaryDefault();
+        int code = loadLanguage();
         if (code != 100) {
             System.out.println("Language file not found. Stop program, exit code: " + code);
             System.exit(code);
         }
+        dictionary = langlist.get(0);
     }
 
-    private static List<Class> findClasses(File directory, String packageName) throws ClassNotFoundException {
-        List<Class> classes = new ArrayList<>();
-        if (!directory.exists()) {
-            return classes;
-        }
-        File[] files = directory.listFiles();
-        for (File file : files) {
-            if (file.isDirectory()) {
-                assert !file.getName().contains(".");
-                classes.addAll(findClasses(file, packageName + "." + file.getName()));
-            } else if (file.getName().endsWith(".class")) {
-                classes.add(Class.forName(packageName + '.' + file.getName().substring(0, file.getName().length() - 6)));
-            }
-        }
-        return classes;
-    }
-
-    public int setDictionaryDefault() {
+    public int loadLanguage() {
         try {
-            Class[] list = getClassList("blaplafla.todolist.models.dictionary");
-            Class<?> first = null;
-            for (Class aClass : list) {
-                if (!aClass.getName().contains("Dictionary")) {
-                    first = Class.forName(aClass.getName());
+            ArrayList<Class> langlist = getClassList("blaplafla.todolist.models.dictionary");
+            Class<?> temp;
+            for (Class aClass : langlist) {
+                temp = Class.forName(aClass.getName());
+                Object obj = temp.getDeclaredConstructor().newInstance();
+                if (obj instanceof Dictionary dictionary) {
+                    boolean inserted = false;
+                    for (Dictionary dict : this.langlist) {
+                        if (dict.getInfo().equals(dictionary.getInfo()))
+                            inserted = true;
+                    }
+                    if (!inserted)
+                        this.langlist.add(dictionary);
                 }
             }
-            if (first != null) {
-                Object obj = first.getDeclaredConstructor().newInstance();
-                if (obj instanceof Dictionary) {
-                    dictionary = (Dictionary) obj;
-                    return 100;
-                } else return 401;
-            } else return 401;
+            return 100;
         } catch (ClassNotFoundException e) {
             return 201;
         } catch (IOException e) {
@@ -70,39 +62,13 @@ public class DictionaryController {
         return dictionary.getInfo();
     }
 
-    public int getLanguageList() {
-        try {
-            Class[] list = getClassList("blaplafla.todolist.models.dictionary");
-            for (int i = 0; i < list.length; i++) {
-                if (!list[i].getName().contains("Dictionary")) {
-                    System.out.println(i + " " + list[i].getSimpleName());
-                }
-            }
-            return 100;
-        } catch (ClassNotFoundException e) {
-            return 201;
-        } catch (IOException e) {
-            return 301;
-        }
-    }
-
     public int setDictionary(int i) {
         try {
-            Class[] list = getClassList("blaplafla.todolist.models.dictionary");
-            Class<?> first = Class.forName(list[i].getName());
-            Object obj = first.getDeclaredConstructor().newInstance();
-            if (obj instanceof Dictionary) {
-                dictionary = (Dictionary) obj;
-            } else return 401;
-        } catch (ClassNotFoundException | IndexOutOfBoundsException e) {
-            return 201;
-        } catch (IOException e) {
+            dictionary = langlist.get(i);
+        } catch (IndexOutOfBoundsException e) {
             return 301;
-        } catch (NoSuchMethodException | InvocationTargetException | InstantiationException |
-                 IllegalAccessException e) {
-            return 401;
         }
-        return 100;
+        return 300;
     }
 
     public String errorExplain(int errorCode) {
@@ -123,7 +89,7 @@ public class DictionaryController {
         MainController.getInstance().setLanguageView().run();
     }
 
-    public Class[] getClassList(String packageName) throws ClassNotFoundException, IOException {
+    public ArrayList<Class> getClassList(String packageName) throws ClassNotFoundException, IOException {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         assert classLoader != null;
         String path = packageName.replace('.', '/');
@@ -137,6 +103,25 @@ public class DictionaryController {
         for (File directory : dirs) {
             classes.addAll(findClasses(directory, packageName));
         }
-        return classes.toArray(new Class[classes.size()]);
+        return classes;
+    }
+
+    private static List<Class> findClasses(File directory, String packageName) throws ClassNotFoundException {
+        List<Class> classes = new ArrayList<>();
+        if (!directory.exists()) {
+            return classes;
+        }
+        File[] files = directory.listFiles(file -> !file.getName().equals("Dictionary.class"));
+        if (files != null) {
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    assert !file.getName().contains(".");
+                    classes.addAll(findClasses(file, packageName + "." + file.getName()));
+                } else if (file.getName().endsWith(".class")) {
+                    classes.add(Class.forName(packageName + '.' + file.getName().substring(0, file.getName().length() - 6)));
+                }
+            }
+        }
+        return classes;
     }
 }

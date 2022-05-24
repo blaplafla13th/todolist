@@ -1,6 +1,7 @@
 package blaplafla.todolist.views.cli;
 
 import blaplafla.todolist.controllers.*;
+import blaplafla.todolist.models.dictionary.Dictionary;
 import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.views.View;
 
@@ -11,20 +12,24 @@ public class SetLanguageCli implements View {
 
     public void run() {
         DictionaryController d = MainController.getInstance().dictionaryController();
-        RequestValidation i = MainController.getInstance().input();
+        RequestValidation r = MainController.getInstance().input();
 
         System.out.println(d.label("current-lang") + d.getDictionary());
         System.out.println(d.label("set-lang"));
-        int code = d.getLanguageList();
+        int code = d.loadLanguage();
         if (code != 100) {
             MainController.getInstance().returnCode(code);
         }
-        System.out.println(d.label("set-lang-term"));
-        code = d.setDictionary(i.inputInteger(i.input()));
+        int i=1;
+        for (Dictionary dic: d.getLanglist()             ) {
+            System.out.println(i++ + ". " + dic.getInfo());
+        }
+        System.out.println(d.label("input-num-option"));
+        code = d.setDictionary(r.inputInteger(r.input())-1);
         if (code != 100)
             MainController.getInstance().returnCode(code);
         System.out.println(d.label("current-lang") + d.getDictionary());
-        i.reset();
+        r.reset();
         MainController.getInstance().pause();
     }
 }
