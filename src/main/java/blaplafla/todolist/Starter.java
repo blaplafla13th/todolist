@@ -2,6 +2,8 @@ package blaplafla.todolist;
 
 import blaplafla.todolist.controllers.MainController;
 
+import java.util.Date;
+
 public class Starter {
     public static void main(String[] args) {
         String mode = "null";
@@ -15,6 +17,9 @@ public class Starter {
         if (!file.equals("null"))
             MainController.getInstance().fileController().setFile(file);
         setMode(mode);
+        MainController.getInstance().taskController().create("bla","bla",new Date(),100);
+        MainController.getInstance().taskController().create("bla","bla",new Date(),100);
+        MainController.getInstance().taskController().create("bla","bla",new Date(),100);
         MainController.getInstance().indexView().run();
     }
 

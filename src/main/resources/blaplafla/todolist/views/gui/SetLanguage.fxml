@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="300.0" prefWidth="297.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="blaplafla.todolist.views.gui.SetLanguageGui">
+            fx:controller="blaplafla.todolist.views.gui.SetLanguage">
    <Label fx:id="curlang" layoutX="14.0" layoutY="14.0" text="Current language: Lorem Ipsum"
           AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
       <font>
