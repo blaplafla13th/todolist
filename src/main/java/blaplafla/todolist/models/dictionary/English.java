@@ -28,6 +28,7 @@ public class English extends Dictionary {
     @Override
     public String label(String label) {
         return switch (label) {
+            case "input-num-option" -> "Input number of option ";
             case "todolist-name" -> "To-do list assigned to ";
             case "current-lang" -> "Current language: ";
             case "set-lang" -> "Set language to: ";
@@ -41,12 +42,12 @@ public class English extends Dictionary {
             case "desc" -> "Description: ";
             case "input-command" -> "Input Command";
             case "list command" -> "List available command";
-            case "next-button" -> "next page";
-            case "prev-button" -> "prev page";
-            case "set-username-button" -> "rename";
-            case "add-button" -> "add";
-            case "delete-button" -> "delete";
-            case "detail-button" -> "detail";
+            case "next-button" -> "Next page";
+            case "prev-button" -> "Prev page";
+            case "set-username-button" -> "Rename";
+            case "add-button" -> "Add";
+            case "delete-button" -> "Delete";
+            case "detail-button" -> "Detail";
             case "set-name" -> "New name";
             case "unknown-command" -> "Unknown command, type 'help' for list command";
             case "pause" -> "Press Enter to continue...";
@@ -59,14 +60,14 @@ public class English extends Dictionary {
             case "type-yes-to-continue" -> "Type 'yes' to continue...";
             case "process-done" -> "Done";
             case "subtask-incomplete" -> "Remaining subtask: ";
-            case "toggle-button" -> "change status ";
+            case "toggle-button" -> "Change status ";
             case "subtask-total" -> "SubTask: ";
             case "set-lang-button" -> "Change language ";
-            case "done list-button" -> "done List ";
-            case "undone list-button" -> "undone list ";
+            case "done list-button" -> "Done List ";
+            case "undone list-button" -> "Undone list ";
             case "exit-button" -> "exit ";
             case "done-list-name" -> "Done list of ";
-            case "back-button" -> "back";
+            case "back-button" -> "Back";
             case "index" -> "Input index";
             case "-" -> "--------------------------------";
             case "create-sub" -> "Create new subtask";
@@ -92,12 +93,14 @@ public class English extends Dictionary {
             case "subtasks" ->"SubTasks";
             case "refresh" -> "Refresh";
             case "old-value" -> "Old Value: ";
+            case "ok" -> "Accept";
+            case "cancel" -> "Cancel";
             default -> "Unknown";
         };
     }
 
     @Override
-    public String getInfo() {
+    public String toString() {
         return "English";
     }
 }

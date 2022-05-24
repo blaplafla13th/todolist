@@ -31,7 +31,7 @@ public class Vietnamese extends Dictionary {
             case "todolist-name" -> "Danh sách việc cần làm của ";
             case "current-lang" -> "Ngôn ngữ hiện tại: ";
             case "set-lang" -> "Đổi ngôn ngữ sang: ";
-            case "set-lang-term" -> "Nhập số của lựa chọn: ";
+            case "input-num-option" -> "Nhập số của lựa chọn: ";
             case "def" -> "Trả về giá trị mặc định: ";
             case "input-date" -> "Nhập giá trị ngày (định dạng năm-tháng-ngày:) ";
             case "input-time" -> "Nhập giá trị thời gian (định dạng giờ:phút:giây (24h):) ";
@@ -93,11 +93,13 @@ public class Vietnamese extends Dictionary {
             case "refresh" -> "Làm mới";
             default -> "Không xác định";
             case "old-value" -> "Giá trị cũ: ";
+            case "ok" -> "Đồng ý";
+            case "cancel" -> "Hủy";
         };
     }
 
     @Override
-    public String getInfo() {
+    public String toString() {
         return "Tiếng Việt";
     }
 }
