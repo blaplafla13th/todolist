@@ -1,3 +1,8 @@
 Manifest-Version: 1.0
+Created-By: Blaplafla
+Specification-Title: Todo List
+Specification-Version: 1.0
+Specification-Title: Gr10 MAT3514 1
+Implementation-Version: build202105
 Main-Class: blaplafla.todolist.Starter
 
