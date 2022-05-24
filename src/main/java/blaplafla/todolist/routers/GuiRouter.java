@@ -38,11 +38,11 @@ public class GuiRouter extends Router {
 
     @Override
     public void refresh() {
-        if (index instanceof Index index && index.isShow()){
+        if (index instanceof ViewGui index && index.isShow()){
             index.close();
             index.run();
         }
-        if (setLanguage instanceof SetLanguage setLanguage && setLanguage.isShow()){
+        if (setLanguage instanceof ViewGui setLanguage && setLanguage.isShow()){
             setLanguage.close();
             setLanguage.run();
         }

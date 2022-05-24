@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" prefHeight="90.0" prefWidth="460.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
-    <children>
-        <Label fx:id="title" layoutX="14.0" layoutY="5.0" text="Title">
-            <font>
-                <Font name="System Bold" size="20.0" />
-            </font>
-        </Label>
-        <Label fx:id="desc" alignment="CENTER" layoutX="14.0" layoutY="57.0" prefHeight="40.0" prefWidth="436.0" text="Description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." textAlignment="JUSTIFY" wrapText="true" />
-        <Label fx:id="timeLeft" layoutX="285.0" layoutY="9.0" text="Time left: 1d 2h 3p 4s">
-            <font>
-                <Font size="16.0" />
-            </font>
-        </Label>
-        <Label fx:id="incomplete" layoutX="14.0" layoutY="34.0" text="SubTask incomplete: 0">
-            <font>
-                <Font size="16.0" />
-            </font>
-        </Label>
-    </children>
+<AnchorPane fx:id="anchorPane" prefHeight="97.0" xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <Label fx:id="title" layoutX="5.0" layoutY="5.0" text="Title">
+        <font>
+            <Font name="System Bold" size="20.0"/>
+        </font>
+    </Label>
+    <Label fx:id="timeLeft" layoutX="90" layoutY="5.0" text="Time left: 1d 2h 3p 4s" AnchorPane.rightAnchor="5.0">
+        <font>
+            <Font size="16.0"/>
+        </font>
+    </Label>
+    <Label fx:id="desc" alignment="TOP_LEFT" layoutX="5.0" layoutY="53.0" prefHeight="40.0" prefWidth="340"
+           text="Description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+           wrapText="true"/>
+
+    <Label fx:id="incomplete" layoutX="5.0" layoutY="32.0" text="SubTask incomplete: 0">
+        <font>
+            <Font size="16.0"/>
+        </font>
+    </Label>
 </AnchorPane>

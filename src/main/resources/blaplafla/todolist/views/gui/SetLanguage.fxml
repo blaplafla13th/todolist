@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="259.0" prefWidth="446.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blaplafla.todolist.views.gui.SetLanguageGui">
-   <children>
-      <Label fx:id="curlang" layoutX="14.0" layoutY="14.0" text="Current language: Lorem Ipsum">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <ListView fx:id="langlist" layoutX="14.0" layoutY="68.0" prefHeight="171.0" prefWidth="262.0" />
-      <Label fx:id="changelang" layoutX="14.0" layoutY="39.0" text="Set language to:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Button fx:id="cancel" layoutX="290.0" layoutY="213.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
-      <Button fx:id="ok" layoutX="370.0" layoutY="213.0" mnemonicParsing="false" onAction="#accept" text="Accept" />
-   </children>
+<AnchorPane prefHeight="300.0" prefWidth="297.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="blaplafla.todolist.views.gui.SetLanguageGui">
+   <Label fx:id="curlang" layoutX="14.0" layoutY="14.0" text="Current language: Lorem Ipsum"
+          AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+      <font>
+         <Font size="18.0"/>
+      </font>
+   </Label>
+   <ListView fx:id="langlist" layoutX="14.0" layoutY="68.0" prefHeight="171.0" prefWidth="272.0"
+             AnchorPane.leftAnchor="14.0"/>
+   <Label fx:id="changelang" layoutX="14.0" layoutY="39.0" text="Set language to:" AnchorPane.leftAnchor="14.0">
+      <font>
+         <Font size="18.0"/>
+      </font>
+   </Label>
+   <Button fx:id="cancel" layoutX="150.0" layoutY="249.0" mnemonicParsing="false" onAction="#cancel" text="Cancel"
+           AnchorPane.leftAnchor="14.0"/>
+   <Button fx:id="ok" layoutX="230.0" layoutY="249.0" mnemonicParsing="false" onAction="#accept" text="Accept"
+           AnchorPane.rightAnchor="14.0"/>
 </AnchorPane>

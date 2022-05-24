@@ -32,7 +32,7 @@ public class TaskListCell extends ListCell<Task> {
         if (task == null || empty) {
             setText(null);
             setGraphic(null);
-        } else if (task != null) {
+        } else {
             URL fxm = getClass().getResource("TaskListCell.fxml");
             FXMLLoader loader = new FXMLLoader(fxm);
             try {
@@ -46,7 +46,7 @@ public class TaskListCell extends ListCell<Task> {
             incomplete = (Label) anchorPane.getChildren().get(3);
             title.setText(task.getTitle());
             timeLeft.setText(d.prettyTime(task.prettyTimer()));
-            desc.setText(task.getDescription());
+            desc.setText(d.label("desc")+task.getDescription());
             incomplete.setText(d.label("subtask-incomplete") + ((MotherTask) task).undoneSubTaskSize());
             setGraphic(anchorPane);
             setText(null);

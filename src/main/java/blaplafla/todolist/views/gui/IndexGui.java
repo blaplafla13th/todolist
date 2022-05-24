@@ -26,7 +26,8 @@ public class IndexGui implements Initializable {
 
     int page = 1;
     int max_page = t.paginateSize(listTask.getUndone(), 3);
-
+    @FXML
+    private Menu file;
     @FXML
     private Label undone;
     @FXML
@@ -34,13 +35,14 @@ public class IndexGui implements Initializable {
     @FXML
     private MenuItem savefile;
     @FXML
+    private Menu task;
+    @FXML
     private MenuItem undonelist;
     @FXML
     private MenuItem donelist;
     @FXML
     private MenuItem addtask;
-    @FXML
-    private Menu task;
+
     @FXML
     private Button refresh;
     @FXML
