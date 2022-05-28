@@ -80,8 +80,6 @@ public class FileController {
     }
 
     public void saveFile() {
-        if (!hasFile())
-            openFile();
         MainController.getInstance().saveFileView().run();
     }
 
@@ -96,5 +94,9 @@ public class FileController {
         } catch (IOException | ClassNotFoundException e) {
             return true;
         }
+    }
+
+    public String filePath(){
+        return userfile.getAbsolutePath();
     }
 }
