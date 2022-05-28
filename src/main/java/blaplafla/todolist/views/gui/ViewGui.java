@@ -7,9 +7,15 @@ import javax.swing.*;
 import java.awt.*;
 
 public abstract class ViewGui implements View {
-    protected JFrame jframe = new JFrame();
-    protected boolean show = false;
-    protected JFXPanel jfxPanel = new JFXPanel();
+    protected JFrame jframe ;
+    protected boolean show;
+    protected JFXPanel jfxPanel ;
+
+    public ViewGui() {
+        this.jframe= new JFrame();
+        this.show = false;
+        this.jfxPanel = new JFXPanel();
+    }
 
     @Override
     public void run(){}
@@ -24,8 +30,8 @@ public abstract class ViewGui implements View {
     }
 
     public void close() {
-        jframe.remove(jfxPanel);
         jframe.setVisible(false);
+        jframe.remove(jfxPanel);
         show = false;
     }
 
@@ -33,5 +39,6 @@ public abstract class ViewGui implements View {
         jframe.setLayout(new BorderLayout());
         jframe.setResizable(false);
         jframe.setExtendedState(Frame.MAXIMIZED_BOTH);
+        jframe.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
     }
 }
