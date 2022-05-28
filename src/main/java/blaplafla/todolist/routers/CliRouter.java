@@ -40,7 +40,7 @@ public class CliRouter extends Router {
     @Override
     public void returnCode(int error) {
         if (error != 100) {
-            MainController.getInstance().dictionaryController().errorExplain(error);
+            System.out.println(MainController.getInstance().dictionaryController().errorExplain(error));
             pause();
         }
     }
