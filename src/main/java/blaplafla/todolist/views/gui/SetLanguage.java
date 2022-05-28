@@ -31,13 +31,15 @@ import java.util.ResourceBundle;
 public class SetLanguage extends ViewGui implements Initializable {
     DictionaryController d = MainController.getInstance().dictionaryController();
 
-    @Override
+    public SetLanguage() {
+        super();
+    }
 
+    @Override
     public void run() {
         show = true;
         jframe.setTitle(d.label("set-lang"));
         jframe.setSize(300, 350);
-        jframe.setLayout(new BorderLayout());
         fixedJFrame();
         jframe.add(jfxPanel);
         jframe.addWindowListener(new WindowAdapter() {
@@ -89,6 +91,7 @@ public class SetLanguage extends ViewGui implements Initializable {
         }
     }
     public void cancel(){
-        ((SetLanguage) MainController.getInstance().setLanguageView()).close();
+        this.close();
+        ((ViewGui) MainController.getInstance().router().getSetLanguage()).close();
     }
 }
