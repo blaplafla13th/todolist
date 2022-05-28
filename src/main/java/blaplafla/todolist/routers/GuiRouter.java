@@ -17,6 +17,8 @@ public class GuiRouter extends Router {
     public void setupView() {
         this.index = new Index();
         this.setLanguage = new SetLanguage();
+        this.openFile=new OpenFile();
+        this.saveFile=new SaveFile();
     }
 
     @Override
@@ -45,6 +47,12 @@ public class GuiRouter extends Router {
         if (setLanguage instanceof ViewGui setLanguage && setLanguage.isShow()){
             setLanguage.close();
             setLanguage.run();
+        }if (openFile instanceof ViewGui openFile && openFile.isShow()){
+             openFile.close();
+             openFile.run();
+        }if (saveFile instanceof ViewGui saveFile && saveFile.isShow()){
+             saveFile.close();
+             saveFile.run();
         }
     }
 }
