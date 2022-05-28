@@ -31,13 +31,14 @@ public class Index extends ViewGui implements Initializable {
     TaskController t = MainController.getInstance().taskController();
     ListTask listTask = MainController.getInstance().listTask();
     FileController f = MainController.getInstance().fileController();
-    RequestValidation r = MainController.getInstance().input();
+    RequestValidation r ;
     int page = 1;
     int max_page = t.paginateSize(listTask.getUndone(), 3);
 
 
     @Override
     public void run() {
+        r = MainController.getInstance().input();
         show = true;
         jframe.setTitle(d.label("todolist-name") + listTask.getUsername());
         jframe.setSize(400, 700);
