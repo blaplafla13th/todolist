@@ -91,6 +91,11 @@ public class SaveFile extends ViewGui implements Initializable {
             if (code != 100)
                 MainController.getInstance().returnCode(code);
         }
+        else if (status == JFileChooser.CANCEL_OPTION) {
+            this.close();
+            ((ViewGui) MainController.getInstance().router().getSaveFile()).close();
+
+        }
         this.close();
         MainController.getInstance().router().refresh();
     }
