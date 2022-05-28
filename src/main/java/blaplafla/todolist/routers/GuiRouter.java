@@ -3,11 +3,12 @@ package blaplafla.todolist.routers;
 import blaplafla.todolist.controllers.MainController;
 import blaplafla.todolist.requests.TerminalInputValidation;
 import blaplafla.todolist.views.gui.*;
+import blaplafla.todolist.views.gui.Error;
 
 import java.io.IOException;
 
 public class GuiRouter extends Router {
-
+    ViewGui error;
 
     public GuiRouter() {
         input = new TerminalInputValidation();
@@ -19,23 +20,21 @@ public class GuiRouter extends Router {
         this.setLanguage = new SetLanguage();
         this.openFile=new OpenFile();
         this.saveFile=new SaveFile();
+        this.error = new Error();
     }
 
     @Override
     public void pause() {
-        System.out.println(MainController.getInstance().dictionaryController().label("pause"));
-        try {
-            System.in.read();
-        } catch (IOException ignored) {
-        }
+
     }
 
     @Override
     public void returnCode(int error) {
-        if (error != 100) {
-            MainController.getInstance().dictionaryController().errorExplain(error);
-            pause();
-        }
+        this.error.run(error);
+    }
+
+    public ViewGui getError() {
+        return error;
     }
 
     @Override
@@ -53,6 +52,9 @@ public class GuiRouter extends Router {
         }if (saveFile instanceof ViewGui saveFile && saveFile.isShow()){
              saveFile.close();
              saveFile.run();
+        } if(error.isShow()){
+            error.close();
+            error.run();
         }
     }
 }
