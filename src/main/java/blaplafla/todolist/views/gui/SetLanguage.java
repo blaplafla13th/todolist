@@ -87,6 +87,7 @@ public class SetLanguage extends ViewGui implements Initializable {
     public void accept(){
         if (!langlist.getSelectionModel().isEmpty()){
             d.setDictionary(langlist.getSelectionModel().getSelectedIndex());
+            cancel();
             MainController.getInstance().router().refresh();
         }
     }
