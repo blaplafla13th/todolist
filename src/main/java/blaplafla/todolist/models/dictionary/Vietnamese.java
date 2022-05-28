@@ -50,8 +50,8 @@ public class Vietnamese extends Dictionary {
             case "set-name" -> "Tên mới";
             case "unknown-command" -> "Không rõ lệnh gõ 'help' để xem danh lệnh";
             case "pause" -> "Nhấn Enter để tiếp tục";
-            case "open-button" -> "Mở file";
-            case "save-button" -> "Lưu file";
+            case "open-button" -> "Nạp file";
+            case "save-button" -> "Xuất file";
             case "path-to-file" -> "Nhập đường dẫn";
             case "not-file" -> "Đường dẫn tới file không hợp lệ";
             case "warning-overwrite-data" -> "Bạn có muốn ghi đè dữ liệu lên file hiện tại?";
@@ -91,10 +91,11 @@ public class Vietnamese extends Dictionary {
             case "tasks" ->"Nhiệm vụ";
             case "subtasks" ->"Nhiệm vụ con";
             case "refresh" -> "Làm mới";
-            default -> "Không xác định";
             case "old-value" -> "Giá trị cũ: ";
             case "ok" -> "Đồng ý";
             case "cancel" -> "Hủy";
+            case "path" -> "Đường dẫn:";
+            default -> "Không xác định";
         };
     }
 

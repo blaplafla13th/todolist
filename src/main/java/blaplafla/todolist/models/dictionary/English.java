@@ -51,9 +51,9 @@ public class English extends Dictionary {
             case "set-name" -> "New name";
             case "unknown-command" -> "Unknown command, type 'help' for list command";
             case "pause" -> "Press Enter to continue...";
-            case "open-button" -> "Open file";
-            case "save-button" -> "Save file";
-            case "path-to-file" -> "Filepath";
+            case "open-button" -> "Import file";
+            case "save-button" -> "Export file";
+            case "path-to-file" -> "Input filepath";
             case "not-file" -> "Invalid filepath";
             case "warning-overwrite-data" -> "Do you want override data into current file?";
             case "warning-load-data" -> "Do you want override data from file to this session?";
@@ -95,6 +95,7 @@ public class English extends Dictionary {
             case "old-value" -> "Old Value: ";
             case "ok" -> "Accept";
             case "cancel" -> "Cancel";
+            case "path" -> "Filepath:";
             default -> "Unknown";
         };
     }
