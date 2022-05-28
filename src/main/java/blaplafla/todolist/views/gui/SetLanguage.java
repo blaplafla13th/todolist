@@ -42,15 +42,6 @@ public class SetLanguage extends ViewGui implements Initializable {
         jframe.setSize(300, 350);
         fixedJFrame();
         jframe.add(jfxPanel);
-        jframe.addWindowListener(new WindowAdapter() {
-                                     @Override
-                                     public void windowClosed(WindowEvent e) {
-                                         super.windowClosed(e);
-                                         show = false;
-                                     }
-                                 }
-        );
-        Platform.runLater(this::initFX);
         jframe.setVisible(true);
     }
 
