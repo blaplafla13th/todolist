@@ -10,21 +10,23 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 public abstract class ViewGui implements View {
-    protected JFrame jframe ;
+    protected JFrame jframe;
     protected boolean show;
-    protected JFXPanel jfxPanel ;
+    protected JFXPanel jfxPanel;
 
     public ViewGui() {
-        this.jframe= new JFrame();
+        this.jframe = new JFrame();
         this.show = false;
         this.jfxPanel = new JFXPanel();
     }
 
     @Override
-    public void run(){}
+    public void run() {
+    }
 
     @Override
-    public void run(Object... params){}
+    public void run(Object... params) {
+    }
 
     abstract protected void initFX();
 

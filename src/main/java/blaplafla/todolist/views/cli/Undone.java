@@ -1,8 +1,12 @@
 package blaplafla.todolist.views.cli;
 
-import blaplafla.todolist.controllers.*;
+import blaplafla.todolist.controllers.DictionaryController;
+import blaplafla.todolist.controllers.MainController;
+import blaplafla.todolist.controllers.TaskController;
 import blaplafla.todolist.models.datastructures.SimpleArrayList;
-import blaplafla.todolist.models.task.*;
+import blaplafla.todolist.models.task.ListTask;
+import blaplafla.todolist.models.task.MotherTask;
+import blaplafla.todolist.models.task.Task;
 import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.views.View;
 
@@ -41,7 +45,7 @@ public class Undone implements View {
                         System.out.println(d.prettyTime(motherTask.prettyTimer()));
                         if ((motherTask.subTaskSize()) > 0)
                             System.out.println(d.label("subtask-remaining") + motherTask.undoneSubTaskSize() +
-                                "/" + motherTask.subTaskSize());
+                                    "/" + motherTask.subTaskSize());
                         System.out.println(d.label("-"));
                     } else MainController.getInstance().returnCode(402);
                 }

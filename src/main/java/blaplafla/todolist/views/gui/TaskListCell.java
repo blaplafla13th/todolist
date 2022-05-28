@@ -46,7 +46,7 @@ public class TaskListCell extends ListCell<Task> {
             incomplete = (Label) anchorPane.getChildren().get(3);
             title.setText(task.getTitle());
             timeLeft.setText(d.prettyTime(task.prettyTimer()));
-            desc.setText(d.label("desc")+task.getDescription());
+            desc.setText(d.label("desc") + task.getDescription());
             incomplete.setText(d.label("subtask-incomplete") + ((MotherTask) task).undoneSubTaskSize());
             setGraphic(anchorPane);
             setText(null);

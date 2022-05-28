@@ -14,6 +14,7 @@ public class MainController {
     protected final TaskController taskController;
     protected ListTask listTask;
     protected Router route;
+
     private MainController() {
         dictionaryController = new DictionaryController();
         fileController = new FileController();
@@ -31,7 +32,9 @@ public class MainController {
     public void setModeCli() {
         route = new CliRouter();
         route.setupView();
-    }public void setModeGui() {
+    }
+
+    public void setModeGui() {
         route = new GuiRouter();
         route.setupView();
     }
@@ -55,6 +58,7 @@ public class MainController {
     public RequestValidation input() {
         return route.getInput();
     }
+
     public Router router() {
         return route;
     }

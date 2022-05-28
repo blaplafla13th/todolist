@@ -235,8 +235,8 @@ Trong khuôn khổ đề tài, chúng ta sẽ nói về ArrayList, Vector và St
 | Tên                                                                |   CLI   |   GUI   |
 |:-------------------------------------------------------------------|:-------:|:-------:|
 | Trang đổi ngôn ngữ<br>SetLanguage                                  | &#9745; | &#9745; |
-| Nhập file<br>OpenFile                                              | &#9745; | &#9744; |
-| Lưu file<br>SaveFile                                               | &#9745; | &#9744; |
+| Nhập file<br>OpenFile                                              | &#9745; | &#9745; |
+| Lưu file<br>SaveFile                                               | &#9745; | &#9745; |
 | Danh sách các việc cần làm + việc cuối cùng đã hoàn thành<br>Index | &#9745; | &#9745; |
 | Danh sách các việc chưa hoàn thành<br>Undone                       | &#9745; | &#9744; |
 | Danh sách các việc đã làm<br>Done                                  | &#9745; | &#9744; |

@@ -79,7 +79,7 @@ public abstract class Router {
 
     public abstract void returnCode(int error);
 
-    public void refresh(){
+    public void refresh() {
 
     }
 }

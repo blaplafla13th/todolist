@@ -89,13 +89,16 @@ public class English extends Dictionary {
             case "edit-task" -> "Edit task";
             case "subtask-remaining" -> "Subtasks Remaining";
             case "undone-sub-list" -> "List undone subtasks";
-            case "tasks" ->"Tasks";
-            case "subtasks" ->"SubTasks";
+            case "tasks" -> "Tasks";
+            case "subtasks" -> "SubTasks";
             case "refresh" -> "Refresh";
             case "old-value" -> "Old Value: ";
             case "ok" -> "Accept";
             case "cancel" -> "Cancel";
             case "path" -> "Filepath:";
+            case "changepath" -> "Change File";
+            case "error" -> "Error ";
+            case "click-to-show" -> "Click to show ";
             default -> "Unknown";
         };
     }

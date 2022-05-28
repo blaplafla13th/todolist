@@ -90,13 +90,13 @@ public class FileController {
     public boolean isNullFile() {
         try {
             return userfile.isFile() && userfile.length() == 0
-                && objectInputStream.readObject() == null;
+                    && objectInputStream.readObject() == null;
         } catch (IOException | ClassNotFoundException e) {
             return true;
         }
     }
 
-    public String filePath(){
+    public String filePath() {
         return userfile.getAbsolutePath();
     }
 }

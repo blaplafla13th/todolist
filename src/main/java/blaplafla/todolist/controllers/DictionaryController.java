@@ -15,13 +15,8 @@ import java.util.stream.Stream;
 
 @SuppressWarnings({"rawtypes", "resource"})
 public class DictionaryController {
+    private final ArrayList<Dictionary> langlist = new ArrayList<>();
     private Dictionary dictionary;
-
-    private ArrayList<Dictionary> langlist = new ArrayList<>();
-
-    public ArrayList<Dictionary> getLanglist() {
-        return langlist;
-    }
 
     DictionaryController() {
         int code = loadLanguage();
@@ -30,6 +25,10 @@ public class DictionaryController {
             System.exit(code);
         }
         dictionary = langlist.get(0);
+    }
+
+    public ArrayList<Dictionary> getLanglist() {
+        return langlist;
     }
 
     public int loadLanguage() {

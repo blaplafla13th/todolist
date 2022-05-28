@@ -100,6 +100,6 @@ public class ListTask implements Serializable {
 
     public boolean isEmpty() {
         return done.isEmpty() &&
-            undone.isEmpty();
+                undone.isEmpty();
     }
 }

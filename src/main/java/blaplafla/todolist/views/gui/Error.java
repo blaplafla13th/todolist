@@ -3,7 +3,6 @@ package blaplafla.todolist.views.gui;
 import blaplafla.todolist.controllers.DictionaryController;
 import blaplafla.todolist.controllers.MainController;
 import blaplafla.todolist.routers.GuiRouter;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,13 +15,16 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Error extends ViewGui implements Initializable {
+    private static int errorCode;
     DictionaryController d = MainController.getInstance().dictionaryController();
+    @FXML
+    private javafx.scene.control.Label error;
+    @FXML
+    private Button ok;
 
     public int getErrorCode() {
         return errorCode;
     }
-
-    private static int errorCode;
 
     @Override
     public void run(Object... params) {
@@ -37,11 +39,6 @@ public class Error extends ViewGui implements Initializable {
             jframe.setVisible(true);
         }
     }
-
-    @FXML
-    private javafx.scene.control.Label error;
-    @FXML
-    private Button ok;
 
     @Override
     protected void initFX() {

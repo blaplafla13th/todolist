@@ -8,7 +8,6 @@ import blaplafla.todolist.models.datastructures.SimpleArrayList;
 import blaplafla.todolist.models.task.ListTask;
 import blaplafla.todolist.models.task.Task;
 import blaplafla.todolist.requests.RequestValidation;
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -19,9 +18,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
-import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -31,10 +27,42 @@ public class Index extends ViewGui implements Initializable {
     TaskController t = MainController.getInstance().taskController();
     ListTask listTask = MainController.getInstance().listTask();
     FileController f = MainController.getInstance().fileController();
-    RequestValidation r ;
+    RequestValidation r;
     int page = 1;
     int max_page = t.paginateSize(listTask.getUndone(), 3);
-
+    ObservableList<Task> listtask = FXCollections.observableArrayList();
+    @FXML
+    private javafx.scene.control.Menu file;
+    @FXML
+    private javafx.scene.control.Label undone;
+    @FXML
+    private javafx.scene.control.MenuItem openfile;
+    @FXML
+    private javafx.scene.control.MenuItem savefile;
+    @FXML
+    private javafx.scene.control.Menu task;
+    @FXML
+    private javafx.scene.control.MenuItem undonelist;
+    @FXML
+    private javafx.scene.control.MenuItem donelist;
+    @FXML
+    private javafx.scene.control.MenuItem addtask;
+    @FXML
+    private javafx.scene.control.Button refresh;
+    @FXML
+    private javafx.scene.control.MenuItem username;
+    @FXML
+    private javafx.scene.control.MenuItem language;
+    @FXML
+    private ListView<Task> listViewTask;
+    @FXML
+    private javafx.scene.control.Label lastDone;
+    @FXML
+    private javafx.scene.control.Label next;
+    @FXML
+    private javafx.scene.control.Label prev;
+    @FXML
+    private TextField usernameField;
 
     @Override
     public void run() {
@@ -57,42 +85,6 @@ public class Index extends ViewGui implements Initializable {
             exc.printStackTrace();
         }
     }
-
-    @FXML
-    private javafx.scene.control.Menu file;
-    @FXML
-    private javafx.scene.control.Label undone;
-    @FXML
-    private javafx.scene.control.MenuItem openfile;
-    @FXML
-    private javafx.scene.control.MenuItem savefile;
-    @FXML
-    private javafx.scene.control.Menu task;
-    @FXML
-    private javafx.scene.control.MenuItem undonelist;
-    @FXML
-    private javafx.scene.control.MenuItem donelist;
-    @FXML
-    private javafx.scene.control.MenuItem addtask;
-
-    @FXML
-    private javafx.scene.control.Button refresh;
-    @FXML
-    private javafx.scene.control.MenuItem username;
-    @FXML
-    private javafx.scene.control.MenuItem language;
-    @FXML
-    private ListView<Task> listViewTask;
-    @FXML
-    private javafx.scene.control.Label lastDone;
-    @FXML
-    private javafx.scene.control.Label next;
-    @FXML
-    private javafx.scene.control.Label prev;
-    @FXML
-    private TextField usernameField;
-
-    ObservableList<Task> listtask = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

@@ -3,7 +3,6 @@ package blaplafla.todolist.views.gui;
 import blaplafla.todolist.controllers.DictionaryController;
 import blaplafla.todolist.controllers.FileController;
 import blaplafla.todolist.controllers.MainController;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,17 +12,27 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import javax.swing.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class OpenFile extends ViewGui implements Initializable {
+    private final JFileChooser fileChooser = new JFileChooser();
     DictionaryController d = MainController.getInstance().dictionaryController();
     FileController f = MainController.getInstance().fileController();
     boolean loadfile = false;
+    File file;
+    @FXML
+    private Label filepath;
+    @FXML
+    private Label overwrite;
+    @FXML
+    private Button cancel;
+    @FXML
+    private Button ok;
+    @FXML
+    private javafx.scene.control.TextField name;
 
     public void run() {
         show = true;
@@ -43,17 +52,6 @@ public class OpenFile extends ViewGui implements Initializable {
             exc.printStackTrace();
         }
     }
-
-    @FXML
-    private Label filepath;
-    @FXML private Label overwrite;
-    @FXML
-    private Button cancel;
-    @FXML
-    private Button ok;
-    private JFileChooser fileChooser = new JFileChooser();
-    @FXML
-    private javafx.scene.control.TextField name;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -76,8 +74,6 @@ public class OpenFile extends ViewGui implements Initializable {
         ((ViewGui) MainController.getInstance().router().getOpenFile()).close();
     }
 
-    File file;
-
     public void handle() {
         overwrite.setVisible(false);
         file = new File(name.getText());
@@ -94,7 +90,7 @@ public class OpenFile extends ViewGui implements Initializable {
         }
     }
 
-    public void check(){
+    public void check() {
         f.setFile(name.getText());
         if (!f.isNullFile() && !MainController.getInstance().listTask().isEmpty()) {
             overwrite.setText(d.label("warning-load-data"));

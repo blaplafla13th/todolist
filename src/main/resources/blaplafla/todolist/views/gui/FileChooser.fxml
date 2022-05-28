@@ -2,20 +2,26 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-
-<AnchorPane prefHeight="262.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blaplafla.todolist.views.gui.OpenFile">
-      <Label fx:id="filepath" layoutX="15.0" layoutY="22.0" text="FilePath" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="22.0">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Label>
-      <TextField fx:id="name" layoutX="15.0" layoutY="58.0" onInputMethodTextChanged="#check" onMouseClicked="#handle" prefHeight="26.0" prefWidth="471.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="58.0" />
-      <Button fx:id="cancel" layoutX="14.0" layoutY="72.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
-      <Button fx:id="ok" layoutX="245.0" layoutY="72.0" mnemonicParsing="false" onAction="#accept" text="Accept" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="13.0" />
-      <Label fx:id="overwrite" layoutX="15.0" layoutY="109.0" prefHeight="18.0" prefWidth="471.0" text="Warning: close current session?" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="262.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/16"
+            fx:controller="blaplafla.todolist.views.gui.OpenFile">
+    <Label fx:id="filepath" layoutX="15.0" layoutY="22.0" text="FilePath" AnchorPane.leftAnchor="15.0"
+           AnchorPane.topAnchor="22.0">
+        <font>
+            <Font name="System Bold" size="20.0"/>
+        </font>
+    </Label>
+    <TextField fx:id="name" layoutX="15.0" layoutY="58.0" onInputMethodTextChanged="#check" onMouseClicked="#handle"
+               prefHeight="26.0" prefWidth="471.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0"
+               AnchorPane.topAnchor="58.0"/>
+    <Button fx:id="cancel" layoutX="14.0" layoutY="72.0" mnemonicParsing="false" onAction="#cancel" text="Cancel"
+            AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0"/>
+    <Button fx:id="ok" layoutX="245.0" layoutY="72.0" mnemonicParsing="false" onAction="#accept" text="Accept"
+            AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="13.0"/>
+    <Label fx:id="overwrite" layoutX="15.0" layoutY="109.0" prefHeight="18.0" prefWidth="471.0"
+           text="Warning: close current session?" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0">
+        <font>
+            <Font size="16.0"/>
+        </font>
+    </Label>
 </AnchorPane>

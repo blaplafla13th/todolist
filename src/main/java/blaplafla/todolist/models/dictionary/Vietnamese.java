@@ -88,13 +88,16 @@ public class Vietnamese extends Dictionary {
             case "edit-task" -> "Sửa nhiệm vụ";
             case "subtask-remaining" -> "Nhiệm vụ con đang chờ";
             case "undone-sub-list" -> "Danh sách việc con đang chờ";
-            case "tasks" ->"Nhiệm vụ";
-            case "subtasks" ->"Nhiệm vụ con";
+            case "tasks" -> "Nhiệm vụ";
+            case "subtasks" -> "Nhiệm vụ con";
             case "refresh" -> "Làm mới";
             case "old-value" -> "Giá trị cũ: ";
             case "ok" -> "Đồng ý";
             case "cancel" -> "Hủy";
             case "path" -> "Đường dẫn:";
+            case "changepath" -> "Đổi file";
+            case "error" -> "Lỗi ";
+            case "click-to-show" -> "Ấn để hiện ";
             default -> "Không xác định";
         };
     }

@@ -100,6 +100,6 @@ public class Task implements Serializable, Comparable<Task> {
 
     public String getDeadlineTime() {
         return String.format("%d/%d/%d %d:%d:%d", deadline.getDate(), deadline.getMonth() + 1, deadline.getYear() + 1900
-            , deadline.getHours(), deadline.getMinutes(), deadline.getMinutes());
+                , deadline.getHours(), deadline.getMinutes(), deadline.getMinutes());
     }
 }
