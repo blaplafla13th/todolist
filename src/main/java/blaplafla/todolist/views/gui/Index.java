@@ -29,7 +29,7 @@ public class Index extends ViewGui implements Initializable {
     FileController f = MainController.getInstance().fileController();
     RequestValidation r;
     int page = 1;
-    int max_page = t.paginateSize(listTask.getUndone(), 3);
+    int max_page = t.paginateSize(listTask.getUndone(), 5);
     ObservableList<Task> listtask = FXCollections.observableArrayList();
     @FXML
     private javafx.scene.control.Menu file;
@@ -69,7 +69,7 @@ public class Index extends ViewGui implements Initializable {
         r = MainController.getInstance().input();
         show = true;
         jframe.setTitle(d.label("todolist-name") + listTask.getUsername());
-        jframe.setSize(400, 700);
+        jframe.setSize(400, 800);
         fixedJFrame();
         jframe.add(jfxPanel);
         jframe.setVisible(true);
@@ -122,7 +122,7 @@ public class Index extends ViewGui implements Initializable {
     }
 
     public void next() {
-        if (page < max_page - 1)
+        if (page < max_page)
             page++;
         addData();
     }
