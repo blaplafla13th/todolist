@@ -101,10 +101,4 @@ public class JavaFXValidation extends RequestValidation {
             return date;
         }
     }
-
-    public void combine(Date date1, Date date2) {
-        date1.setHours(date2.getHours());
-        date1.setMinutes(date2.getMinutes());
-        date1.setSeconds(date2.getSeconds());
-    }
 }
