@@ -6,15 +6,11 @@ import blaplafla.todolist.models.dictionary.Dictionary;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -41,18 +37,11 @@ public class SetLanguage extends ViewGui implements Initializable {
         jframe.setTitle(d.label("set-lang"));
         jframe.setSize(300, 350);
         fixedJFrame();
+        int error = initFX("SetLanguage.fxml");
+        if (error!=100)
+            MainController.getInstance().returnCode(error);
         jframe.add(jfxPanel);
         jframe.setVisible(true);
-    }
-
-    protected void initFX() {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("SetLanguage.fxml"));
-            Scene scene = new Scene(root);
-            jfxPanel.setScene(scene);
-        } catch (IOException exc) {
-            exc.printStackTrace();
-        }
     }
 
     @Override

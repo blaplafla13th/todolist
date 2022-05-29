@@ -4,13 +4,9 @@ import blaplafla.todolist.controllers.DictionaryController;
 import blaplafla.todolist.controllers.MainController;
 import blaplafla.todolist.routers.GuiRouter;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -35,19 +31,11 @@ public class Error extends ViewGui implements Initializable {
             jframe.setTitle(d.label("error") + errorCode);
             jframe.setSize(600, 200);
             fixedJFrame();
+            int error = initFX("Error.fxml");
+            if (error!=100)
+                System.out.println(d.errorExplain(error));
             jframe.add(jfxPanel);
             jframe.setVisible(true);
-        }
-    }
-
-    @Override
-    protected void initFX() {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("Error.fxml"));
-            Scene scene = new Scene(root);
-            jfxPanel.setScene(scene);
-        } catch (IOException exc) {
-            exc.printStackTrace();
         }
     }
 

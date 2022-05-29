@@ -4,16 +4,12 @@ import blaplafla.todolist.controllers.DictionaryController;
 import blaplafla.todolist.controllers.FileController;
 import blaplafla.todolist.controllers.MainController;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import javax.swing.*;
 import java.io.File;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -41,18 +37,11 @@ public class SaveFile extends ViewGui implements Initializable {
         jframe.setTitle(d.label("save-button"));
         jframe.setSize(500, 170);
         fixedJFrame();
+        int error = initFX("SaveFile.fxml");
+        if (error!=100)
+            MainController.getInstance().returnCode(error);
         jframe.add(jfxPanel);
         jframe.setVisible(true);
-    }
-
-    protected void initFX() {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("SaveFile.fxml"));
-            Scene scene = new Scene(root);
-            jfxPanel.setScene(scene);
-        } catch (IOException exc) {
-            exc.printStackTrace();
-        }
     }
 
     @Override

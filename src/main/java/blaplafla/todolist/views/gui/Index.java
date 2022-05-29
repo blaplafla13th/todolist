@@ -11,14 +11,10 @@ import blaplafla.todolist.requests.RequestValidation;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -71,19 +67,11 @@ public class Index extends ViewGui implements Initializable {
         jframe.setTitle(d.label("todolist-name") + listTask.getUsername());
         jframe.setSize(400, 800);
         fixedJFrame();
+        int error=initFX("Index.fxml");
+        if (error!=100)
+            MainController.getInstance().returnCode(error);
         jframe.add(jfxPanel);
         jframe.setVisible(true);
-    }
-
-    @Override
-    protected void initFX() {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("Index.fxml"));
-            Scene scene = new Scene(root);
-            jfxPanel.setScene(scene);
-        } catch (IOException exc) {
-            exc.printStackTrace();
-        }
     }
 
     @Override
