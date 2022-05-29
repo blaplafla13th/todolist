@@ -1,0 +1,29 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ToDoListDarwinX64:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/</output-path>
+    <root id="archive" name="ToDoListDarwinX64.jar">
+      <element id="module-output" name="todolist" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ArtifactLib/darwin64/javafx-swt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ArtifactLib/darwin64/javafx.web.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ArtifactLib/darwin64/javafx.base.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ArtifactLib/darwin64/javafx.fxml.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ArtifactLib/darwin64/javafx.media.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ArtifactLib/darwin64/javafx.swing.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ArtifactLib/darwin64/javafx.controls.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ArtifactLib/darwin64/javafx.graphics.jar" path-in-jar="/" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/darwin64/libdecora_sse.dylib" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/darwin64/libfxplugins.dylib" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/darwin64/libglass.dylib" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/darwin64/libglib-lite.dylib" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/darwin64/libgstreamer-lite.dylib" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/darwin64/libjavafx_font.dylib" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/darwin64/libjavafx_iio.dylib" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/darwin64/libjfxmedia.dylib" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/darwin64/libjfxmedia_avf.dylib" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/darwin64/libjfxwebkit.dylib" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/darwin64/libprism_common.dylib" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/darwin64/libprism_es2.dylib" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/darwin64/libprism_sw.dylib" />
+    </root>
+  </artifact>
+</component>

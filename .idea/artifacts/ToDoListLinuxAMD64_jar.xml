@@ -1,0 +1,37 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ToDoListLinuxAMD64:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/</output-path>
+    <root id="archive" name="ToDoListLinuxAMD64.jar">
+      <element id="module-output" name="todolist" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ArtifactLib/linux64/javafx-swt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ArtifactLib/linux64/javafx.web.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ArtifactLib/linux64/javafx.base.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ArtifactLib/linux64/javafx.fxml.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ArtifactLib/linux64/javafx.media.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ArtifactLib/linux64/javafx.swing.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ArtifactLib/linux64/javafx.controls.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ArtifactLib/linux64/javafx.graphics.jar" path-in-jar="/" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/linux64/libavplugin-54.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/linux64/libavplugin-56.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/linux64/libavplugin-57.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/linux64/libavplugin-ffmpeg-56.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/linux64/libavplugin-ffmpeg-57.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/linux64/libavplugin-ffmpeg-58.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/linux64/libdecora_sse.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/linux64/libfxplugins.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/linux64/libglass.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/linux64/libglassgtk2.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/linux64/libglassgtk3.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/linux64/libgstreamer-lite.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/linux64/libjavafx_font.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/linux64/libjavafx_font_freetype.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/linux64/libjavafx_font_pango.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/linux64/libjavafx_iio.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/linux64/libjfxmedia.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/linux64/libjfxwebkit.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/linux64/libprism_common.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/linux64/libprism_es2.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/ArtifactLib/linux64/libprism_sw.so" />
+    </root>
+  </artifact>
+</component>
