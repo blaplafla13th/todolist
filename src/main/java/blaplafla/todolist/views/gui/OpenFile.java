@@ -19,7 +19,6 @@ public class OpenFile extends ViewGui implements Initializable {
     final FileController f = MainController.getInstance().fileController();
     final RequestValidation r = MainController.getInstance().input();
     private final JFileChooser fileChooser = new JFileChooser();
-    boolean loadfile;
     File file;
     @FXML
     private Label filepath;
@@ -54,10 +53,12 @@ public class OpenFile extends ViewGui implements Initializable {
     }
 
     public void accept() {
-        MainController.getInstance().returnCode(f.importListTask());
-        MainController.getInstance().router().refresh();
+        int code = f.importListTask();
+        if (code!=100)
+        MainController.getInstance().returnCode(code);
         close();
         ((ViewGui) MainController.getInstance().router().getOpenFile()).close();
+        MainController.getInstance().router().refresh();
     }
 
     public void cancel() {
