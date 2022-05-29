@@ -11,7 +11,7 @@ import java.util.Iterator;
 public class SimpleArrayList<T extends Comparable<? super T>> implements Serializable, Iterable<T>, SimpleStructure<T> {
     private final MergeSort<T> sort;
     private T[] array;
-    private int n = 0;
+    private int n;
 
     public SimpleArrayList() {
         int DEFAULT_SIZE = 100;
@@ -128,7 +128,7 @@ public class SimpleArrayList<T extends Comparable<? super T>> implements Seriali
     }
 
     private class Itr implements Iterator<T> {
-        private int currentIndex = 0;
+        private int currentIndex;
 
 
         public boolean hasNext() {

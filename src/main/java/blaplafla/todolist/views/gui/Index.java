@@ -19,10 +19,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Index extends ViewGui implements Initializable {
-    DictionaryController d = MainController.getInstance().dictionaryController();
-    TaskController t = MainController.getInstance().taskController();
+    final DictionaryController d = MainController.getInstance().dictionaryController();
+    final TaskController t = MainController.getInstance().taskController();
+    final FileController f = MainController.getInstance().fileController();
     ListTask listTask = MainController.getInstance().listTask();
-    FileController f = MainController.getInstance().fileController();
     RequestValidation r;
     int page = 1;
     int max_page = t.paginateSize(listTask.getUndone(), 5);
@@ -67,8 +67,8 @@ public class Index extends ViewGui implements Initializable {
         jframe.setTitle(d.label("todolist-name") + listTask.getUsername());
         jframe.setSize(400, 800);
         fixedJFrame();
-        int error=initFX("Index.fxml");
-        if (error!=100)
+        int error = initFX("Index.fxml");
+        if (error != 100)
             MainController.getInstance().returnCode(error);
         jframe.add(jfxPanel);
         jframe.setVisible(true);

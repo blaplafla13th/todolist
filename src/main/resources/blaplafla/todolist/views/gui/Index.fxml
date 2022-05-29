@@ -3,41 +3,51 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="742.0" prefWidth="447.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blaplafla.todolist.views.gui.Index">
-    <MenuBar layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="407.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="15.0">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="742.0" prefWidth="447.0"
+            style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16"
+            fx:controller="blaplafla.todolist.views.gui.Index">
+    <MenuBar layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="407.0" AnchorPane.leftAnchor="9.0"
+             AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="15.0">
         <Menu fx:id="file" mnemonicParsing="false" text="File">
-            <MenuItem fx:id="openfile" mnemonicParsing="false" onAction="#openFile" text="Open file" />
-            <MenuItem fx:id="savefile" mnemonicParsing="false" onAction="#saveFile" text="Save file" />
-            <MenuItem fx:id="username" mnemonicParsing="false" onAction="#setUsername" text="Username" />
-            <MenuItem fx:id="language" mnemonicParsing="false" onAction="#setLanguage" text="Language" />
+            <MenuItem fx:id="openfile" mnemonicParsing="false" onAction="#openFile" text="Open file"/>
+            <MenuItem fx:id="savefile" mnemonicParsing="false" onAction="#saveFile" text="Save file"/>
+            <MenuItem fx:id="username" mnemonicParsing="false" onAction="#setUsername" text="Username"/>
+            <MenuItem fx:id="language" mnemonicParsing="false" onAction="#setLanguage" text="Language"/>
         </Menu>
         <Menu fx:id="task" mnemonicParsing="false" text="ListTask">
-            <MenuItem fx:id="undonelist" mnemonicParsing="false" onAction="#undoneList" text="Undone List" />
-            <MenuItem fx:id="donelist" mnemonicParsing="false" onAction="#doneList" text="Done List" />
-            <MenuItem fx:id="addtask" mnemonicParsing="false" onAction="#add" text="Add task" />
+            <MenuItem fx:id="undonelist" mnemonicParsing="false" onAction="#undoneList" text="Undone List"/>
+            <MenuItem fx:id="donelist" mnemonicParsing="false" onAction="#doneList" text="Done List"/>
+            <MenuItem fx:id="addtask" mnemonicParsing="false" onAction="#add" text="Add task"/>
         </Menu>
     </MenuBar>
-    <Label fx:id="undone" layoutX="18.0" layoutY="47.0" text="Undone list" AnchorPane.leftAnchor="9.0" AnchorPane.topAnchor="60.0">
+    <Label fx:id="undone" layoutX="18.0" layoutY="47.0" text="Undone list" AnchorPane.leftAnchor="9.0"
+           AnchorPane.topAnchor="60.0">
         <font>
-            <Font name="System Bold" size="20.0" />
+            <Font name="System Bold" size="20.0"/>
         </font>
     </Label>
-    <ListView fx:id="listViewTask" layoutX="14.0" layoutY="96.0" prefHeight="535.0" prefWidth="429.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0" />
-    <Label fx:id="lastDone" layoutX="9.0" layoutY="667.0" text="Last Done Task: aaa " AnchorPane.leftAnchor="9.0" AnchorPane.topAnchor="667.0">
+    <ListView fx:id="listViewTask" layoutX="14.0" layoutY="96.0" prefHeight="535.0" prefWidth="429.0"
+              AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0"/>
+    <Label fx:id="lastDone" layoutX="9.0" layoutY="667.0" text="Last Done Task: aaa " AnchorPane.leftAnchor="9.0"
+           AnchorPane.topAnchor="667.0">
         <font>
-            <Font name="System Bold" size="20.0" />
+            <Font name="System Bold" size="20.0"/>
         </font>
     </Label>
     <Label fx:id="prev" layoutX="9.0" layoutY="638.0" onMouseClicked="#prev" text="Prev" AnchorPane.leftAnchor="9.0">
         <font>
-            <Font size="18.0" />
+            <Font size="18.0"/>
         </font>
     </Label>
-    <Label fx:id="next" layoutX="398.0" layoutY="638.0" onMouseClicked="#next" text="Next" textAlignment="RIGHT" AnchorPane.rightAnchor="9.0">
+    <Label fx:id="next" layoutX="398.0" layoutY="638.0" onMouseClicked="#next" text="Next" textAlignment="RIGHT"
+           AnchorPane.rightAnchor="9.0">
         <font>
-            <Font size="18.0" />
+            <Font size="18.0"/>
         </font>
     </Label>
-    <Button fx:id="refresh" layoutX="514.0" layoutY="15.0" mnemonicParsing="false" onAction="#addData" text="Refresh" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="60.0" />
-    <TextField fx:id="usernameField" layoutX="216.0" layoutY="15.0" onAction="#doneSetUsername" onInputMethodTextChanged="#doneSetUsername" AnchorPane.leftAnchor="216.0" AnchorPane.rightAnchor="215.0" />
+    <Button fx:id="refresh" layoutX="514.0" layoutY="15.0" mnemonicParsing="false" onAction="#addData" text="Refresh"
+            AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="60.0"/>
+    <TextField fx:id="usernameField" layoutX="216.0" layoutY="15.0" onAction="#doneSetUsername"
+               onInputMethodTextChanged="#doneSetUsername" AnchorPane.leftAnchor="216.0"
+               AnchorPane.rightAnchor="215.0"/>
 </AnchorPane>

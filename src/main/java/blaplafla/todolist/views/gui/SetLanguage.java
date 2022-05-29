@@ -15,8 +15,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class SetLanguage extends ViewGui implements Initializable {
+    final DictionaryController d = MainController.getInstance().dictionaryController();
     private final ObservableList<Dictionary> dictionaryObservableList = FXCollections.observableArrayList();
-    DictionaryController d = MainController.getInstance().dictionaryController();
     @FXML
     private javafx.scene.control.Label curlang;
     @FXML
@@ -27,9 +27,6 @@ public class SetLanguage extends ViewGui implements Initializable {
     private Button ok;
     @FXML
     private ListView<Dictionary> langlist;
-    public SetLanguage() {
-        super();
-    }
 
     @Override
     public void run() {
@@ -38,7 +35,7 @@ public class SetLanguage extends ViewGui implements Initializable {
         jframe.setSize(300, 350);
         fixedJFrame();
         int error = initFX("SetLanguage.fxml");
-        if (error!=100)
+        if (error != 100)
             MainController.getInstance().returnCode(error);
         jframe.add(jfxPanel);
         jframe.setVisible(true);
@@ -65,7 +62,7 @@ public class SetLanguage extends ViewGui implements Initializable {
     }
 
     public void cancel() {
-        this.close();
+        close();
         ((ViewGui) MainController.getInstance().router().getSetLanguage()).close();
     }
 }

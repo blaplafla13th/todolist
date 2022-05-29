@@ -8,11 +8,10 @@ import blaplafla.todolist.views.View;
 
 
 public class SetLanguage implements View {
+    final DictionaryController d = MainController.getInstance().dictionaryController();
+    final RequestValidation r = MainController.getInstance().input();
 
     public void run() {
-        DictionaryController d = MainController.getInstance().dictionaryController();
-        RequestValidation r = MainController.getInstance().input();
-
         System.out.println(d.label("current-lang") + d.getDictionary());
         System.out.println(d.label("set-lang"));
         int code = d.loadLanguage();
@@ -25,8 +24,7 @@ public class SetLanguage implements View {
         }
         System.out.println(d.label("input-num-option"));
         code = d.setDictionary(r.inputInteger(r.input()) - 1);
-        if (code != 100)
-            MainController.getInstance().returnCode(code);
+        if (code != 100) MainController.getInstance().returnCode(code);
         System.out.println(d.label("current-lang") + d.getDictionary());
         r.reset();
         MainController.getInstance().pause();

@@ -7,8 +7,10 @@ public class English extends Dictionary {
             case 100 -> "Successful";
             case 200 -> "Data file not found";
             case 201 -> "Language file not found";
+            case 202 -> "FXML file not found";
             case 300 -> "Data file can't be read or written";
             case 301 -> "Language file can't be read or written";
+            case 302 -> "FXML file can't be read or written";
             case 400 -> "Data file is invalid";
             case 401 -> "Language file is invalid";
             case 402 -> "Params is invalid";

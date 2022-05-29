@@ -55,7 +55,7 @@ class SimpleStackWorker extends Thread {
     SimpleStack<String> stack;
 
     public SimpleStackWorker(SimpleStack<String> SimpleStack) {
-        this.stack = SimpleStack;
+        stack = SimpleStack;
     }
 
     @Override

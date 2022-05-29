@@ -13,10 +13,10 @@ import blaplafla.todolist.views.View;
 
 
 public class Index implements View {
-    DictionaryController d = MainController.getInstance().dictionaryController();
-    TaskController t = MainController.getInstance().taskController();
-    FileController f = MainController.getInstance().fileController();
-    RequestValidation r = MainController.getInstance().input();
+    final DictionaryController d = MainController.getInstance().dictionaryController();
+    final TaskController t = MainController.getInstance().taskController();
+    final FileController f = MainController.getInstance().fileController();
+    final RequestValidation r = MainController.getInstance().input();
     ListTask listTask = MainController.getInstance().listTask();
     int page = 1;
     int max_page = t.paginateSize(listTask.getUndone(), 3);

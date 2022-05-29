@@ -10,7 +10,7 @@ public class Task implements Serializable, Comparable<Task> {
     private String description;
     private Date deadline;
     private int priority;
-    private boolean status = false;
+    private boolean status;
 
     public Task(String title, String description, Date deadline, int priority) {
         this.title = title;
@@ -63,7 +63,7 @@ public class Task implements Serializable, Comparable<Task> {
     @Override
     public int compareTo(Task task) {
         int temp = Long.compare(priorityPoint(), task.priorityPoint());
-        return temp == 0 ? Long.compare(this.leftTime(), task.leftTime()) : temp;
+        return temp == 0 ? Long.compare(leftTime(), task.leftTime()) : temp;
     }
 
     public long[] prettyTimer() {
@@ -95,9 +95,10 @@ public class Task implements Serializable, Comparable<Task> {
     }
 
     public void toggle() {
-        this.status = !status;
+        status = !status;
     }
 
+    @SuppressWarnings("deprecation")
     public String getDeadlineTime() {
         return String.format("%d/%d/%d %d:%d:%d", deadline.getDate(), deadline.getMonth() + 1, deadline.getYear() + 1900
                 , deadline.getHours(), deadline.getMinutes(), deadline.getMinutes());

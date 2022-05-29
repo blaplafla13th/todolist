@@ -8,7 +8,7 @@ import java.util.Iterator;
 @SuppressWarnings("unchecked")
 public class SimpleStack<T extends Comparable<? super T>> implements Serializable, Iterable<T>, SimpleStructure<T> {
     private T[] array;
-    private int n = 0;
+    private int n;
 
     public SimpleStack() {
         array = (T[]) new Comparable[50];
@@ -42,7 +42,6 @@ public class SimpleStack<T extends Comparable<? super T>> implements Serializabl
             throw new NullPointerException();
         } else if (n <= 0) return null;
         T temp = array[n - 1];
-        array[n - 1] = null;
         n--;
         return temp;
     }

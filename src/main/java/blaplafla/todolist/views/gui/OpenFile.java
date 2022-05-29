@@ -14,10 +14,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class OpenFile extends ViewGui implements Initializable {
+    final DictionaryController d = MainController.getInstance().dictionaryController();
+    final FileController f = MainController.getInstance().fileController();
     private final JFileChooser fileChooser = new JFileChooser();
-    DictionaryController d = MainController.getInstance().dictionaryController();
-    FileController f = MainController.getInstance().fileController();
-    boolean loadfile = false;
+    boolean loadfile;
     File file;
     @FXML
     private Label filepath;
@@ -36,7 +36,7 @@ public class OpenFile extends ViewGui implements Initializable {
         jframe.setSize(500, 200);
         fixedJFrame();
         int error = initFX("FileChooser.fxml");
-        if (error!=100)
+        if (error != 100)
             MainController.getInstance().returnCode(error);
         jframe.add(jfxPanel);
         jframe.setVisible(true);
@@ -54,12 +54,12 @@ public class OpenFile extends ViewGui implements Initializable {
     public void accept() {
         MainController.getInstance().returnCode(f.importListTask());
         MainController.getInstance().router().refresh();
-        this.close();
+        close();
         ((ViewGui) MainController.getInstance().router().getOpenFile()).close();
     }
 
     public void cancel() {
-        this.close();
+        close();
         ((ViewGui) MainController.getInstance().router().getOpenFile()).close();
     }
 

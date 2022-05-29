@@ -23,7 +23,7 @@ public abstract class RequestValidation {
     }
 
     public void reset() {
-        this.dictionaryController = MainController.getInstance().dictionaryController();
+        dictionaryController = MainController.getInstance().dictionaryController();
     }
 
     public Integer inputPositiveInteger(String in) {

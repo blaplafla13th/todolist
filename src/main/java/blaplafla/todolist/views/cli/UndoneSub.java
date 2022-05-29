@@ -12,9 +12,9 @@ import blaplafla.todolist.views.View;
 public class UndoneSub implements View {
 
 
-    DictionaryController d = MainController.getInstance().dictionaryController();
-    TaskController t = MainController.getInstance().taskController();
-    RequestValidation r = MainController.getInstance().input();
+    final DictionaryController d = MainController.getInstance().dictionaryController();
+    final TaskController t = MainController.getInstance().taskController();
+    final RequestValidation r = MainController.getInstance().input();
     SimpleArrayList<Task> tasks;
     boolean using = true;
     MotherTask motherTask;
@@ -108,6 +108,4 @@ public class UndoneSub implements View {
             }
         }
     }
-
-
 }

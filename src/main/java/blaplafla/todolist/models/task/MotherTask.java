@@ -3,10 +3,9 @@ package blaplafla.todolist.models.task;
 import blaplafla.todolist.models.datastructures.SimpleArrayList;
 import blaplafla.todolist.models.datastructures.SimpleStack;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class MotherTask extends Task implements Serializable, Comparable<Task> {
+public class MotherTask extends Task {
     private final SimpleArrayList<Task> undoneSubTask;
     private final SimpleStack<Task> doneSubTask;
 

@@ -14,9 +14,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class SaveFile extends ViewGui implements Initializable {
+    final DictionaryController d = MainController.getInstance().dictionaryController();
+    final FileController f = MainController.getInstance().fileController();
     private final JFileChooser fileChooser = new JFileChooser();
-    DictionaryController d = MainController.getInstance().dictionaryController();
-    FileController f = MainController.getInstance().fileController();
     @FXML
     private Label filepath;
     @FXML
@@ -28,17 +28,13 @@ public class SaveFile extends ViewGui implements Initializable {
     @FXML
     private Button changePath;
 
-    public SaveFile() {
-        super();
-    }
-
     public void run() {
         show = true;
         jframe.setTitle(d.label("save-button"));
         jframe.setSize(500, 170);
         fixedJFrame();
         int error = initFX("SaveFile.fxml");
-        if (error!=100)
+        if (error != 100)
             MainController.getInstance().returnCode(error);
         jframe.add(jfxPanel);
         jframe.setVisible(true);
@@ -63,25 +59,24 @@ public class SaveFile extends ViewGui implements Initializable {
             int code = MainController.getInstance().fileController().setFile(file.getAbsolutePath());
             if (code != 100) MainController.getInstance().returnCode(code);
         } else if (status == JFileChooser.CANCEL_OPTION) {
-            this.close();
+            close();
             ((ViewGui) MainController.getInstance().router().getSaveFile()).close();
 
         }
-        this.close();
+        close();
         MainController.getInstance().router().refresh();
     }
 
     public void accept() {
         if (f.hasFile()) {
             f.exportListTask();
-            this.close();
+            close();
             ((ViewGui) MainController.getInstance().router().getSaveFile()).close();
         } else changePath();
     }
 
     public void cancel() {
-        this.close();
+        close();
         ((ViewGui) MainController.getInstance().router().getSaveFile()).close();
     }
-
 }

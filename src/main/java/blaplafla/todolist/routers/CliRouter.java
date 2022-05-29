@@ -1,5 +1,6 @@
 package blaplafla.todolist.routers;
 
+import blaplafla.todolist.controllers.DictionaryController;
 import blaplafla.todolist.controllers.MainController;
 import blaplafla.todolist.requests.TerminalInputValidation;
 import blaplafla.todolist.views.cli.*;
@@ -7,6 +8,7 @@ import blaplafla.todolist.views.cli.*;
 import java.io.IOException;
 
 public class CliRouter extends Router {
+    DictionaryController dictionaryController = MainController.getInstance().dictionaryController();
 
     public CliRouter() {
         input = new TerminalInputValidation();
@@ -30,7 +32,7 @@ public class CliRouter extends Router {
 
     @Override
     public void pause() {
-        System.out.println(MainController.getInstance().dictionaryController().label("pause"));
+        System.out.println(dictionaryController.label("pause"));
         try {
             System.in.read();
         } catch (IOException ignored) {
@@ -40,7 +42,7 @@ public class CliRouter extends Router {
     @Override
     public void returnCode(int error) {
         if (error != 100) {
-            System.out.println(MainController.getInstance().dictionaryController().errorExplain(error));
+            System.out.println(dictionaryController.errorExplain(error));
             pause();
         }
     }

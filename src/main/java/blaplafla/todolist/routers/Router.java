@@ -18,9 +18,6 @@ public abstract class Router {
     protected View detailSubTask;
     protected RequestValidation input;
 
-    public Router() {
-    }
-
     public RequestValidation getInput() {
         return input;
     }

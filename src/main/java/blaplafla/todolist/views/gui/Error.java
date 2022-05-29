@@ -12,7 +12,7 @@ import java.util.ResourceBundle;
 
 public class Error extends ViewGui implements Initializable {
     private static int errorCode;
-    DictionaryController d = MainController.getInstance().dictionaryController();
+    final DictionaryController d = MainController.getInstance().dictionaryController();
     @FXML
     private javafx.scene.control.Label error;
     @FXML
@@ -25,14 +25,14 @@ public class Error extends ViewGui implements Initializable {
     @Override
     public void run(Object... params) {
         if (this != ((GuiRouter) MainController.getInstance().router()).getError()) {
-            this.close();
+            close();
         } else {
             errorCode = (Integer) params[0];
             jframe.setTitle(d.label("error") + errorCode);
             jframe.setSize(600, 200);
             fixedJFrame();
             int error = initFX("Error.fxml");
-            if (error!=100)
+            if (error != 100)
                 System.out.println(d.errorExplain(error));
             jframe.add(jfxPanel);
             jframe.setVisible(true);
@@ -46,7 +46,7 @@ public class Error extends ViewGui implements Initializable {
     }
 
     public void cancel() {
-        this.close();
+        close();
         ((GuiRouter) MainController.getInstance().router()).getError().close();
     }
 }

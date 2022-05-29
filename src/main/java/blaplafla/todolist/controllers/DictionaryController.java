@@ -52,7 +52,6 @@ public class DictionaryController {
         } catch (ClassNotFoundException e) {
             return 201;
         } catch (IOException e) {
-            e.printStackTrace();
             return 301;
         } catch (NoSuchMethodException | InvocationTargetException | InstantiationException |
                  IllegalAccessException | URISyntaxException e) {

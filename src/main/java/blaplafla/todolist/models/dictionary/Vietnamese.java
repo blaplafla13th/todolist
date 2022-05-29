@@ -7,8 +7,10 @@ public class Vietnamese extends Dictionary {
             case 100 -> "Thành công";
             case 200 -> "Không tìm thấy file dữ liệu";
             case 201 -> "Không tìm thấy file ngôn ngữ";
+            case 202 -> "Không tìm thấy file giao diện";
             case 300 -> "Không thể đọc ghi file dữ liệu";
             case 301 -> "Không thể đọc ghi file ngôn ngữ";
+            case 302 -> "Không thể đọc ghi file giao diện";
             case 400 -> "Dữ liệu của tệp không hợp lệ";
             case 401 -> "Dữ liệu của tệp ngôn ngữ không hợp lệ";
             case 402 -> "Đầu vào không hợp lệ";

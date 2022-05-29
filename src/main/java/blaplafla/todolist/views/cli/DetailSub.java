@@ -19,7 +19,7 @@ public class DetailSub implements View {
     @Override
     public void run(Object... params) {
         if (params[0] instanceof MotherTask motherTask && params[1] instanceof Task subtask) {
-            this.task = subtask;
+            task = subtask;
             this.motherTask = motherTask;
             while (using) {
                 System.out.print("\033[H\033[2J");
@@ -39,7 +39,6 @@ public class DetailSub implements View {
             using = true;
         } else
             MainController.getInstance().returnCode(402);
-
     }
 
     private void commandlist() {

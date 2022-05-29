@@ -10,9 +10,9 @@ import blaplafla.todolist.views.View;
 import java.util.Date;
 
 public class Edit implements View {
-    DictionaryController d = MainController.getInstance().dictionaryController();
-    TaskController t = MainController.getInstance().taskController();
-    RequestValidation r = MainController.getInstance().input();
+    final DictionaryController d = MainController.getInstance().dictionaryController();
+    final TaskController t = MainController.getInstance().taskController();
+    final RequestValidation r = MainController.getInstance().input();
 
     @Override
     public void run(Object... params) {

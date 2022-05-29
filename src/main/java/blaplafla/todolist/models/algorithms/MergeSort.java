@@ -23,12 +23,11 @@ public class MergeSort<T extends Comparable<? super T>> implements Serializable 
             if (array1[i].compareTo(array2[j]) <= 0) {
                 array[r] = array1[i];
                 i++;
-                r++;
             } else {
                 array[r] = array2[j];
                 j++;
-                r++;
             }
+            r++;
             if (i == array1.length) {
                 while (j < array2.length) {
                     array[r] = array2[j];

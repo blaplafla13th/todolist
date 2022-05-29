@@ -10,9 +10,6 @@ import java.util.Date;
 @SuppressWarnings("rawtypes")
 public class TaskController {
 
-    public TaskController() {
-    }
-
     public void index() {
         MainController.getInstance().indexView().run();
     }

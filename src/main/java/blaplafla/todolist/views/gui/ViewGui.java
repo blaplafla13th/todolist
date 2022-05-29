@@ -19,9 +19,9 @@ public abstract class ViewGui implements View {
     protected JFXPanel jfxPanel;
 
     public ViewGui() {
-        this.jframe = new JFrame();
-        this.show = false;
-        this.jfxPanel = new JFXPanel();
+        jframe = new JFrame();
+        show = false;
+        jfxPanel = new JFXPanel();
     }
 
     @Override

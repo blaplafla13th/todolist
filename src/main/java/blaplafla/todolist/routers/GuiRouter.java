@@ -13,11 +13,11 @@ public class GuiRouter extends Router {
 
     @Override
     public void setupView() {
-        this.index = new Index();
-        this.setLanguage = new SetLanguage();
-        this.openFile = new OpenFile();
-        this.saveFile = new SaveFile();
-        this.error = new Error();
+        index = new Index();
+        setLanguage = new SetLanguage();
+        openFile = new OpenFile();
+        saveFile = new SaveFile();
+        error = new Error();
     }
 
     @Override

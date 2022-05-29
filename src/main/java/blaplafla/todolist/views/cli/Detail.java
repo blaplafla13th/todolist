@@ -10,9 +10,9 @@ import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.views.View;
 
 public class Detail implements View {
-    DictionaryController d = MainController.getInstance().dictionaryController();
-    RequestValidation r = MainController.getInstance().input();
-    TaskController t = MainController.getInstance().taskController();
+    final DictionaryController d = MainController.getInstance().dictionaryController();
+    final RequestValidation r = MainController.getInstance().input();
+    final TaskController t = MainController.getInstance().taskController();
     int page = 1;
     int max_page;
     boolean using = true;

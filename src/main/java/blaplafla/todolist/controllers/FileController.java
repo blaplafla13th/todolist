@@ -3,16 +3,14 @@ package blaplafla.todolist.controllers;
 import blaplafla.todolist.models.task.ListTask;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.attribute.BasicFileAttributes;
 
 public class FileController {
     private File userfile;
-    private boolean hasFile = false;
-    private FileInputStream fileInputStream;
+    private boolean hasFile;
     private ObjectInputStream objectInputStream;
 
-
-    public FileController() {
-    }
 
     public boolean hasFile() {
         return userfile != null;
@@ -27,7 +25,7 @@ public class FileController {
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
                 objectOutputStream.writeObject(null);
             }
-            fileInputStream = new FileInputStream(this.userfile);
+            FileInputStream fileInputStream = new FileInputStream(this.userfile);
             objectInputStream = new ObjectInputStream(fileInputStream);
             hasFile = true;
             return 100;
@@ -39,7 +37,7 @@ public class FileController {
     }
 
     public int unsetFile() {
-        this.userfile = null;
+        userfile = null;
         return 100;
     }
 
@@ -63,7 +61,7 @@ public class FileController {
     public int exportListTask() {
         if (hasFile) {
             try {
-                FileOutputStream fileOutputStream = new FileOutputStream(this.userfile);
+                FileOutputStream fileOutputStream = new FileOutputStream(userfile);
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
                 objectOutputStream.writeObject(MainController.getInstance().listTask());
                 objectOutputStream.flush();
@@ -89,7 +87,8 @@ public class FileController {
 
     public boolean isNullFile() {
         try {
-            return userfile.isFile() && userfile.length() == 0
+            BasicFileAttributes basicFileAttributes = Files.readAttributes(userfile.toPath(), BasicFileAttributes.class);
+            return basicFileAttributes.isRegularFile() && basicFileAttributes.size() == 0
                     && objectInputStream.readObject() == null;
         } catch (IOException | ClassNotFoundException e) {
             return true;
