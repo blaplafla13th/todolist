@@ -18,7 +18,6 @@ public class Starter {
             MainController.getInstance().fileController().setFile(file);
         setMode(mode);
         SwingUtilities.invokeLater(() -> MainController.getInstance().router().getIndex().run());
-        MainController.getInstance().returnCode(500);
     }
 
     private static void setMode(String mode) {
