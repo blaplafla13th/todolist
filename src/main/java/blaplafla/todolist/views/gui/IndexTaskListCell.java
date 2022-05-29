@@ -13,7 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.net.URL;
 
-public class TaskListCell extends ListCell<Task> {
+public class IndexTaskListCell extends ListCell<Task> {
     DictionaryController d = MainController.getInstance().dictionaryController();
     @FXML
     private Label title;
