@@ -18,6 +18,7 @@ public class GuiRouter extends Router {
         openFile = new OpenFile();
         saveFile = new SaveFile();
         error = new Error();
+        create = new Create();
     }
 
     @Override

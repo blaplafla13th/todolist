@@ -100,6 +100,9 @@ public class Vietnamese extends Dictionary {
             case "changepath" -> "Đổi file";
             case "error" -> "Lỗi ";
             case "click-to-show" -> "Ấn để hiện ";
+            case "hour" -> "giờ";
+            case "minute" -> "phút";
+            case "second" -> "giây";
             default -> "Không xác định";
         };
     }

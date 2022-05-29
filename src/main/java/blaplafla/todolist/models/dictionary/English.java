@@ -101,6 +101,9 @@ public class English extends Dictionary {
             case "changepath" -> "Change File";
             case "error" -> "Error ";
             case "click-to-show" -> "Click to show ";
+            case "hour" -> "h";
+            case "minute" -> "m";
+            case "second" -> "s";
             default -> "Unknown";
         };
     }
