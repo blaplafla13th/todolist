@@ -26,9 +26,9 @@ public class Create implements View {
             return;
         }
         System.out.println(d.label("placeholder-title"));
-        String title = r.input();
+        String title = r.inputString(r.input());
         System.out.println(d.label("placeholder-desc"));
-        String desc = r.input();
+        String desc = r.inputString(r.input());
         System.out.println(d.label("placeholder-deadline"));
         System.out.println(d.label("input-date"));
         Date deadline = r.inputDate(r.input());

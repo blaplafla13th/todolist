@@ -20,10 +20,10 @@ public class Edit implements View {
             System.out.println(d.label("edit-task"));
             System.out.println(d.label("placeholder-title"));
             System.out.println(d.label("old-value") + ":" + task.getTitle());
-            String title = r.input();
+            String title = r.inputString(r.input());
             System.out.println(d.label("placeholder-desc"));
             System.out.println(d.label("old-value") + ":" + task.getDescription());
-            String desc = r.input();
+            String desc = r.inputString(r.input());
             System.out.println(d.label("placeholder-deadline"));
             System.out.println(d.label("old-value") + ":" + task.getDeadlineTime());
             System.out.println(d.prettyTime(task.prettyTimer()));
