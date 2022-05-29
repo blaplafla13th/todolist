@@ -3,6 +3,7 @@ package blaplafla.todolist.views.gui;
 import blaplafla.todolist.controllers.DictionaryController;
 import blaplafla.todolist.controllers.FileController;
 import blaplafla.todolist.controllers.MainController;
+import blaplafla.todolist.requests.RequestValidation;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -16,6 +17,7 @@ import java.util.ResourceBundle;
 public class OpenFile extends ViewGui implements Initializable {
     final DictionaryController d = MainController.getInstance().dictionaryController();
     final FileController f = MainController.getInstance().fileController();
+    final RequestValidation r = MainController.getInstance().input();
     private final JFileChooser fileChooser = new JFileChooser();
     boolean loadfile;
     File file;
@@ -65,7 +67,7 @@ public class OpenFile extends ViewGui implements Initializable {
 
     public void handle() {
         overwrite.setVisible(false);
-        file = new File(name.getText());
+        file = new File( r.reformat(name.getText()));
         if (name.getText() != null && file.isFile())
             fileChooser.setCurrentDirectory(file.getParentFile());
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -80,7 +82,7 @@ public class OpenFile extends ViewGui implements Initializable {
     }
 
     public void check() {
-        f.setFile(name.getText());
+        f.setFile( r.reformat(name.getText()) );
         if (!f.isNullFile() && !MainController.getInstance().listTask().isEmpty()) {
             overwrite.setText(d.label("warning-load-data"));
             overwrite.setVisible(true);

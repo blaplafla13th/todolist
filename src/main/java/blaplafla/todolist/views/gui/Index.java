@@ -157,7 +157,7 @@ public class Index extends ViewGui implements Initializable {
 
     public void doneSetUsername() {
         usernameField.setVisible(false);
-        MainController.getInstance().listTask().setUsername(usernameField.getText());
+        MainController.getInstance().listTask().setUsername(r.reformat(usernameField.getText()) );
         MainController.getInstance().indexView().run();
     }
 }

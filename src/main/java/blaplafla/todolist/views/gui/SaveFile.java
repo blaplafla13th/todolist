@@ -31,7 +31,7 @@ public class SaveFile extends ViewGui implements Initializable {
     public void run() {
         show = true;
         jframe.setTitle(d.label("save-button"));
-        jframe.setSize(500, 170);
+        jframe.setSize(500, 200);
         fixedJFrame();
         int error = initFX("SaveFile.fxml");
         if (error != 100)

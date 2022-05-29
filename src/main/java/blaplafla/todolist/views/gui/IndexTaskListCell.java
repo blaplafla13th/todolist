@@ -4,27 +4,17 @@ import blaplafla.todolist.controllers.DictionaryController;
 import blaplafla.todolist.controllers.MainController;
 import blaplafla.todolist.models.task.MotherTask;
 import blaplafla.todolist.models.task.Task;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
 import java.net.URL;
 
 public class IndexTaskListCell extends ListCell<Task> {
     DictionaryController d = MainController.getInstance().dictionaryController();
-    @FXML
-    private Label title;
-    @FXML
-    private Label desc;
-    @FXML
-    private Label timeLeft;
-    @FXML
-    private Label incomplete;
-    @FXML
-    private AnchorPane anchorPane;
 
     @Override
     protected void updateItem(Task task, boolean empty) {
@@ -35,15 +25,18 @@ public class IndexTaskListCell extends ListCell<Task> {
         } else {
             URL fxm = getClass().getResource("TaskListCell.fxml");
             FXMLLoader loader = new FXMLLoader(fxm);
+            AnchorPane anchorPane;
             try {
                 anchorPane = loader.load();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            title = (Label) anchorPane.getChildren().get(0);
-            timeLeft = (Label) anchorPane.getChildren().get(1);
-            desc = (Label) anchorPane.getChildren().get(2);
-            incomplete = (Label) anchorPane.getChildren().get(3);
+            GridPane gridPane1 = (GridPane) anchorPane.getChildren().get(0);
+            GridPane gridPane2 = (GridPane) anchorPane.getChildren().get(1);
+            Label title = (Label) gridPane1.getChildren().get(0);
+            Label timeLeft = (Label) gridPane1.getChildren().get(1);
+            Label desc = (Label) gridPane2.getChildren().get(0);
+            Label incomplete = (Label) gridPane2.getChildren().get(1);
             title.setText(task.getTitle());
             timeLeft.setText(d.prettyTime(task.prettyTimer()));
             desc.setText(d.label("desc") + task.getDescription());
