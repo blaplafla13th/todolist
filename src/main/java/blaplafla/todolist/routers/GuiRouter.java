@@ -1,6 +1,6 @@
 package blaplafla.todolist.routers;
 
-import blaplafla.todolist.requests.TerminalInputValidation;
+import blaplafla.todolist.requests.JavaFXValidation;
 import blaplafla.todolist.views.gui.Error;
 import blaplafla.todolist.views.gui.*;
 
@@ -8,7 +8,7 @@ public class GuiRouter extends Router {
     ViewGui error;
 
     public GuiRouter() {
-        input = new TerminalInputValidation();
+        input = new JavaFXValidation();
     }
 
     @Override

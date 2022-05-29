@@ -1,18 +1,14 @@
 package blaplafla.todolist.requests;
 
+import blaplafla.todolist.controllers.MainController;
+
 import java.util.Date;
-import java.util.Scanner;
 
 @SuppressWarnings("deprecation")
-public class TerminalInputValidation extends RequestValidation {
-    private final Scanner input;
-
-    public TerminalInputValidation() {
-        input = new Scanner(System.in);
-    }
-
+public class JavaFXValidation extends RequestValidation {
+    @Override
     public String input() {
-        return reformat(input.nextLine());
+        return null;
     }
 
     @Override
@@ -20,8 +16,7 @@ public class TerminalInputValidation extends RequestValidation {
         try {
             return Integer.parseInt(in);
         } catch (NumberFormatException e) {
-            System.out.println(dictionaryController.errorExplain(500));
-            System.out.println(dictionaryController.label("def") + 0);
+            MainController.getInstance().returnCode(500);
             return 0;
         }
     }
@@ -33,8 +28,7 @@ public class TerminalInputValidation extends RequestValidation {
                 return Integer.parseInt(in);
             throw new NumberFormatException();
         } catch (NumberFormatException e) {
-            System.out.println(dictionaryController.errorExplain(500));
-            System.out.println(dictionaryController.label("def") + 1);
+            MainController.getInstance().returnCode(500);
             return 1;
         }
     }
@@ -46,21 +40,21 @@ public class TerminalInputValidation extends RequestValidation {
                 return Integer.parseInt(in);
             throw new NumberFormatException();
         } catch (NumberFormatException e) {
-            System.out.println(dictionaryController.errorExplain(500));
-            System.out.println(dictionaryController.label("def") + 1);
-            return 1;
+            MainController.getInstance().returnCode(500);
+            return max;
         }
     }
 
+    @Override
     public String inputString(String temp) {
-        temp = reformat(temp);
+        temp=reformat(temp);
         if (temp.equals("") || temp.equals(" ")) {
-            System.out.println(dictionaryController.errorExplain(500));
-            System.out.println(dictionaryController.label("def"));
+            MainController.getInstance().returnCode(500);
             return "Lorem Ipsum";
         } else return temp;
     }
 
+    @Override
     public Date inputDate(String in) {
         try {
             String[] splitted = in.split("-");
@@ -74,15 +68,15 @@ public class TerminalInputValidation extends RequestValidation {
             else
                 throw new NumberFormatException();
         } catch (NumberFormatException e) {
-            System.out.println(dictionaryController.errorExplain(502));
-            System.out.println(dictionaryController.label("def") + "2022-01-01");
+            MainController.getInstance().returnCode(500);
             return new Date(122, 1, 1);
         }
     }
 
+    @Override
     public Date inputTime(Date date, String in) {
         if (date == null) {
-            date = inputDate(input());
+            date= new Date();
         }
         try {
             String[] splitted = in.split(":");
@@ -108,5 +102,9 @@ public class TerminalInputValidation extends RequestValidation {
         }
     }
 
-
+    public void combine(Date date1, Date date2) {
+        date1.setHours(date2.getHours());
+        date1.setMinutes(date2.getMinutes());
+        date1.setSeconds(date2.getSeconds());
+    }
 }
