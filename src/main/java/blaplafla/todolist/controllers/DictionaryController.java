@@ -70,7 +70,7 @@ public class DictionaryController {
         } catch (IndexOutOfBoundsException e) {
             return 301;
         }
-        return 300;
+        return 100;
     }
 
     public String errorExplain(int errorCode) {
