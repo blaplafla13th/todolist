@@ -55,7 +55,7 @@ public class OpenFile extends ViewGui implements Initializable {
     public void accept() {
         int code = f.importListTask();
         if (code!=100)
-        MainController.getInstance().returnCode(code);
+            MainController.getInstance().returnCode(code);
         close();
         ((ViewGui) MainController.getInstance().router().getOpenFile()).close();
         MainController.getInstance().router().refresh();
