@@ -61,7 +61,6 @@ public class Index extends ViewGui implements Initializable {
 
     @Override
     public void run() {
-        r = MainController.getInstance().input();
         show = true;
         jframe.setTitle(d.label("todolist-name") + listTask.getUsername());
         jframe.setSize(400, 800);
@@ -75,6 +74,7 @@ public class Index extends ViewGui implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        r = MainController.getInstance().input();
         task.setText(d.label("tasks"));
         undone.setText(d.label("undone list-button"));
         openfile.setText(d.label("open-button"));
