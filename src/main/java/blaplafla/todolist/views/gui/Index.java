@@ -12,8 +12,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -28,35 +27,35 @@ public class Index extends ViewGui implements Initializable {
     int max_page = t.paginateSize(listTask.getUndone(), 5);
     ObservableList<Task> listtask = FXCollections.observableArrayList();
     @FXML
-    private javafx.scene.control.Menu file;
+    private Menu file;
     @FXML
-    private javafx.scene.control.Label undone;
+    private Label undone;
     @FXML
-    private javafx.scene.control.MenuItem openfile;
+    private MenuItem openfile;
     @FXML
-    private javafx.scene.control.MenuItem savefile;
+    private MenuItem savefile;
     @FXML
-    private javafx.scene.control.Menu task;
+    private Menu task;
     @FXML
-    private javafx.scene.control.MenuItem undonelist;
+    private MenuItem undonelist;
     @FXML
-    private javafx.scene.control.MenuItem donelist;
+    private MenuItem donelist;
     @FXML
-    private javafx.scene.control.MenuItem addtask;
+    private MenuItem addtask;
     @FXML
-    private javafx.scene.control.Button refresh;
+    private Button refresh;
     @FXML
-    private javafx.scene.control.MenuItem username;
+    private MenuItem username;
     @FXML
-    private javafx.scene.control.MenuItem language;
+    private MenuItem language;
     @FXML
     private ListView<Task> listViewTask;
     @FXML
-    private javafx.scene.control.Label lastDone;
+    private Label lastDone;
     @FXML
-    private javafx.scene.control.Label next;
+    private Label next;
     @FXML
-    private javafx.scene.control.Label prev;
+    private Label prev;
     @FXML
     private TextField usernameField;
 
