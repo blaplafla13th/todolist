@@ -31,7 +31,7 @@
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Button fx:id="refresh" mnemonicParsing="false" onAction="#addData" text="Refresh" GridPane.columnIndex="1" />
+        <Button fx:id="refresh" mnemonicParsing="false" onAction="#addData" prefHeight="30.0" prefWidth="80.0" text="Refresh" GridPane.columnIndex="1" />
     </GridPane>
     <ListView fx:id="listViewTask" layoutX="9.0" layoutY="125.0" prefHeight="518.0" prefWidth="429.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0" />
     <Label fx:id="lastDone" layoutX="10.0" layoutY="684.0" text="Last Done Task: aaa " AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="684.0">
