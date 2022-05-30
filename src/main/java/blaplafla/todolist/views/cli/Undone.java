@@ -44,7 +44,7 @@ public class Undone implements View {
                         System.out.println(d.label("desc") + motherTask.getDescription());
                         System.out.println(d.prettyTime(motherTask.prettyTimer()));
                         if ((motherTask.subTaskSize()) > 0)
-                            System.out.println(d.label("subtask-remaining") + motherTask.undoneSubTaskSize() +
+                            System.out.println(d.label("subtask-remaining") + ": " + motherTask.undoneSubTaskSize() +
                                     "/" + motherTask.subTaskSize());
                         System.out.println(d.label("-"));
                     } else MainController.getInstance().returnCode(402);
