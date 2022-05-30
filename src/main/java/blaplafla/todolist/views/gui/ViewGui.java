@@ -61,6 +61,7 @@ public abstract class ViewGui implements View {
     public void fixedJFrame() {
         jframe.setLayout(new BorderLayout());
         jframe.setResizable(false);
+        jframe.setLocationRelativeTo(null);
         jframe.setExtendedState(Frame.MAXIMIZED_BOTH);
         jframe.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         jframe.addWindowListener(new WindowAdapter() {
