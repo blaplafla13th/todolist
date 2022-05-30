@@ -12,20 +12,27 @@ public class SystemTrayIcon implements View {
     final PopupMenu popupMenu = new PopupMenu();
     final Image image = Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png"));
     final TrayIcon trayIcon = new TrayIcon(image,"To-do List",popupMenu);
-
+    final MenuItem start = new MenuItem();
+    final MenuItem setLang = new MenuItem();
+    final MenuItem exit = new MenuItem();
+    boolean started;
+    public void refresh(){
+        start.setLabel(d.label("start-button"));
+        setLang.setLabel(d.label("set-lang-button"));
+        exit.setLabel(d.label("exit-button"));
+    }
     @Override
     public void run() {
-        if (SystemTray.isSupported()) {
-            MenuItem menuItem0 = new MenuItem(d.label("start-button"));
-            menuItem0.addActionListener(actionEvent -> MainController.getInstance().indexView().run());
-            MenuItem menuItem1 = new MenuItem(d.label("set-lang-button"));
-            menuItem1.addActionListener(actionEvent -> MainController.getInstance().setLanguageView().run());
-            MenuItem menuItem2 = new MenuItem(d.label("exit-button"));
-            menuItem2.addActionListener(actionEvent -> System.exit(100));
-            popupMenu.add(menuItem0);
-            popupMenu.add(menuItem1);
+        if (SystemTray.isSupported() && !started) {
+            started=true;
+            refresh();
+            start.addActionListener(actionEvent -> MainController.getInstance().indexView().run());
+            setLang.addActionListener(actionEvent -> MainController.getInstance().setLanguageView().run());
+            exit.addActionListener(actionEvent -> System.exit(100));
+            popupMenu.add(start);
+            popupMenu.add(setLang);
             popupMenu.addSeparator();
-            popupMenu.add(menuItem2);
+            popupMenu.add(exit);
             trayIcon.setImageAutoSize(true);
             try {
                 tray.add(trayIcon);
@@ -33,6 +40,7 @@ public class SystemTrayIcon implements View {
                 MainController.getInstance().returnCode(303);
             }
         }
+        else refresh();
     }
 
     @Override

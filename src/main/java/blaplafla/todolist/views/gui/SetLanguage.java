@@ -3,6 +3,7 @@ package blaplafla.todolist.views.gui;
 import blaplafla.todolist.controllers.DictionaryController;
 import blaplafla.todolist.controllers.MainController;
 import blaplafla.todolist.models.dictionary.Dictionary;
+import blaplafla.todolist.routers.GuiRouter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -58,6 +59,7 @@ public class SetLanguage extends ViewGui implements Initializable {
             d.setDictionary(langlist.getSelectionModel().getSelectedIndex());
             cancel();
             MainController.getInstance().router().refresh();
+            ((GuiRouter) MainController.getInstance().router()).getSystemTrayIcon().run();
         }
     }
 
