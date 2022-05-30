@@ -1,9 +1,12 @@
 package blaplafla.todolist;
 
 import blaplafla.todolist.controllers.MainController;
+import blaplafla.todolist.routers.CliRouter;
 import blaplafla.todolist.routers.GuiRouter;
 
 import javax.swing.*;
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 
 public class Starter {
     public static void main(String[] args) {
@@ -18,10 +21,19 @@ public class Starter {
         if (!file.equals("null"))
             MainController.getInstance().fileController().setFile(file);
         setMode(mode);
-        SwingUtilities.invokeLater(() -> {
-            ((GuiRouter) MainController.getInstance().router()).getSystemTrayIcon().run();
-            MainController.getInstance().router().getIndex().run();
-        });
+        if (MainController.getInstance().router() instanceof GuiRouter)
+            SwingUtilities.invokeLater(() -> {
+                ((GuiRouter) MainController.getInstance().router()).getSystemTrayIcon().run();
+                MainController.getInstance().router().getIndex().run();
+            });
+        else if (MainController.getInstance().router() instanceof CliRouter) {
+            try {
+                System.setOut(new PrintStream(System.out, true, "UTF-8"));
+                MainController.getInstance().router().getIndex().run();
+            } catch (UnsupportedEncodingException e) {
+                MainController.getInstance().returnCode(304);
+            }
+        }
     }
 
     private static void setMode(String mode) {

@@ -12,6 +12,7 @@ public class Vietnamese extends Dictionary {
             case 301 -> "Không thể đọc ghi file ngôn ngữ";
             case 302 -> "Không thể đọc ghi file giao diện";
             case 303 -> "Không thể tạo icon ở taskbar";
+            case 304 -> "Không thể để UTF-8 cho terminal";
             case 400 -> "Dữ liệu của tệp không hợp lệ";
             case 401 -> "Dữ liệu của tệp ngôn ngữ không hợp lệ";
             case 402 -> "Đầu vào không hợp lệ";

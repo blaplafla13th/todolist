@@ -12,6 +12,7 @@ public class English extends Dictionary {
             case 301 -> "Language file can't be read or written";
             case 302 -> "FXML file can't be read or written";
             case 303 -> "Can't Create system tray";
+            case 304 -> "Can't set UTF-8 to terminal";
             case 400 -> "Data file is invalid";
             case 401 -> "Language file is invalid";
             case 402 -> "Params is invalid";
