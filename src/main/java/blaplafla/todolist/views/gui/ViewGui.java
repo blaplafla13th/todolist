@@ -63,6 +63,7 @@ public abstract class ViewGui implements View {
         jframe.setResizable(false);
         jframe.setLocationRelativeTo(null);
         jframe.setExtendedState(Frame.MAXIMIZED_BOTH);
+        jframe.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
         jframe.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         jframe.addWindowListener(new WindowAdapter() {
                                      @Override
