@@ -87,8 +87,8 @@ public class Index extends ViewGui implements Initializable {
         refresh.setText(d.label("refresh"));
         listViewTask.setItems(listtask);
         listViewTask.setCellFactory(param -> new IndexTaskListCell());
-        next.setText(d.label("next-button"));
-        prev.setText(d.label("prev-button"));
+        next.setText(d.label("next-button") + ">");
+        prev.setText("<" + d.label("prev-button"));
         usernameField.setVisible(false);
         addData();
     }
