@@ -11,6 +11,7 @@ public class Vietnamese extends Dictionary {
             case 300 -> "Không thể đọc ghi file dữ liệu";
             case 301 -> "Không thể đọc ghi file ngôn ngữ";
             case 302 -> "Không thể đọc ghi file giao diện";
+            case 303 -> "Không thể tạo icon ở taskbar";
             case 400 -> "Dữ liệu của tệp không hợp lệ";
             case 401 -> "Dữ liệu của tệp ngôn ngữ không hợp lệ";
             case 402 -> "Đầu vào không hợp lệ";
@@ -103,7 +104,8 @@ public class Vietnamese extends Dictionary {
             case "hour" -> "giờ";
             case "minute" -> "phút";
             case "second" -> "giây";
-            case "toggle" -> "Xong";
+            case "done-button" -> "Xong";
+            case "start-button" -> "Mở";
             default -> "Không xác định";
         };
     }

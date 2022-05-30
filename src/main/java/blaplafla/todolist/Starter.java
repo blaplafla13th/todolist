@@ -1,6 +1,7 @@
 package blaplafla.todolist;
 
 import blaplafla.todolist.controllers.MainController;
+import blaplafla.todolist.routers.GuiRouter;
 
 import javax.swing.*;
 
@@ -17,7 +18,10 @@ public class Starter {
         if (!file.equals("null"))
             MainController.getInstance().fileController().setFile(file);
         setMode(mode);
-        SwingUtilities.invokeLater(() -> MainController.getInstance().router().getIndex().run());
+        SwingUtilities.invokeLater(() -> {
+            ((GuiRouter) MainController.getInstance().router()).getSystemTrayIcon().run();
+            MainController.getInstance().router().getIndex().run();
+        });
     }
 
     private static void setMode(String mode) {

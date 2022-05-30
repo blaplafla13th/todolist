@@ -2,11 +2,17 @@ package blaplafla.todolist.routers;
 
 import blaplafla.todolist.controllers.MainController;
 import blaplafla.todolist.requests.JavaFXValidation;
+import blaplafla.todolist.views.View;
 import blaplafla.todolist.views.gui.Error;
 import blaplafla.todolist.views.gui.*;
 
 public class GuiRouter extends Router {
     ViewGui error;
+    View systemTrayIcon;
+
+    public View getSystemTrayIcon() {
+        return systemTrayIcon;
+    }
 
     public GuiRouter() {
         input = new JavaFXValidation();
@@ -14,6 +20,7 @@ public class GuiRouter extends Router {
 
     @Override
     public void setupView() {
+        systemTrayIcon = new SystemTrayIcon();
         index = new Index();
         setLanguage = new SetLanguage();
         openFile = new OpenFile();

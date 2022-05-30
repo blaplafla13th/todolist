@@ -11,6 +11,7 @@ public class English extends Dictionary {
             case 300 -> "Data file can't be read or written";
             case 301 -> "Language file can't be read or written";
             case 302 -> "FXML file can't be read or written";
+            case 303 -> "Can't Create system tray";
             case 400 -> "Data file is invalid";
             case 401 -> "Language file is invalid";
             case 402 -> "Params is invalid";
@@ -67,7 +68,7 @@ public class English extends Dictionary {
             case "set-lang-button" -> "Change language ";
             case "done list-button" -> "Done List ";
             case "undone list-button" -> "Undone list ";
-            case "exit-button" -> "exit ";
+            case "exit-button" -> "Exit ";
             case "done-list-name" -> "Done list of ";
             case "back-button" -> "Back";
             case "index" -> "Input index";
@@ -104,7 +105,8 @@ public class English extends Dictionary {
             case "hour" -> "h";
             case "minute" -> "m";
             case "second" -> "s";
-            case "toggle" -> "Done";
+            case "done-button" -> "Done";
+            case "start-button" -> "Open";
             default -> "Unknown";
         };
     }
