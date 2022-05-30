@@ -104,6 +104,7 @@ public class English extends Dictionary {
             case "hour" -> "h";
             case "minute" -> "m";
             case "second" -> "s";
+            case "toggle" -> "Done";
             default -> "Unknown";
         };
     }

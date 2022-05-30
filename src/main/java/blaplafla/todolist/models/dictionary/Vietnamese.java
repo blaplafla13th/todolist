@@ -103,6 +103,7 @@ public class Vietnamese extends Dictionary {
             case "hour" -> "giờ";
             case "minute" -> "phút";
             case "second" -> "giây";
+            case "toggle" -> "Xong";
             default -> "Không xác định";
         };
     }

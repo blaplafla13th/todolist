@@ -1,5 +1,6 @@
 package blaplafla.todolist.routers;
 
+import blaplafla.todolist.controllers.MainController;
 import blaplafla.todolist.requests.JavaFXValidation;
 import blaplafla.todolist.views.gui.Error;
 import blaplafla.todolist.views.gui.*;
@@ -19,6 +20,7 @@ public class GuiRouter extends Router {
         saveFile = new SaveFile();
         error = new Error();
         create = new Create();
+        undone = new Undone();
     }
 
     @Override
@@ -52,6 +54,10 @@ public class GuiRouter extends Router {
         if (saveFile instanceof ViewGui saveFile && saveFile.isShow()) {
             saveFile.close();
             saveFile.run();
+        }
+        if (undone instanceof ViewGui undone && undone.isShow()) {
+            undone.close();
+            undone.run(MainController.getInstance().listTask());
         }
         if (error.isShow()) {
             error.close();
