@@ -67,6 +67,11 @@ public abstract class ViewGui implements View {
         jframe.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         jframe.addWindowListener(new WindowAdapter() {
                                      @Override
+                                     public void windowClosing(WindowEvent e) {
+                                         super.windowClosing(e);
+                                         show = false;
+                                     }
+
                                      public void windowClosed(WindowEvent e) {
                                          super.windowClosed(e);
                                          show = false;
