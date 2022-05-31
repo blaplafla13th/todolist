@@ -8,4 +8,6 @@ module blaplafla.todolist {
     exports blaplafla.todolist.views.gui;
     opens blaplafla.todolist to javafx.fxml;
     exports blaplafla.todolist;
+    opens blaplafla.todolist.models.task to javafx.fxml;
+    exports blaplafla.todolist.models.task;
 }
