@@ -26,7 +26,7 @@ public class Vietnamese extends Dictionary {
 
     @Override
     public String prettyTime(long day, long hour, long minute, long second) {
-        return String.format("còn lại %d ngày %d giờ %d phút %d giây", day, hour, minute, second);
+        return String.format("Còn lại %d ngày %d giờ %d phút %d giây", day, hour, minute, second);
     }
 
     @Override
@@ -106,6 +106,7 @@ public class Vietnamese extends Dictionary {
             case "minute" -> "phút";
             case "second" -> "giây";
             case "done-button" -> "Xong";
+            case "undone-button" -> "Hủy";
             case "start-button" -> "Mở";
             default -> "Không xác định";
         };

@@ -26,7 +26,7 @@ public class English extends Dictionary {
 
     @Override
     public String prettyTime(long day, long hour, long minute, long second) {
-        return String.format("time left: %d d, %d h : %d m : %d s", day, hour, minute, second);
+        return String.format("Time left: %d d, %d h : %d m : %d s", day, hour, minute, second);
     }
 
     @Override
@@ -82,7 +82,7 @@ public class English extends Dictionary {
             case "placeholder-priority" -> "Priority (int): ";
             case "priority" -> "Priority: ";
             case "last-done" -> "Latest done task: ";
-            case "add-subtask-button" -> "create subtask";
+            case "add-subtask-button" -> "Create subtask";
             case "toggle-this-button" -> "Toggle this";
             case "delete-this-button" -> "Delete this";
             case "edit-this-button" -> "Edit this";
@@ -108,6 +108,7 @@ public class English extends Dictionary {
             case "second" -> "s";
             case "done-button" -> "Done";
             case "start-button" -> "Open";
+            case "undone-button" -> "Undone";
             default -> "Unknown";
         };
     }

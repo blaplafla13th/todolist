@@ -28,6 +28,8 @@ public class GuiRouter extends Router {
         error = new Error();
         create = new Create();
         undone = new Undone();
+        done = new Done();
+        detail = new Detail();
     }
 
     @Override
@@ -65,6 +67,12 @@ public class GuiRouter extends Router {
         if (undone instanceof ViewGui undone && undone.isShow()) {
             undone.close();
             undone.run(MainController.getInstance().listTask());
+        }if (done instanceof ViewGui done && done.isShow()) {
+            done.close();
+            done.run(MainController.getInstance().listTask());
+        }if (detail instanceof Detail detail && detail.isShow()) {
+            detail.close();
+            detail.run(Detail.getMotherTask());
         }
         if (error.isShow()) {
             error.close();
