@@ -6,7 +6,8 @@ import blaplafla.todolist.models.datastructures.SimpleStack;
 import java.io.Serializable;
 import java.util.Date;
 
-public class ListTask implements Serializable {
+public class ListTask
+        implements Serializable {
     private final SimpleArrayList<MotherTask> undone;
     private final SimpleStack<MotherTask> done;
     private String username;
@@ -34,40 +35,28 @@ public class ListTask implements Serializable {
         this.username = username;
     }
 
-    public int doneTask(MotherTask task) {
-        if (undone.isContain(task)) {
-            done.add(task);
-            undone.remove(task);
-            task.toggle();
-            return 100;
-        } else return 501;
-    }
-
-    public int undoneTask(MotherTask task) {
-        if (done.isContain(task)) {
-            undone.add(task);
-            done.remove(task);
-            task.toggle();
-            return 100;
-        } else return 501;
-    }
-
     public Task getTaskById(int from, int id) {
         if (from == 1) {
             return undone.get(id);
-        } else if (from == 2) {
+        }
+        else if (from == 2) {
             return done.get(id);
-        } else return null;
+        }
+        else
+            return null;
     }
 
     public int deleteTaskById(int from, int id) {
         if (from == 1) {
             undone.removeIndex(id);
             return 100;
-        } else if (from == 2) {
+        }
+        else if (from == 2) {
             done.removeIndex(id);
             return 100;
-        } else return 501;
+        }
+        else
+            return 501;
     }
 
     public Task getLastDoneTask() {
@@ -94,12 +83,34 @@ public class ListTask implements Serializable {
             return 501;
         if (task.isStatus()) {
             return undoneTask(task);
-        } else
+        }
+        else
             return doneTask(task);
     }
 
+    public int undoneTask(MotherTask task) {
+        if (done.isContain(task)) {
+            undone.add(task);
+            done.remove(task);
+            task.toggle();
+            return 100;
+        }
+        else
+            return 501;
+    }
+
+    public int doneTask(MotherTask task) {
+        if (undone.isContain(task)) {
+            done.add(task);
+            undone.remove(task);
+            task.toggle();
+            return 100;
+        }
+        else
+            return 501;
+    }
+
     public boolean isEmpty() {
-        return done.isEmpty() &&
-                undone.isEmpty();
+        return done.isEmpty() && undone.isEmpty();
     }
 }

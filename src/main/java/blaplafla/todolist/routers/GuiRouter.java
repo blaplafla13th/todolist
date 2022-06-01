@@ -6,16 +6,17 @@ import blaplafla.todolist.views.View;
 import blaplafla.todolist.views.gui.Error;
 import blaplafla.todolist.views.gui.*;
 
-public class GuiRouter extends Router {
+public class GuiRouter
+        extends Router {
     ViewGui error;
     View systemTrayIcon;
 
-    public View getSystemTrayIcon() {
-        return systemTrayIcon;
-    }
-
     public GuiRouter() {
         input = new JavaFXValidation();
+    }
+
+    public View getSystemTrayIcon() {
+        return systemTrayIcon;
     }
 
     @Override
@@ -30,7 +31,7 @@ public class GuiRouter extends Router {
         undone = new Undone();
         done = new Done();
         detail = new Detail();
-        edit=new Edit();
+        edit = new Edit();
     }
 
     @Override
@@ -41,10 +42,6 @@ public class GuiRouter extends Router {
     @Override
     public void returnCode(int error) {
         this.error.run(error);
-    }
-
-    public ViewGui getError() {
-        return error;
     }
 
     @Override
@@ -68,13 +65,16 @@ public class GuiRouter extends Router {
         if (undone instanceof ViewGui undone && undone.isShow()) {
             undone.close();
             undone.run(MainController.getInstance().listTask());
-        }if (done instanceof ViewGui done && done.isShow()) {
+        }
+        if (done instanceof ViewGui done && done.isShow()) {
             done.close();
             done.run(MainController.getInstance().listTask());
-        }if (detail instanceof Detail detail && detail.isShow()) {
+        }
+        if (detail instanceof Detail detail && detail.isShow()) {
             detail.close();
             detail.run(Detail.getMotherTask());
-        }if (edit instanceof Edit edit && edit.isShow()) {
+        }
+        if (edit instanceof Edit edit && edit.isShow()) {
             edit.close();
             edit.run(Edit.getTask());
         }
@@ -82,5 +82,9 @@ public class GuiRouter extends Router {
             error.close();
             error.run();
         }
+    }
+
+    public ViewGui getError() {
+        return error;
     }
 }

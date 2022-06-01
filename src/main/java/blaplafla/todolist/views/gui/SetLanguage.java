@@ -15,9 +15,12 @@ import javafx.scene.control.SelectionMode;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SetLanguage extends ViewGui implements Initializable {
+public class SetLanguage
+        extends ViewGui
+        implements Initializable {
     final DictionaryController d = MainController.getInstance().dictionaryController();
-    private final ObservableList<Dictionary> dictionaryObservableList = FXCollections.observableArrayList();
+    private final ObservableList<Dictionary> dictionaryObservableList =
+            FXCollections.observableArrayList();
     @FXML
     private javafx.scene.control.Label curlang;
     @FXML

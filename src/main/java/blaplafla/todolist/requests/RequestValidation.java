@@ -7,15 +7,17 @@ import java.util.Date;
 
 public abstract class RequestValidation {
 
-    protected DictionaryController dictionaryController = MainController.getInstance().dictionaryController();
+    protected DictionaryController dictionaryController =
+            MainController.getInstance().dictionaryController();
 
     public abstract String input();
 
-    public String reformat(String s){
+    public String reformat(String s) {
         return s.replaceAll("\\s+", " ").trim();
     }
 
     public abstract Integer inputInteger(String in);
+
     public void reset() {
         dictionaryController = MainController.getInstance().dictionaryController();
     }
@@ -34,10 +36,6 @@ public abstract class RequestValidation {
         return !(hour < 0 || hour > 23 || minute < 0 || minute > 59 || second < 0 || second > 59);
     }
 
-    protected boolean isLeap(int year) {
-        return (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0));
-    }
-
     protected boolean isValidDate(int d, int m, int y) {
         if (m < 1 || m > 12)
             return false;
@@ -52,5 +50,9 @@ public abstract class RequestValidation {
         if (m == 4 || m == 6 || m == 9 || m == 11)
             return (d <= 30);
         return true;
+    }
+
+    protected boolean isLeap(int year) {
+        return (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0));
     }
 }

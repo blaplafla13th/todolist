@@ -6,7 +6,8 @@ import blaplafla.todolist.controllers.MainController;
 import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.views.View;
 
-public class SaveFile implements View {
+public class SaveFile
+        implements View {
     final DictionaryController d = MainController.getInstance().dictionaryController();
     final RequestValidation i = MainController.getInstance().input();
     final FileController f = MainController.getInstance().fileController();
@@ -20,7 +21,8 @@ public class SaveFile implements View {
                 System.out.println(d.label("not-file"));
                 MainController.getInstance().pause();
                 return;
-            } else {
+            }
+            else {
                 int error = f.setFile(path);
                 if (error != 100) {
                     MainController.getInstance().returnCode(error);
@@ -32,7 +34,9 @@ public class SaveFile implements View {
             System.out.println(d.label("type-yes-to-continue"));
             if (i.input().equals("yes"))
                 MainController.getInstance().returnCode(f.exportListTask());
-        } else MainController.getInstance().returnCode(f.exportListTask());
+        }
+        else
+            MainController.getInstance().returnCode(f.exportListTask());
         System.out.println(d.label("process-done"));
     }
 }

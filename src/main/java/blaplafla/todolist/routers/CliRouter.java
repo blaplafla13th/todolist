@@ -7,7 +7,8 @@ import blaplafla.todolist.views.cli.*;
 
 import java.io.IOException;
 
-public class CliRouter extends Router {
+public class CliRouter
+        extends Router {
     DictionaryController dictionaryController = MainController.getInstance().dictionaryController();
 
     public CliRouter() {
@@ -35,7 +36,8 @@ public class CliRouter extends Router {
         System.out.println(dictionaryController.label("pause"));
         try {
             System.in.read();
-        } catch (IOException ignored) {
+        }
+        catch (IOException ignored) {
         }
     }
 

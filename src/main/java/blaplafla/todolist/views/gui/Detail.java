@@ -17,7 +17,9 @@ import javafx.scene.control.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Detail extends ViewGui implements Initializable {
+public class Detail
+        extends ViewGui
+        implements Initializable {
     private static MotherTask motherTask;
     final DictionaryController d = MainController.getInstance().dictionaryController();
     final TaskController t = MainController.getInstance().taskController();
@@ -67,6 +69,10 @@ public class Detail extends ViewGui implements Initializable {
     @FXML
     private Label desc;
 
+    public static MotherTask getMotherTask() {
+        return motherTask;
+    }
+
     @Override
     public void run(Object... params) {
         if (params[0] instanceof MotherTask task) {
@@ -81,10 +87,6 @@ public class Detail extends ViewGui implements Initializable {
             jframe.add(jfxPanel);
             jframe.setVisible(true);
         }
-    }
-
-    public static MotherTask getMotherTask() {
-        return motherTask;
     }
 
     @Override
@@ -108,7 +110,8 @@ public class Detail extends ViewGui implements Initializable {
         deadline.setText(d.label("deadline-time") + ":" + motherTask.getDeadlineTime());
         if (!motherTask.isStatus())
             timeLeft.setText(d.prettyTime(motherTask.prettyTimer()));
-        else timeLeft.setVisible(false);
+        else
+            timeLeft.setVisible(false);
         priority.setText(d.label("priority") + motherTask.getPriority());
         desc.setText(d.label("desc") + motherTask.getDescription());
         addData();
@@ -130,7 +133,8 @@ public class Detail extends ViewGui implements Initializable {
         }
         if (!motherTask.isStatus())
             timeLeft.setText(d.prettyTime(motherTask.prettyTimer()));
-        else timeLeft.setVisible(false);
+        else
+            timeLeft.setVisible(false);
     }
 
     public void next() {

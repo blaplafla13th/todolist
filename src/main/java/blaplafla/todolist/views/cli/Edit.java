@@ -9,7 +9,8 @@ import blaplafla.todolist.views.View;
 
 import java.util.Date;
 
-public class Edit implements View {
+public class Edit
+        implements View {
     final DictionaryController d = MainController.getInstance().dictionaryController();
     final TaskController t = MainController.getInstance().taskController();
     final RequestValidation r = MainController.getInstance().input();
@@ -35,6 +36,8 @@ public class Edit implements View {
             System.out.println(d.label("old-value") + ":" + task.getPriority());
             int priority = r.inputPositiveInteger(r.input());
             t.edit(task, title, desc, deadline, priority);
-        } else MainController.getInstance().returnCode(402);
+        }
+        else
+            MainController.getInstance().returnCode(402);
     }
 }

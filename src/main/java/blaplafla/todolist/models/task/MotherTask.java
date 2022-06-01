@@ -5,7 +5,8 @@ import blaplafla.todolist.models.datastructures.SimpleStack;
 
 import java.util.Date;
 
-public class MotherTask extends Task {
+public class MotherTask
+        extends Task {
     private final SimpleArrayList<Task> undoneSubTask;
     private final SimpleStack<Task> doneSubTask;
 
@@ -15,13 +16,25 @@ public class MotherTask extends Task {
         doneSubTask = new SimpleStack<>();
     }
 
-    public int doneSubtask(Task task) {
-        if (undoneSubTask.isContain(task)) {
-            task.toggle();
-            doneSubTask.add(task);
-            undoneSubTask.remove(task);
-            return 100;
-        } else return 501;
+    public Task getSubTaskById(int from, int id) {
+        if (from == 1) {
+            return undoneSubTask.get(id);
+        }
+        else if (from == 2) {
+            return doneSubTask.get(id);
+        }
+        else
+            return null;
+    }
+
+    public int toggleTask(Task task) {
+        if (!undoneSubTask.isContain(task) && !doneSubTask.isContain(task))
+            return 501;
+        if (task.isStatus()) {
+            return undoneSubtask(task);
+        }
+        else
+            return doneSubtask(task);
     }
 
     public int undoneSubtask(Task task) {
@@ -30,34 +43,33 @@ public class MotherTask extends Task {
             undoneSubTask.add(task);
             doneSubTask.remove(task);
             return 100;
-        } else return 501;
-    }
-
-    public Task getSubTaskById(int from, int id) {
-        if (from == 1) {
-            return undoneSubTask.get(id);
-        } else if (from == 2) {
-            return doneSubTask.get(id);
-        } else return null;
-    }
-
-    public int toggleTask(Task task) {
-        if (!undoneSubTask.isContain(task) && !doneSubTask.isContain(task))
+        }
+        else
             return 501;
-        if (task.isStatus()) {
-            return undoneSubtask(task);
-        } else
-            return doneSubtask(task);
+    }
+
+    public int doneSubtask(Task task) {
+        if (undoneSubTask.isContain(task)) {
+            task.toggle();
+            doneSubTask.add(task);
+            undoneSubTask.remove(task);
+            return 100;
+        }
+        else
+            return 501;
     }
 
     public int deleteSubTaskById(int from, int id) {
         if (from == 1) {
             undoneSubTask.removeIndex(id);
             return 100;
-        } else if (from == 2) {
+        }
+        else if (from == 2) {
             doneSubTask.removeIndex(id);
             return 100;
-        } else return 501;
+        }
+        else
+            return 501;
     }
 
     public Task getLastDoneTask() {

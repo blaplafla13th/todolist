@@ -9,7 +9,8 @@ import blaplafla.todolist.models.task.Task;
 import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.views.View;
 
-public class DoneSub implements View {
+public class DoneSub
+        implements View {
 
 
     final DictionaryController d = MainController.getInstance().dictionaryController();
@@ -52,18 +53,9 @@ public class DoneSub implements View {
                 execute(r.input());
             }
             using = true;
-        } else
+        }
+        else
             MainController.getInstance().returnCode(402);
-    }
-
-    private void commandlist() {
-        System.out.println(d.label("list command"));
-        System.out.println("next :" + d.label("next-button"));//
-        System.out.println("prev :" + d.label("prev-button"));//
-        System.out.println("toggle :" + d.label("toggle-button"));//
-        System.out.println("delete :" + d.label("delete-button"));//
-        System.out.println("detail :" + d.label("detail-button"));//
-        System.out.println("back :" + d.label("back-button"));//
     }
 
     private void execute(String command) {
@@ -82,16 +74,19 @@ public class DoneSub implements View {
             }
             case "detail" -> {
                 System.out.print(d.label("index") + ":");
-                t.detailSubTask(motherTask, tasks.get(r.inputPositiveInteger(r.input(), tasks.size()) - 1));
+                t.detailSubTask(motherTask,
+                        tasks.get(r.inputPositiveInteger(r.input(), tasks.size()) - 1));
             }
             case "delete" -> {
                 System.out.print(d.label("index") + ":");
-                t.deleteSubTask(motherTask, tasks.get(r.inputPositiveInteger(r.input(), tasks.size()) - 1));
+                t.deleteSubTask(motherTask,
+                        tasks.get(r.inputPositiveInteger(r.input(), tasks.size()) - 1));
                 max_page = t.paginateSize(motherTask.getDoneSubTask(), 3);
             }
             case "toggle" -> {
                 System.out.print(d.label("index") + ":");
-                t.toggleSubTask(motherTask, tasks.get(r.inputPositiveInteger(r.input(), tasks.size()) - 1));
+                t.toggleSubTask(motherTask,
+                        tasks.get(r.inputPositiveInteger(r.input(), tasks.size()) - 1));
                 max_page = t.paginateSize(motherTask.getDoneSubTask(), 3);
             }
 
@@ -101,5 +96,15 @@ public class DoneSub implements View {
                 MainController.getInstance().pause();
             }
         }
+    }
+
+    private void commandlist() {
+        System.out.println(d.label("list command"));
+        System.out.println("next :" + d.label("next-button"));//
+        System.out.println("prev :" + d.label("prev-button"));//
+        System.out.println("toggle :" + d.label("toggle-button"));//
+        System.out.println("delete :" + d.label("delete-button"));//
+        System.out.println("detail :" + d.label("detail-button"));//
+        System.out.println("back :" + d.label("back-button"));//
     }
 }

@@ -4,7 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-public class Task implements Serializable, Comparable<Task> {
+public class Task
+        implements Serializable, Comparable<Task> {
     private final String created_at;
     private String title;
     private String description;
@@ -52,18 +53,18 @@ public class Task implements Serializable, Comparable<Task> {
         this.priority = priority;
     }
 
-    public long leftTime() {
-        return (deadline.getTime() - System.currentTimeMillis()) / 1000; //second
+    @Override
+    public int compareTo(Task task) {
+        int temp = Long.compare(priorityPoint(), task.priorityPoint());
+        return temp == 0 ? Long.compare(leftTime(), task.leftTime()) : temp;
     }
 
     public long priorityPoint() {
         return leftTime() > 0 ? leftTime() / priority : leftTime() * priority;
     }
 
-    @Override
-    public int compareTo(Task task) {
-        int temp = Long.compare(priorityPoint(), task.priorityPoint());
-        return temp == 0 ? Long.compare(leftTime(), task.leftTime()) : temp;
+    public long leftTime() {
+        return (deadline.getTime() - System.currentTimeMillis()) / 1000; //second
     }
 
     public long[] prettyTimer() {
@@ -82,16 +83,21 @@ public class Task implements Serializable, Comparable<Task> {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Task task = (Task) o;
-        return priority == task.priority && status == task.status && Objects.equals(created_at, task.created_at) && Objects.equals(title, task.title) && Objects.equals(description, task.description) && Objects.equals(deadline, task.deadline);
+    public int hashCode() {
+        return Objects.hash(created_at, title, description, deadline, priority, status);
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(created_at, title, description, deadline, priority, status);
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Task task = (Task) o;
+        return priority == task.priority && status == task.status &&
+               Objects.equals(created_at, task.created_at) && Objects.equals(title, task.title) &&
+               Objects.equals(description, task.description) &&
+               Objects.equals(deadline, task.deadline);
     }
 
     public void toggle() {
@@ -100,7 +106,8 @@ public class Task implements Serializable, Comparable<Task> {
 
     @SuppressWarnings("deprecation")
     public String getDeadlineTime() {
-        return String.format("%d/%d/%d %d:%d:%d", deadline.getDate(), deadline.getMonth() + 1, deadline.getYear() + 1900
-                , deadline.getHours(), deadline.getMinutes(), deadline.getMinutes());
+        return String.format("%d/%d/%d %d:%d:%d", deadline.getDate(), deadline.getMonth() + 1,
+                deadline.getYear() + 1900, deadline.getHours(), deadline.getMinutes(),
+                deadline.getMinutes());
     }
 }

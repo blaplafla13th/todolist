@@ -1,6 +1,7 @@
 package blaplafla.todolist.models.dictionary;
 
-public class English extends Dictionary {
+public class English
+        extends Dictionary {
     @Override
     public String errorExplain(int errorCode) {
         return switch (errorCode) {

@@ -29,9 +29,11 @@ public class FileController {
             objectInputStream = new ObjectInputStream(fileInputStream);
             hasFile = true;
             return 100;
-        } catch (FileNotFoundException e) {
+        }
+        catch (FileNotFoundException e) {
             return 200;
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             return 300;
         }
     }
@@ -49,9 +51,11 @@ public class FileController {
                     MainController.getInstance().listTask = (ListTask) object;
                 }
                 return 100;
-            } catch (IOException e) {
+            }
+            catch (IOException e) {
                 return 300;
-            } catch (ClassNotFoundException e) {
+            }
+            catch (ClassNotFoundException e) {
                 return 400;
             }
         }
@@ -66,7 +70,8 @@ public class FileController {
                 objectOutputStream.writeObject(MainController.getInstance().listTask());
                 objectOutputStream.flush();
                 return 100;
-            } catch (IOException e) {
+            }
+            catch (IOException e) {
                 return 300;
             }
         }
@@ -87,10 +92,12 @@ public class FileController {
 
     public boolean isNullFile() {
         try {
-            BasicFileAttributes basicFileAttributes = Files.readAttributes(userfile.toPath(), BasicFileAttributes.class);
-            return basicFileAttributes.isRegularFile() && basicFileAttributes.size() == 0
-                    && objectInputStream.readObject() == null;
-        } catch (IOException | ClassNotFoundException e) {
+            BasicFileAttributes basicFileAttributes =
+                    Files.readAttributes(userfile.toPath(), BasicFileAttributes.class);
+            return basicFileAttributes.isRegularFile() && basicFileAttributes.size() == 0 &&
+                   objectInputStream.readObject() == null;
+        }
+        catch (IOException | ClassNotFoundException e) {
             return true;
         }
     }

@@ -10,7 +10,8 @@ import blaplafla.todolist.models.task.Task;
 import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.views.View;
 
-public class Undone implements View {
+public class Undone
+        implements View {
 
     DictionaryController d = MainController.getInstance().dictionaryController();
     TaskController t = MainController.getInstance().taskController();
@@ -44,10 +45,13 @@ public class Undone implements View {
                         System.out.println(d.label("desc") + motherTask.getDescription());
                         System.out.println(d.prettyTime(motherTask.prettyTimer()));
                         if ((motherTask.subTaskSize()) > 0)
-                            System.out.println(d.label("subtask-remaining") + ": " + motherTask.undoneSubTaskSize() +
-                                    "/" + motherTask.subTaskSize());
+                            System.out.println(d.label("subtask-remaining") + ": " +
+                                               motherTask.undoneSubTaskSize() + "/" +
+                                               motherTask.subTaskSize());
                         System.out.println(d.label("-"));
-                    } else MainController.getInstance().returnCode(402);
+                    }
+                    else
+                        MainController.getInstance().returnCode(402);
                 }
             else
                 System.out.println(d.label("-"));
@@ -56,17 +60,6 @@ public class Undone implements View {
             execute(r.input());
         }
         using = true;
-    }
-
-    private void commandlist() {
-        System.out.println(d.label("list command"));
-        System.out.println("next :" + d.label("next-button"));//
-        System.out.println("prev :" + d.label("prev-button"));//
-        System.out.println("add :" + d.label("add-button"));
-        System.out.println("toggle :" + d.label("toggle-button"));//
-        System.out.println("delete :" + d.label("delete-button"));//
-        System.out.println("detail :" + d.label("detail-button"));//
-        System.out.println("back :" + d.label("back-button"));//
     }
 
     private void execute(String command) {
@@ -85,16 +78,19 @@ public class Undone implements View {
             }
             case "detail" -> {
                 System.out.print(d.label("index") + ":");
-                t.detailMotherTask((MotherTask) tasks.get(r.inputPositiveInteger(r.input(), tasks.size()) - 1));
+                t.detailMotherTask((MotherTask) tasks.get(
+                        r.inputPositiveInteger(r.input(), tasks.size()) - 1));
             }
             case "delete" -> {
                 System.out.print(d.label("index") + ":");
-                t.deleteMotherTask((MotherTask) tasks.get(r.inputPositiveInteger(r.input(), tasks.size()) - 1));
+                t.deleteMotherTask((MotherTask) tasks.get(
+                        r.inputPositiveInteger(r.input(), tasks.size()) - 1));
                 max_page = t.paginateSize(listTask.getUndone(), 3);
             }
             case "toggle" -> {
                 System.out.print(d.label("index") + ":");
-                t.toggleMotherTask((MotherTask) tasks.get(r.inputPositiveInteger(r.input(), tasks.size()) - 1));
+                t.toggleMotherTask((MotherTask) tasks.get(
+                        r.inputPositiveInteger(r.input(), tasks.size()) - 1));
                 max_page = t.paginateSize(listTask.getUndone(), 3);
             }
 
@@ -108,5 +104,16 @@ public class Undone implements View {
                 MainController.getInstance().pause();
             }
         }
+    }
+
+    private void commandlist() {
+        System.out.println(d.label("list command"));
+        System.out.println("next :" + d.label("next-button"));//
+        System.out.println("prev :" + d.label("prev-button"));//
+        System.out.println("add :" + d.label("add-button"));
+        System.out.println("toggle :" + d.label("toggle-button"));//
+        System.out.println("delete :" + d.label("delete-button"));//
+        System.out.println("detail :" + d.label("detail-button"));//
+        System.out.println("back :" + d.label("back-button"));//
     }
 }

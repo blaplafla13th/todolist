@@ -14,7 +14,9 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class OpenFile extends ViewGui implements Initializable {
+public class OpenFile
+        extends ViewGui
+        implements Initializable {
     final DictionaryController d = MainController.getInstance().dictionaryController();
     final FileController f = MainController.getInstance().fileController();
     final RequestValidation r = MainController.getInstance().input();
@@ -54,7 +56,7 @@ public class OpenFile extends ViewGui implements Initializable {
 
     public void accept() {
         int code = f.importListTask();
-        if (code!=100)
+        if (code != 100)
             MainController.getInstance().returnCode(code);
         close();
         ((ViewGui) MainController.getInstance().router().getOpenFile()).close();
@@ -68,7 +70,7 @@ public class OpenFile extends ViewGui implements Initializable {
 
     public void handle() {
         overwrite.setVisible(false);
-        file = new File( r.reformat(name.getText()));
+        file = new File(r.reformat(name.getText()));
         if (name.getText() != null && file.isFile())
             fileChooser.setCurrentDirectory(file.getParentFile());
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -77,13 +79,14 @@ public class OpenFile extends ViewGui implements Initializable {
             file = fileChooser.getSelectedFile();
             name.setText(file.getAbsolutePath());
             check();
-        } else if (status == JFileChooser.CANCEL_OPTION) {
+        }
+        else if (status == JFileChooser.CANCEL_OPTION) {
             name.clear();
         }
     }
 
     public void check() {
-        f.setFile( r.reformat(name.getText()) );
+        f.setFile(r.reformat(name.getText()));
         if (!f.isNullFile() && !MainController.getInstance().listTask().isEmpty()) {
             overwrite.setText(d.label("warning-load-data"));
             overwrite.setVisible(true);

@@ -28,7 +28,8 @@ public class SyncTest {
             arrayListWorker2.join();
             stackWorker1.join();
             stackWorker2.join();
-        } catch (InterruptedException e) {
+        }
+        catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
 
@@ -36,7 +37,8 @@ public class SyncTest {
     }
 }
 
-class SimpleArrayListWorker extends Thread {
+class SimpleArrayListWorker
+        extends Thread {
     SimpleArrayList<String> arrayList;
 
     public SimpleArrayListWorker(SimpleArrayList<String> arrayList) {
@@ -51,7 +53,8 @@ class SimpleArrayListWorker extends Thread {
     }
 }
 
-class SimpleStackWorker extends Thread {
+class SimpleStackWorker
+        extends Thread {
     SimpleStack<String> stack;
 
     public SimpleStackWorker(SimpleStack<String> SimpleStack) {

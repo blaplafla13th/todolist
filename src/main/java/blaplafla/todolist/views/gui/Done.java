@@ -20,7 +20,9 @@ import javafx.scene.control.SelectionMode;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Done extends ViewGui implements Initializable {
+public class Done
+        extends ViewGui
+        implements Initializable {
     static ListTask listTask;
     DictionaryController d = MainController.getInstance().dictionaryController();
     TaskController t = MainController.getInstance().taskController();
@@ -80,6 +82,17 @@ public class Done extends ViewGui implements Initializable {
         addData();
     }
 
+    public void addData() {
+        if (page > max_page) {
+            page = 1;
+        }
+        listViewTask.getItems().clear();
+        SimpleArrayList<Task> tasks = t.paginate(listTask.getDone(), 5, page);
+        for (Task task : tasks) {
+            listtask.add((MotherTask) task);
+        }
+    }
+
     public void delete() {
         if (listViewTask.getSelectionModel().getSelectedIndex() != -1) {
             t.deleteMotherTask(listtask.get(listViewTask.getSelectionModel().getSelectedIndex()));
@@ -113,16 +126,5 @@ public class Done extends ViewGui implements Initializable {
         if (page > 1)
             page--;
         addData();
-    }
-
-    public void addData() {
-        if (page > max_page) {
-            page = 1;
-        }
-        listViewTask.getItems().clear();
-        SimpleArrayList<Task> tasks = t.paginate(listTask.getDone(), 5, page);
-        for (Task task : tasks) {
-            listtask.add((MotherTask) task);
-        }
     }
 }

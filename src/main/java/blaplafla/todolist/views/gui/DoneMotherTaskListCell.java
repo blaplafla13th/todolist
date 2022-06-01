@@ -12,7 +12,8 @@ import javafx.scene.layout.GridPane;
 import java.io.IOException;
 import java.net.URL;
 
-public class DoneMotherTaskListCell extends ListCell<MotherTask> {
+public class DoneMotherTaskListCell
+        extends ListCell<MotherTask> {
     DictionaryController d = MainController.getInstance().dictionaryController();
 
     @Override
@@ -21,13 +22,15 @@ public class DoneMotherTaskListCell extends ListCell<MotherTask> {
         if (motherTask == null || empty) {
             setText(null);
             setGraphic(null);
-        } else {
+        }
+        else {
             URL fxm = getClass().getResource("TaskListCell.fxml");
             FXMLLoader loader = new FXMLLoader(fxm);
             AnchorPane anchorPane;
             try {
                 anchorPane = loader.load();
-            } catch (IOException e) {
+            }
+            catch (IOException e) {
                 throw new RuntimeException(e);
             }
             GridPane gridPane1 = (GridPane) anchorPane.getChildren().get(0);

@@ -3,22 +3,25 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="300.0" prefWidth="297.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blaplafla.todolist.views.gui.SetLanguage">
-    <Label fx:id="curlang" layoutX="14.0" layoutY="14.0" text="Current language: Lorem Ipsum" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="300.0" prefWidth="297.0" xmlns="http://javafx.com/javafx/18"
+            fx:controller="blaplafla.todolist.views.gui.SetLanguage">
+    <Label fx:id="curlang" layoutX="14.0" layoutY="14.0" text="Current language: Lorem Ipsum"
+           AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
         <font>
-            <Font size="18.0" />
+            <Font size="18.0"/>
         </font>
     </Label>
-    <ListView fx:id="langlist" layoutX="14.0" layoutY="68.0" prefHeight="171.0" prefWidth="272.0" AnchorPane.leftAnchor="14.0" />
+    <ListView fx:id="langlist" layoutX="14.0" layoutY="68.0" prefHeight="171.0" prefWidth="272.0"
+              AnchorPane.leftAnchor="14.0"/>
     <Label fx:id="changelang" layoutX="14.0" layoutY="39.0" text="Set language to:" AnchorPane.leftAnchor="14.0">
         <font>
-            <Font size="18.0" />
+            <Font size="18.0"/>
         </font>
     </Label>
-   <ButtonBar layoutX="11.0" layoutY="245.0" prefHeight="30.0" prefWidth="272.0">
-      <buttons>
-          <Button fx:id="cancel" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
-          <Button fx:id="ok" mnemonicParsing="false" onAction="#accept" text="Accept" />
-      </buttons>
-   </ButtonBar>
+    <ButtonBar layoutX="11.0" layoutY="245.0" prefHeight="30.0" prefWidth="272.0">
+        <buttons>
+            <Button fx:id="cancel" mnemonicParsing="false" onAction="#cancel" text="Cancel"/>
+            <Button fx:id="ok" mnemonicParsing="false" onAction="#accept" text="Accept"/>
+        </buttons>
+    </ButtonBar>
 </AnchorPane>

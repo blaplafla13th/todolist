@@ -9,7 +9,8 @@ import blaplafla.todolist.models.task.Task;
 import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.views.View;
 
-public class Detail implements View {
+public class Detail
+        implements View {
     final DictionaryController d = MainController.getInstance().dictionaryController();
     final RequestValidation r = MainController.getInstance().input();
     final TaskController t = MainController.getInstance().taskController();
@@ -44,7 +45,8 @@ public class Detail implements View {
                     for (Task subtask : subtasks) {
                         i++;
                         System.out.println(d.label("-"));
-                        System.out.println((3 * (page - 1) + i) + ". " + d.label("title") + subtask.getTitle());
+                        System.out.println((3 * (page - 1) + i) + ". " + d.label("title") +
+                                           subtask.getTitle());
                         System.out.println(d.prettyTime(subtask.prettyTimer()));
                         System.out.println(d.label("desc") + subtask.getDescription());
                         System.out.println(d.label("-"));
@@ -59,21 +61,9 @@ public class Detail implements View {
                 execute(r.input());
             }
             using = true;
-        } else
+        }
+        else
             MainController.getInstance().returnCode(402);
-    }
-
-    private void commandlist() {
-        System.out.println(d.label("list command"));
-        System.out.println("next :" + d.label("next-button"));//
-        System.out.println("prev :" + d.label("prev-button"));//
-        System.out.println("add :" + d.label("add-subtask-button"));
-        System.out.println("toggle :" + d.label("toggle-this-button"));//
-        System.out.println("delete :" + d.label("delete-this-button"));//
-        System.out.println("edit :" + d.label("edit-this-button"));//
-        System.out.println("back :" + d.label("back-button"));//
-        System.out.println("done list :" + d.label("done list-button"));
-        System.out.println("undone list :" + d.label("undone list-button"));
     }
 
     private void execute(String command) {
@@ -116,5 +106,18 @@ public class Detail implements View {
                 MainController.getInstance().pause();
             }
         }
+    }
+
+    private void commandlist() {
+        System.out.println(d.label("list command"));
+        System.out.println("next :" + d.label("next-button"));//
+        System.out.println("prev :" + d.label("prev-button"));//
+        System.out.println("add :" + d.label("add-subtask-button"));
+        System.out.println("toggle :" + d.label("toggle-this-button"));//
+        System.out.println("delete :" + d.label("delete-this-button"));//
+        System.out.println("edit :" + d.label("edit-this-button"));//
+        System.out.println("back :" + d.label("back-button"));//
+        System.out.println("done list :" + d.label("done list-button"));
+        System.out.println("undone list :" + d.label("undone list-button"));
     }
 }

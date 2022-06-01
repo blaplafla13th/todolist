@@ -8,7 +8,8 @@ import blaplafla.todolist.models.task.Task;
 import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.views.View;
 
-public class DetailSub implements View {
+public class DetailSub
+        implements View {
     DictionaryController d = MainController.getInstance().dictionaryController();
     RequestValidation r = MainController.getInstance().input();
     TaskController t = MainController.getInstance().taskController();
@@ -37,16 +38,9 @@ public class DetailSub implements View {
                 execute(r.input());
             }
             using = true;
-        } else
+        }
+        else
             MainController.getInstance().returnCode(402);
-    }
-
-    private void commandlist() {
-        System.out.println(d.label("list command"));
-        System.out.println("toggle :" + d.label("toggle-this-button"));//
-        System.out.println("delete :" + d.label("delete-this-button"));//
-        System.out.println("edit :" + d.label("edit-this-button"));//
-        System.out.println("back :" + d.label("back-button"));//
     }
 
     private void execute(String command) {
@@ -69,5 +63,13 @@ public class DetailSub implements View {
                 MainController.getInstance().pause();
             }
         }
+    }
+
+    private void commandlist() {
+        System.out.println(d.label("list command"));
+        System.out.println("toggle :" + d.label("toggle-this-button"));//
+        System.out.println("delete :" + d.label("delete-this-button"));//
+        System.out.println("edit :" + d.label("edit-this-button"));//
+        System.out.println("back :" + d.label("back-button"));//
     }
 }

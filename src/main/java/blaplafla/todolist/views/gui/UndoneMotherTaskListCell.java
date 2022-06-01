@@ -12,7 +12,8 @@ import javafx.scene.layout.GridPane;
 import java.io.IOException;
 import java.net.URL;
 
-public class UndoneMotherTaskListCell extends ListCell<MotherTask> {
+public class UndoneMotherTaskListCell
+        extends ListCell<MotherTask> {
     DictionaryController d = MainController.getInstance().dictionaryController();
 
     @Override
@@ -21,13 +22,15 @@ public class UndoneMotherTaskListCell extends ListCell<MotherTask> {
         if (motherTask == null || empty) {
             setText(null);
             setGraphic(null);
-        } else {
+        }
+        else {
             URL fxm = getClass().getResource("TaskListCell.fxml");
             FXMLLoader loader = new FXMLLoader(fxm);
             AnchorPane anchorPane;
             try {
                 anchorPane = loader.load();
-            } catch (IOException e) {
+            }
+            catch (IOException e) {
                 throw new RuntimeException(e);
             }
             GridPane gridPane1 = (GridPane) anchorPane.getChildren().get(0);
@@ -39,8 +42,9 @@ public class UndoneMotherTaskListCell extends ListCell<MotherTask> {
             title.setText(motherTask.getTitle());
             timeLeft.setText(d.prettyTime(motherTask.prettyTimer()));
             desc.setText(d.label("desc") + motherTask.getDescription());
-            incomplete.setText(d.label("subtask-remaining") + ": " + motherTask.undoneSubTaskSize() +
-                    "/" + motherTask.subTaskSize());
+            incomplete.setText(
+                    d.label("subtask-remaining") + ": " + motherTask.undoneSubTaskSize() + "/" +
+                    motherTask.subTaskSize());
             setGraphic(anchorPane);
             setText(null);
         }

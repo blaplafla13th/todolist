@@ -17,7 +17,9 @@ import java.util.Date;
 import java.util.ResourceBundle;
 
 @SuppressWarnings("deprecation")
-public class Edit extends ViewGui implements Initializable {
+public class Edit
+        extends ViewGui
+        implements Initializable {
     private static Task task;
     final DictionaryController d = MainController.getInstance().dictionaryController();
     final TaskController t = MainController.getInstance().taskController();
@@ -55,6 +57,10 @@ public class Edit extends ViewGui implements Initializable {
     @FXML
     private Button ok;
 
+    public static Task getTask() {
+        return task;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         title.setText(d.label("placeholder-title"));
@@ -81,7 +87,8 @@ public class Edit extends ViewGui implements Initializable {
         hourFactory.setValue(task.getDeadline().getHours());
         minuteFactory.setValue(task.getDeadline().getMinutes());
         secondFactory.setValue(task.getDeadline().getSeconds());
-        endDay.setValue(task.getDeadline().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+        endDay.setValue(
+                task.getDeadline().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
     }
 
     @Override
@@ -89,8 +96,9 @@ public class Edit extends ViewGui implements Initializable {
         if (params[0] instanceof Task) {
             jframe.setTitle(d.label("edit-task"));
             task = (Task) params[0];
-            show=true;
-        } else {
+            show = true;
+        }
+        else {
             MainController.getInstance().returnCode(402);
             return;
         }
@@ -103,10 +111,6 @@ public class Edit extends ViewGui implements Initializable {
         jframe.setVisible(true);
     }
 
-    public static Task getTask() {
-        return task;
-    }
-
     public void cancel() {
         close();
         ((ViewGui) MainController.getInstance().router().getEdit()).close();
@@ -116,8 +120,9 @@ public class Edit extends ViewGui implements Initializable {
         LocalDate localDate = endDay.getValue();
         Instant instant = Instant.from(localDate.atStartOfDay(ZoneId.systemDefault()));
         Date date = Date.from(instant);
-        t.edit(task,r.inputString(titleField.getText()), r.inputString(descField.getText()),
-                r.inputTime(date, (endTimeHour.getValue() + ":" + endTimeMinute.getValue() + ":" + endTimeSecond.getValue())),
+        t.edit(task, r.inputString(titleField.getText()), r.inputString(descField.getText()),
+                r.inputTime(date, (endTimeHour.getValue() + ":" + endTimeMinute.getValue() + ":" +
+                                   endTimeSecond.getValue())),
                 r.inputPositiveInteger(r.inputString(priorityField.getText())));
 
         close();

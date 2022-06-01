@@ -10,7 +10,8 @@ import blaplafla.todolist.views.View;
 
 import java.util.Date;
 
-public class Create implements View {
+public class Create
+        implements View {
     final DictionaryController d = MainController.getInstance().dictionaryController();
     final TaskController t = MainController.getInstance().taskController();
     final RequestValidation r = MainController.getInstance().input();

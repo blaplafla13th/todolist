@@ -6,7 +6,7 @@ import blaplafla.todolist.routers.GuiRouter;
 
 import javax.swing.*;
 import java.io.PrintStream;
-import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 
 public class Starter {
     public static void main(String[] args) {
@@ -27,12 +27,8 @@ public class Starter {
                 MainController.getInstance().router().getIndex().run();
             });
         else if (MainController.getInstance().router() instanceof CliRouter) {
-            try {
-                System.setOut(new PrintStream(System.out, true, "UTF-8"));
-                MainController.getInstance().router().getIndex().run();
-            } catch (UnsupportedEncodingException e) {
-                MainController.getInstance().returnCode(304);
-            }
+            System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
+            MainController.getInstance().router().getIndex().run();
         }
     }
 
@@ -43,7 +39,9 @@ public class Starter {
             default -> {
                 if (System.console() != null) {
                     MainController.getInstance().setModeCli();
-                } else MainController.getInstance().setModeGui();
+                }
+                else
+                    MainController.getInstance().setModeGui();
             }
         }
     }

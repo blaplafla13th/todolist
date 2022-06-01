@@ -10,7 +10,8 @@ import blaplafla.todolist.models.task.Task;
 import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.views.View;
 
-public class Done implements View {
+public class Done
+        implements View {
 
 
     final DictionaryController d = MainController.getInstance().dictionaryController();
@@ -42,7 +43,8 @@ public class Done implements View {
                     System.out.println(d.label("-"));
                     System.out.println(i + ". " + d.label("title") + task.getTitle());
                     System.out.println(d.label("desc") + task.getDescription());
-                    System.out.println(d.label("subtask-total") + ((MotherTask) task).subTaskSize());
+                    System.out.println(
+                            d.label("subtask-total") + ((MotherTask) task).subTaskSize());
                     System.out.println(d.label("-"));
                 }
             else
@@ -52,16 +54,6 @@ public class Done implements View {
             execute(r.input());
         }
         using = true;
-    }
-
-    private void commandlist() {
-        System.out.println(d.label("list command"));
-        System.out.println("next :" + d.label("next-button"));//
-        System.out.println("prev :" + d.label("prev-button"));//
-        System.out.println("toggle :" + d.label("toggle-button"));//
-        System.out.println("delete :" + d.label("delete-button"));//
-        System.out.println("detail :" + d.label("detail-button"));//
-        System.out.println("back :" + d.label("back-button"));//
     }
 
     private void execute(String command) {
@@ -80,16 +72,19 @@ public class Done implements View {
             }
             case "detail" -> {
                 System.out.print(d.label("index") + ":");
-                t.detailMotherTask((MotherTask) tasks.get(r.inputPositiveInteger(r.input(), tasks.size()) - 1));
+                t.detailMotherTask((MotherTask) tasks.get(
+                        r.inputPositiveInteger(r.input(), tasks.size()) - 1));
             }
             case "delete" -> {
                 System.out.print(d.label("index") + ":");
-                t.deleteMotherTask((MotherTask) tasks.get(r.inputPositiveInteger(r.input(), tasks.size()) - 1));
+                t.deleteMotherTask((MotherTask) tasks.get(
+                        r.inputPositiveInteger(r.input(), tasks.size()) - 1));
                 max_page = t.paginateSize(listTask.getUndone(), 3);
             }
             case "toggle" -> {
                 System.out.print(d.label("index") + ":");
-                t.toggleMotherTask((MotherTask) tasks.get(r.inputPositiveInteger(r.input(), tasks.size()) - 1));
+                t.toggleMotherTask((MotherTask) tasks.get(
+                        r.inputPositiveInteger(r.input(), tasks.size()) - 1));
                 max_page = t.paginateSize(listTask.getUndone(), 3);
             }
 
@@ -99,5 +94,15 @@ public class Done implements View {
                 MainController.getInstance().pause();
             }
         }
+    }
+
+    private void commandlist() {
+        System.out.println(d.label("list command"));
+        System.out.println("next :" + d.label("next-button"));//
+        System.out.println("prev :" + d.label("prev-button"));//
+        System.out.println("toggle :" + d.label("toggle-button"));//
+        System.out.println("delete :" + d.label("delete-button"));//
+        System.out.println("detail :" + d.label("detail-button"));//
+        System.out.println("back :" + d.label("back-button"));//
     }
 }

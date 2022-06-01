@@ -12,7 +12,8 @@ import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.views.View;
 
 
-public class Index implements View {
+public class Index
+        implements View {
     final DictionaryController d = MainController.getInstance().dictionaryController();
     final TaskController t = MainController.getInstance().taskController();
     final FileController f = MainController.getInstance().fileController();
@@ -39,10 +40,12 @@ public class Index implements View {
                 for (Task task : tasks) {
                     i++;
                     System.out.println(d.label("-"));
-                    System.out.println((3 * (page - 1) + i) + ". " + d.label("title") + task.getTitle());
+                    System.out.println(
+                            (3 * (page - 1) + i) + ". " + d.label("title") + task.getTitle());
                     System.out.println(d.prettyTime(task.prettyTimer()));
                     System.out.println(d.label("desc") + task.getDescription());
-                    System.out.println(d.label("subtask-incomplete") + ((MotherTask) task).undoneSubTaskSize());
+                    System.out.println(d.label("subtask-incomplete") +
+                                       ((MotherTask) task).undoneSubTaskSize());
                     System.out.println(d.label("-"));
                 }
             else
@@ -56,20 +59,6 @@ public class Index implements View {
             System.out.println(d.label("input-command"));
             execute(r.input());
         }
-    }
-
-    private void commandlist() {
-        System.out.println(d.label("list command"));
-        System.out.println("next :" + d.label("next-button"));//
-        System.out.println("set username :" + d.label("set-username-button"));//
-        System.out.println("set lang :" + d.label("set-lang-button"));//
-        System.out.println("open file :" + d.label("open-button"));//
-        System.out.println("save file :" + d.label("save-button"));//
-        System.out.println("prev :" + d.label("prev-button"));//
-        System.out.println("add :" + d.label("add-button"));
-        System.out.println("done list :" + d.label("done list-button"));
-        System.out.println("undone list :" + d.label("undone list-button"));
-        System.out.println("exit :" + d.label("exit-button"));
     }
 
     private void execute(String command) {
@@ -116,5 +105,19 @@ public class Index implements View {
                 MainController.getInstance().pause();
             }
         }
+    }
+
+    private void commandlist() {
+        System.out.println(d.label("list command"));
+        System.out.println("next :" + d.label("next-button"));//
+        System.out.println("set username :" + d.label("set-username-button"));//
+        System.out.println("set lang :" + d.label("set-lang-button"));//
+        System.out.println("open file :" + d.label("open-button"));//
+        System.out.println("save file :" + d.label("save-button"));//
+        System.out.println("prev :" + d.label("prev-button"));//
+        System.out.println("add :" + d.label("add-button"));
+        System.out.println("done list :" + d.label("done list-button"));
+        System.out.println("undone list :" + d.label("undone list-button"));
+        System.out.println("exit :" + d.label("exit-button"));
     }
 }

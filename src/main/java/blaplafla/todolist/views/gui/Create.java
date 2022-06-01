@@ -17,7 +17,9 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-public class Create extends ViewGui implements Initializable {
+public class Create
+        extends ViewGui
+        implements Initializable {
     private static Object param0;
     final DictionaryController d = MainController.getInstance().dictionaryController();
     final TaskController t = MainController.getInstance().taskController();
@@ -82,10 +84,12 @@ public class Create extends ViewGui implements Initializable {
         if (params[0] instanceof MotherTask) {
             jframe.setTitle(d.label("create-sub"));
             param0 = params[0];
-        } else if (params[0] instanceof ListTask) {
+        }
+        else if (params[0] instanceof ListTask) {
             jframe.setTitle(d.label("create-task"));
             param0 = params[0];
-        } else {
+        }
+        else {
             MainController.getInstance().returnCode(402);
             return;
         }
@@ -110,11 +114,15 @@ public class Create extends ViewGui implements Initializable {
         Date date = Date.from(instant);
         if (param0 instanceof ListTask)
             t.create(r.inputString(titleField.getText()), r.inputString(descField.getText()),
-                    r.inputTime(date, (endTimeHour.getValue() + ":" + endTimeMinute.getValue() + ":" + endTimeSecond.getValue())),
+                    r.inputTime(date,
+                            (endTimeHour.getValue() + ":" + endTimeMinute.getValue() + ":" +
+                             endTimeSecond.getValue())),
                     r.inputPositiveInteger(r.inputString(priorityField.getText())));
         else if (param0 instanceof MotherTask motherTask) {
-            t.create(motherTask, r.inputString(titleField.getText()), r.inputString(descField.getText()),
-                    r.inputTime(date, (endTimeHour.getValue() + ":" + endTimeMinute.getValue() + ":" + endTimeSecond.getValue())),
+            t.create(motherTask, r.inputString(titleField.getText()),
+                    r.inputString(descField.getText()), r.inputTime(date,
+                            (endTimeHour.getValue() + ":" + endTimeMinute.getValue() + ":" +
+                             endTimeSecond.getValue())),
                     r.inputPositiveInteger(r.inputString(priorityField.getText())));
         }
         close();

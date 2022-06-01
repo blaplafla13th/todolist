@@ -5,7 +5,8 @@ import blaplafla.todolist.controllers.MainController;
 import java.util.Date;
 
 @SuppressWarnings("deprecation")
-public class JavaFXValidation extends RequestValidation {
+public class JavaFXValidation
+        extends RequestValidation {
     @Override
     public String input() {
         return null;
@@ -15,7 +16,8 @@ public class JavaFXValidation extends RequestValidation {
     public Integer inputInteger(String in) {
         try {
             return Integer.parseInt(in);
-        } catch (NumberFormatException e) {
+        }
+        catch (NumberFormatException e) {
             MainController.getInstance().returnCode(500);
             return 0;
         }
@@ -27,7 +29,8 @@ public class JavaFXValidation extends RequestValidation {
             if (Integer.parseInt(in) > 0)
                 return Integer.parseInt(in);
             throw new NumberFormatException();
-        } catch (NumberFormatException e) {
+        }
+        catch (NumberFormatException e) {
             MainController.getInstance().returnCode(500);
             return 1;
         }
@@ -39,7 +42,8 @@ public class JavaFXValidation extends RequestValidation {
             if (Integer.parseInt(in) > 0 && Integer.parseInt(in) <= max)
                 return Integer.parseInt(in);
             throw new NumberFormatException();
-        } catch (NumberFormatException e) {
+        }
+        catch (NumberFormatException e) {
             MainController.getInstance().returnCode(500);
             return max;
         }
@@ -47,11 +51,13 @@ public class JavaFXValidation extends RequestValidation {
 
     @Override
     public String inputString(String temp) {
-        temp=reformat(temp);
+        temp = reformat(temp);
         if (temp.equals("") || temp.equals(" ")) {
             MainController.getInstance().returnCode(500);
             return "Lorem Ipsum";
-        } else return temp;
+        }
+        else
+            return temp;
     }
 
     @Override
@@ -67,7 +73,8 @@ public class JavaFXValidation extends RequestValidation {
                 return new Date(year - 1900, month - 1, day);
             else
                 throw new NumberFormatException();
-        } catch (NumberFormatException e) {
+        }
+        catch (NumberFormatException e) {
             MainController.getInstance().returnCode(500);
             return new Date(122, 1, 1);
         }
@@ -76,7 +83,7 @@ public class JavaFXValidation extends RequestValidation {
     @Override
     public Date inputTime(Date date, String in) {
         if (date == null) {
-            date= new Date();
+            date = new Date();
         }
         try {
             String[] splitted = in.split(":");
@@ -90,9 +97,11 @@ public class JavaFXValidation extends RequestValidation {
                 date.setMinutes(minute);
                 date.setSeconds(second);
                 return date;
-            } else
+            }
+            else
                 throw new NumberFormatException();
-        } catch (NumberFormatException e) {
+        }
+        catch (NumberFormatException e) {
             System.out.println(dictionaryController.errorExplain(503));
             System.out.println(dictionaryController.label("def") + "0:0:0");
             date.setHours(0);

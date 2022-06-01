@@ -4,7 +4,8 @@ import java.io.Serializable;
 
 @SuppressWarnings("unchecked")
 
-public class MergeSort<T extends Comparable<? super T>> implements Serializable {
+public class MergeSort<T extends Comparable<? super T>>
+        implements Serializable {
     private T[] array;
 
     public MergeSort(T[] array) {
@@ -15,6 +16,25 @@ public class MergeSort<T extends Comparable<? super T>> implements Serializable 
         this.array = array;
     }
 
+    public void sort(int n) {
+        T[] subArray1 = (T[]) new Comparable[n / 2];
+        T[] subArray2 = (T[]) new Comparable[n - n / 2];
+        System.arraycopy(array, 0, subArray1, 0, n / 2);
+        System.arraycopy(array, n / 2, subArray2, 0, n - n / 2);
+        Worker runner1 = new Worker(subArray1);
+        Worker runner2 = new Worker(subArray2);
+        runner1.start();
+        runner2.start();
+        try {
+            runner1.join();
+            runner2.join();
+        }
+        catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        merge(runner1.getArray(), runner2.getArray());
+    }
+
     public void merge(T[] array1, T[] array2) {
         int i = 0;
         int j = 0;
@@ -23,7 +43,8 @@ public class MergeSort<T extends Comparable<? super T>> implements Serializable 
             if (array1[i].compareTo(array2[j]) <= 0) {
                 array[r] = array1[i];
                 i++;
-            } else {
+            }
+            else {
                 array[r] = array2[j];
                 j++;
             }
@@ -45,25 +66,8 @@ public class MergeSort<T extends Comparable<? super T>> implements Serializable 
         }
     }
 
-    public void sort(int n) {
-        T[] subArray1 = (T[]) new Comparable[n / 2];
-        T[] subArray2 = (T[]) new Comparable[n - n / 2];
-        System.arraycopy(array, 0, subArray1, 0, n / 2);
-        System.arraycopy(array, n / 2, subArray2, 0, n - n / 2);
-        Worker runner1 = new Worker(subArray1);
-        Worker runner2 = new Worker(subArray2);
-        runner1.start();
-        runner2.start();
-        try {
-            runner1.join();
-            runner2.join();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        merge(runner1.getArray(), runner2.getArray());
-    }
-
-    class Worker extends Thread {
+    class Worker
+            extends Thread {
         private final T[] array;
 
         public Worker(T[] array) {
@@ -85,7 +89,8 @@ public class MergeSort<T extends Comparable<? super T>> implements Serializable 
                 System.arraycopy(array, 0, left, 0, array.length / 2);
                 mergeSort(left);
                 T[] right = (T[]) new Comparable[array.length - array.length / 2];
-                System.arraycopy(array, array.length / 2, right, 0, array.length - array.length / 2);
+                System.arraycopy(array, array.length / 2, right, 0,
+                        array.length - array.length / 2);
                 mergeSort(right);
                 merge(array, left, right);
             }
@@ -96,10 +101,12 @@ public class MergeSort<T extends Comparable<? super T>> implements Serializable 
             int i2 = 0;
 
             for (int i = 0; i < result.length; i++) {
-                if (i2 >= right.length || (i1 < left.length && left[i1].compareTo(right[i2]) <= 0)) {
+                if (i2 >= right.length ||
+                    (i1 < left.length && left[i1].compareTo(right[i2]) <= 0)) {
                     result[i] = left[i1];
                     i1++;
-                } else {
+                }
+                else {
                     result[i] = right[i2];
                     i2++;
                 }

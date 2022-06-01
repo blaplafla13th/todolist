@@ -1,122 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
-
-<AnchorPane prefHeight="742.0" prefWidth="400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blaplafla.todolist.views.gui.Detail">
-   <MenuBar layoutX="10.0" layoutY="14.0" prefHeight="30.0" prefWidth="429.0" style="-fx-view-order: 1;" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0">
-      <Menu fx:id="task" mnemonicParsing="false" text="Task">
-         <MenuItem fx:id="delete" mnemonicParsing="false" onAction="#delete" text="Delete" />
-         <MenuItem fx:id="toggle" mnemonicParsing="false" onAction="#toggle" text="Toggle" />
-         <MenuItem fx:id="edit" mnemonicParsing="false" onAction="#edit" text="Edit" />
-      </Menu>
-      <Menu fx:id="subtask" mnemonicParsing="false" text="SubTask">
-         <MenuItem fx:id="undoneList" mnemonicParsing="false" onAction="#undoneList" text="Undone List" />
-         <MenuItem fx:id="doneList" mnemonicParsing="false" onAction="#doneList" text="Done List" />
-         <MenuItem fx:id="addTask" mnemonicParsing="false" onAction="#add" text="Add task" />
-      </Menu>
-   </MenuBar>
-   <GridPane layoutX="9.0" layoutY="50.0" prefHeight="30.0" prefWidth="421.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="45.0">
-      <columnConstraints>
-         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-         <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" />
-      </columnConstraints>
-      <rowConstraints>
-         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-      </rowConstraints>
-      <Label fx:id="taskName" text="Task name: AAA">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Label>
-      <Button fx:id="refresh" mnemonicParsing="false" onAction="#addData" prefHeight="30.0" prefWidth="80.0" text="Refresh" GridPane.columnIndex="1" />
-   </GridPane>
-   <GridPane layoutX="9.0" layoutY="75.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0">
-      <columnConstraints>
-         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-      </columnConstraints>
-      <rowConstraints>
-         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-      </rowConstraints>
-      <Label fx:id="undone" text="List Undone SubTask: ">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Label>
-      <ListView fx:id="listViewTask" prefHeight="318.0" prefWidth="429.0" GridPane.rowIndex="1" />
-      <GridPane prefHeight="25.0" prefWidth="429.0" GridPane.rowIndex="2">
-         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-         </rowConstraints>
-         <Label fx:id="prev" onMouseClicked="#prev" text="Prev">
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="742.0" prefWidth="400.0"
+            style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18"
+            fx:controller="blaplafla.todolist.views.gui.Detail">
+    <MenuBar layoutX="10.0" layoutY="14.0" prefHeight="30.0" prefWidth="429.0" style="-fx-view-order: 1;"
+             AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0">
+        <Menu fx:id="task" mnemonicParsing="false" text="Task">
+            <MenuItem fx:id="delete" mnemonicParsing="false" onAction="#delete" text="Delete"/>
+            <MenuItem fx:id="toggle" mnemonicParsing="false" onAction="#toggle" text="Toggle"/>
+            <MenuItem fx:id="edit" mnemonicParsing="false" onAction="#edit" text="Edit"/>
+        </Menu>
+        <Menu fx:id="subtask" mnemonicParsing="false" text="SubTask">
+            <MenuItem fx:id="undoneList" mnemonicParsing="false" onAction="#undoneList" text="Undone List"/>
+            <MenuItem fx:id="doneList" mnemonicParsing="false" onAction="#doneList" text="Done List"/>
+            <MenuItem fx:id="addTask" mnemonicParsing="false" onAction="#add" text="Add task"/>
+        </Menu>
+    </MenuBar>
+    <GridPane layoutX="9.0" layoutY="50.0" prefHeight="30.0" prefWidth="421.0" AnchorPane.leftAnchor="9.0"
+              AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="45.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+        </rowConstraints>
+        <Label fx:id="taskName" text="Task name: AAA">
             <font>
-               <Font size="18.0" />
+                <Font name="System Bold" size="20.0"/>
             </font>
-         </Label>
-         <Label fx:id="next" onMouseClicked="#next" text="Next" textAlignment="RIGHT" GridPane.columnIndex="1">
+        </Label>
+        <Button fx:id="refresh" mnemonicParsing="false" onAction="#addData" prefHeight="30.0" prefWidth="80.0"
+                text="Refresh" GridPane.columnIndex="1"/>
+    </GridPane>
+    <GridPane layoutX="9.0" layoutY="75.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+        </rowConstraints>
+        <Label fx:id="undone" text="List Undone SubTask: ">
             <font>
-               <Font size="18.0" />
+                <Font name="System Bold" size="20.0"/>
             </font>
-         </Label>
-      </GridPane>
-      <Label fx:id="lastDone" text="Last Done SubTask: aaa " GridPane.rowIndex="3">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Label>
-      <Label fx:id="deadline" text="Deadline: 31/12/2022 23h59m59s " GridPane.rowIndex="5">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <GridPane prefHeight="25.0" prefWidth="429.0" GridPane.rowIndex="6">
-         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-         </rowConstraints>
-         <Label fx:id="priority" text="Priority: 13122002" GridPane.columnIndex="0">
+        </Label>
+        <ListView fx:id="listViewTask" prefHeight="318.0" prefWidth="429.0" GridPane.rowIndex="1"/>
+        <GridPane prefHeight="25.0" prefWidth="429.0" GridPane.rowIndex="2">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <Label fx:id="prev" onMouseClicked="#prev" text="Prev">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label fx:id="next" onMouseClicked="#next" text="Next" textAlignment="RIGHT" GridPane.columnIndex="1">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+        </GridPane>
+        <Label fx:id="lastDone" text="Last Done SubTask: aaa " GridPane.rowIndex="3">
             <font>
-               <Font size="18.0" />
+                <Font name="System Bold" size="20.0"/>
             </font>
-         </Label>
-         <Label fx:id="timeLeft" text="Time left: 1d 2h 3p 4s" GridPane.columnIndex="1">
+        </Label>
+        <Label fx:id="deadline" text="Deadline: 31/12/2022 23h59m59s " GridPane.rowIndex="5">
             <font>
-               <Font size="18.0" />
+                <Font size="18.0"/>
             </font>
-         </Label>
-      </GridPane>
-      <Label fx:id="desc" alignment="TOP_LEFT" maxHeight="180.0" prefWidth="429.0" text="Description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." wrapText="true" GridPane.rowIndex="7">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="detail" text="Detail" GridPane.rowIndex="4">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Label>
-   </GridPane>
+        </Label>
+        <GridPane prefHeight="25.0" prefWidth="429.0" GridPane.rowIndex="6">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <Label fx:id="priority" text="Priority: 13122002" GridPane.columnIndex="0">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label fx:id="timeLeft" text="Time left: 1d 2h 3p 4s" GridPane.columnIndex="1">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+        </GridPane>
+        <Label fx:id="desc" alignment="TOP_LEFT" maxHeight="180.0" prefWidth="429.0"
+               text="Description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+               wrapText="true" GridPane.rowIndex="7">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <Label fx:id="detail" text="Detail" GridPane.rowIndex="4">
+            <font>
+                <Font name="System Bold" size="20.0"/>
+            </font>
+        </Label>
+    </GridPane>
 </AnchorPane>

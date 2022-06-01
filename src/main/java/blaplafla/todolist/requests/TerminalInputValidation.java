@@ -4,7 +4,8 @@ import java.util.Date;
 import java.util.Scanner;
 
 @SuppressWarnings("deprecation")
-public class TerminalInputValidation extends RequestValidation {
+public class TerminalInputValidation
+        extends RequestValidation {
     private final Scanner input;
 
     public TerminalInputValidation() {
@@ -19,7 +20,8 @@ public class TerminalInputValidation extends RequestValidation {
     public Integer inputInteger(String in) {
         try {
             return Integer.parseInt(in);
-        } catch (NumberFormatException e) {
+        }
+        catch (NumberFormatException e) {
             System.out.println(dictionaryController.errorExplain(500));
             System.out.println(dictionaryController.label("def") + 0);
             return 0;
@@ -32,7 +34,8 @@ public class TerminalInputValidation extends RequestValidation {
             if (Integer.parseInt(in) > 0)
                 return Integer.parseInt(in);
             throw new NumberFormatException();
-        } catch (NumberFormatException e) {
+        }
+        catch (NumberFormatException e) {
             System.out.println(dictionaryController.errorExplain(500));
             System.out.println(dictionaryController.label("def") + 1);
             return 1;
@@ -45,7 +48,8 @@ public class TerminalInputValidation extends RequestValidation {
             if (Integer.parseInt(in) > 0 && Integer.parseInt(in) <= max)
                 return Integer.parseInt(in);
             throw new NumberFormatException();
-        } catch (NumberFormatException e) {
+        }
+        catch (NumberFormatException e) {
             System.out.println(dictionaryController.errorExplain(500));
             System.out.println(dictionaryController.label("def") + 1);
             return 1;
@@ -58,7 +62,9 @@ public class TerminalInputValidation extends RequestValidation {
             System.out.println(dictionaryController.errorExplain(500));
             System.out.println(dictionaryController.label("def"));
             return "Lorem Ipsum";
-        } else return temp;
+        }
+        else
+            return temp;
     }
 
     public Date inputDate(String in) {
@@ -73,7 +79,8 @@ public class TerminalInputValidation extends RequestValidation {
                 return new Date(year - 1900, month - 1, day);
             else
                 throw new NumberFormatException();
-        } catch (NumberFormatException e) {
+        }
+        catch (NumberFormatException e) {
             System.out.println(dictionaryController.errorExplain(502));
             System.out.println(dictionaryController.label("def") + "2022-01-01");
             return new Date(122, 1, 1);
@@ -96,9 +103,11 @@ public class TerminalInputValidation extends RequestValidation {
                 date.setMinutes(minute);
                 date.setSeconds(second);
                 return date;
-            } else
+            }
+            else
                 throw new NumberFormatException();
-        } catch (NumberFormatException e) {
+        }
+        catch (NumberFormatException e) {
             System.out.println(dictionaryController.errorExplain(503));
             System.out.println(dictionaryController.label("def") + "0:0:0");
             date.setHours(0);

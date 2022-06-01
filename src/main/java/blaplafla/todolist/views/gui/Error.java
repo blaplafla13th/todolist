@@ -10,7 +10,9 @@ import javafx.scene.control.Button;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Error extends ViewGui implements Initializable {
+public class Error
+        extends ViewGui
+        implements Initializable {
     private static int errorCode;
     final DictionaryController d = MainController.getInstance().dictionaryController();
     @FXML

@@ -13,7 +13,9 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SaveFile extends ViewGui implements Initializable {
+public class SaveFile
+        extends ViewGui
+        implements Initializable {
     final DictionaryController d = MainController.getInstance().dictionaryController();
     final FileController f = MainController.getInstance().fileController();
     private final JFileChooser fileChooser = new JFileChooser();
@@ -44,8 +46,10 @@ public class SaveFile extends ViewGui implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         overwrite.setText(d.label("warning-overwrite-data"));
         filepath.setText(d.label("path"));
-        if (f.hasFile()) filepath.setText(d.label("path") + f.filePath());
-        else changePath();
+        if (f.hasFile())
+            filepath.setText(d.label("path") + f.filePath());
+        else
+            changePath();
         ok.setText(d.label("ok"));
         cancel.setText(d.label("cancel"));
         changePath.setText(d.label("changepath"));
@@ -56,9 +60,12 @@ public class SaveFile extends ViewGui implements Initializable {
         int status = fileChooser.showSaveDialog(null);
         if (status == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();
-            int code = MainController.getInstance().fileController().setFile(file.getAbsolutePath());
-            if (code != 100) MainController.getInstance().returnCode(code);
-        } else if (status == JFileChooser.CANCEL_OPTION) {
+            int code =
+                    MainController.getInstance().fileController().setFile(file.getAbsolutePath());
+            if (code != 100)
+                MainController.getInstance().returnCode(code);
+        }
+        else if (status == JFileChooser.CANCEL_OPTION) {
             close();
             ((ViewGui) MainController.getInstance().router().getSaveFile()).close();
 
@@ -72,7 +79,9 @@ public class SaveFile extends ViewGui implements Initializable {
             f.exportListTask();
             close();
             ((ViewGui) MainController.getInstance().router().getSaveFile()).close();
-        } else changePath();
+        }
+        else
+            changePath();
     }
 
     public void cancel() {

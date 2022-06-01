@@ -26,7 +26,8 @@ public class TaskController {
         MainController.getInstance().createView().run(task);
     }
 
-    public void create(MotherTask task, String title, String description, Date deadline, int priority) {
+    public void create(MotherTask task, String title, String description, Date deadline,
+                       int priority) {
         task.addSubTask(title, description, deadline, priority);
     }
 
@@ -35,7 +36,8 @@ public class TaskController {
     }
 
     public void edit(Task task, String title, String description, Date deadline, int priority) {
-        MainController.getInstance().listTask.editTask(task, title, description, deadline, priority);
+        MainController.getInstance().listTask.editTask(task, title, description, deadline,
+                priority);
     }
 
     public void listDone() {
@@ -60,7 +62,8 @@ public class TaskController {
         if (MainController.getInstance().listTask.getUndone().indexOf(task) != -1) {
             from = 1;
             id = MainController.getInstance().listTask.getUndone().indexOf(task);
-        } else if (MainController.getInstance().listTask.getDone().indexOf(task) != -1) {
+        }
+        else if (MainController.getInstance().listTask.getDone().indexOf(task) != -1) {
             from = 2;
             id = MainController.getInstance().listTask.getDone().indexOf(task);
         }
@@ -73,7 +76,8 @@ public class TaskController {
         if (task.getUndoneSubTask().indexOf(subTask) != -1) {
             from = 1;
             id = task.getUndoneSubTask().indexOf(subTask);
-        } else if (task.getDoneSubTask().indexOf(subTask) != -1) {
+        }
+        else if (task.getDoneSubTask().indexOf(subTask) != -1) {
             from = 2;
             id = task.getDoneSubTask().indexOf(subTask);
         }
@@ -97,7 +101,8 @@ public class TaskController {
     }
 
     public int paginateSize(SimpleStructure tasks, int numPerPage) {
-        return tasks.size() % numPerPage != 0 ? tasks.size() / numPerPage + 1 : tasks.size() / numPerPage;
+        return tasks.size() % numPerPage != 0 ? tasks.size() / numPerPage + 1
+                                              : tasks.size() / numPerPage;
     }
 
     public SimpleArrayList<Task> paginate(SimpleStructure tasks, int numPerPage, int page) {

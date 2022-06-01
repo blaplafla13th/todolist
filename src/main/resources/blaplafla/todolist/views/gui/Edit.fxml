@@ -3,8 +3,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="367.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="blaplafla.todolist.views.gui.Edit">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="367.0" prefWidth="1000.0"
+            xmlns="http://javafx.com/javafx/18" fx:controller="blaplafla.todolist.views.gui.Edit">
 
     <GridPane alignment="CENTER" layoutX="20.0" layoutY="17.0" prefHeight="291.0" prefWidth="972.0"
               AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">

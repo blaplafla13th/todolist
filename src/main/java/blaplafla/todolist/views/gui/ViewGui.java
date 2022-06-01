@@ -13,7 +13,8 @@ import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.net.URL;
 
-public abstract class ViewGui implements View {
+public abstract class ViewGui
+        implements View {
     protected JFrame jframe;
     protected boolean show;
     protected JFXPanel jfxPanel;
@@ -25,11 +26,11 @@ public abstract class ViewGui implements View {
     }
 
     @Override
-    public void run() {
+    public void run(Object... params) {
     }
 
     @Override
-    public void run(Object... params) {
+    public void run() {
     }
 
     protected int initFX(String fileName) {
@@ -43,7 +44,8 @@ public abstract class ViewGui implements View {
             Scene scene = new Scene(root);
             jfxPanel.setScene(scene);
             return 100;
-        } catch (IOException exc) {
+        }
+        catch (IOException exc) {
             return 302;
         }
     }
@@ -62,21 +64,21 @@ public abstract class ViewGui implements View {
         jframe.setLayout(new BorderLayout());
         jframe.setResizable(false);
         jframe.setLocationRelativeTo(null);
-//        jframe.setExtendedState(Frame.MAXIMIZED_BOTH);
-        jframe.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
+        //        jframe.setExtendedState(Frame.MAXIMIZED_BOTH);
+        jframe.setIconImage(
+                Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
         jframe.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         jframe.addWindowListener(new WindowAdapter() {
-                                     @Override
-                                     public void windowClosing(WindowEvent e) {
-                                         super.windowClosing(e);
-                                         show = false;
-                                     }
+            @Override
+            public void windowClosing(WindowEvent e) {
+                super.windowClosing(e);
+                show = false;
+            }
 
-                                     public void windowClosed(WindowEvent e) {
-                                         super.windowClosed(e);
-                                         show = false;
-                                     }
-                                 }
-        );
+            public void windowClosed(WindowEvent e) {
+                super.windowClosed(e);
+                show = false;
+            }
+        });
     }
 }

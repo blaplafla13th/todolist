@@ -27,10 +27,6 @@ public class DictionaryController {
         dictionary = langlist.get(0);
     }
 
-    public ArrayList<Dictionary> getLanglist() {
-        return langlist;
-    }
-
     public int loadLanguage() {
         try {
             ArrayList<Class> langlist = getClassList("blaplafla.todolist.models.dictionary");
@@ -49,15 +45,48 @@ public class DictionaryController {
                 }
             }
             return 100;
-        } catch (ClassNotFoundException e) {
+        }
+        catch (ClassNotFoundException e) {
             return 201;
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             return 301;
-        } catch (NoSuchMethodException | InvocationTargetException | InstantiationException |
-                 IllegalAccessException | URISyntaxException e) {
+        }
+        catch (NoSuchMethodException | InvocationTargetException | InstantiationException |
+               IllegalAccessException | URISyntaxException e) {
             return 401;
         }
 
+    }
+
+    public ArrayList<Class> getClassList(
+            String packageName) throws ClassNotFoundException, IOException, URISyntaxException {
+        ArrayList<Class> classes = new ArrayList<>();
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        assert classLoader != null;
+        String path = packageName.replace('.', '/');
+        URI uri = Objects.requireNonNull(getClass().getResource("/" + path)).toURI();
+        Path myPath;
+        if (uri.getScheme().equals("jar")) {
+            FileSystem fileSystem = FileSystems.newFileSystem(uri, Collections.emptyMap());
+            myPath = fileSystem.getPath("/" + path);
+        }
+        else {
+            myPath = Paths.get(uri);
+        }
+        Stream<Path> walk = Files.walk(myPath, 1);
+        for (Iterator<Path> iter = walk.iterator(); iter.hasNext(); ) {
+            Path temp = iter.next();
+            String className = temp.toAbsolutePath().toString().replace("/", ".");
+            className = className.substring(className.indexOf("blaplafla"));
+            if (className.contains(".class") && !className.contains("Dictionary.class"))
+                classes.add(Class.forName(className.replace(".class", "")));
+        }
+        return classes;
+    }
+
+    public ArrayList<Dictionary> getLanglist() {
+        return langlist;
     }
 
     public String getDictionary() {
@@ -67,7 +96,8 @@ public class DictionaryController {
     public int setDictionary(int i) {
         try {
             dictionary = langlist.get(i);
-        } catch (IndexOutOfBoundsException e) {
+        }
+        catch (IndexOutOfBoundsException e) {
             return 301;
         }
         return 100;
@@ -89,29 +119,5 @@ public class DictionaryController {
 
     public void changeLanguage() {
         MainController.getInstance().setLanguageView().run();
-    }
-
-    public ArrayList<Class> getClassList(String packageName) throws ClassNotFoundException, IOException, URISyntaxException {
-        ArrayList<Class> classes = new ArrayList<>();
-        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        assert classLoader != null;
-        String path = packageName.replace('.', '/');
-        URI uri = Objects.requireNonNull(getClass().getResource("/" + path)).toURI();
-        Path myPath;
-        if (uri.getScheme().equals("jar")) {
-            FileSystem fileSystem = FileSystems.newFileSystem(uri, Collections.emptyMap());
-            myPath = fileSystem.getPath("/" + path);
-        } else {
-            myPath = Paths.get(uri);
-        }
-        Stream<Path> walk = Files.walk(myPath, 1);
-        for (Iterator<Path> iter = walk.iterator(); iter.hasNext(); ) {
-            Path temp = iter.next();
-            String className = temp.toAbsolutePath().toString().replace("/", ".");
-            className = className.substring(className.indexOf("blaplafla"));
-            if (className.contains(".class") && !className.contains("Dictionary.class"))
-                classes.add(Class.forName(className.replace(".class", "")));
-        }
-        return classes;
     }
 }

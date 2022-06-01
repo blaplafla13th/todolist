@@ -8,7 +8,8 @@ import java.util.Iterator;
 
 @SuppressWarnings("unchecked")
 
-public class SimpleArrayList<T extends Comparable<? super T>> implements Serializable, Iterable<T>, SimpleStructure<T> {
+public class SimpleArrayList<T extends Comparable<? super T>>
+        implements Serializable, Iterable<T>, SimpleStructure<T> {
     private final MergeSort<T> sort;
     private T[] array;
     private int n;
@@ -24,6 +25,27 @@ public class SimpleArrayList<T extends Comparable<? super T>> implements Seriali
         return array;
     }
 
+    public int size() {
+        return n;
+    }
+
+    public int indexOf(T data) {
+        if (data == null) {
+            for (int i = 0; i < n; i++) {
+                if (array[i] == null)
+                    return i;
+            }
+        }
+        else if (isContain(data)) {
+            for (int i = 0; i < n; i++) {
+                if (array[i] != null && array[i].equals(data)) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+
     public void add(T data) {
         if (array == null) {
             array = (T[]) new Comparable[0];
@@ -36,43 +58,27 @@ public class SimpleArrayList<T extends Comparable<? super T>> implements Seriali
         n++;
     }
 
-
     public T get(int i) {
         if (array == null) {
             throw new NullPointerException();
-        } else if (i < 0 || i > n) throw new IndexOutOfBoundsException();
+        }
+        else if (i < 0 || i > n)
+            throw new IndexOutOfBoundsException();
         return array[i];
     }
 
-
-    public void set(int i, T data) {
-        if (array == null) {
-            throw new NullPointerException();
-        }
-        if (i < 0 || i > n) throw new IndexOutOfBoundsException();
-        array[i] = data;
+    public boolean isEmpty() {
+        return n == 0;
     }
-
-    public void remove(T data) {
-        if (array == null) {
-            throw new NullPointerException();
-        } else if (data == null) {
-            return;
-        }
-        for (int i = 0; i < n; i++) {
-            if (array[i] != null && array[i].equals(data)) {
-                removeIndex(i);
-            }
-        }
-    }
-
 
     public boolean isContain(T data) {
         if (array == null) {
             throw new NullPointerException();
-        } else if (data == null) {
+        }
+        else if (data == null) {
             return false;
-        } else {
+        }
+        else {
             for (int i = 0; i < n; i++) {
                 if (array[i] != null && array[i].equals(data)) {
                     return true;
@@ -82,52 +88,52 @@ public class SimpleArrayList<T extends Comparable<? super T>> implements Seriali
         return false;
     }
 
+    public void set(int i, T data) {
+        if (array == null) {
+            throw new NullPointerException();
+        }
+        if (i < 0 || i > n)
+            throw new IndexOutOfBoundsException();
+        array[i] = data;
+    }
 
-    public int indexOf(T data) {
-        if (data == null) {
-            for (int i = 0; i < n; i++) {
-                if (array[i] == null) return i;
-            }
-        } else if (isContain(data)) {
-            for (int i = 0; i < n; i++) {
-                if (array[i] != null && array[i].equals(data)) {
-                    return i;
-                }
+    public void remove(T data) {
+        if (array == null) {
+            throw new NullPointerException();
+        }
+        else if (data == null) {
+            return;
+        }
+        for (int i = 0; i < n; i++) {
+            if (array[i] != null && array[i].equals(data)) {
+                removeIndex(i);
             }
         }
-        return -1;
-    }
-
-
-    public int size() {
-        return n;
-    }
-
-
-    public boolean isEmpty() {
-        return n == 0;
-    }
-
-
-    public Iterator<T> iterator() {
-        return new Itr();
     }
 
     public void removeIndex(int i) {
         if (array == null) {
             throw new NullPointerException();
-        } else if (i < 0 || i > n) throw new IndexOutOfBoundsException();
+        }
+        else if (i < 0 || i > n)
+            throw new IndexOutOfBoundsException();
         else {
             n--;
-            if (n - i >= 0) System.arraycopy(array, i + 1, array, i, n - i);
+            if (n - i >= 0)
+                System.arraycopy(array, i + 1, array, i, n - i);
         }
+    }
+
+    public Iterator<T> iterator() {
+        return new Itr();
     }
 
     public void sort() {
         sort.sort(n);
     }
 
-    private class Itr implements Iterator<T> {
+    private class Itr
+            implements Iterator<T> {
         private int currentIndex;
 
 

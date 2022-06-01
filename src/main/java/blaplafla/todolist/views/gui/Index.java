@@ -17,7 +17,9 @@ import javafx.scene.control.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Index extends ViewGui implements Initializable {
+public class Index
+        extends ViewGui
+        implements Initializable {
     final DictionaryController d = MainController.getInstance().dictionaryController();
     final TaskController t = MainController.getInstance().taskController();
     final FileController f = MainController.getInstance().fileController();
@@ -151,12 +153,13 @@ public class Index extends ViewGui implements Initializable {
 
     public void setUsername() {
         usernameField.setVisible(true);
-        usernameField.setPromptText(d.label("set-name") + " " + d.label("old-value") + listTask.getUsername());
+        usernameField.setPromptText(
+                d.label("set-name") + " " + d.label("old-value") + listTask.getUsername());
     }
 
     public void doneSetUsername() {
         usernameField.setVisible(false);
-        MainController.getInstance().listTask().setUsername(r.reformat(usernameField.getText()) );
+        MainController.getInstance().listTask().setUsername(r.reformat(usernameField.getText()));
         MainController.getInstance().indexView().run();
     }
 }
