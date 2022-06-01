@@ -30,6 +30,7 @@ public class GuiRouter extends Router {
         undone = new Undone();
         done = new Done();
         detail = new Detail();
+        edit=new Edit();
     }
 
     @Override
@@ -73,6 +74,9 @@ public class GuiRouter extends Router {
         }if (detail instanceof Detail detail && detail.isShow()) {
             detail.close();
             detail.run(Detail.getMotherTask());
+        }if (edit instanceof Edit edit && edit.isShow()) {
+            edit.close();
+            edit.run(Edit.getTask());
         }
         if (error.isShow()) {
             error.close();
