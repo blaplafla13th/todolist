@@ -159,7 +159,6 @@ public class Detail extends ViewGui implements Initializable {
 
     public void edit() {
         t.edit(motherTask);
-        MainController.getInstance().router().refresh();
     }
 
     public void add() {
