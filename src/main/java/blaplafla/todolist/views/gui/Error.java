@@ -24,19 +24,16 @@ public class Error extends ViewGui implements Initializable {
 
     @Override
     public void run(Object... params) {
-        if (this != ((GuiRouter) MainController.getInstance().router()).getError()) {
-            close();
-        } else {
-            errorCode = (Integer) params[0];
-            jframe.setTitle(d.label("error") + errorCode);
-            jframe.setSize(600, 200);
-            fixedJFrame();
-            int error = initFX("Error.fxml");
-            if (error != 100)
-                System.out.println(d.errorExplain(error));
-            jframe.add(jfxPanel);
-            jframe.setVisible(true);
-        }
+        show = true;
+        errorCode = (Integer) params[0];
+        jframe.setTitle(d.label("error") + errorCode);
+        jframe.setSize(600, 200);
+        fixedJFrame();
+        int error = initFX("Error.fxml");
+        if (error != 100)
+            System.out.println(d.errorExplain(error));
+        jframe.add(jfxPanel);
+        jframe.setVisible(true);
     }
 
     @Override

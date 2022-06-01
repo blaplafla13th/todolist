@@ -89,6 +89,7 @@ public class Create extends ViewGui implements Initializable {
             MainController.getInstance().returnCode(402);
             return;
         }
+
         jframe.setSize(1000, 400);
         fixedJFrame();
         int error = initFX("Create.fxml");
