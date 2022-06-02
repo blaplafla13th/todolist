@@ -109,7 +109,7 @@ public class Detail
         next.setText(d.label("next-button") + ">");
         prev.setText("<" + d.label("prev-button"));
         detail.setText(d.label("detail-button"));
-        deadline.setText(d.label("deadline-time") + ":" + motherTask.getDeadlineTime());
+        deadline.setText(d.label("deadline-time") + motherTask.getDeadlineTime());
         if (!motherTask.isStatus())
             timeLeft.setText(d.prettyTime(motherTask.prettyTimer()));
         else

@@ -7,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
 import java.net.URL;
@@ -33,9 +32,8 @@ public class SubTaskListCell
             catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            GridPane gridPane = (GridPane) anchorPane.getChildren().get(0);
-            Label title = (Label) gridPane.getChildren().get(0);
-            Label timeLeft = (Label) gridPane.getChildren().get(1);
+            Label title = (Label) anchorPane.getChildren().get(0);
+            Label timeLeft = (Label) anchorPane.getChildren().get(1);
             title.setText(motherTask.getTitle());
             timeLeft.setText(d.prettyTime(motherTask.prettyTimer()));
             setGraphic(anchorPane);
