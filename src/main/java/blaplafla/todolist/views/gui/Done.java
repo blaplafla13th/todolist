@@ -74,7 +74,7 @@ public class Done
         undone.setText(d.label("done list-button"));
         refresh.setText(d.label("refresh"));
         delete.setText(d.label("delete-button"));
-        toggle.setText(d.label("done-button"));
+        toggle.setText(d.label("undone-button"));
         detail.setText(d.label("detail-button"));
         next.setText(d.label("next-button") + ">");
         prev.setText("<" + d.label("prev-button"));
