@@ -59,6 +59,7 @@
         <GridPane prefHeight="25.0" prefWidth="429.0" GridPane.rowIndex="2">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
                 <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0"/>
             </columnConstraints>
             <rowConstraints>
@@ -69,7 +70,13 @@
                     <Font size="18.0"/>
                 </font>
             </Label>
-            <Label fx:id="next" onMouseClicked="#next" text="Next" textAlignment="RIGHT" GridPane.columnIndex="1">
+            <Label fx:id="next" onMouseClicked="#next" text="Next" textAlignment="RIGHT" GridPane.columnIndex="2">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label fx:id="pageLabel" layoutX="10.0" layoutY="10.0" text="Page 1"
+                   GridPane.columnIndex="1">
                 <font>
                     <Font size="18.0"/>
                 </font>

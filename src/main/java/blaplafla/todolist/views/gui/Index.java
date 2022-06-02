@@ -60,6 +60,8 @@ public class Index
     private Label prev;
     @FXML
     private TextField usernameField;
+    @FXML
+    private Label pageLabel;
 
     @Override
     public void run() {
@@ -108,6 +110,7 @@ public class Index
         for (Task task : tasks) {
             listtask.add(task);
         }
+        pageLabel.setText(d.label("page") + page);
     }
 
     public void next() {

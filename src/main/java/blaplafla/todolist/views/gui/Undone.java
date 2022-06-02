@@ -49,6 +49,8 @@ public class Undone
     private Label next;
     @FXML
     private Label prev;
+    @FXML
+    private Label pageLabel;
 
     @Override
     public void run(Object... params) {
@@ -71,7 +73,7 @@ public class Undone
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        undone.setText(d.label("undone list-button"));
+        undone.setText(d.label("undone list-button") + " (" + listTask.getUndone().size() + "): ");
         refresh.setText(d.label("refresh"));
         add.setText(d.label("add-button"));
         delete.setText(d.label("delete-button"));
@@ -94,6 +96,7 @@ public class Undone
         for (Task task : tasks) {
             listtask.add((MotherTask) task);
         }
+        pageLabel.setText(d.label("page") + page);
     }
 
     public void add() {

@@ -110,6 +110,7 @@ public class English
             case "done-button" -> "Done";
             case "start-button" -> "Open";
             case "undone-button" -> "Undone";
+            case "page" -> "Page ";
             default -> "Unknown";
         };
     }

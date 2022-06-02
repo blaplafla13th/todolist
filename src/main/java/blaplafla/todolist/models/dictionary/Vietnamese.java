@@ -109,6 +109,7 @@ public class Vietnamese
             case "done-button" -> "Xong";
             case "undone-button" -> "Hủy";
             case "start-button" -> "Mở";
+            case "page" -> "Trang ";
             default -> "Không xác định";
         };
     }

@@ -8,10 +8,11 @@
             fx:controller="blaplafla.todolist.views.gui.Undone">
     <ListView fx:id="listViewTask" layoutX="9.0" layoutY="110.0" prefHeight="518.0" prefWidth="429.0"
               AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0"/>
-    <GridPane layoutX="9.0" layoutY="628.0" prefHeight="29.0" prefWidth="365.0" AnchorPane.leftAnchor="9.0"
-              AnchorPane.topAnchor="628.0">
+    <GridPane layoutX="9.0" layoutY="628.0" prefHeight="25.0" prefWidth="429.0" AnchorPane.leftAnchor="9.0"
+              AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="635.0" GridPane.rowIndex="2">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
             <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0"/>
         </columnConstraints>
         <rowConstraints>
@@ -22,7 +23,12 @@
                 <Font size="18.0"/>
             </font>
         </Label>
-        <Label fx:id="next" onMouseClicked="#next" text="Next" textAlignment="RIGHT" GridPane.columnIndex="1">
+        <Label fx:id="next" onMouseClicked="#next" text="Next" textAlignment="RIGHT" GridPane.columnIndex="2">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <Label fx:id="pageLabel" layoutX="10.0" layoutY="10.0" text="Page 1" GridPane.columnIndex="1">
             <font>
                 <Font size="18.0"/>
             </font>

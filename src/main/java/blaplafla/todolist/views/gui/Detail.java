@@ -68,6 +68,8 @@ public class Detail
     private Label priority;
     @FXML
     private Label desc;
+    @FXML
+    private Label pageLabel;
 
     public static MotherTask getMotherTask() {
         return motherTask;
@@ -135,6 +137,7 @@ public class Detail
             timeLeft.setText(d.prettyTime(motherTask.prettyTimer()));
         else
             timeLeft.setVisible(false);
+        pageLabel.setText(d.label("page") + page);
     }
 
     public void next() {

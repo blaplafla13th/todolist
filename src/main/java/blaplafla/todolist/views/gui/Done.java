@@ -47,6 +47,8 @@ public class Done
     private Label next;
     @FXML
     private Label prev;
+    @FXML
+    private Label pageLabel;
 
     @Override
     public void run(Object... params) {
@@ -91,6 +93,7 @@ public class Done
         for (Task task : tasks) {
             listtask.add((MotherTask) task);
         }
+        pageLabel.setText(d.label("page") + page);
     }
 
     public void delete() {
