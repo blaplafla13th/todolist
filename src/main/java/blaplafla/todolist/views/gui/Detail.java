@@ -113,7 +113,7 @@ public class Detail
         if (!motherTask.isStatus())
             timeLeft.setText(d.prettyTime(motherTask.prettyTimer()));
         else
-            timeLeft.setVisible(false);
+            timeLeft.setText("done-button");
         priority.setText(d.label("priority") + motherTask.getPriority());
         desc.setText(d.label("desc") + motherTask.getDescription());
         addData();

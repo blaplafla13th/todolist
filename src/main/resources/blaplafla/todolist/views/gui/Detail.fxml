@@ -49,6 +49,7 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
         </rowConstraints>
         <Label fx:id="undone" text="List Undone SubTask: ">
             <font>
@@ -75,8 +76,7 @@
                     <Font size="18.0"/>
                 </font>
             </Label>
-            <Label fx:id="pageLabel" layoutX="10.0" layoutY="10.0" text="Page 1"
-                   GridPane.columnIndex="1">
+            <Label fx:id="pageLabel" layoutX="10.0" layoutY="10.0" text="Page 1" GridPane.columnIndex="1">
                 <font>
                     <Font size="18.0"/>
                 </font>
@@ -92,28 +92,9 @@
                 <Font size="18.0"/>
             </font>
         </Label>
-        <GridPane prefHeight="25.0" prefWidth="429.0" GridPane.rowIndex="6">
-            <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
-                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0"/>
-            </columnConstraints>
-            <rowConstraints>
-                <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
-            </rowConstraints>
-            <Label fx:id="priority" text="Priority: 13122002" GridPane.columnIndex="0">
-                <font>
-                    <Font size="18.0"/>
-                </font>
-            </Label>
-            <Label fx:id="timeLeft" text="Time left: 1d 2h 3p 4s" GridPane.columnIndex="1">
-                <font>
-                    <Font size="18.0"/>
-                </font>
-            </Label>
-        </GridPane>
-        <Label fx:id="desc" alignment="TOP_LEFT" maxHeight="180.0" prefWidth="429.0"
+        <Label fx:id="desc" alignment="TOP_LEFT" maxHeight="180.0" prefHeight="155.0" prefWidth="411.0"
                text="Description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-               wrapText="true" GridPane.rowIndex="7">
+               wrapText="true" GridPane.rowIndex="8">
             <font>
                 <Font size="18.0"/>
             </font>
@@ -123,5 +104,24 @@
                 <Font name="System Bold" size="20.0"/>
             </font>
         </Label>
+        <Label fx:id="priority" text="Priority: 13122002" GridPane.rowIndex="6">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <Label fx:id="timeLeft" text="Time left: 1d 2h 3p 4s" GridPane.rowIndex="7">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+    </GridPane>
+    <GridPane prefHeight="25.0" prefWidth="429.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+        </rowConstraints>
     </GridPane>
 </AnchorPane>
