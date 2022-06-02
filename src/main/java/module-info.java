@@ -10,4 +10,6 @@ module blaplafla.todolist {
     exports blaplafla.todolist;
     opens blaplafla.todolist.models.task to javafx.fxml;
     exports blaplafla.todolist.models.task;
+    opens blaplafla.todolist.models.datastructures to javafx.fxml;
+    exports blaplafla.todolist.models.datastructures;
 }
