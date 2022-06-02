@@ -243,9 +243,9 @@ Trong khuôn khổ đề tài, chúng ta sẽ nói về ArrayList, Vector và St
 | Tạo việc mới (MotherTask&Task)<br>Create                           | &#9745; | &#9745; |
 | Sửa việc đã tạo (MotherTask&Task) <br>Edit                         | &#9745; | &#9745; |
 | Xem chi tiết việc (Sửa Xóa Tích hoàn thành)<br>Detail              | &#9745; | &#9745; |
-| Xem chi tiết việc con (Sửa Xóa Tích hoàn thành)<br>DetailSubTask   | &#9745; | &#9744; |
-| Danh sách các việc con chưa hoàn thành<br>UndoneSub                | &#9745; | &#9744; |
-| Danh sách các việc con đã làm<br>DoneSub                           | &#9745; | &#9744; |
+| Xem chi tiết việc con (Sửa Xóa Tích hoàn thành)<br>DetailSubTask   | &#9745; | &#9745; |
+| Danh sách các việc con chưa hoàn thành<br>UndoneSub                | &#9745; | &#9745; |
+| Danh sách các việc con đã làm<br>DoneSub                           | &#9745; | &#9745; |
 
 &#9745; hoàn tất  
 &#9744; đang làm

@@ -85,7 +85,7 @@ public class Vietnamese
             case "add-subtask-button" -> "Thêm nhiệm vụ con";
             case "toggle-this-button" -> "Đổi trạng thái nhv này";
             case "delete-this-button" -> "Xóa nhiệm vụ này";
-            case "edit-this-button" -> "Sửa nhiệm vụ này";
+            case "edit-this-button" -> "Sửa";
             case "mother-task-name" -> "Nhiệm vụ chính: ";
             case "task-name" -> "Tiêu đề: ";
             case "deadline-time" -> "Hạn: ";

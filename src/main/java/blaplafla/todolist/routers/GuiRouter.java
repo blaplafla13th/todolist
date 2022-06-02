@@ -34,6 +34,7 @@ public class GuiRouter
         edit = new Edit();
         undoneSubTask = new UndoneSub();
         doneSubTask = new DoneSub();
+        detailSubTask = new DetailSub();
     }
 
     @Override
@@ -87,6 +88,10 @@ public class GuiRouter
         if (doneSubTask instanceof DoneSub doneSubTask && doneSubTask.isShow()) {
             doneSubTask.close();
             doneSubTask.run(DoneSub.getMotherTask());
+        }
+        if (detailSubTask instanceof DetailSub detailSubTask && detailSubTask.isShow()) {
+            detailSubTask.close();
+            detailSubTask.run(DetailSub.getMotherTask(), DetailSub.getTask());
         }
         if (error.isShow()) {
             error.close();

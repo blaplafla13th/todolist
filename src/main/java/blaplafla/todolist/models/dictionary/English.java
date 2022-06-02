@@ -86,7 +86,7 @@ public class English
             case "add-subtask-button" -> "Create subtask";
             case "toggle-this-button" -> "Toggle this";
             case "delete-this-button" -> "Delete this";
-            case "edit-this-button" -> "Edit this";
+            case "edit-this-button" -> "Edit";
             case "mother-task-name" -> "Main task: ";
             case "task-name" -> "Title: ";
             case "deadline-time" -> "Deadline: ";
