@@ -90,7 +90,7 @@ public class Index
         language.setText(d.label("set-lang-button"));
         refresh.setText(d.label("refresh"));
         listViewTask.setItems(listtask);
-        listViewTask.setCellFactory(param -> new IndexTaskListCell());
+        listViewTask.setCellFactory(param -> new IndexMotherTaskListCell());
         next.setText(d.label("next-button") + ">");
         prev.setText("<" + d.label("prev-button"));
         usernameField.setVisible(false);

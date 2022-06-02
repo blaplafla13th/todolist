@@ -11,7 +11,7 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.net.URL;
 
-public class SubTaskListCell
+public class IndexSubTaskListCell
         extends ListCell<Task> {
     DictionaryController d = MainController.getInstance().dictionaryController();
 

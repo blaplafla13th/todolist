@@ -13,7 +13,7 @@ import javafx.scene.layout.GridPane;
 import java.io.IOException;
 import java.net.URL;
 
-public class IndexTaskListCell
+public class IndexMotherTaskListCell
         extends ListCell<Task> {
     DictionaryController d = MainController.getInstance().dictionaryController();
 

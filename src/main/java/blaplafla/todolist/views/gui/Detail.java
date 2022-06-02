@@ -105,7 +105,7 @@ public class Detail
         refresh.setText(d.label("refresh"));
         undone.setText(d.label("undone-sub-list") + " (" + motherTask.undoneSubTaskSize() + "): ");
         listViewTask.setItems(listtask);
-        listViewTask.setCellFactory(param -> new SubTaskListCell());
+        listViewTask.setCellFactory(param -> new IndexSubTaskListCell());
         next.setText(d.label("next-button") + ">");
         prev.setText("<" + d.label("prev-button"));
         detail.setText(d.label("detail-button"));
