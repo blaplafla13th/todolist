@@ -1,13 +1,11 @@
 package blaplafla.todolist.views.gui;
 
 import blaplafla.todolist.controllers.DictionaryController;
-import blaplafla.todolist.controllers.FileController;
 import blaplafla.todolist.controllers.MainController;
 import blaplafla.todolist.controllers.TaskController;
 import blaplafla.todolist.models.datastructures.SimpleArrayList;
 import blaplafla.todolist.models.task.MotherTask;
 import blaplafla.todolist.models.task.Task;
-import blaplafla.todolist.requests.RequestValidation;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -23,8 +21,6 @@ public class Detail
     private static MotherTask motherTask;
     final DictionaryController d = MainController.getInstance().dictionaryController();
     final TaskController t = MainController.getInstance().taskController();
-    final FileController f = MainController.getInstance().fileController();
-    RequestValidation r = MainController.getInstance().input();
     int page = 1;
     int max_page;
     ObservableList<Task> listtask = FXCollections.observableArrayList();

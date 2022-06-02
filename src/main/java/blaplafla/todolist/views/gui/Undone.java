@@ -7,7 +7,6 @@ import blaplafla.todolist.models.datastructures.SimpleArrayList;
 import blaplafla.todolist.models.task.ListTask;
 import blaplafla.todolist.models.task.MotherTask;
 import blaplafla.todolist.models.task.Task;
-import blaplafla.todolist.requests.RequestValidation;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -26,7 +25,6 @@ public class Undone
     static ListTask listTask;
     DictionaryController d = MainController.getInstance().dictionaryController();
     TaskController t = MainController.getInstance().taskController();
-    RequestValidation r = MainController.getInstance().input();
     ObservableList<MotherTask> listtask = FXCollections.observableArrayList();
     int page = 1;
     int max_page;
