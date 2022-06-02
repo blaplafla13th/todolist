@@ -111,6 +111,7 @@ public class English
             case "start-button" -> "Open";
             case "undone-button" -> "Undone";
             case "page" -> "Page ";
+            case "subtask-completed" -> "Subtask Completed ";
             default -> "Unknown";
         };
     }
