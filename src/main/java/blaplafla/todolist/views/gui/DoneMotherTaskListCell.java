@@ -33,15 +33,12 @@ public class DoneMotherTaskListCell
             catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            GridPane gridPane1 = (GridPane) anchorPane.getChildren().get(0);
-            GridPane gridPane2 = (GridPane) anchorPane.getChildren().get(1);
-            Label title = (Label) gridPane1.getChildren().get(0);
-            Label timeLeft = (Label) gridPane1.getChildren().get(1);
-            Label desc = (Label) gridPane2.getChildren().get(0);
-            Label totalSubTask = (Label) gridPane2.getChildren().get(1);
-            timeLeft.setVisible(false);
+            GridPane gridPane = (GridPane) anchorPane.getChildren().get(0);
+            Label title = (Label) gridPane.getChildren().get(0);
+            Label timeLeft = (Label) gridPane.getChildren().get(1);
+            Label totalSubTask = (Label) gridPane.getChildren().get(2);
             title.setText(motherTask.getTitle());
-            desc.setText(d.label("desc") + motherTask.getDescription());
+            timeLeft.setText(d.label("desc") + motherTask.getDescription());
             totalSubTask.setText(d.label("subtask-total") + motherTask.subTaskSize());
             setGraphic(anchorPane);
             setText(null);

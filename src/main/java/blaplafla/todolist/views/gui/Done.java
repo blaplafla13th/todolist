@@ -11,10 +11,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.SelectionMode;
+import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -30,15 +28,25 @@ public class Done
     int max_page;
 
     @FXML
+    private Menu task;
+    @FXML
+    private MenuItem delete1;
+    @FXML
+    private MenuItem toggle1;
+    @FXML
+    private MenuItem detail1;
+    @FXML
     private ListView<MotherTask> listViewTask;
     @FXML
-    private Button refresh;
+    private ImageView refresh;
     @FXML
-    private Button delete;
+    private ImageView delete;
     @FXML
-    private Button toggle;
+    private ImageView toggle;
     @FXML
-    private Button detail;
+    private ImageView detail;
+    @FXML
+    private ImageView back;
     @FXML
     private Label undone;
     @FXML
@@ -69,11 +77,16 @@ public class Done
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        task.setText(d.label("tasks"));
         undone.setText(d.label("done list-button"));
-        refresh.setText(d.label("refresh"));
-        delete.setText(d.label("delete-button"));
-        toggle.setText(d.label("undone-button"));
-        detail.setText(d.label("detail-button"));
+        Tooltip.install(refresh, new Tooltip(d.label("refresh")));
+        Tooltip.install(delete, new Tooltip(d.label("delete-button")));
+        Tooltip.install(toggle, new Tooltip(d.label("undone-button")));
+        Tooltip.install(detail, new Tooltip(d.label("detail-button")));
+        Tooltip.install(back, new Tooltip(d.label("back")));
+        delete1.setText(d.label("delete-button"));
+        toggle1.setText(d.label("undone-button"));
+        detail1.setText(d.label("detail-button"));
         next.setText(d.label("next-button") + ">");
         prev.setText("<" + d.label("prev-button"));
         listViewTask.setItems(listtask);
@@ -83,6 +96,7 @@ public class Done
     }
 
     public void addData() {
+        max_page = t.paginateSize(listTask.getDone(), 5);
         if (page > max_page) {
             page = 1;
         }
@@ -115,6 +129,11 @@ public class Done
     public void detail() {
         if (listViewTask.getSelectionModel().getSelectedIndex() != -1)
             t.detailMotherTask(listtask.get(listViewTask.getSelectionModel().getSelectedIndex()));
+    }
+
+    public void back() {
+        this.close();
+        ((ViewGui) MainController.getInstance().router().getDone()).close();
     }
 
     public void next() {

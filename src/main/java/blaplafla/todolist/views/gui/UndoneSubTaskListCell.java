@@ -34,10 +34,9 @@ public class UndoneSubTaskListCell
                 throw new RuntimeException(e);
             }
             GridPane gridPane = (GridPane) anchorPane.getChildren().get(0);
-            GridPane gridPane1 = (GridPane) gridPane.getChildren().get(0);
-            Label title = (Label) gridPane1.getChildren().get(0);
-            Label timeLeft = (Label) gridPane1.getChildren().get(1);
-            Label desc = (Label) gridPane.getChildren().get(1);
+            Label title = (Label) gridPane.getChildren().get(0);
+            Label timeLeft = (Label) gridPane.getChildren().get(1);
+            Label desc = (Label) gridPane.getChildren().get(2);
             title.setText(motherTask.getTitle());
             timeLeft.setText(d.prettyTime(motherTask.prettyTimer()));
             desc.setText(d.label("desc") + motherTask.getDescription());

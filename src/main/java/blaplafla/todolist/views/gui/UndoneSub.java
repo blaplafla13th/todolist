@@ -10,10 +10,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.SelectionMode;
+import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -31,15 +29,27 @@ public class UndoneSub
     @FXML
     private ListView<Task> listViewTask;
     @FXML
-    private Button refresh;
+    private Menu task;
     @FXML
-    private Button add;
+    private MenuItem delete1;
     @FXML
-    private Button delete;
+    private MenuItem toggle1;
     @FXML
-    private Button toggle;
+    private MenuItem detail1;
     @FXML
-    private Button detail;
+    private MenuItem add1;
+    @FXML
+    private ImageView refresh;
+    @FXML
+    private ImageView add;
+    @FXML
+    private ImageView back;
+    @FXML
+    private ImageView delete;
+    @FXML
+    private ImageView toggle;
+    @FXML
+    private ImageView detail;
     @FXML
     private Label undone;
     @FXML
@@ -80,11 +90,16 @@ public class UndoneSub
         undone.setText(
                 d.label("undone list-button") + " (" + motherTask.getUndoneSubTask().size() + ")" +
                 ": ");
-        refresh.setText(d.label("refresh"));
-        add.setText(d.label("add-button"));
-        delete.setText(d.label("delete-button"));
-        toggle.setText(d.label("done-button"));
-        detail.setText(d.label("detail-button"));
+        Tooltip.install(refresh, new Tooltip(d.label("refresh")));
+        Tooltip.install(delete, new Tooltip(d.label("delete-button")));
+        Tooltip.install(toggle, new Tooltip(d.label("undone-button")));
+        Tooltip.install(detail, new Tooltip(d.label("detail-button")));
+        Tooltip.install(back, new Tooltip(d.label("back")));
+        Tooltip.install(add, new Tooltip(d.label("add-button")));
+        add1.setText(d.label("add-button"));
+        delete1.setText(d.label("delete-button"));
+        toggle1.setText(d.label("done-button"));
+        detail1.setText(d.label("detail-button"));
         next.setText(d.label("next-button") + ">");
         prev.setText("<" + d.label("prev-button"));
         listViewTask.setItems(listtask);
@@ -94,6 +109,7 @@ public class UndoneSub
     }
 
     public void addData() {
+        max_page = t.paginateSize(motherTask.getUndoneSubTask(), 5);
         if (page > max_page) {
             page = 1;
         }
@@ -146,5 +162,10 @@ public class UndoneSub
         if (page > 1)
             page--;
         addData();
+    }
+
+    public void back() {
+        this.close();
+        ((ViewGui) MainController.getInstance().router().getUndoneSubTask()).close();
     }
 }

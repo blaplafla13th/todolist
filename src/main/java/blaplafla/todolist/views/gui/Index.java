@@ -13,6 +13,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -45,7 +46,7 @@ public class Index
     @FXML
     private MenuItem addtask;
     @FXML
-    private Button refresh;
+    private ImageView refresh;
     @FXML
     private MenuItem username;
     @FXML
@@ -59,9 +60,15 @@ public class Index
     @FXML
     private Label prev;
     @FXML
+    private Label cat;
+    @FXML
     private TextField usernameField;
     @FXML
     private Label pageLabel;
+    @FXML
+    private ImageView plus;
+    @FXML
+    private ImageView plus1;
 
     @Override
     public void run() {
@@ -88,16 +95,20 @@ public class Index
         addtask.setText(d.label("add-button"));
         username.setText(d.label("set-username-button"));
         language.setText(d.label("set-lang-button"));
-        refresh.setText(d.label("refresh"));
+        cat.setText(d.label("name"));
+        usernameField.setText(listTask.getUsername());
+        Tooltip.install(refresh, new Tooltip(d.label("refresh")));
+        Tooltip.install(plus, new Tooltip(d.label("add-button")));
+        Tooltip.install(plus1, new Tooltip(d.label("add-button")));
         listViewTask.setItems(listtask);
         listViewTask.setCellFactory(param -> new IndexMotherTaskListCell());
         next.setText(d.label("next-button") + ">");
         prev.setText("<" + d.label("prev-button"));
-        usernameField.setVisible(false);
         addData();
     }
 
     public void addData() {
+        max_page = t.paginateSize(listTask.getUndone(), 5);
         if (page > max_page) {
             page = 1;
         }
@@ -110,6 +121,7 @@ public class Index
         for (Task task : tasks) {
             listtask.add(task);
         }
+        plus.setVisible(tasks.isEmpty());
         pageLabel.setText(d.label("page") + page);
     }
 
@@ -155,13 +167,11 @@ public class Index
     }
 
     public void setUsername() {
-        usernameField.setVisible(true);
-        usernameField.setPromptText(
-                d.label("set-name") + " " + d.label("old-value") + listTask.getUsername());
+        usernameField.setEditable(true);
     }
 
     public void doneSetUsername() {
-        usernameField.setVisible(false);
+        usernameField.setEditable(false);
         MainController.getInstance().listTask().setUsername(r.reformat(usernameField.getText()));
         MainController.getInstance().indexView().run();
     }

@@ -7,8 +7,11 @@ import blaplafla.todolist.models.task.MotherTask;
 import blaplafla.todolist.models.task.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.Tooltip;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -35,13 +38,23 @@ public class DetailSub
     @FXML
     private Label detail;
     @FXML
-    private Button edit;
+    private ImageView edit;
     @FXML
-    private Button toggle;
+    private ImageView toggle;
     @FXML
-    private Button delete;
+    private ImageView delete;
     @FXML
-    private Button refresh;
+    private ImageView refresh;
+    @FXML
+    private ImageView back;
+    @FXML
+    private Menu task1;
+    @FXML
+    private MenuItem delete1;
+    @FXML
+    private MenuItem toggle1;
+    @FXML
+    private MenuItem edit1;
 
     public static MotherTask getMotherTask() {
         return motherTask;
@@ -79,12 +92,17 @@ public class DetailSub
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        task1.setText(d.label("tasks"));
+        delete1.setText(d.label("delete-this-button"));
+        toggle1.setText(d.label("toggle-this-button"));
+        edit1.setText(d.label("edit-this-button"));
         taskName.setText(d.label("mother-task-name") + motherTask.getTitle());
         detail.setText(d.label("detail-button"));
-        delete.setText(d.label("delete-button"));
-        toggle.setText(d.label("toggle-button"));
-        edit.setText(d.label("edit-this-button"));
-        refresh.setText(d.label("refresh"));
+        Tooltip.install(delete, new Tooltip(d.label("delete-button")));
+        Tooltip.install(toggle, new Tooltip(d.label("toggle-button")));
+        Tooltip.install(edit, new Tooltip(d.label("edit-this-button")));
+        Tooltip.install(refresh, new Tooltip(d.label("refresh")));
+        Tooltip.install(back, new Tooltip(d.label("back")));
         addData();
     }
 
@@ -97,6 +115,11 @@ public class DetailSub
         else
             timeLeft.setText(d.label("done-button"));
         desc.setText(d.label("desc") + task.getDescription());
+    }
+
+    public void back() {
+        this.close();
+        ((ViewGui) MainController.getInstance().router().getDetailSubTask()).close();
     }
 
     public void edit() {

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="367.0" prefWidth="1000.0"
             xmlns="http://javafx.com/javafx/18" fx:controller="blaplafla.todolist.views.gui.Create">
-
     <GridPane alignment="CENTER" layoutX="20.0" layoutY="17.0" prefHeight="291.0" prefWidth="972.0"
               AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
         <columnConstraints>
@@ -18,7 +16,6 @@
             <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="SOMETIMES"/>
             <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="SOMETIMES"/>
         </rowConstraints>
-
         <Label fx:id="title" text="Title">
             <font>
                 <Font size="20.0"/>
@@ -55,7 +52,6 @@
             <rowConstraints>
                 <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
             </rowConstraints>
-
             <DatePicker fx:id="endDay" prefHeight="29.0" prefWidth="281.0"/>
             <Spinner fx:id="endTimeHour" editable="true" prefHeight="26.0" prefWidth="91.0"
                      GridPane.columnIndex="1"/>
@@ -69,11 +65,9 @@
                    GridPane.columnIndex="4"/>
             <Label fx:id="second" alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="Second"
                    GridPane.columnIndex="6"/>
-
         </GridPane>
         <TextField fx:id="priorityField" prefHeight="26.0" prefWidth="316.0" GridPane.columnIndex="1"
                    GridPane.rowIndex="3"/>
-
     </GridPane>
     <ButtonBar layoutX="786.0" layoutY="308.0" prefHeight="40.0" prefWidth="200.0">
         <buttons>
@@ -82,5 +76,4 @@
                     text="Accept"/>
         </buttons>
     </ButtonBar>
-
 </AnchorPane>

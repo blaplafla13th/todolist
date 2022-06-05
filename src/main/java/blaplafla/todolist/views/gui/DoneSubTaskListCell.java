@@ -7,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
 import java.net.URL;
@@ -24,7 +23,7 @@ public class DoneSubTaskListCell
             setGraphic(null);
         }
         else {
-            URL fxm = getClass().getResource("SubTaskListCellFull.fxml");
+            URL fxm = getClass().getResource("SubTaskListCell.fxml");
             FXMLLoader loader = new FXMLLoader(fxm);
             AnchorPane anchorPane;
             try {
@@ -33,14 +32,10 @@ public class DoneSubTaskListCell
             catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            GridPane gridPane = (GridPane) anchorPane.getChildren().get(0);
-            GridPane gridPane1 = (GridPane) gridPane.getChildren().get(0);
-            Label title = (Label) gridPane1.getChildren().get(0);
-            Label timeLeft = (Label) gridPane1.getChildren().get(1);
-            Label desc = (Label) gridPane.getChildren().get(1);
+            Label title = (Label) anchorPane.getChildren().get(0);
+            Label timeLeft = (Label) anchorPane.getChildren().get(1);
             title.setText(motherTask.getTitle());
-            timeLeft.setVisible(false);
-            desc.setText(d.label("desc") + motherTask.getDescription());
+            timeLeft.setText(d.label("desc") + motherTask.getDescription());
             setGraphic(anchorPane);
             setText(null);
         }

@@ -11,6 +11,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -43,7 +44,7 @@ public class Detail
     @FXML
     private Label taskName;
     @FXML
-    private Button refresh;
+    private ImageView refresh;
     @FXML
     private Label undone;
     @FXML
@@ -66,6 +67,18 @@ public class Detail
     private Label desc;
     @FXML
     private Label pageLabel;
+    @FXML
+    private ImageView plus;
+    @FXML
+    private ImageView plus1;
+    @FXML
+    private ImageView editIcon;
+    @FXML
+    private ImageView toggleIcon;
+    @FXML
+    private ImageView deleteIcon;
+    @FXML
+    private ImageView back;
 
     public static MotherTask getMotherTask() {
         return motherTask;
@@ -98,7 +111,13 @@ public class Detail
         doneList.setText(d.label("done list-button"));
         addTask.setText(d.label("add-subtask-button"));
         taskName.setText(d.label("task-name") + motherTask.getTitle());
-        refresh.setText(d.label("refresh"));
+        Tooltip.install(refresh, new Tooltip(d.label("refresh")));
+        Tooltip.install(plus, new Tooltip(d.label("add-button")));
+        Tooltip.install(plus1, new Tooltip(d.label("add-button")));
+        Tooltip.install(deleteIcon, new Tooltip(d.label("delete-this-button")));
+        Tooltip.install(toggleIcon, new Tooltip(d.label("toggle-this-button")));
+        Tooltip.install(editIcon, new Tooltip(d.label("edit-this-button")));
+        Tooltip.install(back, new Tooltip(d.label("back")));
         undone.setText(d.label("undone-sub-list") + " (" + motherTask.undoneSubTaskSize() + "): ");
         listViewTask.setItems(listtask);
         listViewTask.setCellFactory(param -> new IndexSubTaskListCell());
@@ -132,7 +151,8 @@ public class Detail
         if (!motherTask.isStatus())
             timeLeft.setText(d.prettyTime(motherTask.prettyTimer()));
         else
-            timeLeft.setVisible(false);
+            timeLeft.setText(d.label("done-button"));
+        plus.setVisible(tasks.isEmpty());
         pageLabel.setText(d.label("page") + page);
     }
 
@@ -150,9 +170,13 @@ public class Detail
 
     public void delete() {
         t.deleteMotherTask(motherTask);
+        back();
+        MainController.getInstance().router().refresh();
+    }
+
+    public void back() {
         this.close();
         ((ViewGui) MainController.getInstance().router().getDetail()).close();
-        MainController.getInstance().router().refresh();
     }
 
     public void toggle() {

@@ -33,15 +33,12 @@ public class UndoneMotherTaskListCell
             catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            GridPane gridPane1 = (GridPane) anchorPane.getChildren().get(0);
-            GridPane gridPane2 = (GridPane) anchorPane.getChildren().get(1);
-            Label title = (Label) gridPane1.getChildren().get(0);
-            Label timeLeft = (Label) gridPane1.getChildren().get(1);
-            Label desc = (Label) gridPane2.getChildren().get(0);
-            Label incomplete = (Label) gridPane2.getChildren().get(1);
+            GridPane gridPane = (GridPane) anchorPane.getChildren().get(0);
+            Label title = (Label) gridPane.getChildren().get(0);
+            Label timeLeft = (Label) gridPane.getChildren().get(1);
+            Label incomplete = (Label) gridPane.getChildren().get(2);
             title.setText(motherTask.getTitle());
             timeLeft.setText(d.prettyTime(motherTask.prettyTimer()));
-            desc.setText(d.label("desc") + motherTask.getDescription());
             incomplete.setText(
                     d.label("subtask-remaining") + ": " + motherTask.undoneSubTaskSize() + "/" +
                     motherTask.subTaskSize());

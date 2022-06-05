@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="702.0" prefWidth="447.0"
             style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18"
             fx:controller="blaplafla.todolist.views.gui.Done">
-    <ListView fx:id="listViewTask" layoutX="9.0" layoutY="110.0" prefHeight="518.0" prefWidth="429.0"
+    <MenuBar layoutX="9.0" layoutY="14.0" prefHeight="30.0" prefWidth="429.0" style="-fx-view-order: 1;"
+             AnchorPane.leftAnchor="9.0" AnchorPane.topAnchor="14.0">
+        <Menu fx:id="task" mnemonicParsing="false" text="Task">
+            <MenuItem fx:id="delete1" mnemonicParsing="false" onAction="#delete" text="Delete"/>
+            <MenuItem fx:id="toggle1" mnemonicParsing="false" onAction="#toggle" text="Toggle"/>
+            <MenuItem fx:id="detail1" mnemonicParsing="false" onAction="#detail" text="Edit"/>
+        </Menu>
+    </MenuBar>
+    <ListView fx:id="listViewTask" layoutX="9.0" layoutY="133.0" prefHeight="518.0" prefWidth="429.0"
               AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0"/>
-    <GridPane layoutX="9.0" layoutY="635.0" prefHeight="25.0" prefWidth="429.0" AnchorPane.leftAnchor="9.0"
-              AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="635.0" GridPane.rowIndex="2">
+    <GridPane layoutX="9.0" layoutY="658.0" prefHeight="25.0" prefWidth="429.0" AnchorPane.leftAnchor="9.0"
+              AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="658.0" GridPane.rowIndex="2">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
@@ -22,11 +31,17 @@
             <font>
                 <Font size="18.0"/>
             </font>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
         </Label>
         <Label fx:id="next" onMouseClicked="#next" text="Next" textAlignment="RIGHT" GridPane.columnIndex="2">
             <font>
                 <Font size="18.0"/>
             </font>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
         </Label>
         <Label fx:id="pageLabel" layoutX="10.0" layoutY="10.0" text="Page 1" GridPane.columnIndex="1">
             <font>
@@ -34,38 +49,56 @@
             </font>
         </Label>
     </GridPane>
-    <GridPane layoutX="14.0" layoutY="21.0" prefHeight="30.0" prefWidth="409.0" AnchorPane.leftAnchor="9.0"
-              AnchorPane.rightAnchor="9.0">
-        <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
-            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0"/>
-        </columnConstraints>
-        <rowConstraints>
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
-        </rowConstraints>
-        <Label fx:id="undone" text="Undone list">
-            <font>
-                <Font name="System Bold" size="20.0"/>
-            </font>
-        </Label>
-        <Button fx:id="refresh" mnemonicParsing="false" onAction="#addData" prefHeight="30.0" prefWidth="80.0"
-                text="Refresh" GridPane.columnIndex="1"/>
-    </GridPane>
-    <GridPane layoutX="8.0" layoutY="63.0" prefHeight="30.0" prefWidth="429.0" AnchorPane.leftAnchor="9.0"
-              AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="67.0">
+    <Label fx:id="undone" layoutX="14.0" layoutY="57.0" text="Done list" AnchorPane.topAnchor="55.0">
+        <font>
+            <Font name="System Bold" size="20.0"/>
+        </font>
+    </Label>
+    <ImageView fx:id="back" fitHeight="32.0" fitWidth="53.0" layoutX="370.0" layoutY="55.0" onMouseClicked="#back"
+               pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="55.0">
+        <Image url="@icon/arrow.png"/>
+        <cursor>
+            <Cursor fx:constant="HAND"/>
+        </cursor>
+    </ImageView>
+    <GridPane layoutX="9.0" layoutY="87.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0"
+              AnchorPane.topAnchor="87.0">
         <columnConstraints>
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0"/>
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0"/>
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0"/>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0"/>
         </columnConstraints>
         <rowConstraints>
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
         </rowConstraints>
-        <Button fx:id="detail" mnemonicParsing="false" onAction="#detail" prefHeight="30.0" prefWidth="80.0"
-                text="Detail" GridPane.columnIndex="2"/>
-        <Button fx:id="toggle" mnemonicParsing="false" onAction="#toggle" prefHeight="30.0" prefWidth="80.0"
-                text="Toggle" GridPane.columnIndex="1"/>
-        <Button fx:id="delete" mnemonicParsing="false" onAction="#delete" prefHeight="30.0" prefWidth="80.0"
-                text="Delete"/>
+        <ImageView fx:id="delete" fitHeight="32.0" fitWidth="32.0" onMouseClicked="#delete" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@icon/delete.png"/>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </ImageView>
+        <ImageView fx:id="toggle" fitHeight="32.0" fitWidth="32.0" layoutX="30.0" layoutY="10.0"
+                   onMouseClicked="#toggle" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+            <Image url="@icon/close.png"/>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </ImageView>
+        <ImageView fx:id="detail" fitHeight="32.0" fitWidth="32.0" onMouseClicked="#detail" pickOnBounds="true"
+                   preserveRatio="true" GridPane.columnIndex="2">
+            <Image url="@icon/info.png"/>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </ImageView>
+        <ImageView fx:id="refresh" fitHeight="32.0" fitWidth="32.0" onMouseClicked="#addData" pickOnBounds="true"
+                   preserveRatio="true" GridPane.columnIndex="3">
+            <Image url="@icon/refresh.png"/>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </ImageView>
     </GridPane>
 </AnchorPane>
