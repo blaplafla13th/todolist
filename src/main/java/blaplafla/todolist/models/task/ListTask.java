@@ -13,7 +13,7 @@ public class ListTask
     private String username;
 
     public ListTask() {
-        username = "user";
+        username = "category";
         undone = new SimpleArrayList<>();
         done = new SimpleStack<>();
     }
