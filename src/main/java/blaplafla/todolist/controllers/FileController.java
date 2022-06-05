@@ -11,7 +11,6 @@ public class FileController {
     private boolean hasFile;
     private ObjectInputStream objectInputStream;
 
-
     public boolean hasFile() {
         return userfile != null;
     }

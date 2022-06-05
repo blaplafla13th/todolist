@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Iterator;
 
-
 @SuppressWarnings("unchecked")
 public class SimpleStack<T extends Comparable<? super T>>
         implements Serializable, Iterable<T>, SimpleStructure<T> {
@@ -138,11 +137,9 @@ public class SimpleStack<T extends Comparable<? super T>>
             implements Iterator<T> {
         private int currentIndex = n - 1;
 
-
         public boolean hasNext() {
             return currentIndex >= 0;
         }
-
 
         public T next() {
             return array[currentIndex--];

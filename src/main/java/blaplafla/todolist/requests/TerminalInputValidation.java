@@ -3,7 +3,7 @@ package blaplafla.todolist.requests;
 import java.util.Date;
 import java.util.Scanner;
 
-@SuppressWarnings("deprecation")
+@SuppressWarnings({"deprecation", "MagicConstant"})
 public class TerminalInputValidation
         extends RequestValidation {
     private final Scanner input;
@@ -116,6 +116,5 @@ public class TerminalInputValidation
             return date;
         }
     }
-
 
 }

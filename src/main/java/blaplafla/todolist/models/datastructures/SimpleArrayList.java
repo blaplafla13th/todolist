@@ -136,16 +136,13 @@ public class SimpleArrayList<T extends Comparable<? super T>>
             implements Iterator<T> {
         private int currentIndex;
 
-
         public boolean hasNext() {
             return currentIndex < n;
         }
-
 
         public T next() {
             return array[currentIndex++];
         }
     }
-
 
 }

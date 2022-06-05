@@ -6,7 +6,6 @@ import blaplafla.todolist.models.dictionary.Dictionary;
 import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.views.View;
 
-
 public class SetLanguage
         implements View {
     final DictionaryController d = MainController.getInstance().dictionaryController();

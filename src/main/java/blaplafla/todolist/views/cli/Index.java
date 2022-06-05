@@ -11,7 +11,6 @@ import blaplafla.todolist.models.task.Task;
 import blaplafla.todolist.requests.RequestValidation;
 import blaplafla.todolist.views.View;
 
-
 public class Index
         implements View {
     final DictionaryController d = MainController.getInstance().dictionaryController();

@@ -110,7 +110,9 @@ public class Vietnamese
             case "undone-button" -> "Hủy";
             case "start-button" -> "Mở";
             case "page" -> "Trang ";
-            case "subtask-completed" -> "Nhệm vụ con đã hoàn tất";
+            case "subtask-completed" -> "Nhiệm vụ con đã hoàn tất";
+            case "back" -> "Quay lại";
+            case "name" -> "Danh sách:";
             default -> "Không xác định";
         };
     }

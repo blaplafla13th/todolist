@@ -34,7 +34,7 @@ public class English
     public String label(String label) {
         return switch (label) {
             case "input-num-option" -> "Input number of option ";
-            case "todolist-name" -> "To-do list assigned to ";
+            case "todolist-name" -> "Assigned task in ";
             case "current-lang" -> "Current language: ";
             case "set-lang" -> "Set language to: ";
             case "sel-lang-term" -> "Input number of option: ";
@@ -112,6 +112,8 @@ public class English
             case "undone-button" -> "Undone";
             case "page" -> "Page ";
             case "subtask-completed" -> "Subtask Completed ";
+            case "back" -> "Back";
+            case "name" -> "List:";
             default -> "Unknown";
         };
     }

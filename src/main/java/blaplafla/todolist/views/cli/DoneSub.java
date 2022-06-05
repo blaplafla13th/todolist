@@ -12,7 +12,6 @@ import blaplafla.todolist.views.View;
 public class DoneSub
         implements View {
 
-
     final DictionaryController d = MainController.getInstance().dictionaryController();
     final TaskController t = MainController.getInstance().taskController();
     final RequestValidation r = MainController.getInstance().input();
